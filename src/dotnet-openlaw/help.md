@@ -6,7 +6,7 @@ OPTIONS:
     -h, --help    Prints help information
 
 COMMANDS:
-    saij                                                
-    convert    Convierte archivos JSON a YAML y Markdown
-    format     Normaliza el formato de archivos JSON    
+    saij                                                     
+    convert    Convierte archivos JSON a YAML, Markdown y PDF
+    format     Normaliza el formato de archivos JSON         
 ```

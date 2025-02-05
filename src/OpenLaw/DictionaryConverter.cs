@@ -6,24 +6,35 @@ namespace Clarius.OpenLaw;
 
 public class DictionaryConverter
 {
+    static readonly Lock sync = new();
+
     static readonly JsonSerializerOptions options = new()
     {
         Converters = { new JsonDictionaryConverter() },
     };
 
-    public static void ConvertFile(string jsonFile, bool overwrite)
+    public static void Convert(string jsonFile, bool yaml, bool pdf, bool markdown, bool overwrite)
     {
         var yamlDir = Path.Combine(Path.GetDirectoryName(jsonFile) ?? "", "yaml");
         var yamlFile = Path.Combine(yamlDir, Path.ChangeExtension(Path.GetFileName(jsonFile), ".yaml"));
-        Directory.CreateDirectory(yamlDir);
+        if (yaml)
+            Directory.CreateDirectory(yamlDir);
 
         var mdDir = Path.Combine(Path.GetDirectoryName(jsonFile) ?? "", "md");
         var mdFile = Path.Combine(mdDir, Path.ChangeExtension(Path.GetFileName(jsonFile), ".md"));
-        Directory.CreateDirectory(mdDir);
+        if (markdown)
+            Directory.CreateDirectory(mdDir);
+
+        var pdfDir = Path.Combine(Path.GetDirectoryName(jsonFile) ?? "", "pdf");
+        var pdfFile = Path.Combine(pdfDir, Path.ChangeExtension(Path.GetFileName(jsonFile), ".pdf"));
+        if (pdf)
+            Directory.CreateDirectory(pdfDir);
 
         Dictionary<string, object?>? dictionary = null;
+        var writeTime = File.GetLastWriteTimeUtc(jsonFile);
 
-        if (overwrite || !File.Exists(yamlFile))
+        if (overwrite || !File.Exists(yamlFile) || 
+            (File.Exists(yamlFile) && File.GetLastWriteTimeUtc(yamlFile) != writeTime))
         {
             dictionary = Parse(File.ReadAllText(jsonFile));
             if (dictionary is null)
@@ -32,15 +43,48 @@ public class DictionaryConverter
             File.WriteAllText(yamlFile, ToYaml(dictionary), Encoding.UTF8);
         }
 
-        if (overwrite || !File.Exists(mdFile))
+        // Always ensure write time matches source json file
+        File.SetLastWriteTimeUtc(yamlFile, writeTime);
+
+        if (overwrite || !File.Exists(mdFile) ||
+            (File.Exists(mdFile) && File.GetLastWriteTimeUtc(mdFile) != writeTime))
         {
-            if (dictionary is null)
-                dictionary = Parse(File.ReadAllText(jsonFile));
+            dictionary ??= Parse(File.ReadAllText(jsonFile));
             if (dictionary is null)
                 return;
 
             File.WriteAllText(mdFile, ToMarkdown(dictionary), Encoding.UTF8);
         }
+
+        // Always ensure write time matches source json file
+        File.SetLastWriteTimeUtc(mdFile, writeTime);
+
+        if (overwrite || !File.Exists(pdfFile) || 
+            (File.Exists(pdfFile) && File.GetLastWriteTimeUtc(pdfFile) != writeTime))
+        {
+            dictionary ??= Parse(File.ReadAllText(jsonFile));
+            if (dictionary is null)
+                return;
+            
+            if (!File.Exists(mdFile))
+            {
+                File.WriteAllText(mdFile, ToMarkdown(dictionary), Encoding.UTF8);
+                File.SetLastWriteTimeUtc(mdFile, writeTime);
+            }
+
+            // single-threaded usage of the markdown2pdf converter
+            string? converted = null;
+            lock (sync)
+            {
+                // Force sync execution since we can't lock and await.
+                // Should work ok because it's a console app.
+                converted = new Markdown2Pdf.Markdown2PdfConverter().Convert(mdFile).Result;
+            }
+            File.Move(converted, pdfFile, overwrite: true);
+        }
+
+        // Always ensure write time matches source json file
+        File.SetLastWriteTimeUtc(pdfFile, writeTime);
     }
 
     public static Dictionary<string, object?>? Parse(string json)

@@ -56,7 +56,10 @@ public class SaijClient(IHttpClientFactory httpFactory, IProgress<ProgressMessag
             }
 
             skip = skip + take;
-            url = string.Format(CultureInfo.InvariantCulture, UrlFormat, skip, take, tipo);
+            url = string.Format(CultureInfo.InvariantCulture, UrlFormat, skip, take,
+                !string.IsNullOrEmpty(tipo) ? $"/Legislación/{tipo}" : "",
+                !string.IsNullOrEmpty(jurisdiccion) ? "/" + jurisdiccion : "");
+
             var response = await http.GetAsync(url, cancellation);
             if (!response.IsSuccessStatusCode)
                 break;

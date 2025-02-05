@@ -1,6 +1,6 @@
 .document | {
     id: .metadata.uuid,
-    canonical: .content["standard-normativo"],
+    ref: .content["standard-normativo"],
     name: .content["nombre-coloquial"],
     number: .content["numero-norma"], 
     title: .content["titulo-norma"],

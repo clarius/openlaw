@@ -2,7 +2,7 @@
   "profiles": {
     "dotnet-openlaw": {
       "commandName": "Project",
-      "commandLineArgs": "convert --dir F:\\SAIJ"
+      "commandLineArgs": "saij download --dir F:\\SAIJ --overwrite false"
     }
   }
 }

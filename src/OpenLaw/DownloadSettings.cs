@@ -15,7 +15,7 @@ public class DownloadSettings : CommandSettings
     [CommandOption("--ff", IsHidden = true)]
     public bool ForceFormat { get; set; } = false;
 
-    [Description("Convertir automaticamente documentos nuevos descargados a YAML.")]
+    [Description("Convertir automaticamente documentos nuevos descargados a Markdown, PDF y YAML.")]
     [DefaultValue(true)]
     [CommandOption("--convert")]
     public bool Convert { get; set; } = false;

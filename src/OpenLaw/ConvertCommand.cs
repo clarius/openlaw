@@ -1,19 +1,19 @@
 ﻿using System.ComponentModel;
-using System.Text.Json;
+using System.Diagnostics;
+using System.Dynamic;
 using Spectre.Console;
 using Spectre.Console.Cli;
-using YamlDotNet.Serialization;
 
 namespace Clarius.OpenLaw;
 
-[Description("Convierte archivos JSON a YAML y Markdown.")]
+[Description("Convierte archivos JSON a YAML, Markdown y PDF.")]
 public class ConvertCommand(IAnsiConsole console) : Command<ConvertCommand.ConvertSettings>
 {
     public override int Execute(CommandContext context, ConvertSettings settings)
     {
         if (settings.File is not null)
         {
-            ConvertFile(settings.File, true);
+            Convert(settings.File, settings);
             return 0;
         }
 
@@ -27,20 +27,25 @@ public class ConvertCommand(IAnsiConsole console) : Command<ConvertCommand.Conve
                 ])
                 .Start(ctx =>
                 {
-                    Parallel.ForEach(Directory.EnumerateFiles(settings.Directory, "*.json", SearchOption.AllDirectories), file =>
-                    {
-                        var task = ctx.AddTask($"Convirtiendo {file}");
-                        task.IsIndeterminate = true;
-                        ConvertFile(file, true);
-                        task.Value(100);
-                    });
+                    var options = new ParallelOptions();
+                    if (Debugger.IsAttached)
+                        options.MaxDegreeOfParallelism = 1;
+                    Parallel.ForEach(Directory.EnumerateFiles(settings.Directory, "*.json", SearchOption.AllDirectories),
+                        options, file =>
+                        {
+                            var task = ctx.AddTask($"Convirtiendo {file}");
+                            task.IsIndeterminate = true;
+                            Convert(file, settings);
+                            task.Value(100);
+                        });
                 });
         }
 
         return 0;
     }
 
-    static void ConvertFile(string file, bool overwrite) => DictionaryConverter.ConvertFile(file, overwrite);
+    static void Convert(string file, ConvertSettings settings) 
+        => DictionaryConverter.Convert(file, settings.Yaml, settings.Pdf, settings.Markdown, settings.Overwrite);
 
     public class ConvertSettings : CommandSettings
     {
@@ -59,5 +64,25 @@ public class ConvertCommand(IAnsiConsole console) : Command<ConvertCommand.Conve
         [Description("Ubicación de archivos a convertir. Por defecto '%AppData%\\clarius\\openlaw'")]
         [CommandOption("--dir")]
         public string Directory { get; set; } = Environment.ExpandEnvironmentVariables("%AppData%\\clarius\\openlaw");
+
+        [Description("Sobreescribir archivos existentes. Por defecto 'false'.")]
+        [DefaultValue(false)]
+        [CommandOption("--overwrite")]
+        public bool Overwrite { get; set; } = false;
+
+        [Description("Generar archivos YAML. Por defecto 'true'.")]
+        [DefaultValue(true)]
+        [CommandOption("--yaml")]
+        public bool Yaml { get; set; } = true;
+
+        [Description("Generar archivos PDF. Por defecto 'true'.")]
+        [DefaultValue(true)]
+        [CommandOption("--pdf")]
+        public bool Pdf { get; set; } = true;
+
+        [Description("Generar archivos Markdown. Por defecto 'true'.")]
+        [DefaultValue(true)]
+        [CommandOption("--md")]
+        public bool Markdown { get; set; } = true;
     }
 }

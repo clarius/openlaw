@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel;
+using System.Diagnostics;
 using System.Text;
 using System.Text.Json;
 using CliWrap;
@@ -44,37 +45,49 @@ public class DownloadCommand(IAnsiConsole console, IHttpClientFactory http) : As
 
                 var tipo = settings.All ? null : "Ley";
                 var jurisdiccion = settings.All ? null : "Nacional";
+                var options = new ParallelOptions();
+                if (Debugger.IsAttached)
+                    options.MaxDegreeOfParallelism = 1;
 
-                await foreach (var doc in client.EnumerateAsync())
+                await Parallel.ForEachAsync(client.EnumerateAsync(), options, async (doc, cancellation) =>
                 {
                     if (doc["document"]?["metadata"]?["uuid"]?.GetValue<string>() is not string id ||
                         doc["document"]?["metadata"]?["timestamp"]?.GetValue<long>() is not long timestamp)
-                        continue;
+                        return;
 
                     var file = Path.Combine(settings.Directory, id + ".json");
                     // Skip if file exists and has the same timestamp
                     if (File.Exists(file) && await GetJsonTimestampAsync(file) == timestamp)
                     {
+                        // Ensure we set the last write time to the timestamp for easier checks at conversion time.
+                        // when converting files.
+                        File.SetLastWriteTimeUtc(file, DateTimeOffset.FromUnixTimeMilliseconds(timestamp).UtcDateTime);
+
                         // Source json file hasn't changed, so only convert if requested
                         if (settings.Convert)
                             // Don't force conversion if file already exists.
-                            ConvertFile(file, overwrite: false);
+                            Convert(file, overwrite: false);
 
-                        continue;
+                        return;
                     }
 
                     // Converting to dictionary performs string multiline formatting and markup removal
                     var dictionary = JsonSerializer.Deserialize<Dictionary<string, object?>>(doc, readOptions);
                     File.WriteAllText(file, JsonSerializer.Serialize(dictionary, writeOptions));
                     if (settings.Convert)
-                        ConvertFile(file, overwrite: true);
-                }
+                        Convert(file, overwrite: true);
+
+                    // Ensure we set the last write time to the timestamp for easier check 
+                    // when converting files.
+                    File.SetLastWriteTimeUtc(file, DateTimeOffset.FromUnixTimeMilliseconds(timestamp).UtcDateTime);
+                });
             });
 
         return 0;
     }
 
-    static void ConvertFile(string file, bool overwrite) => DictionaryConverter.ConvertFile(file, overwrite);
+    static void Convert(string file, bool overwrite) 
+        => DictionaryConverter.Convert(file, true, true, true, overwrite);
 
     static async Task<long> GetJsonTimestampAsync(string file)
     {

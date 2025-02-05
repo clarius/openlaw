@@ -11,7 +11,7 @@ OPTIONS:
         --all        True       Descargar todos los documentos, no solamente    
                                 Leyes de alcance Nacional                       
         --convert    True       Convertir automaticamente documentos nuevos     
-                                descargados a YAML                              
+                                descargados a Markdown, PDF y YAML              
         --dir                   Ubicación opcional para descarga de archivos.   
                                 Por defecto '%AppData%\clarius\openlaw'         
 ```
