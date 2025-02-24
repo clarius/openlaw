@@ -20,9 +20,9 @@ OPTIONS:
     -h, --help    Prints help information
 
 COMMANDS:
-    saij                                                
-    convert    Convierte archivos JSON a YAML y Markdown
-    format     Normaliza el formato de archivos JSON    
+    convert    Convierte archivos JSON a YAML, Markdown y PDF
+    format     Normaliza el formato de archivos JSON         
+    ar                                                       
 ```
 
 <!-- src/dotnet-openlaw/help.md -->
@@ -30,10 +30,10 @@ COMMANDS:
 <!-- include src/dotnet-openlaw/ar-download.md -->
 ```shell
 DESCRIPTION:
-Descargar documentos del sistema SAIJ.
+Descargar normas argentinas del sistema SAIJ.
 
 USAGE:
-    openlaw saij download [OPTIONS]
+    openlaw ar download [OPTIONS]
 
 OPTIONS:
                      DEFAULT                                                    
@@ -41,7 +41,7 @@ OPTIONS:
         --all        True       Descargar todos los documentos, no solamente    
                                 Leyes de alcance Nacional                       
         --convert    True       Convertir automaticamente documentos nuevos     
-                                descargados a YAML                              
+                                descargados a Markdown, PDF y YAML              
         --dir                   Ubicación opcional para descarga de archivos.   
                                 Por defecto '%AppData%\clarius\openlaw'         
 ```
@@ -51,7 +51,7 @@ OPTIONS:
 <!-- include src/dotnet-openlaw/convert.md -->
 ```shell
 DESCRIPTION:
-Convierte archivos JSON a YAML y Markdown.
+Convierte archivos JSON a YAML, Markdown y PDF.
 
 USAGE:
     openlaw convert [file] [OPTIONS]
@@ -60,9 +60,15 @@ ARGUMENTS:
     [file]    Archivo a convertir. Opcional
 
 OPTIONS:
-    -h, --help    Prints help information                                       
-        --dir     Ubicación de archivos a convertir. Por defecto                
-                  '%AppData%\clarius\openlaw'                                   
+                       DEFAULT                                                  
+    -h, --help                    Prints help information                       
+        --dir                     Ubicación de archivos a convertir. Por defecto
+                                  '%AppData%\clarius\openlaw'                   
+        --overwrite               Sobreescribir archivos existentes. Por defecto
+                                  'false'                                       
+        --yaml         True       Generar archivos YAML. Por defecto 'true'     
+        --pdf          True       Generar archivos PDF. Por defecto 'true'      
+        --md           True       Generar archivos Markdown. Por defecto 'true' 
 ```
 
 <!-- src/dotnet-openlaw/convert.md -->
