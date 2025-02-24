@@ -2,7 +2,7 @@
   "profiles": {
     "dotnet-openlaw": {
       "commandName": "Project",
-      "commandLineArgs": "saij download --dir F:\\SAIJ --overwrite false"
+      "commandLineArgs": "ar enum"
     }
   }
 }

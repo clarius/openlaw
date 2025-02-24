@@ -27,9 +27,9 @@ public class YamlDictionaryConverter : IYamlTypeConverter
             if (kvp.Value is string str)
             {
                 if (str.Contains('\n'))
-                    emitter.Emit(new Scalar(null, null, str, ScalarStyle.Literal, true, false));
+                    emitter.Emit(new Scalar(null, null, StringMarkup.Cleanup(str), ScalarStyle.Literal, true, false));
                 else
-                    emitter.Emit(new Scalar(str));
+                    emitter.Emit(new Scalar(StringMarkup.Cleanup(str)));
             }
             else
             {

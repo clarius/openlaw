@@ -1,13 +1,13 @@
 ﻿using System.Text;
 using System.Text.Json;
+using Devlooped;
 using YamlDotNet.Serialization;
 
 namespace Clarius.OpenLaw;
 
-public class DictionaryConverter
+public static class DictionaryConverter
 {
     static readonly Lock sync = new();
-
     static readonly JsonSerializerOptions options = new()
     {
         Converters = { new JsonDictionaryConverter() },
@@ -90,21 +90,22 @@ public class DictionaryConverter
     public static Dictionary<string, object?>? Parse(string json)
         => JsonSerializer.Deserialize<Dictionary<string, object?>>(json, options);
 
-    public static string ToYaml(Dictionary<string, object?> dictionary)
+    public static string ToYaml(this object value)
     {
         var serializer = new SerializerBuilder()
             .WithTypeConverter(new YamlDictionaryConverter())
             .WithTypeConverter(new YamlListConverter())
             .Build();
 
-        return serializer.Serialize(dictionary);
+        return serializer.Serialize(value).Trim();
     }
 
-    public static string ToMarkdown(Dictionary<string, object?> dictionary)
+    public static string ToMarkdown(this Dictionary<string, object?> dictionary)
     {
         var output = new StringBuilder();
-        ProcessDictionary(0, dictionary!, output);
-        return output.ToString();
+        ProcessDictionary(0, dictionary, output);
+
+        return output.ToString().Trim();
     }
 
     static void ProcessObject(int depth, object? obj, StringBuilder output)
@@ -145,7 +146,12 @@ public class DictionaryConverter
                 // We may have section title with text without an article #
                 (dictionary.ContainsKey("numero-articulo") || title is not null))
             {
-                output.AppendLine().AppendLine(value.ToString());
+                output.AppendLine();
+
+                if (dictionary.TryGetValue("numero-articulo", out var number))
+                    output.AppendLine($"<a id=\"{number}\"></a>");
+
+                output.AppendLine(value.ToString());
             }
             else
             {

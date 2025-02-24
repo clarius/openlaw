@@ -8,7 +8,7 @@ using System.Xml.Linq;
 using Devlooped;
 using Devlooped.Web;
 
-namespace Clarius.OpenLaw;
+namespace Clarius.OpenLaw.Argentina;
 
 //public record Norma(string Id, string Metadata, string Texto, string? Original);
 
@@ -60,7 +60,7 @@ public class Scraper(IHttpClientFactory httpFactory, IProgress<string> progress)
         if (data is null)
             throw new InvalidOperationException("No data found for " + id);
 
-        var jq = await JQ.ExecuteAsync(data, ThisAssembly.Resources.SaijDocument.Text);
+        var jq = await JQ.ExecuteAsync(data, ThisAssembly.Resources.Argentina.SaijDocument.Text);
         var doc = JsonSerializer.Deserialize<Document>(jq, camelOptions);
 
         return doc;
@@ -72,14 +72,14 @@ public class Scraper(IHttpClientFactory httpFactory, IProgress<string> progress)
         var url = string.Format(CultureInfo.InvariantCulture, UrlFormat, skip, take, tipo);
         var json = await http.GetStringAsync(url, cancellation);
 
-        var jq = await JQ.ExecuteAsync(json, ThisAssembly.Resources.SaijSearch.Text);
+        var jq = await JQ.ExecuteAsync(json, ThisAssembly.Resources.Argentina.SaijSearch.Text);
         var result = JsonSerializer.Deserialize<SearchResult[]>(jq, camelOptions);
         if (result == null)
             yield break;
 
         foreach (var item in result)
         {
-            jq = await JQ.ExecuteAsync(item.Abstract, ThisAssembly.Resources.SaijAbstract.Text);
+            jq = await JQ.ExecuteAsync(item.Abstract, ThisAssembly.Resources.Argentina.SaijAbstract.Text);
             var doc = JsonSerializer.Deserialize<DocumentAbstract>(jq, camelOptions);
             if (doc is null)
                 continue;

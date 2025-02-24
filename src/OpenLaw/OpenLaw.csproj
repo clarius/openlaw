@@ -34,4 +34,11 @@
     <EmbeddedResource Include="*.jq" />
   </ItemGroup>
 
+  <ItemGroup>
+    <EmbeddedResource Include="Argentina\SaijAbstract.jq" />
+    <EmbeddedResource Include="Argentina\SaijDocument.jq" />
+    <EmbeddedResource Include="Argentina\SaijMetadata.jq" />
+    <EmbeddedResource Include="Argentina\SaijSearch.jq" />
+  </ItemGroup>
+
 </Project>

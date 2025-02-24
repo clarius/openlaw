@@ -8,9 +8,9 @@ using Devlooped;
 using Spectre.Console;
 using Spectre.Console.Cli;
 
-namespace Clarius.OpenLaw;
+namespace Clarius.OpenLaw.Argentina;
 
-[Description("Descargar documentos del sistema SAIJ.")]
+[Description("Descargar normas argentinas del sistema SAIJ.")]
 public class DownloadCommand(IAnsiConsole console, IHttpClientFactory http) : AsyncCommand<DownloadSettings>
 {
     static readonly JsonSerializerOptions readOptions = new()
@@ -49,7 +49,7 @@ public class DownloadCommand(IAnsiConsole console, IHttpClientFactory http) : As
                 if (Debugger.IsAttached)
                     options.MaxDegreeOfParallelism = 1;
 
-                await Parallel.ForEachAsync(client.EnumerateAsync(), options, async (doc, cancellation) =>
+                await Parallel.ForEachAsync(client.EnumerateJsonAsync(), options, async (doc, cancellation) =>
                 {
                     if (doc["document"]?["metadata"]?["uuid"]?.GetValue<string>() is not string id ||
                         doc["document"]?["metadata"]?["timestamp"]?.GetValue<long>() is not long timestamp)
@@ -72,7 +72,7 @@ public class DownloadCommand(IAnsiConsole console, IHttpClientFactory http) : As
                     }
 
                     // Converting to dictionary performs string multiline formatting and markup removal
-                    var dictionary = JsonSerializer.Deserialize<Dictionary<string, object?>>(doc, readOptions);
+                    var dictionary = doc.Deserialize<Dictionary<string, object?>>(readOptions);
                     File.WriteAllText(file, JsonSerializer.Serialize(dictionary, writeOptions));
                     if (settings.Convert)
                         Convert(file, overwrite: true);

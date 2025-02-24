@@ -7,14 +7,14 @@ using Xunit;
 using Xunit.Abstractions;
 using YamlDotNet.Serialization;
 
-namespace Clarius.OpenLaw;
+namespace Clarius.OpenLaw.Argentina;
 
 public partial class Misc(ITestOutputHelper output)
 {
-    [Theory]
-    [InlineData("SaijSamples/123456789-0abc-defg-g23-85000scanyel.json")]
-    [InlineData("SaijSamples/123456789-0abc-defg-g81-87000tcanyel.json")]
-    [InlineData("SaijSamples/123456789-0abc-defg-g56-95000scanyel.json")]
+    [LocalTheory]
+    [InlineData("Argentina/SaijSamples/123456789-0abc-defg-g23-85000scanyel.json")]
+    [InlineData("Argentina/SaijSamples/123456789-0abc-defg-g81-87000tcanyel.json")]
+    [InlineData("Argentina/SaijSamples/123456789-0abc-defg-g56-95000scanyel.json")]
     public void ConvertJsonToYaml(string jsonFile)
     {
         jsonFile = Path.Combine(ThisAssembly.Project.MSBuildProjectDirectory, jsonFile);
@@ -30,9 +30,9 @@ public partial class Misc(ITestOutputHelper output)
         File.WriteAllText(yamlFile, yaml);
     }
 
-    [Theory]
-    [InlineData("SaijSamples/123456789-0abc-defg-g23-85000scanyel.json")]
-    [InlineData("SaijSamples/123456789-0abc-defg-g56-95000scanyel.json")]
+    [LocalTheory]
+    [InlineData("Argentina/SaijSamples/123456789-0abc-defg-g23-85000scanyel.json")]
+    [InlineData("Argentina/SaijSamples/123456789-0abc-defg-g56-95000scanyel.json")]
     public void ConvertJsonToMarkdown(string jsonFile)
     {
         jsonFile = Path.Combine(ThisAssembly.Project.MSBuildProjectDirectory, jsonFile);
@@ -48,9 +48,9 @@ public partial class Misc(ITestOutputHelper output)
         File.WriteAllText(markdownFile, markdown);
     }
 
-    [Theory]
-    [InlineData("SaijSamples/123456789-0abc-defg-g23-85000scanyel.md")]
-    [InlineData("SaijSamples/123456789-0abc-defg-g56-95000scanyel.md")]
+    [LocalTheory]
+    [InlineData("Argentina/SaijSamples/123456789-0abc-defg-g23-85000scanyel.md")]
+    [InlineData("Argentina/SaijSamples/123456789-0abc-defg-g56-95000scanyel.md")]
     public async Task ConvertJsonToPdfAsync(string markdownFile)
     {
         markdownFile = Path.Combine(ThisAssembly.Project.MSBuildProjectDirectory, markdownFile);

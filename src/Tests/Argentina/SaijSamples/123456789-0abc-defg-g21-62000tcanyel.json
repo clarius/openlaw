@@ -1,0 +1,199 @@
+﻿{
+  "document": {
+    "metadata": {
+      "uuid": "123456789-0abc-defg-g21-62000tcanyel",
+      "document-content-type": "legislacion",
+      "timestamp": 1413584037820,
+      "operation": "ADD",
+      "target-document-repository-id": "infojus",
+      "target-index-id": "index",
+      "target-document-indexing-id": "legislacion",
+      "document-recovery-strategy": "abstract-legislacion",
+      "friendly-url": {
+        "subdomain": "tratado",
+        "description": "11175-nacional-aprobacion-convenio-sobre-limites-rio-uruguay-lnt0002612-1921-09-30"
+      }
+    },
+    "content": {
+      "mecanografico": "T0002612",
+      "numero-norma": 11175,
+      "timestamp": "2013-01-19T19:05:48",
+      "timestamp-m": "2013-01-19T19:05:48",
+      "tipo-norma": {
+        "codigo": "TRA",
+        "texto": "Tratado"
+      },
+      "fecha": "1921-09-30",
+      "jurisdiccion": {
+        "codigo": "CAPITAL FEDERAL",
+        "descripcion": "Nacional",
+        "capital": "Capital Federal",
+        "id-pais": 11
+      },
+      "standard-normativo": "TRA C 011175 1921 09 30",
+      "identificacion-coloquial": {
+        "identificacion-coloquial": [
+          "LEY 11.175",
+          "BUENOS AIRES, 30 DE SETIEMBRE DE 1921"
+        ]
+      },
+      "titulo-norma": "APROBACION DE UN CONVENIO SOBRE LIMITES DEL RIO URUGUAY.",
+      "publicacion-privada": "ADLA                                                  0000019400083",
+      "anexos-ley": {
+        "anexo-ley": "A CONVENCION"
+      },
+      "lugar-sancion": "BUENOS AIRES",
+      "nombre-coloquial": "Ley 11.175",
+      "estado": "Vigente, de alcance general",
+      "fecha-alta": "1997-07-21",
+      "fecha-mod": "2013-01-19",
+      "uid-mod": "SASAIJ",
+      "generalidades": {
+        "observaciones-generales": "[[p]]CANTIDAD DE ARTICULOS QUE COMPONEN LA NORMA 3 OBSERVACION: POR ART. 1 DEL DECRETO 554/09 (B.O. 18/05/2009) SE SUSTITUYE LA DENOMINACION DEL INSTITUTO GEOGRAFICO MILITAR POR LA DE INSTITUTO GEOGRAFICO NACIONAL[[/p]]"
+      },
+      "noticias-accesorias": {
+        "texto": "[[p]]CANTIDAD DE ARTICULOS QUE COMPONEN LA NORMA 0003[[/p]]"
+      },
+      "sumario": {
+        "sumario": "[[p]]PODER EJECUTIVO NACIONAL-LIMITES INTERNACIONALES-CONVENIOS SOBRE TRIANGULACION DEL RIO URUGUAY,FIRMADO ENTRE LA REPUBLICA ARGENTINA Y LA REPUBLICA ORIENTAL DEL URUGUAY EN MOTEVIDEO EL 11 DE ABRIL DE 1918[[/p]]"
+      },
+      "descriptores": "no procesado",
+      "articulo": [
+        {
+          "numero-articulo": 1,
+          "texto": "[[p]]Art\u00EDculo  1.-  Apru\u00E9base  el  convenio  sobre  triangulaci\u00F3n del Rio Uruguay,  firmado  entre  la  Rep\u00FAblica  Argentina y  la  Rep\u00FAblica Oriental  del  Uruguay,  en  Motevideo  el  11  de  abril  de  1918.[[/p]]"
+        },
+        {
+          "numero-articulo": 2,
+          "texto": "[[p]]Art\u00EDculo  2.-  Autor\u00EDzase  al  Poder  Ejecutivo  para invertir en el cumplimiento de la presente ley, hasta la cantidad  de  setenta  mil pesos  moneda  nacional  imput\u00E1ndose  este  gasto  a la misma, hasta tanto no sea incluida en la Ley de Presupuesto.[[/p]]"
+        },
+        {
+          "numero-articulo": 3,
+          "texto": "[[p]]Art\u00EDculo 3.- Comun\u00EDquese al Poder Ejecutivo.[[/p]]"
+        }
+      ],
+      "firmantes": {
+        "firmantes": "[[p]] VILLANUEVA - LABOUGLE - GOYENECHE - G. BONORINO[[/p]]"
+      },
+      "anexo": {
+        "anexo": "A",
+        "titulo-anexo": "CONVENIO  SOBRE  TRIANGULACION  DEL  RIO  URUGUAY ENTRE LA REPUBLICA ARGENTINA Y LA REPUBLICA ORIENTAL DEL URUGUAY  EN  MONTEVIDEO  EL 11 DE ABRIL DE 1918",
+        "observaciones-generales": "[[p]]CANTIDAD DE ARTICULOS QUE COMPONEN LA NORMA 0006[[/p]][[p]]NRO. DE ART. QUE ESTABLECE LA ENTRADA EN VIGENCIA 0006[[/p]]",
+        "articulo": [
+          {
+            "numero-articulo": "A 0001",
+            "texto": "[[p]]Art.  1.-  Los  institutos  geogr\u00E1ficos  militares  de  la Rep\u00FAblica Argentina  y  de  la  Rep\u00FAblica Oriental del Uruguay, efectuar\u00E1n  de acuerdo  los  trabajos de  triangulaci\u00F3n  de  la  zona  de  del  r\u00EDo Uruguay, l\u00EDmite  de ambos pa\u00EDses, desde la desembocadura del Cuare\u00EDm hasta la desembocadura  del Uruguay en el estuario del Plata, de tal modo que la operaci\u00F3n resulte  una  cadena de tri\u00E1ngulos con v\u00E9rtice en cada banda del r\u00EDo.[[/p]]"
+          },
+          {
+            "numero-articulo": "A 0002",
+            "texto": "[[p]]Art.  2.-  Los  trabajos a que se refiere el art. 1 servir\u00E1n de base para  la  coincidencia   de  las  hojas  del  mapa  al  millon\u00E9simo, correspondientes a esa zona.[[/p]]"
+          },
+          {
+            "numero-articulo": "A 0003",
+            "texto": "[[p]]Art.  3.-  Para determinar lo detalles del trabajo y para establecer el convenio  t\u00E9cnico  y  administrativo de las operaciones que deben efectuarse,  des\u00EDgnase  una  comisi\u00F3n  internacional  compuesta  por parte de la Rep\u00FAblica Argentina  del  jefe  del Instituto Geogr\u00E1fico Militar y del jefe de la secci\u00F3n geodesia del  mismo, y por parte de la  Rep\u00FAblica Oriental del Uruguay del jefe del Servicio  Geogr\u00E1fico Militar  y  del  jefe de la secci\u00F3n Geodesia del mismo, comisi\u00F3n que deber\u00E1 constituirse  a  los  treinta  d\u00EDas  de la ratificaci\u00F3n de la presente convenci\u00F3n.[[/p]][[p]]Esa  comisi\u00F3n  resolver\u00E1  igualmente,  en  el  transcurso    de  los trabajos,  los  problemas  de  \u00EDndole  t\u00E9cnica  o administrativa que sobrevinieran  y  que  en  el  convenio  detallado  original  no  se hubiesen previsto.[[/p]]"
+          },
+          {
+            "numero-articulo": "A 0004",
+            "texto": "[[p]]Art.  4.- En el convenio t\u00E9cnico y administrativo deben establecerse los procedimientos  y  m\u00E9todos  a emplear en campa\u00F1a y en el c\u00E1lculo de gabinete, procurando la mayor  uniformidad  y precisi\u00F3n posibles, y  que  la  documentaci\u00F3n  completa original o copias  fotogr\u00E1ficas, confrontadas y legalizadas,  de  las  libretas  de  observaci\u00F3n y de c\u00E1lculos, se conserven en los archivos de ambas naciones contratantes.[[/p]][[p]]Deben  fijarse  igualmente  la  composici\u00F3n  de  las comisiones  que trabajar\u00E1n  en  campa\u00F1a,  los  elementos de que deben  disponer,  el presupuesto de gastos, el tiempo  de  duraci\u00F3n  y  el  momento de la iniciaci\u00F3n de las operaciones.[[/p]]"
+          },
+          {
+            "numero-articulo": "A 0005",
+            "texto": "[[p]]Art.  5.-  Cada  instituto geogr\u00E1fico militar nombrar\u00E1 a su personal de operadores de campa\u00F1a  y  los proveer\u00E1 de los recursos,  \u00FAtiles y elementos que le sean necesarios,  por  cuenta  y  previo acuerdo de sus respectivos gobiernos.[[/p]]"
+          },
+          {
+            "numero-articulo": "A 0006",
+            "texto": "[[p]]Art.  6.- La presente convenci\u00F3n ser\u00E1 ratificada, sus ratificaciones ser\u00E1n canjeadas  en Buenos Aires o en Montevideo y  entrar\u00E1 en vigor en cuanto se haya efectuado el mencionado canje.[[/p]][[p]]En fe de lo cual,  los  plenipotenciarios  arriba  nombrados  la han puesto en ella sus sellos.[[/p]]"
+          }
+        ],
+        "firmantes": {
+          "anexo": "A",
+          "firmantes": "[[p]] Hecha  en  doble ejemplar, en Montevideo, a los once d\u00EDas del mes de abril del a\u00F1o mil novecientos diez y ocho. [[/p]][[p]] Estrada - Brum.[[/p]]"
+        }
+      },
+      "id-infojus": "LNT0002612",
+      "descriptores": {
+        "descriptor": [
+          {
+            "elegido": {
+              "termino": "tratados internacionales"
+            },
+            "preferido": {
+              "termino": "Derecho internacional/derecho internacional p\u00FAblico/derecho de los tratados/tratados internacionales"
+            },
+            "sinonimos": {
+              "termino": [
+                "convenciones internacionales",
+                "convenios internacionales"
+              ]
+            }
+          },
+          {
+            "elegido": {
+              "termino": "Uruguay"
+            },
+            "preferido": {
+              "termino": "Rep\u00FAblica Oriental del Uruguay"
+            },
+            "sinonimos": {
+              "termino": "Uruguay"
+            }
+          },
+          {
+            "elegido": {
+              "termino": "r\u00EDos"
+            },
+            "preferido": {
+              "termino": "Recursos naturales/recursos h\u00EDdricos/r\u00EDos"
+            },
+            "sinonimos": {
+              "termino": "aguas"
+            }
+          },
+          {
+            "elegido": {
+              "termino": "R\u00EDo Uruguay"
+            },
+            "preferido": {
+              "termino": "R\u00EDo Uruguay"
+            },
+            "sinonimos": null
+          },
+          {
+            "elegido": {
+              "termino": "l\u00EDmites internacionales"
+            },
+            "preferido": {
+              "termino": "Derecho constitucional/Estado/territorio/l\u00EDmites de la Naci\u00F3n/l\u00EDmites internacionales"
+            },
+            "sinonimos": {
+              "termino": "fronteras"
+            }
+          }
+        ],
+        "suggest": {
+          "termino": [
+            "Derecho internacional",
+            "Uruguay (Rep\u00FAblica Oriental del Uruguay)",
+            "derecho de los tratados",
+            "convenciones internacionales (tratados internacionales)",
+            "recursos h\u00EDdricos",
+            "Derecho constitucional",
+            "Estado",
+            "territorio",
+            "convenios internacionales (tratados internacionales)",
+            "l\u00EDmites de la Naci\u00F3n",
+            "Rep\u00FAblica Oriental del Uruguay",
+            "aguas (recursos h\u00EDdricos)",
+            "l\u00EDmites internacionales",
+            "R\u00EDo Uruguay",
+            "r\u00EDos",
+            "derecho internacional p\u00FAblico",
+            "fronteras (l\u00EDmites de la Naci\u00F3n)",
+            "tratados internacionales",
+            "Recursos naturales"
+          ]
+        }
+      }
+    }
+  }
+}

@@ -48,9 +48,9 @@ public partial class JsonDictionaryConverter : JsonConverter<Dictionary<string, 
                 }
                 throw new JsonException();
             case JsonTokenType.String:
-                return ProcessString(reader.GetString());
+                return StringMarkup.Cleanup(reader.GetString());
             case JsonTokenType.Number:
-                if (reader.TryGetInt32(out int intValue))
+                if (reader.TryGetInt32(out var intValue))
                     return intValue;
                 return reader.GetDouble();
             case JsonTokenType.True:
@@ -66,22 +66,4 @@ public partial class JsonDictionaryConverter : JsonConverter<Dictionary<string, 
 
     public override void Write(Utf8JsonWriter writer, Dictionary<string, object?> value, JsonSerializerOptions options)
         => throw new NotImplementedException();
-
-    string? ProcessString(string? value)
-    {
-        if (value == null)
-            return null;
-
-        var replaced = value.Replace("\r\n", "\n").Replace("[[p]]", "\n").Replace("[[/p]]", "\n");
-        var multiline = MultilineExpr().Replace(replaced, "\n\n");
-        var clean = RemoveMarkup().Replace(multiline, string.Empty);
-
-        return clean.Trim();
-    }
-
-    [GeneratedRegex(@"(\r?\n){3,}")]
-    private static partial Regex MultilineExpr();
-
-    [GeneratedRegex(@"\[\[(/?\w+[^\]]*)\]\]")]
-    private static partial Regex RemoveMarkup();
 }

@@ -1,0 +1,362 @@
+﻿{
+  "document": {
+    "metadata": {
+      "uuid": "123456789-0abc-defg-g24-62000tcanyel",
+      "document-content-type": "legislacion",
+      "timestamp": 1676383307825,
+      "operation": "ADD",
+      "target-document-repository-id": "infojus",
+      "target-index-id": "index",
+      "target-document-indexing-id": "legislacion",
+      "document-recovery-strategy": "abstract-legislacion",
+      "friendly-url": {
+        "subdomain": "tratado",
+        "description": "0-nacional-aprobacion-tratados-libre-navegacion-rios-parana-uruguay-francia-gran-bretana-lnt0002642-1853-09-14"
+      }
+    },
+    "content": {
+      "mecanografico": "T0002642",
+      "numero-norma": 0,
+      "timestamp": "2023-02-13T20:35:43",
+      "timestamp-m": "2023-02-13T20:35:43",
+      "tipo-norma": {
+        "codigo": "TRA",
+        "texto": "Tratado"
+      },
+      "fecha": "1853-09-14",
+      "jurisdiccion": {
+        "codigo": "CAPITAL FEDERAL",
+        "descripcion": "Nacional",
+        "capital": "Capital Federal",
+        "id-pais": 11
+      },
+      "standard-normativo": "TRA C 000000 1853 09 14",
+      "identificacion-coloquial": {
+        "identificacion-coloquial": [
+          "LEY DE 14 DE SEPTIEMBRE DE 1853",
+          "SANTA FE, 14 DE SETIEMBRE DE 1853"
+        ]
+      },
+      "nombre-norma": "TRATADO  DE LIBRE NAVEG. DEL PARANA Y URUGUAY",
+      "titulo-norma": "APROBACION DE TRATADOS DE LIBRE NAVEGACION DE RIOS PARANA Y URUGUAY CON FRANCIA Y GRAN BRETA\u00D1A.",
+      "datos-publicacion": "SIN FECHA         1853 09 14",
+      "publicacion-codificada": {
+        "publicacion-decodificada": {
+          "organismo": "Sin fecha",
+          "fecha-sf": "1853 09 14"
+        }
+      },
+      "publicacion-privada": "ADLA                                                  0000018800093",
+      "sancion": "El  Congreso  General  Constituyente  de  la  Naci\u00F3n Argentina: Vistos y examinados los tres tratados sobre la  libre  navegaci\u00F3n de los r\u00EDos Paran\u00E1 y Uruguay, celebrados en San Jos\u00E9 de Flores  el  d\u00EDa 10  de  Julio del corriente a\u00F1o, entre el Director Provisorio  de la Confederaci\u00F3n  Argentina  y S.M. la Reina del Reino Unido de la Gran Breta\u00F1a  e  Irlanda,  S.M.  el  Emperador  de  los  Franceses  y  el Presidente  de los Estados Unidos,  por  medio  de  sus  respectivos Plenipotenciarios, declara: 1. Que ellos  no  importan m\u00E1s que la aplicaci\u00F3n pr\u00E1ctica y garant\u00EDa para su perpetuidad  de  la  libre navegaci\u00F3n de los r\u00EDos interiores de  la Confederaci\u00F3n, otorgada  a  todas  las  banderas  del  mundo, erigida  en  principio  de derecho p\u00FAblico argentino por el art\u00EDculo 26, parte 1. De la Constituci\u00F3n de la Rep\u00FAblica. 2. Que la libertad de los  r\u00EDos interiores al comercio del mundo as\u00ED garantido, es el m\u00E1s poderoso  elemento de vida, de prosperidad y de verdadera  y  pr\u00E1ctica  constitucionalidad    de   la  Confederaci\u00F3n Argentina,  que el presente Congreso debe por su misi\u00F3n  promover  y asegurar eficazmente.  En  su  consecuencia,  ha acordado y decreta:",
+      "anexos-ley": {
+        "anexo-ley": [
+          "A TRATADO 1",
+          "B TRATADO 2",
+          "C TRATADO 3"
+        ]
+      },
+      "lugar-sancion": "SANTA FE",
+      "nombre-coloquial": "Ley S/N del 14 de Septiembre de 1853",
+      "estado": "Vigente, de alcance general",
+      "fecha-alta": "1997-07-21",
+      "fecha-mod": "2023-02-13",
+      "uid-mod": "ABM",
+      "generalidades": {
+        "observaciones-generales": "[[p]]CANTIDAD DE ARTICULOS QUE COMPONEN LA NORMA 4 NRO. DE ART. QUE ESTABLECE LA ENTRADA EN VIGENCIA 2[[/p]]"
+      },
+      "sumario": {
+        "sumario": "[[p]]ACLARACIONES[[/p]]"
+      },
+      "descriptores": {
+        "descriptor": [
+          {
+            "elegido": {
+              "termino": "tratados internacionales"
+            },
+            "preferido": {
+              "termino": "Derecho internacional/derecho internacional p\u00FAblico/derecho de los tratados/tratados internacionales"
+            },
+            "sinonimos": {
+              "termino": [
+                "convenios internacionales",
+                "convenciones internacionales"
+              ]
+            }
+          },
+          {
+            "elegido": {
+              "termino": "GRAN BRETA\u00D1A"
+            },
+            "preferido": {
+              "termino": "GRAN BRETA\u00D1A"
+            },
+            "sinonimos": {
+              "termino": [
+                "Inglaterra",
+                "Reino Unido",
+                "Reino Unido de Gran Breta\u00F1a e Irlanda del Norte"
+              ]
+            }
+          },
+          {
+            "elegido": {
+              "termino": "FRANCIA"
+            },
+            "preferido": {
+              "termino": "FRANCIA"
+            },
+            "sinonimos": null
+          },
+          {
+            "elegido": {
+              "termino": "libre navegaci\u00F3n"
+            },
+            "preferido": {
+              "termino": "Transporte/contrato de transporte/transporte por agua/libre navegaci\u00F3n"
+            },
+            "sinonimos": null
+          },
+          {
+            "elegido": {
+              "termino": "buques"
+            },
+            "preferido": {
+              "termino": "Derecho de la navegaci\u00F3n/buques"
+            },
+            "sinonimos": {
+              "termino": [
+                "navegaci\u00F3n",
+                "derecho mar\u00EDtimo",
+                "embarcaciones"
+              ]
+            }
+          },
+          {
+            "elegido": {
+              "termino": "aranceles aduaneros"
+            },
+            "preferido": {
+              "termino": "Derecho tributario y aduanero/Derecho Aduanero/tributos aduaneros"
+            },
+            "sinonimos": {
+              "termino": [
+                "aranceles aduaneros",
+                "derechos de aduana"
+              ]
+            }
+          },
+          {
+            "elegido": {
+              "termino": "navegaci\u00F3n fluvial"
+            },
+            "preferido": {
+              "termino": "Transporte/contrato de transporte/transporte por agua/transporte fluvial"
+            },
+            "sinonimos": {
+              "termino": "navegaci\u00F3n fluvial"
+            }
+          }
+        ],
+        "suggest": {
+          "termino": [
+            "buques",
+            "Derecho Aduanero",
+            "Derecho internacional",
+            "derecho de los tratados",
+            "derechos de aduana (tributos aduaneros)",
+            "Derecho tributario y aduanero",
+            "GRAN BRETA\u00D1A",
+            "convenios internacionales (tratados internacionales)",
+            "FRANCIA",
+            "Derecho de la navegaci\u00F3n",
+            "aranceles aduaneros (tributos aduaneros)",
+            "libre navegaci\u00F3n",
+            "tributos aduaneros",
+            "Inglaterra (GRAN BRETA\u00D1A)",
+            "Transporte",
+            "contrato de transporte",
+            "transporte fluvial",
+            "convenciones internacionales (tratados internacionales)",
+            "navegaci\u00F3n (Derecho de la navegaci\u00F3n)",
+            "transporte por agua",
+            "Reino Unido (GRAN BRETA\u00D1A)",
+            "navegaci\u00F3n fluvial (transporte fluvial)",
+            "derecho internacional p\u00FAblico",
+            "Reino Unido de Gran Breta\u00F1a e Irlanda del Norte (GRAN BRETA\u00D1A)",
+            "tratados internacionales",
+            "embarcaciones (buques)",
+            "derecho mar\u00EDtimo (Derecho de la navegaci\u00F3n)"
+          ]
+        }
+      },
+      "articulo": [
+        {
+          "numero-articulo": 1,
+          "texto": "[[p]]Art\u00EDculo  1.  Apru\u00E9base  la  conducta  del Director Provisorio de la Confederaci\u00F3n  Argentina en la celebraci\u00F3n  y  ratificaci\u00F3n  de  los tres tratados conclu\u00EDdos  el  10  de  Julio del presente a\u00F1o, en San Jos\u00E9  de  Flores,  con  S.M. la Reina del Reino  Unido  de  la  Gran Breta\u00F1a  e  Irlanda,  S.M.  el  Emperador  de  los  Franceses  y  el Presidente  de  los Estados Unidos  por  medio  de  sus  respectivos Plenipotenciarios.[[/p]]"
+        },
+        {
+          "numero-articulo": 2,
+          "texto": "[[p]]Art.  2.  Desde  esta  fecha  y  hasta  que  pueda  tener  efecto la aprobaci\u00F3n  estipulada  en  el  art\u00EDculo  9  de  dicho  tratado,  la Confederaci\u00F3n  Argentina  queda  obligada  de  un  modo perfecto, al cumplimiento de ellos para con las otras tres Potencias  signatarias[[/p]]"
+        },
+        {
+          "numero-articulo": 3,
+          "texto": "[[p]]Art.  3.  La presente sanci\u00F3n ser\u00E1 subscripta individualmente por el Presidente  y  Diputados del Congreso en el Gran Libro de Acuerdos y Resoluciones.[[/p]]"
+        },
+        {
+          "numero-articulo": 4,
+          "texto": "[[p]]Art.  4.  Comun\u00EDquese  al  Director  Provisorio  de la Confederaci\u00F3n Argentina.[[/p]]"
+        }
+      ],
+      "firmantes": {
+        "firmantes": "DERQUI - ZUVIRIA"
+      },
+      "anexo": [
+        {
+          "anexo": "A",
+          "titulo-anexo": "TRATADO  PARA LA LIBRE NAVEGACION DE LOS RIOS PARANA Y URUGUAY ENTRE LA CONFEDERACION ARGENTINA Y SU MAJESTAD BRITANICA",
+          "observaciones-generales": "[[p]]CANTIDAD DE ARTICULOS QUE COMPONEN LA NORMA 0009[[/p]]",
+          "sancion-anexo": "El Excelent\u00EDsimo se\u00F1or Director Provisorio de la Confederaci\u00F3n Argentina y su Magestad la Reina del Reino Unido de la Gran Breta\u00F1a e Irlanda, deseando estrechar v\u00EDnculos de amistad que tan felizmente existen entre sus Estados y Pa\u00EDses respectivos, y convencidos que de ning\u00FAn modo podr\u00EDan alcanzar ese resultado que tomando de com\u00FAn acuerdo todas las medidas propias a facilitar y desarrollar las relaciones comerciales, han resuelto fijar, por un Tratado, las condiciones de la libre navegaci\u00F3n de los r\u00EDos Paran\u00E1 y Uruguay, y apartar as\u00ED los obst\u00E1culos que hasta ahora han embarazado esta navegaci\u00F3n. Con este objeto han nombrado por sus Plenipotenciarios, a saber: El Excelent\u00EDsimo se\u00F1or Director Provisorio de la Confederaci\u00F3n Argentina, a los se\u00F1ores Doctor don Salvador Mar\u00EDa del Carril y doctor don Jos\u00E9 Benjam\u00EDn Gorostiaga. Y su Magestad la Reina del Reino Unido de la Gran Breta\u00F1a e Irlanda, a Sir Charles Hotham, caballero comendador de la muy Honorable Orden del Ba\u00F1o, Capit\u00E1n de Marina de Su Magestad, y uno de sus Edecanes acreditado en misi\u00F3n especial cerca de la Confederaci\u00F3n Argentina. Quienes, despu\u00E9s de haberse comunicado sus plenos poderes y hall\u00E1ndose en buena y debida forma, han convenido en los art\u00EDculos siguientes:",
+          "articulo": [
+            {
+              "numero-articulo": "A 0001",
+              "texto": "[[p]]Art\u00EDculo  1.  La  Confederaci\u00F3n  Argentina,  en  el ejercicio de sus derechos soberanos, permite la libre navegaci\u00F3n de  los  R\u00EDos Paran\u00E1 y  Uruguay  en toda la parte de su curso que les pertenezca,  a  los buques mercantes  de  todas  las naciones, con sujeci\u00F3n \u00FAnicamente a las condiciones que establece  este  Tratado  y  a  los  reglamentos sancionados  o  que en adelante sancionare la autoridad Nacional  de la Confederaci\u00F3n,[[/p]]"
+            },
+            {
+              "numero-articulo": "A 0002",
+              "texto": "[[p]]Art.    2.   Por  consiguiente,  dichos  buques  ser\u00E1n  admitidos  a permanecer, cargar  y  descargar  en  los  lugares  y  puertos de la Confederaci\u00F3n Argentina habilitados para ese objeto.[[/p]]"
+            },
+            {
+              "numero-articulo": "A 0003",
+              "texto": "[[p]]Art.    3.  El  Gobierno  de  la  Confederaci\u00F3n  Argentina  deseando proporcionar  toda facilidad a la navegaci\u00F3n interior, se compromete a mantener balizas y marcas que se\u00F1alen los canales.[[/p]]"
+            },
+            {
+              "numero-articulo": "A 0004",
+              "texto": "[[p]]Art.  4.  Se  establecer\u00E1,  por  las  autoridades  competentes de la Confederaci\u00F3n,  un  sistema  uniforme  para  la recaudaci\u00F3n  de  los derechos  de Aduana, puerto, fanal, polic\u00EDa y pilotaje  en  todo  el curso de las aguas que pertenecen a la Confederaci\u00F3n.[[/p]]"
+            },
+            {
+              "numero-articulo": "A 0005",
+              "texto": "[[p]]Art.  5.  Las altas partes contratantes, reconociendo que la isla de Mart\u00EDn Garc\u00EDa  puede,  por su posici\u00F3n, embarazar e impedir la libre navegaci\u00F3n de los confluentes  del  R\u00EDo  de  la  Plata, convienen en emplear  su  influjo  para  que  la  posici\u00F3n de dicha isla  no  sea retenida ni conservada por ning\u00FAn Estado  del  R\u00EDo  de la Plata o de sus confluentes, que no hubiera dado su adhesi\u00F3n al principio  de la libre navegaci\u00F3n.[[/p]]"
+            },
+            {
+              "numero-articulo": "A 0006",
+              "texto": "[[p]]Art.  6.  Si  sucediere  (lo  que  Dios  no  permita)  que la guerra estallase en cualquiera de los Estados, Rep\u00FAblicas o Provincias  del R\u00EDo  de  la  Plata  o  de sus confluentes, la navegaci\u00F3n de los r\u00EDos Paran\u00E1 y Uruguay quedar\u00E1  libre  para el pabell\u00F3n mercantil de todas las  naciones.  No  habr\u00E1 excepci\u00F3n a  este  principio  sino  en  lo relativo a las municiones  de  guerra,  como  son  las armas de toda clase, la p\u00F3lvora, el plomo y las balas de ca\u00D1\u00F3n,[[/p]]"
+            },
+            {
+              "numero-articulo": "A 0007",
+              "texto": "[[p]]Art.  7.  Se  reserva  expresamente  a  su Majestad el Emperador del Brasil  y  a los Gobiernos de Bolivia, del  Paraguay  y  del  Estado Oriental del  Uruguay el poder de hacerse partes al presente Tratado en el caso de que  fueren  dispuestos a aplicar sus principios a las partes de los r\u00EDos Paran\u00E1, Paraguay  y  Uruguay en los cuales pueden poseer respectivamente derechos fluviales.[[/p]]"
+            },
+            {
+              "numero-articulo": "A 0008",
+              "texto": "[[p]]Art.  8.  Los  principales  objetos, en vista de los cuales los r\u00EDos Paran\u00E1  y Uruguay quedan declarados  libres  para  el  comercio  del mundo, siendo  los  de desenvolver las relaciones comerciales de sus pa\u00EDses ribere\u00F1os y fomentar  la  inmigraci\u00F3n,  se conviene que no se conceder\u00E1  ning\u00FAn  favor o inmunidad al pabell\u00F3n o  al  comercio  de cualquiera otra naci\u00F3n  que  no  se extender\u00E1 igualmente a los de su Majestad Brit\u00E1nica.[[/p]]"
+            },
+            {
+              "numero-articulo": "A 0009",
+              "texto": "[[p]]Art.  9.  El  presente  Tratado ser\u00E1 ratificado por el Excelent\u00EDsimo se\u00F1or Director Provisorio  de  la  Confederaci\u00F3n Argentina a los dos d\u00EDas de la fecha, debiendo presentarlo  para su aprobaci\u00F3n al primer Congreso  Legislativo de la Confederaci\u00F3n,  y  por  Su  Majestad  la Reina del Reino  Unido  de  la  Gran  Breta\u00F1a  e  Irlanda a los seis meses.[[/p]][[p]]Las ratificaciones deber\u00E1n canjearse a los diez y ocho  meses  en el lugar  de  la residencia del Gobierno de la Confederaci\u00F3n Argentina.[[/p]]"
+            }
+          ],
+          "firmantes": {
+            "anexo": "A",
+            "firmantes": "[[p]] En  f\u00E9 de lo cual los Plenipotenciarios respectivos lo han firmado y sellado con los sellos de sus armas. [[/p]][[p]] Hecho  en  San  Jos\u00E9  de  Flores  el  d\u00EDa  diez de Julio del a\u00F1o del Nuestro Se\u00F1or de mil ochocientos cincuenta y tres. [[/p]][[p]] Del Carril - Gorostiaga - Hotham.[[/p]]"
+          }
+        },
+        {
+          "anexo": "B",
+          "titulo-anexo": "ANEXO  B-Tratado  para  la  libre  Navegaci\u00F3n  de  los R\u00EDos Paran\u00E1 y Uruguay entre la Confederaci\u00F3n Argentina y El Reino  Unido  de  Gran Breta\u00F1a e Irlanda suscripto el 10/7/1853-",
+          "observaciones-generales": "[[p]]CANTIDAD DE ARTICULOS QUE COMPONEN LA NORMA 0009[[/p]]",
+          "sancion-anexo": "En Nombre de la Sant\u00EDsima Trinidad, S.E. el se\u00F1or Director Provisorio de la Confederaci\u00F3n Argentina y su Magestad el Emperador de los Franceses. Deseando estrechar los v\u00EDnculos de amistad que tan felizmente existen entre los Estados y pa\u00EDses respectivos, y convencidos que de ning\u00FAn modo podr\u00EDan mejor alcanzar ese resultado, que tomando de com\u00FAn acuerdo las medidas propias a facilitar y desarrollar las relaciones comerciales. Han resuelto fijar por un tratado, las condiciones de la libre navegaci\u00F3n de los r\u00EDos Paran\u00E1 y Uruguay y apartar as\u00ED los obst\u00E1culos que hasta ahora han embarazado esta navegaci\u00F3n. Con el objeto han nombrado para sus Plenipotenciarios, a saber: S.E. El se\u00F1or Director Provisorio de la Confederaci\u00F3n Argentina, a los se\u00F1ores don Salvador M. del Carril y don Jos\u00E9 Benjam\u00EDn Gorostiaga; y Su Magestad el Emperador de los Franceses al se\u00F1or Caballero Saint Georges, Oficial de la Imperial Orden de la Legi\u00F3n de Honor, Comendador de la Imperial Orden del Cristo del Brasil, su Enviado Extraordinario y Ministro Plenipotenciario, en misi\u00F3n extraordinaria y especial cerca de la Confederaci\u00F3n Argentina; Los cuales despu\u00E9s de haber canjeado sus plenos poderes y haberlos hallado en buena forma, han convenido en los art\u00EDculos siguientes:",
+          "articulo": [
+            {
+              "numero-articulo": "B 0001",
+              "texto": "[[p]]Art\u00EDculo  1.  La  Confederaci\u00F3n  Argentina,  en  el ejercicio de sus derechos soberanos, permite la libre navegaci\u00F3n de  los  r\u00EDos Paran\u00E1 y  Uruguay  en  toda la parte de su curso que le pertenezca,  a  los buques mercantes  de  todas  las naciones, con sujeci\u00F3n \u00FAnicamente a las condiciones que establece  este  tratado  y  a  los  reglamentos sancionados  o  que en adelante sancionare la autoridad nacional  de la Confederaci\u00F3n.[[/p]]"
+            },
+            {
+              "numero-articulo": "B 0002",
+              "texto": "[[p]]Art.    2.   Por  consiguiente,  dichos  buques  ser\u00E1n  admitidos  a permanecer, cargar  y  descargar  en  los  lugares  y  puertos de la Confederaci\u00F3n Argentina, autorizados para ese objeto.[[/p]]"
+            },
+            {
+              "numero-articulo": "B 0003",
+              "texto": "[[p]]Art.   3.  El  Gobierno  de  la  Confederaci\u00F3n  Argentina,  deseando proporcionar   toda  la  facilidad  a  la  navegaci\u00F3n  interior,  se compromete en mantener  balizas  y  marcas  que se\u00F1alen los canales,[[/p]]"
+            },
+            {
+              "numero-articulo": "B 0004",
+              "texto": "[[p]]Art.  4.  Se  establecer\u00E1  por  las  autoridades  competentes  de la Confederaci\u00F3n,  un  sistema  uniforme,  para  la  recaudaci\u00F3n de los derechos  de aduana, puerto,fanal, polic\u00EDa y pilotaje,  en  todo  el curso de las aguas que pertenecen a la Confederaci\u00F3n,[[/p]]"
+            },
+            {
+              "numero-articulo": "B 0005",
+              "texto": "[[p]]Art.  5.  Las altas partes contratantes, reconociendo que la isla de Mart\u00EDn Garc\u00EDa  puede,  por su posici\u00F3n, embarazar e impedir la libre navegaci\u00F3n de los confluentes  del  R\u00EDo  de  la  Plata, convienen en emplear  su  influjo  para  que  la  posici\u00F3n de dicha isla  no  sea retenida ni conservada por ning\u00FAn Estado  del  R\u00EDo  de la Plata o de sus confluentes, que no hubiera dado su adhesi\u00F3n al principio  de su libre navegaci\u00F3n.[[/p]]"
+            },
+            {
+              "numero-articulo": "B 0006",
+              "texto": "[[p]]Art.  6.  Si  sucediere  (lo  que  Dios  no  permita)  que la guerra estallase entre cualesquiera de los Estados, Rep\u00FAblica o  Provincias del R\u00EDo de la Plata o de sus confluentes, la navegaci\u00F3n de  los r\u00EDos Paran\u00E1  y Uruguay quedar\u00E1 libre para el Pabell\u00F3n mercantil de  todas las naciones.  No  habr\u00E1  excepci\u00F3n  a  este  principio,  sino en lo relativo  a  las  municiones  de  guerra como son las armas de todas clases, la p\u00F3lvora, el plomo y las balas de ca\u00D1\u00F3n.[[/p]]"
+            },
+            {
+              "numero-articulo": "B 0007",
+              "texto": "[[p]]Art.7.  Se  reserva expresamente a S.M. el Emperador del Brasil, y a los Gobiernos  del  Paraguay,  Bolivia  y  del  Estado  Oriental del Uruguay el poder de hacerse partes al presente Tratado, en  el  caso de  que  fueren  dispuestos a aplicar sus principios a las partes de los r\u00EDos Paran\u00E1, Paraguay  y  Uruguay,  en las cuales puedan poseer, respectivamente, derechos fluviales.[[/p]]"
+            },
+            {
+              "numero-articulo": "B 0008",
+              "texto": "[[p]]Art.8.  Los  principales  objetos,  en  vista de los cuales los r\u00EDos Paran\u00E1  y  Uruguay quedan declarados libres  para  el  comercio  del mundo, siendo  las  de desenvolver las relaciones comerciales de sus pa\u00EDses ribere\u00F1os, y de  fomentar  la inmigraci\u00F3n, se conviene que no se conceder\u00E1 ning\u00FAn favor o inmunidad  al  pabell\u00F3n o al comercio de cualquiera otra naci\u00F3n que no se extender\u00E1 igualmente  a los Estados Unidos.[[/p]]"
+            },
+            {
+              "numero-articulo": "B 0009",
+              "texto": "[[p]]Art.9.  El  presente  tratado  ser\u00E1  ratificado por el Excelent\u00EDsimo se\u00F1or Director Provisorio de la Confederaci\u00F3n  Argentina  a  los dos d\u00EDas  de la fecha, debiendo presentarlo para su aprobaci\u00F3n al primer Congreso   Legislativo  de  la  Confederaci\u00F3n  Argentina  y  por  su Majestad el  Emperador  de  los  Franceses,  dentro  del  t\u00E9rmino de quince meses.[[/p]][[p]]Las ratificaciones deber\u00E1n canjearse a los diez y ocho meses,  en el lugar  de  la residencia del Gobierno de la Confederaci\u00F3n Argentina.[[/p]]"
+            }
+          ],
+          "firmantes": {
+            "anexo": "B",
+            "firmantes": "[[p]] En  fe  de lo cual, los Plenipotenciarios respectivos han firmado el presente  Tratado  y  le han firmado con el sello de sus armas. [[/p]][[p]] Hecho en San Jos\u00E9 de Flores, el d\u00EDa diez de Julio de mil ochocientos cincuenta y tres. [[/p]][[p]] del Carril - St. Georges - Gorostiaga.[[/p]]"
+          }
+        },
+        {
+          "anexo": "C",
+          "titulo-anexo": "Uruguay  entre  la  Confederaci\u00F3n  Argentina  y Francia suscripto el 10/7/1853- TRATADO PARA LA LIBRE NAVEGACION DE  LOS  RIOS  PARANA  Y URUGUAY    ENTRE   LA  CONFEDERACION  ARGENTINA  Y  ESTADOS  UNIDOS, SUSCRIPTO EL 10/7/1853 -",
+          "observaciones-generales": "[[p]]CANTIDAD DE ARTICULOS QUE COMPONEN LA NORMA 0009[[/p]]",
+          "sancion-anexo": "El Excelent\u00EDsimo se\u00F1or Director de la Confederaci\u00F3n Argentina y el Presidente de los Estados Unidos, deseando estrechar los v\u00EDnculos de amistad que tan felizmente existen entre sus Estados y pa\u00EDses respectivos, y convencidos que de ning\u00FAn modo podr\u00EDan alcanzar ese resultado que tomando de com\u00FAn acuerdo todas las medidas propias a facilitar y desarrollar las relaciones comerciales, han resuelto fijar por un tratado las condiciones de la libre navegaci\u00F3n de los r\u00EDos Paran\u00E1 y Uruguay, y apartar as\u00ED los obst\u00E1culos que hasta ahora han embarazado esta navegaci\u00F3n. Con este objeto han nombrado por sus Plenipotenciarios, a saber: El Excelent\u00EDsimo se\u00F1or Director Provisorio de la Confederaci\u00F3n Argentina a los se\u00F1ores doctor don Salvador M. del Carril y el doctor don Jos\u00E9 Benjam\u00EDn Gorostiaga. Y el Presidente de los Estados Unidos a Roberto C. Schenek, Enviado Extraordinario y Ministro Plenipotenciario de los estados Unidos del Brasil, y a John S. Sandleton, Encargado de Negocios de los Estados Unidos a la Confederaci\u00F3n Argentina. Quienes despu\u00E9s de haberse comunicado sus plenos poderes, y hall\u00E1ndolos en buena y debida forma, han convenido en los art\u00EDculos siguientes:",
+          "articulo": [
+            {
+              "numero-articulo": "C 0001",
+              "texto": "[[p]]Art\u00EDculo  1.  La  Confederaci\u00F3n  Argentina,  en  el ejercicio de sus derechos soberanos, permite la libre navegaci\u00F3n de  los  r\u00EDos Paran\u00E1 y  Uruguay  en  toda la parte de su curso que le pertenezca,  a  los buques mercantes  de  todas  las naciones; con sujeci\u00F3n \u00FAnicamente a las condiciones que establece  este  tratado,  y  a  los reglamentos sancionados  o que en adelante sancionare la autoridad  nacional  de la Confederaci\u00F3n.[[/p]]"
+            },
+            {
+              "numero-articulo": "C 0002",
+              "texto": "[[p]]Art.2. Por consiguiente, dichos buques ser\u00E1n admitidos a permanecer,  cargar  y  descargar  en  los  lugares  y puertos de la Confederaci\u00F3n Argentina habilitados para ese objeto.[[/p]]"
+            },
+            {
+              "numero-articulo": "C 0003",
+              "texto": "[[p]]Art.3.    El   Gobierno  de  la  Confederaci\u00F3n  Argentina,  deseando proporcionar toda  facilidad a la navegaci\u00F3n interior, se compromete a mantener balizas y marcas que se\u00F1alen los canales.[[/p]]"
+            },
+            {
+              "numero-articulo": "C 0004",
+              "texto": "[[p]]Art.4.   Se  establecer\u00E1  por  las  autoridades  competentes  de  la Confederaci\u00F3n,  un  sistema  uniforme  para  la  recaudaci\u00F3n  de los derechos  de  aduana, puerto, fanal, polic\u00EDa y pilotaje, en todo  el curso de las que pertenecen a la Confederaci\u00F3n.[[/p]]"
+            },
+            {
+              "numero-articulo": "C 0005",
+              "texto": "[[p]]Art.5.  Las  altas  partes contratantes, reconociendo que la isla de Mart\u00EDn Garc\u00EDa puede,  por  su posici\u00F3n, embarazar e impedir la libre navegaci\u00F3n de los confluentes  del  R\u00EDo  de  la  Plata, convienen en emplear influjo para que la posici\u00F3n de dicha isla  no  sea retenida ni  conservada  por  ning\u00FAn  Estado  del  R\u00EDo  de la Plata o de  sus confluentes,  que  no hubiera dado su adhesi\u00F3n al  principio  de  su libre navegaci\u00F3n.[[/p]]"
+            },
+            {
+              "numero-articulo": "C 0006",
+              "texto": "[[p]]Art.6.  Si  sucediere  (lo  que  Dios  no  permita)  que  la  guerra estallase  entre cualesquiera de los estados, Rep\u00FAblica o Provincias del R\u00EDo de la  Plata o de sus confluentes, la navegaci\u00F3n de los r\u00EDos Paran\u00E1 y Uruguay,  quedar\u00E1 libre para el pabell\u00F3n mercantil de todas las  naciones. No habr\u00E1  excepci\u00F3n  a  este  principio  sino  en  lo relativo  a  las  municiones  de  guerra  como en las armas de todas clases, la p\u00F3lvora, el plomo y las balas de ca\u00D1\u00F3n.[[/p]]"
+            },
+            {
+              "numero-articulo": "C 0007",
+              "texto": "[[p]]Art.7.  Se reserva a S.M. el Emperador del Brasil, y a los gobiernos de Bolivia,  del Paraguay y del Estado Oriental del Uruguay el poder de hacerse partes  al  presente  tratado,  en  el caso de que fueren dispuestos a aplicar sus principios a la parte de  los  r\u00EDos Paran\u00E1, Paraguay  y  Uruguay,  en  los cuales pueden poseer, respectivamente derechos fluviales.[[/p]]"
+            },
+            {
+              "numero-articulo": "C 0008",
+              "texto": "[[p]]Art.8.  Los  principales  objetos,  en  vista de los cuales los r\u00EDos Paran\u00E1  y  Uruguay quedan declarados libres  para  el  comercio  del mundo, siendo  los  de desenvolver las relaciones comerciales de sus pa\u00EDses ribere\u00F1os, y de  fomentar  la inmigraci\u00F3n, se conviene que no se conceder\u00E1 ning\u00FAn favor o inmunidad  al  pabell\u00F3n o al comercio de cualquiera  otra  naci\u00F3n  que no se extender\u00E1 igualmente  a  los  de Estados Unidos.[[/p]]"
+            },
+            {
+              "numero-articulo": "C 0009",
+              "texto": "[[p]]Art.9.  El  presente  tratado  ser\u00E1  ratificado  por el Excmo. se\u00F1or Director Provisorio de la Confederaci\u00F3n Argentina  a los dos d\u00EDas de la  fecha,  debiendo  presentarlo  para  su  aprobaci\u00F3n  al   primer Congreso  Legislativo  de la Confederaci\u00F3n, y por parte del Gobierno de los Estados Unidos dentro de quince meses.[[/p]][[p]]Las ratificaciones deber\u00E1n  canjearse  a los diez y ocho meses en el lugar de la residencia del Gobierno de la  Confederaci\u00F3n  Argentina.[[/p]]"
+            }
+          ],
+          "firmantes": {
+            "anexo": "C",
+            "firmantes": "[[p]] En  fe  de  lo  cual,  los plenipotenciarios respectivos han firmado este tratado y le han puesto sus sellos. [[/p]][[p]] Hecho en San Jos\u00E9 de Flores,  el  d\u00EDa  diez  de  Julio  del  a\u00F1o  de Nuestro Se\u00F1or de mil ochocientos cincuenta y tres. [[/p]][[p]] del Carril - Schenck - Gorostiaga - Pendleton.[[/p]]"
+          }
+        }
+      ],
+      "id-infojus": "LNT0002642"
+    }
+  }
+}

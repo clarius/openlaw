@@ -1,9 +1,9 @@
 ﻿```shell
 DESCRIPTION:
-Descargar documentos del sistema SAIJ.
+Descargar normas argentinas del sistema SAIJ.
 
 USAGE:
-    openlaw saij download [OPTIONS]
+    openlaw ar download [OPTIONS]
 
 OPTIONS:
                      DEFAULT                                                    
