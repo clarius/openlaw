@@ -11,4 +11,4 @@
     date: .content.fecha,
     modified: (.content["fecha-umod"] // (.content.fecha | gsub("-"; ""))),
     terms: [(.content.descriptores | .. | .termino?)] | map(select(. != null)) | flatten | unique
-}a
+}
