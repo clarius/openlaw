@@ -82,16 +82,19 @@ public class SaijClientTests(ITestOutputHelper output)
     }
 
     [Fact]
-    public async Task AllDocsContainModifiedAndTimestamp()
+    public async Task CanDeserializeEnumeratedDocs()
     {
         var client = CreateClient(output);
         var count = 0;
 
         await foreach (var doc in client.EnumerateAsync())
         {
+            count++;
+            if (count == 10)
+                break;
         }
 
-        Assert.Equal(0, count);
+        Assert.Equal(10, count);
     }
 
     [LocalFact]
