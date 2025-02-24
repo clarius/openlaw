@@ -86,7 +86,7 @@ public class DownloadCommand(IAnsiConsole console, IHttpClientFactory http) : As
         return 0;
     }
 
-    static void Convert(string file, bool overwrite) 
+    static void Convert(string file, bool overwrite)
         => DictionaryConverter.Convert(file, true, true, true, overwrite);
 
     static async Task<long> GetJsonTimestampAsync(string file)

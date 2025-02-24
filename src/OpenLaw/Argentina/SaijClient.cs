@@ -88,7 +88,7 @@ public class SaijClient(IHttpClientFactory httpFactory, IProgress<ProgressMessag
 
     public async Task<Document?> FetchDocumentAsync(string id)
     {
-        if (await FetchRawAsync(id) is not { } data || 
+        if (await FetchRawAsync(id) is not { } data ||
             await JQ.ExecuteAsync(data, ThisAssembly.Resources.Argentina.SaijDocument.Text) is not { Length: > 0 } jq ||
             TryDeserialize<Document>(jq) is not { } doc)
         {

@@ -44,7 +44,7 @@ public class FormatCommand(IAnsiConsole console) : Command<FormatCommand.FormatS
                     if (Debugger.IsAttached)
                         options.MaxDegreeOfParallelism = 1;
 
-                    Parallel.ForEach(Directory.EnumerateFiles(settings.Directory, "*.json", SearchOption.AllDirectories), 
+                    Parallel.ForEach(Directory.EnumerateFiles(settings.Directory, "*.json", SearchOption.AllDirectories),
                         options, file =>
                         {
                             var task = ctx.AddTask($"Formateando {file}");
@@ -71,7 +71,7 @@ public class FormatCommand(IAnsiConsole console) : Command<FormatCommand.FormatS
             document is Dictionary<string, object?> doc &&
             doc.TryGetValue("metadata", out var metadata) &&
             metadata is Dictionary<string, object?> meta &&
-            meta.TryGetValue("timestamp", out var timestamp) && 
+            meta.TryGetValue("timestamp", out var timestamp) &&
             (timestamp is double || timestamp is long))
         {
             var ts = timestamp is double ? Convert.ToInt64(timestamp) : (long)timestamp;

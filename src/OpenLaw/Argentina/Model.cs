@@ -16,9 +16,9 @@ public record DocumentAbstract(
 };
 
 public record Document(
-    string Id, string Ref, long Timestamp, 
-    string Name, string Title, string Summary, 
-    string Type, string Kind, string Status, string Date, 
+    string Id, string Ref, long Timestamp,
+    string Name, string Title, string Summary,
+    string Type, string Kind, string Status, string Date,
     long Modified, string[] Terms,
     [property: JsonPropertyName("pub")] Publication? Publication) :
     DocumentAbstract(Id, Ref, Name, Title, Summary, Type, Kind, Status, Date, Modified, Terms);

@@ -33,7 +33,7 @@ public static class DictionaryConverter
         Dictionary<string, object?>? dictionary = null;
         var writeTime = File.GetLastWriteTimeUtc(jsonFile);
 
-        if (overwrite || !File.Exists(yamlFile) || 
+        if (overwrite || !File.Exists(yamlFile) ||
             (File.Exists(yamlFile) && File.GetLastWriteTimeUtc(yamlFile) != writeTime))
         {
             dictionary = Parse(File.ReadAllText(jsonFile));
@@ -59,13 +59,13 @@ public static class DictionaryConverter
         // Always ensure write time matches source json file
         File.SetLastWriteTimeUtc(mdFile, writeTime);
 
-        if (overwrite || !File.Exists(pdfFile) || 
+        if (overwrite || !File.Exists(pdfFile) ||
             (File.Exists(pdfFile) && File.GetLastWriteTimeUtc(pdfFile) != writeTime))
         {
             dictionary ??= Parse(File.ReadAllText(jsonFile));
             if (dictionary is null)
                 return;
-            
+
             if (!File.Exists(mdFile))
             {
                 File.WriteAllText(mdFile, ToMarkdown(dictionary), Encoding.UTF8);

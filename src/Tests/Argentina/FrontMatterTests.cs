@@ -23,7 +23,7 @@ public class FrontMatterTests(ITestOutputHelper output)
         var contents =
             $"""
             ---
-            {doc.ToFrontMatter() }
+            {doc.ToFrontMatter()}
             ---
             {markdown}
             <!-- 

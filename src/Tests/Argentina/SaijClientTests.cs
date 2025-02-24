@@ -110,7 +110,7 @@ public class SaijClientTests(ITestOutputHelper output)
         await foreach (var item in client.EnumerateAsync())
         {
             total++;
-            if (await client.FetchDocumentAsync(item.Id) is { } doc && 
+            if (await client.FetchDocumentAsync(item.Id) is { } doc &&
                 doc.Publication is null)
             {
                 nopub++;
