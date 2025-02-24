@@ -2,7 +2,7 @@ document:
   metadata:
     uuid: 123456789-0abc-defg-g23-85000scanyel
     document-content-type: legislacion
-    timestamp: 1721055247519
+    timestamp: 1721055246235
     operation: ADD
     target-document-repository-id: infojus
     target-index-id: index
@@ -821,4 +821,4 @@ document:
       firmantes:
         firmantes: DOMINGUEZ-ROJKES DE ALPEROVICH-Bozzano-Estrada
     id-infojus: LNS0005832
-    fecha-umod: 20240715115407
+    fecha-umod: 20240715115406
