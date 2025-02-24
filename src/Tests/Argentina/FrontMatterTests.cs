@@ -25,10 +25,10 @@ public class FrontMatterTests(ITestOutputHelper output)
             ---
             {doc.ToFrontMatter() }
             ---
+            {markdown}
             <!-- 
             {doc.ToYaml()}
-            -->
-            {markdown}
+            -->            
             """;
 
         output.WriteLine(contents);
