@@ -27,7 +27,7 @@ COMMANDS:
 
 <!-- src/dotnet-openlaw/help.md -->
 
-<!-- include src/dotnet-openlaw/saij-download.md -->
+<!-- include src/dotnet-openlaw/ar-download.md -->
 ```shell
 DESCRIPTION:
 Descargar documentos del sistema SAIJ.
@@ -46,7 +46,7 @@ OPTIONS:
                                 Por defecto '%AppData%\clarius\openlaw'         
 ```
 
-<!-- src/dotnet-openlaw/saij-download.md -->
+<!-- src/dotnet-openlaw/ar-download.md -->
 
 <!-- include src/dotnet-openlaw/convert.md -->
 ```shell
