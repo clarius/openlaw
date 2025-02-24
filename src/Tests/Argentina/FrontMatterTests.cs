@@ -6,7 +6,7 @@ namespace Clarius.OpenLaw.Argentina;
 
 public class FrontMatterTests(ITestOutputHelper output)
 {
-    [Fact]
+    [LocalFact]
     public async Task CanRoundtripFrontMatter()
     {
         var client = SaijClientTests.CreateClient(output);
