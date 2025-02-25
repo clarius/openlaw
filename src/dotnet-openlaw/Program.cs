@@ -34,7 +34,7 @@ if (args.Contains("--exceptions"))
 #endif
 
 if (args.Contains("-?"))
-    args = args.Select(x => x == "-?" ? "-h" : x).ToArray();
+    args = [.. args.Select(x => x == "-?" ? "-h" : x)];
 
 app.Configure(config => config.SetApplicationName(ThisAssembly.Project.ToolCommandName));
 
@@ -62,7 +62,7 @@ return exit;
 
 static async Task<string[]> CheckUpdates(string[] args)
 {
-    if (args.Contains("-u") && !args.Contains("--unattended"))
+    if (args.Contains("-u") || args.Contains("--unattended"))
         return [];
 
 #if DEBUG
