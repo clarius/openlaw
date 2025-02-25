@@ -1,0 +1,291 @@
+﻿{
+  "document": {
+    "metadata": {
+      "uuid": "123456789-0abc-defg-837-2090jvorpyel",
+      "document-content-type": "legislacion",
+      "timestamp": 1740070103520,
+      "operation": "ADD",
+      "target-document-repository-id": "infojus",
+      "target-index-id": "index",
+      "target-document-indexing-id": "legislacion",
+      "document-recovery-strategy": "abstract-legislacion",
+      "friendly-url": {
+        "subdomain": "ley",
+        "description": "2738-local-san-juan-modificacion-ley-impositiva-codigo-fiscal-provincia-san-juan-lpj0902738-2025-01-10"
+      }
+    },
+    "content": {
+      "mecanografico": "J0902738",
+      "estado": "Vigente, de alcance general",
+      "tipo-norma": {
+        "codigo": "LEY",
+        "texto": "Ley"
+      },
+      "numero-norma": 2738,
+      "fecha": "2025-01-10",
+      "jurisdiccion": {
+        "codigo": "J",
+        "descripcion": "Local",
+        "capital": "San Juan",
+        "id-pais": 11
+      },
+      "provincia": "San Juan",
+      "standard-normativo": "LEY J 002738 2025 01 10",
+      "identificacion-coloquial": {
+        "identificacion-coloquial": [
+          "LEY 2.738-I",
+          "SAN JUAN, 10 DE ENERO DE 2025"
+        ]
+      },
+      "nombre-coloquial": "LEY 2.738-I",
+      "lugar-sancion": "SAN JUAN",
+      "titulo-norma": "Modificaci\u00F3n de la Ley Impositiva y C\u00F3digo Fiscal de la provincia de San Juan",
+      "publicacion-codificada": {
+        "publicacion-decodificada": {
+          "organismo": "Bolet\u00EDn Oficial",
+          "fecha": "2025 01 21"
+        }
+      },
+      "sancion": "LA CAMARA DE DIPUTADOS DE LA PROVINCIA DE SAN JUAN SANCIONA CON FUERZA DE LEY:",
+      "analista": "Oficial",
+      "responsable": "Mazza, Gustavo",
+      "rama-digesto": "I",
+      "uid-alta": "ABM",
+      "uid-mod": "ABM",
+      "fecha-alta": "2025-02-20",
+      "fecha-mod": "2025-02-20",
+      "timestamp": "2025-02-20T13:40:07",
+      "timestamp-alta": "2025-02-20T13:40:07",
+      "timestamp-m": "2025-02-20T13:40:07",
+      "sumario": {
+        "sumario": "[[p]]Modificaci\u00F3n de la Ley Impositiva y C\u00F3digo Fiscal de la provincia de San Juan.[[/p]]"
+      },
+      "descriptores": {
+        "descriptor": [
+          {
+            "elegido": {
+              "termino": "ley impositiva"
+            },
+            "preferido": {
+              "termino": "Derecho tributario y aduanero/derecho tributario/ley tributaria"
+            },
+            "sinonimos": {
+              "termino": [
+                "ley fiscal",
+                "legislaci\u00F3n impositiva",
+                "derecho fiscal",
+                "legislaci\u00F3n tributaria",
+                "ley impositiva",
+                "derecho p\u00FAblico fiscal"
+              ]
+            }
+          },
+          {
+            "elegido": {
+              "termino": "c\u00F3digo fiscal"
+            },
+            "preferido": {
+              "termino": "Derecho tributario y aduanero/derecho tributario/ley tributaria/c\u00F3digo tributario"
+            },
+            "sinonimos": {
+              "termino": [
+                "ley fiscal",
+                "legislaci\u00F3n impositiva",
+                "c\u00F3digo de procedimiento tributario",
+                "derecho fiscal",
+                "legislaci\u00F3n tributaria",
+                "c\u00F3digo fiscal",
+                "ley impositiva",
+                "derecho p\u00FAblico fiscal"
+              ]
+            }
+          }
+        ],
+        "suggest": {
+          "termino": [
+            "derecho p\u00FAblico fiscal (derecho tributario)",
+            "ley fiscal (ley tributaria)",
+            "derecho tributario",
+            "c\u00F3digo de procedimiento tributario (c\u00F3digo tributario)",
+            "legislaci\u00F3n tributaria (ley tributaria)",
+            "ley tributaria",
+            "derecho fiscal (derecho tributario)",
+            "Derecho tributario y aduanero",
+            "c\u00F3digo tributario",
+            "ley impositiva (ley tributaria)",
+            "c\u00F3digo fiscal (c\u00F3digo tributario)",
+            "legislaci\u00F3n impositiva (ley tributaria)"
+          ]
+        }
+      },
+      "generalidades": {
+        "observaciones-generales": "[[p]]CANTIDAD DE ARTICULOS QUE COMPONEN LA NORMA:15[[/p]]"
+      },
+      "articulo": [
+        {
+          "modifica-a": {
+            "referencia-normativa": {
+              "cr": "B.O. 30/12/2024",
+              "id": "MODIFICA_A_0",
+              "ref": "LEY J 002730 2024 12 19 0000 000 0000 000"
+            }
+          },
+          "numero-articulo": 1,
+          "texto": "[[p]]ART\u00CDCULO 1\u00B0.- Se sustituyen los incisos 4, 5 y 6 del art\u00EDculo 11 de la Ley N\u00B0 2730-I, por los siguientes:[[/p]][[p]]\u00224. Seiscientas Treinta y Dos Unidades Tributarias (632 U.T.).[[/p]][[p]]4.1. Demandas en juicios ordinarios, especiales, contenciosos, ejercicio de acci\u00F3n civil en procesos penales y tercer\u00EDas en juicios ordinarios, especiales y contenciosos (incluido el II Cuerpo).[[/p]][[p]]5.Trescientas Diecis\u00E9is Unidades Tributarias (316 U.T.).[[/p]][[p]]5.1. Juicios Universales.[[/p]][[p]]5.2. Recursos extraordinarios de casaci\u00F3n e inconstitucionalidad.[[/p]][[p]]6.Ciento Treinta y Tres Unidades Tributarias (133 U.T.).[[/p]][[p]]6.1. En los juicios sobre reclamaciones y derechos de familia independientemente del patrimonio.[[/p]][[p]]6.2. Procesos abreviados, procesos voluntarios y tercer\u00EDas en juicios ejecutivos.[[/p]][[p]]6.3. Juicios especiales de jurisdicci\u00F3n voluntaria, incidentes de cualquier naturaleza y todo otro proceso judicial que no tenga otro tratamiento.\u0022[[/p]]"
+        },
+        {
+          "modifica-a": {
+            "referencia-normativa": {
+              "cr": "B.O. 30/12/2024",
+              "id": "MODIFICA_A_0",
+              "ref": "LEY J 002730 2024 12 19 0000 000 0000 000"
+            }
+          },
+          "numero-articulo": 2,
+          "texto": "[[p]]ART\u00CDCULO 2\u00B0.- Se sustituye el inciso 3 del art\u00EDculo 17 de la Ley N\u00B0 2730-I, por los siguientes:[[/p]][[p]]3.Quinientas Unidades Tributarias (500 U.T.) 3.1. Por la celebraci\u00F3n de matrimonios, fuera de la Oficina en horas y d\u00EDas h\u00E1biles.[[/p]][[p]]3.2. Por la celebraci\u00F3n de matrimonios, fuera de la Oficina en horas y d\u00EDas inh\u00E1biles.[[/p]]"
+        },
+        {
+          "modifica-a": {
+            "referencia-normativa": {
+              "cr": null,
+              "id": "MODIFICA_A_0",
+              "ref": "LEY J 000151 2014 11 19 0000 000 0000 000"
+            }
+          },
+          "numero-articulo": 3,
+          "texto": "[[p]]ART\u00CDCULO 3\u00B0.- Se sustituye el art\u00EDculo 45 de la Ley N\u00B0 151-I, por el siguiente:[[/p]][[p]]\u0022ART\u00CDCULO 45.- T\u00E9rminos. Prescriben a los cinco (5) a\u00F1os:[[/p]][[p]]1. Las facultades de la D.G.R. para determinar las obligaciones tributarias.[[/p]][[p]]2. La acci\u00F3n para el cobro judicial de las obligaciones tributarias.[[/p]][[p]]3. La acci\u00F3n de repetici\u00F3n de las obligaciones tributarias.[[/p]][[p]]4. Las facultades de la DGR para aplicar multas.[[/p]][[p]]Estos plazos de prescripci\u00F3n operan autom\u00E1ticamente, sin necesidad de petici\u00F3n de parte interesada o resoluci\u00F3n que la declare cumplida.[[/p]]"
+        },
+        {
+          "modifica-a": {
+            "referencia-normativa": {
+              "cr": null,
+              "id": "MODIFICA_A_0",
+              "ref": "LEY J 000151 2014 11 19 0000 000 0000 000"
+            }
+          },
+          "numero-articulo": 4,
+          "texto": "[[p]]ART\u00CDCULO 4\u00B0.- Se sustituye el inciso 5 del art\u00EDculo 120 de la Ley N\u00B0 151-I, por el siguiente:[[/p]][[p]]\u00225. La locaci\u00F3n de hasta dos inmuebles destinados a vivienda, efectuadas por personas humanas.\u0022[[/p]]"
+        },
+        {
+          "modifica-a": {
+            "referencia-normativa": {
+              "cr": null,
+              "id": "MODIFICA_A_0",
+              "ref": "LEY J 000151 2014 11 19 0000 000 0000 000"
+            }
+          },
+          "numero-articulo": 5,
+          "texto": "[[p]]ART\u00CDCULO 5\u00B0.- Se sustituye el art\u00EDculo 204 de la Ley N\u00B0 151-I, por el siguiente:[[/p]][[p]]\u0022ART\u00CDCULO 204.- Causas o litigios. Las causas o litigios que se inicien por ante la Administraci\u00F3n de Justicia estar\u00E1n sujetos al presente gravamen. Las al\u00EDcuotas ser\u00E1n fijadas por la Ley Impositiva Anual que se aplicar\u00E1n en la siguiente forma:[[/p]][[p]]1. En relaci\u00F3n al monto de la demanda en los juicios por sumas de dinero o derechos susceptibles de apreciaci\u00F3n pecuniaria, y al importe de dos a\u00F1os de alquiler en los juicios de desalojo de inmuebles;[[/p]][[p]]2. En base al aval\u00FAo para el pago del impuesto inmobiliario en los juicios ordinarios, posesorios, informativos, que tengan por objeto inmuebles;[[/p]][[p]]3. En base al activo denunciado en los juicios sucesorios. Si se tramitaran acumuladas las sucesiones de m\u00E1s de un causante se aplicar\u00E1 el gravamen independientemente sobre el activo de cada una de ellas. En los juicios de inscripci\u00F3n de declaratorias, testamentos o hijuelas de extra\u00F1a jurisdicci\u00F3n sobre el valor de los bienes que se trasmiten en la Provincia, o sometidos a su jurisdicci\u00F3n, aplic\u00E1ndose la misma norma anterior en el caso de transmisiones acumuladas.[[/p]][[p]]4. En base al activo verificado en el concurso (Ley N\u00B0 19.550). Cuando se terminen los concursos sin haber llegado a la verificaci\u00F3n, en base al activo denunciado.[[/p]][[p]]5. En base al importe reclamado en concepto de compensaci\u00F3n econ\u00F3mica en los juicios de divorcio o en forma aut\u00F3noma. Cuando la misma sea en cuotas, en base a la suma del importe, hasta dos (2) a\u00F1os de la compensaci\u00F3n peri\u00F3dica.[[/p]][[p]]En los concursos promovidos por acreedores en base al monto del cr\u00E9dito en que se funda la acci\u00F3n. En caso de declaraci\u00F3n del concurso lo abonado se computar\u00E1 a cuenta del impuesto que le corresponde en total.\u0022[[/p]]"
+        },
+        {
+          "modifica-a": {
+            "referencia-normativa": {
+              "cr": null,
+              "id": "MODIFICA_A_0",
+              "ref": "LEY J 000151 2014 11 19 0000 000 0000 000"
+            }
+          },
+          "numero-articulo": 6,
+          "texto": "[[p]]ART\u00CDCULO 6\u00B0.- Se incorporan los art\u00EDculos 204 bis y 204 ter, a continuaci\u00F3n del art\u00EDculo 204, a la Ley N\u00B0 151-I, con la siguiente redacci\u00F3n:[[/p]][[p]]\u0022ART\u00CDCULO 204 bis.- Las partes que intervengan en los juicios responden solidariamente del pago del impuesto, conforme a la siguiente regla:[[/p]][[p]]1. En los juicios ordinarios de cualquier naturaleza la parte actora deber\u00E1 pagar el impuesto al iniciar el juicio, sin perjuicio de su derecho de repetir de la parte demandada lo que corresponda.[[/p]][[p]]2. En caso de juicio de jurisdicci\u00F3n voluntaria el impuesto ser\u00E1 pagado \u00EDntegramente por el recurrente. Trat\u00E1ndose de juicios contra ausentes, o personas inciertas o seguidos en rebeld\u00EDa el gravamen correspondiente a la parte demandada se abonar\u00E1 por el actor a llamarse autos para sentencia.[[/p]][[p]]3. En los juicios sucesorios se pagar\u00E1 el gravamen inmediatamente despu\u00E9s de ser determinado el acervo hereditario, sin perjuicio de integrarse cualquier diferencia si se comprobara la existencia de otros bienes.[[/p]][[p]]4. En los concursos (Ley 19.550) iniciados por el deudor, el gravamen deber\u00E1 satisfacerse al realizarse la liquidaci\u00F3n e igualmente en los casos de liquidaci\u00F3n sin quiebra. En los casos que el concurso termine por concordato, al homologarse este \u00FAltimo.[[/p]][[p]]5. En los juicios ejecutivos y de estructura monitoria el impuesto deber\u00E1 abonarse al momento de la presentaci\u00F3n de la acci\u00F3n. En los juicios contenciosos, ejecutivos y de estructura monitoria donde el actor sea el Estado Nacional, el Estado Provincial, las Municipalidades de la Provincia, sus dependencias y reparticiones aut\u00E1rquicas, salvo las que est\u00E1n organizadas como empresas lucrativas, la mitad del impuesto previsto en la Ley Impositiva Anual, ser\u00E1 pagado al momento de hacerse parte el demandado. En caso de extinci\u00F3n del cr\u00E9dito fiscal, la Direcci\u00F3n General de Rentas, o dependencias del Estado Provincial, deber\u00E1 solicitar la constataci\u00F3n de la cancelaci\u00F3n del Impuesto de Sellos a favor del Poder Judicial en la cuenta correspondiente, condici\u00F3n para dar por finalizada la causa.[[/p]][[p]]6. En los casos en que se reconvenga se aplicar\u00E1n a la contrademanda las mismas normas que para el pago de impuesto a la demanda, consider\u00E1ndola independientemente.[[/p]][[p]]7. En los casos no previstos expresamente, el impuesto deber\u00E1 abonarse en el momento de la presentaci\u00F3n.[[/p]][[p]]ART\u00CDCULO 204 ter.- Cuando exista condenaci\u00F3n en costas al impuesto quedar\u00E1 comprendido en ella.\u0022[[/p]]"
+        },
+        {
+          "modifica-a": {
+            "referencia-normativa": {
+              "cr": null,
+              "id": "MODIFICA_A_0",
+              "ref": "LEY J 000151 2014 11 19 0000 000 0000 000"
+            }
+          },
+          "numero-articulo": 7,
+          "texto": "[[p]]ART\u00CDCULO 7\u00B0.- Se sustituye el art\u00EDculo 216 de la Ley N\u00B0 151-I, por el siguiente:[[/p]][[p]]\u0022ART\u00CDCULO 216.- Escritos presentados. Los escritos dirigidos a cualquier dependencia administrativa o judicial deben presentarse con el sellado correspondiente, conforme se establece en la Ley Impositiva Anual vigente.\u0022[[/p]]"
+        },
+        {
+          "modifica-a": {
+            "referencia-normativa": {
+              "cr": null,
+              "id": "MODIFICA_A_0",
+              "ref": "LEY J 000151 2014 11 19 0000 000 0000 000"
+            }
+          },
+          "numero-articulo": 8,
+          "texto": "[[p]]ART\u00CDCULO 8\u00B0.- Se sustituye el art\u00EDculo 217 de la Ley N\u00B0 151-I, por el siguiente:[[/p]][[p]]\u0022ART\u00CDCULO 217.- Instrumentos adicionales a los escritos. Todo instrumento sujeto a grav\u00E1menes que se adjunte a un escrito deber\u00E1 estar debidamente repuesto; debi\u00E9ndose, en su caso, agregar los valores fiscales necesarios para emitir la resoluci\u00F3n correspondiente, conforme se establece en la Ley Impositiva Anual vigente.\u0022[[/p]]"
+        },
+        {
+          "modifica-a": {
+            "referencia-normativa": {
+              "cr": null,
+              "id": "MODIFICA_A_0",
+              "ref": "LEY J 000151 2014 11 19 0000 000 0000 000"
+            }
+          },
+          "numero-articulo": 9,
+          "texto": "[[p]]ART\u00CDCULO 9\u00B0.- Se sustituye el art\u00EDculo 223 de la Ley 151-I, por el siguiente:[[/p]][[p]]\u0022ART\u00CDCULO 223.- Sentencia. En los casos de condenaci\u00F3n en costas el vencido deber\u00E1 reponer todo el papel com\u00FAn empleado en el juicio, los impuestos de los actos, contratos y obligaciones establecidos en el T\u00EDtulo IV y que, en virtud de exenci\u00F3n no hubiere satisfecho la parte privilegiada.[[/p]][[p]]Cuando el juicio concluya por transacci\u00F3n de las partes el convenio, o acta, que expresa la voluntad de los interesados deber\u00E1 se\u00F1alar tambi\u00E9n la carga del presente impuesto y las tasas que correspondieren, los que ser\u00E1n pagados previo a la homologaci\u00F3n.\u0022[[/p]]"
+        },
+        {
+          "modifica-a": {
+            "referencia-normativa": {
+              "cr": null,
+              "id": "MODIFICA_A_0",
+              "ref": "LEY J 000151 2014 11 19 0000 000 0000 000"
+            }
+          },
+          "numero-articulo": 10,
+          "texto": "[[p]]ART\u00CDCULO 10.- Se sustituye el art\u00EDculo 224 de la Ley 151-I, por el siguiente:[[/p]][[p]]\u0022ART\u00CDCULO 224.- Actuario. Liquidaci\u00F3n. El actuario deber\u00E1 liquidar, sin necesidad de mandato judicial o solicitud de parte, el impuesto de sellos y dem\u00E1s tasas que no se hayan satisfecho en las actuaciones. La liquidaci\u00F3n se notificar\u00E1 a las partes, y una vez cumplido el tr\u00E1mite, el juez dictar\u00E1 la resoluci\u00F3n sin recurso alguno. Cualquier decreto que ordene la reposici\u00F3n de sellos deber\u00E1 indicar la parte responsable, que tendr\u00E1 tres d\u00EDas para hacerlo. Vencido ese plazo, se impondr\u00E1n las multas previstas en la Ley Impositiva Anual y se proceder\u00E1 a su cobro por v\u00EDa ejecutiva.[[/p]][[p]]La Corte de Justicia por Acuerdo General reglamentar\u00E1 el importe m\u00EDnimo a ser ejecutado.\u0022[[/p]]"
+        },
+        {
+          "modifica-a": {
+            "referencia-normativa": {
+              "cr": null,
+              "id": "MODIFICA_A_0",
+              "ref": "LEY J 000151 2014 11 19 0000 000 0000 000"
+            }
+          },
+          "numero-articulo": 11,
+          "texto": "[[p]]ART\u00CDCULO 11.- Se sustituye el art\u00EDculo 232 de la Ley 151-I, por el siguiente:[[/p]][[p]]\u0022ART\u00CDCULO 232.- Escribanos p\u00FAblicos. Los escribanos p\u00FAblicos deben verificar que los instrumentos privados que les presenten para su agregaci\u00F3n o transcripci\u00F3n en el registro cumplan con las disposiciones de este C\u00F3digo y las Leyes Tributarias. Deben solicitar la reposici\u00F3n del impuesto antes de aceptar el documento. De no hacerlo, el escribano ser\u00E1 sancionado con una multa equivalente a diez veces el monto del impuesto no abonado, adem\u00E1s de hacerse cargo de la reposici\u00F3n del mismo.[[/p]][[p]]En los casos de boletos de compra-venta de inmuebles, el documento original deber\u00E1 ser agregado a la escritura correspondiente, y en dicha escritura se consignar\u00E1n el n\u00FAmero, valor, a\u00F1o y fecha de reposici\u00F3n del valor fiscal respectivo.[[/p]][[p]]Los escribanos secretarios deber\u00E1n detener los expedientes mandados a archivar si existen sellos pendientes y notificar al juez para que se aplique lo dispuesto en el art\u00EDculo 239.\u0022[[/p]]"
+        },
+        {
+          "modifica-a": {
+            "referencia-normativa": {
+              "cr": null,
+              "id": "MODIFICA_A_0",
+              "ref": "LEY J 000151 2014 11 19 0000 000 0000 000"
+            }
+          },
+          "numero-articulo": 12,
+          "texto": "[[p]]ART\u00CDCULO 12- Se sustituye el art\u00EDculo 235 de la Ley 151-I, por el siguiente:[[/p]][[p]]\u0022ART\u00CDCULO 235.- Funcionarios, empleados p\u00FAblicos o actuarios. Todo funcionario, empleado p\u00FAblico o actuario deber\u00E1 anotar \u0022no corresponde\u0022 en la solicitud, escrito o documento que no lleve el tributo correspondiente, debiendo el interesado reponerlo junto con la multa, si aplica. La omisi\u00F3n de esta obligaci\u00F3n conllevar\u00E1 recargos del Art\u00EDculo 49. y sanci\u00F3n disciplinaria que podr\u00E1 llegar hasta la destituci\u00F3n.[[/p]][[p]]Los grav\u00E1menes de los T\u00EDtulos III y IV ser\u00E1n de aplicaci\u00F3n obligatoria para las autoridades judiciales, sin importar su jurisdicci\u00F3n.[[/p]][[p]]La tasa por anotaciones judiciales deber\u00E1 abonarse con el sellado correspondiente.[[/p]][[p]]Todo oficio judicial o administrativo deber\u00E1 emitirse en papel sellado, y cuando implique medidas a ser ejecutadas por autoridades p\u00FAblicas, deber\u00E1 acompa\u00F1arse el sellado respectivo.[[/p]][[p]]No se proveer\u00E1n peticiones a quienes adeuden grav\u00E1menes establecidos en los T\u00EDtulos III y IV hasta que sean satisfechos.[[/p]][[p]]Si se reactiva un expediente paralizado con sellos pendientes, el actuario que no lo certifique ser\u00E1 sancionado conforme el primer p\u00E1rrafo del presente art\u00EDculo.[[/p]][[p]]La retenci\u00F3n indebida de actuaciones judiciales que d\u00E9 motivos a procedimientos compulsivos, ser\u00E1 sancionada con una multa que fijar\u00E1 la ley impositiva anual.\u0022[[/p]]"
+        },
+        {
+          "modifica-a": {
+            "referencia-normativa": {
+              "cr": null,
+              "id": "MODIFICA_A_0",
+              "ref": "LEY J 000151 2014 11 19 0000 000 0000 000"
+            }
+          },
+          "numero-articulo": 13,
+          "texto": "[[p]]ART\u00CDCULO 13.- Se sustituye el art\u00EDculo 239 de la Ley 151-I, por el siguiente:[[/p]][[p]]\u0022ART\u00CDCULO 239.- Multas y reposiciones. Las multas y reposiciones judiciales impuestas, deber\u00E1n abonarse dentro del t\u00E9rmino de tres (3) d\u00EDas, pasados los cuales, los actuarios pondr\u00E1n el hecho en conocimiento del superior, quien pasar\u00E1 el expediente al Ministerio Fiscal para que gestione el cobro por v\u00EDa ejecutiva.[[/p]][[p]]En caso de ser imposible el pago de las multas o reposici\u00F3n de sellos o valores fiscales por alguna causa que apreciara el juez, podr\u00E1 decretarse el archivo sin llenar los requisitos mencionados, previa vista fiscal.\u0022[[/p]]"
+        },
+        {
+          "modifica-a": {
+            "referencia-normativa": {
+              "cr": null,
+              "id": "MODIFICA_A_0",
+              "ref": "LEY J 000151 2014 11 19 0000 000 0000 000"
+            }
+          },
+          "numero-articulo": 14,
+          "texto": "[[p]]ART\u00CDCULO 14.- Se sustituye el art\u00EDculo 243 de la Ley 151-I, por el siguiente:[[/p]][[p]]\u0022ART\u00CDCULO 243.- Forma de la reposici\u00F3n. La reposici\u00F3n de papel sellado se har\u00E1 constando el asunto, fecha y firma del empleado, adem\u00E1s del sello de la oficina respectiva.[[/p]][[p]]Los valores fiscales en documentos ser\u00E1n inutilizados con el sello de la oficina o firma, y su incorrecto uso ser\u00E1 considerado no pago del gravamen.[[/p]][[p]]Los valores fiscales en documentos suscritos por particulares ser\u00E1n inutilizados con la fecha o firma del emisor, y cualquier alteraci\u00F3n ser\u00E1 considerada nula.[[/p]][[p]]En todos los casos la obliteraci\u00F3n de las estampillas por parte de los particulares, funcionarios o agentes expendedores deber\u00E1n efectuarse de manera que el sello fechador, o en su caso. La firma o fecha escrita puesta en el instrumento cubran en parte la estampilla y el papel al que se adhirieron consider\u00E1ndose nula la reposici\u00F3n cuando los particulares no hubieren observado este requisito, o cuando la estampilla est\u00E9 deteriorada, su numeraci\u00F3n o serie alteradas o el documento est\u00E9 fechado independientemente de la fecha escrita o estampada con que fue inutilizada la estampilla.[[/p]][[p]]Est\u00E1 prohibido colocar las estampillas una sobre otras. Las que aparezcan ocultas parcial o totalmente a causa de la superposici\u00F3n se reputar\u00E1n no repuestas en el documento.[[/p]][[p]]Cuando el pago de impuestos y tasas se realice a trav\u00E9s de plataformas digitales, deber\u00E1 registrarse digitalmente su baja en el expediente donde aplica el pago. El responsable de este registro ser\u00E1 la persona designada para proveer el tr\u00E1mite del expediente por primera vez.\u0022[[/p]]"
+        },
+        {
+          "numero-articulo": 15,
+          "texto": "[[p]]ART\u00CDCULO 15.- Comun\u00EDquese al Poder Ejecutivo.[[/p]]"
+        }
+      ],
+      "firmantes": {
+        "firmantes": "Enzo Ariel Cornejo - Vicepresidente Primero Dr. Gustavo A. Velert - Secretario Legislativo C\u00C1MARA DE DIPUTADOS"
+      },
+      "id-infojus": "LPJ0902738",
+      "fecha-umod": 20250220134823
+    }
+  }
+}

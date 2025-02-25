@@ -1,0 +1,201 @@
+﻿{
+  "document": {
+    "metadata": {
+      "uuid": "123456789-0abc-362-1000-4202gvorpced",
+      "document-content-type": "legislacion",
+      "timestamp": 1725470063739,
+      "operation": "ADD",
+      "target-document-repository-id": "infojus",
+      "target-index-id": "index",
+      "target-document-indexing-id": "legislacion",
+      "document-recovery-strategy": "abstract-legislacion",
+      "friendly-url": {
+        "subdomain": "decreto",
+        "description": "1263-local-santiago-estero-creacion-programa-abordaje-concientizacion-prevencion-ludopatia-control-consumo-problematico-digital-g20240001263-2024-09-03"
+      }
+    },
+    "content": {
+      "mecanografico": "G20240001263",
+      "estado": "Vigente, de alcance general",
+      "tipo-norma": {
+        "codigo": "DEC",
+        "texto": "Decreto"
+      },
+      "numero-norma": 1263,
+      "fecha": "2024-09-03",
+      "jurisdiccion": {
+        "codigo": "G",
+        "descripcion": "Local",
+        "capital": "Santiago del Estero",
+        "id-pais": 11
+      },
+      "provincia": "Santiago del Estero",
+      "standard-normativo": "DEC G 001263 2024 09 03",
+      "titulo-norma": "Creaci\u00F3n del programa de Abordaje, Concientizaci\u00F3n y Prevenci\u00F3n de la Ludopat\u00EDa y Control de Consumo Problem\u00E1tico Digital",
+      "nombre-coloquial": "DECRETO 1.263/2024",
+      "lugar-emision": "SANTIAGO DEL ESTERO",
+      "publicacion-codificada": {
+        "publicacion-decodificada": {
+          "organismo": "Bolet\u00EDn Oficial",
+          "fecha": "2024 09 03"
+        }
+      },
+      "analista": "Mazza, Gustavo",
+      "responsable": "Mazza, Gustavo",
+      "uid-alta": "ABM",
+      "uid-mod": "ABM",
+      "fecha-alta": "2024-09-04",
+      "fecha-mod": "2024-09-04",
+      "timestamp": "2024-09-04T14:09:11",
+      "timestamp-alta": "2024-09-04T14:09:11",
+      "timestamp-m": "2024-09-04T14:09:11",
+      "generalidades": {
+        "sintesis": "[[p]]Creaci\u00F3n del programa de Abordaje, Concientizaci\u00F3n y Prevenci\u00F3n de la Ludopat\u00EDa y Control de Consumo Problem\u00E1tico Digital.[[/p]]",
+        "observaciones-generales": "[[p]]CANTIDAD DE ARTICULOS QUE COMPONEN LA NORMA: 15[[/p]]"
+      },
+      "descriptores": {
+        "descriptor": [
+          {
+            "elegido": {
+              "termino": "ludopat\u00EDa"
+            },
+            "preferido": {
+              "termino": "Salud p\u00FAblica/enfermedades/ludopat\u00EDa"
+            },
+            "sinonimos": {
+              "termino": "juego compulsivo"
+            }
+          },
+          {
+            "elegido": {
+              "termino": "estudiantes"
+            },
+            "preferido": {
+              "termino": "Cultura y educaci\u00F3n/educaci\u00F3n/estudiantes"
+            },
+            "sinonimos": {
+              "termino": [
+                "Educaci\u00F3n y Cultura",
+                "alumnos"
+              ]
+            }
+          },
+          {
+            "elegido": {
+              "termino": "enfermedades"
+            },
+            "preferido": {
+              "termino": "Salud p\u00FAblica/enfermedades"
+            },
+            "sinonimos": null
+          },
+          {
+            "elegido": {
+              "termino": "prevenci\u00F3n de adicciones"
+            },
+            "preferido": {
+              "termino": "Salud p\u00FAblica/adicciones/prevenci\u00F3n de adicciones"
+            },
+            "sinonimos": null
+          }
+        ],
+        "suggest": {
+          "termino": [
+            "estudiantes",
+            "Salud p\u00FAblica",
+            "Educaci\u00F3n y Cultura (Cultura y educaci\u00F3n)",
+            "alumnos (estudiantes)",
+            "Cultura y educaci\u00F3n",
+            "ludopat\u00EDa",
+            "adicciones",
+            "prevenci\u00F3n de adicciones",
+            "juego compulsivo (ludopat\u00EDa)",
+            "enfermedades",
+            "educaci\u00F3n"
+          ]
+        }
+      },
+      "visto": {
+        "texto": "[[p]]Decreto para la Implementaci\u00F3n del Programa Provincial de \u0022ABORDAJE, CONCIENTIZACION Y PREVENCI\u00D3N DE LA LUDOPATIA y CONTROL DE CONSUMO PROBLEMATICO DIGITAL\u0022[[/p]]"
+      },
+      "considerando": {
+        "sancion": "EL SE\u00D1OR GOBERNADOR DE LA PROVINCIA DECRETA",
+        "texto": "[[p]]Que el avance de la tecnolog\u00EDa y el acceso a Internet han facilitado el acceso a sitios de apuestas en l\u00EDnea, lo cual representa un riesgo potencial para la poblaci\u00F3n, especialmente para ni\u00F1os y adolescentes.[[/p]][[p]]La ludopat\u00EDa, o adicci\u00F3n al juego de azar, como uno de los Consumos Problem\u00E1ticos Digitales representan una preocupaci\u00F3n creciente en la sociedad contempor\u00E1nea, particularmente entre los segmentos m\u00E1s j\u00F3venes de la poblaci\u00F3n. Los ni\u00F1os y adolescentes son cada vez m\u00E1s susceptibles a desarrollar este trastorno del juego debido a la accesibilidad y la promoci\u00F3n generalizada de juegos de azar en diversas plataformas y entornos digitales.[[/p]][[p]]Que es responsabilidad del Estado desarrollar pol\u00EDticas de prevenci\u00F3n de conductas adictivas que puedan inducir a conductas nocivas a poblaci\u00F3n vulnerable, como lo son las apuestas en l\u00EDnea de ni\u00F1os, ni\u00F1as y adolescentes. Los que son particularmente susceptibles a la publicidad persuasiva y manipuladora,que puede llevarlos a decisiones poco informadas sobre juegos en l\u00EDnea ya que perciben estas actividades como un ocio normalizado y aceptado, resultando verdaderamente dif\u00EDcil ser consciente de los riesgos.- Es crucial establecer mecanismos de detecci\u00F3n temprana y de intervenci\u00F3n oportuna para identificar y brindar apoyo a los ni\u00F1os en riesgo o afectados por esta problem\u00E1tica.[[/p]][[p]]Que la implementaci\u00F3n de un sistema de filtrado y bloqueo de contenidos en las redes p\u00FAblicas es una medida preventiva destinada a garantizar un entorno seguro y protegido para los usuarios de estas redes, especialmente en plazas con WiFi gratis, escuelas, y organismos p\u00FAblicos.[[/p]][[p]]Que la colaboraci\u00F3n con proveedores de servicios de Internet (ISP) es esencial para asegurar que las medidas de control y bloqueo sean efectivas y se mantengan actualizadas frente a la aparici\u00F3n de nuevas plataformas de apuestas.[[/p]][[p]]Que la implementaci\u00F3n de este programa es coherente con las pol\u00EDticas p\u00FAblicas de la provincia orientadas a la protecci\u00F3n de la comunidad y la promoci\u00F3n de un uso responsable y seguro de las tecnolog\u00EDas digitales.[[/p]][[p]]Que es necesario establecer un marco normativo claro y detallado que respalde las acciones delgobierno provincial en esta materia, garantizando la transparencia y el respeto a los derechos de los ciudadanos.[[/p]][[p]]Por todo ello,[[/p]]"
+      },
+      "articulo": [
+        {
+          "numero-articulo": 1,
+          "texto": "[[p]]ART\u00CDCULO 1\u00B0.- Crease en el \u00E1mbito de la Provincia el programa de ABORDAJE, CONCIENTIZACION Y PREVENCI\u00D3N DE LA LUDOPATIA y CONTROL DE CONSUMO PROBLEMATICO DIGITAL, bajo la \u00F3rbita del Ministerio de Educaci\u00F3n,Ciencia yTecnolog\u00EDa destinado a los alumnos y alumnas de todos los niveles obligatorios de educaci\u00F3n, tanto de gesti\u00F3n p\u00FAblica como privada.[[/p]][[p]]A fin de estructurar su funcionamiento interno y abordar la problem\u00E1tica desde una perspectiva integralse conformara una Unidad de Gesti\u00F3n que ser\u00E1 presidida por la Ministra de Educaci\u00F3n en su car\u00E1cter de autoridad de aplicaci\u00F3n, e integrada por Jefatura de Gabinete, Ministerio de Salud, Ministerio de Justicia y DDHH , Ministerio de Gobierno, Conocimiento, Investigaci\u00F3n, Innovaci\u00F3n y Desarrollo Sociedad del Estado\u0022 (CIID S.E.) y Energ\u00EDa Santiago del Estero Sociedad An\u00F3nima con Participaci\u00F3n Estatal Mayoritaria (ENERSE SAPEM) quienes dictaran un reglamento de funcionamiento interno para la articulaci\u00F3n de las acciones que se establezcan conforme el presente programa.[[/p]]"
+        },
+        {
+          "numero-articulo": 2,
+          "texto": "[[p]]ARTICULO 2\u00B0.- Son objetivos del Programa:[[/p]][[p]]1. Sensibilizar a los estudiantes sobre los riesgos del Consumo Problem\u00E1tico Digital, especialmente la ludopat\u00EDa y la ludopat\u00EDa en l\u00EDnea, implementar actividades de concienciaci\u00F3n destinados a informar a los alumnos y alumnas sobre los peligros asociados al consumo digital y al juego compulsivo y las apuestas en l\u00EDnea, destacando las consecuencias legales, sociales y personales de estas pr\u00E1cticas.[[/p]][[p]]2. Generar campa\u00F1as de concientizaci\u00F3n sobre la Ludopat\u00EDa Digital con el finalidad de Prevenir y Concientizar sobre el consumo problem\u00E1tico que aqueja nuestros ni\u00F1os y j\u00F3venes.[[/p]][[p]]3. Reconocer el rol de los establecimientos educativos como espacios de trabajo fundamentales para abordar el ejercicio de pr\u00E1cticas de riesgo de adicci\u00F3n, entendi\u00E9ndose como espacios donde se crean redes de contenci\u00F3n y que contribuyen a la construcci\u00F3n de v\u00EDnculos entre los alumnos y alumnas, sus familias y/o entornos afectivos y toda la comunidad educativa.[[/p]][[p]]4. Capacitar a docentes y personal educativo para identificar signos de problemas de juego en estudiantes y brindar el apoyo adecuado.[[/p]][[p]]5. Brindar apoyo y acompa\u00F1amiento a las familias y/o entorno afectivo de aquellos alumnos y alumnas que ejerza la ludopat\u00EDa;[[/p]][[p]]6. Generar espacios de di\u00E1logo y acompa\u00F1amiento con los miembros de los equipos de apoyo y pedag\u00F3gicos del establecimiento;[[/p]][[p]]7. Abordar la problem\u00E1tica desde una perspectiva integral y comunitaria.[[/p]][[p]]8. Promover la capacitaci\u00F3n en la utilizaci\u00F3n de las tecnolog\u00EDas de la informaci\u00F3n y la comunicaci\u00F3n, otorgando herramientas para la prevenci\u00F3n y concientizaci\u00F3n sobre su uso responsable y seguro del entorno digital que los rodea.[[/p]][[p]]9. Generar acciones Asistencia y Apoyo tendientes a Resguardar yproteger la salud f\u00EDsica y psicol\u00F3gica de los ni\u00F1os/as y adolecentes;[[/p]][[p]]10. Integrar redes para brindar informaci\u00F3n y apoyo a personas con consumo problem\u00E1tico digital y a sus familias.[[/p]][[p]]11. Colaborar con organizaciones no gubernamentales para ofrecer programas de tratamiento y apoyo para personas afectadas por la ludopat\u00EDa.[[/p]][[p]]12. Promover el trabajo articulado y sostenido con otras \u00E1reas del estado provincial, municipal y con organizaciones deportivas y de la sociedad civil. Sin perjuicio de los objetivos previamente detallados, la Unidad de Gesti\u00F3n estar\u00E1 facultada para establecer las acciones y procedimientos que considere necesarios, con el fin de cumplir con la finalidad del presente programa.[[/p]]"
+        },
+        {
+          "numero-articulo": 3,
+          "texto": "[[p]]ARTICULO 3\u00B0.- La autoridad de aplicaci\u00F3n podr\u00E1 celebrar convenios con colegios profesionales, c\u00E1mara de tecnolog\u00EDa, organismos nacionales, municipales, Organizaciones no gubernamentales, Universidades y instituciones deportivas con el fin de articular campa\u00F1as conjuntas de concientizaci\u00F3n, a s\u00ED como la programaci\u00F3n, ejecuci\u00F3n y evaluaci\u00F3n de las acciones necesarias para el cumplimiento de los objetivos del presente programa.\u0022[[/p]]"
+        },
+        {
+          "numero-articulo": 4,
+          "texto": "[[p]]ARTICULO 4\u00B0.- Promu\u00E9vase el conocimiento de herramientas digitales efectivas de control parental y medios de bloqueo de sitios il\u00EDcitos o indebidos en dispositivos a los que tengan acceso ni\u00F1os/as y adolecentes.-[[/p]]"
+        },
+        {
+          "numero-articulo": 5,
+          "texto": "[[p]]ARTICULO 5\u00B0.- Bloqueo de sitios en redes p\u00FAblicas. Proceder a la implementaci\u00F3n de un sistema integral de bloqueo y control en los servicios p\u00FAblicos de internet proporcionados por el Estado provincial con el objetivo de impedir el acceso a p\u00E1ginas web, plataformas digitales y cualquier otro formato que facilite las apuestas en l\u00EDnea, acceso a pornograf\u00EDa u otros de contenidos ilegales o indebidos en todos los servicios de internet de acceso libre brindados por el Estado.[[/p]]"
+        },
+        {
+          "numero-articulo": 6,
+          "texto": "[[p]]ART\u00CDCULO 6\u00B0 .- El presente decreto se aplicar\u00E1 en todas las redes de Internet que sean administradas o subvencionadas por el gobierno de la provincia de Santiago del Estero, incluyendo pero no limit\u00E1ndose a) Escuelas e Instituciones educativas p\u00FAblicas en todos sus niveles b) Plazas y espacios p\u00FAblicos con WiFi gratuito c) Organismos y oficinas gubernamentales.[[/p]][[p]]D) y todo otro \u00E1mbito del estado provincial conforme lo determine la autoridad de aplicaci\u00F3n.[[/p]]"
+        },
+        {
+          "numero-articulo": 7,
+          "texto": "[[p]]ARTICULO 7\u00B0.- Instr\u00FAyase a los organismos t\u00E9cnicos a fin de arbitrar los medios necesarios, de existir las herramientas adecuadas, para el bloqueo de sitios indebidos y/o adoptar medidas de informaci\u00F3n previo a la entrega de Computadoras, tablets y/o cualquier dispositivo tecnol\u00F3gico que el estado entregue a los alumnos, establecimientos y asociaciones sin fines de lucro .-[[/p]]"
+        },
+        {
+          "numero-articulo": 8,
+          "texto": "[[p]]ART\u00CDCULO 8\u00B0.- Mantenimiento y Actualizaci\u00F3n del Sistema. La autoridad de aplicaci\u00F3n ser\u00E1 responsable de la actualizaci\u00F3n continua del sistema de filtrado, asegurando la inclusi\u00F3n de nuevas plataformas de apuestas que aparezcan en el mercado.[[/p]]"
+        },
+        {
+          "numero-articulo": 9,
+          "texto": "[[p]]ART\u00CDCULO 9\u00B0.- Colaboraci\u00F3n con Proveedores de Servicios de Internet (ISP). La autoridad de aplicaci\u00F3n establecer\u00E1 acuerdos con los proveedores de servicios de Internet (ISP) para cooperar en la implementaci\u00F3n efectiva de las medidas dispuestas en el presente.[[/p]]"
+        },
+        {
+          "numero-articulo": 10,
+          "texto": "[[p]]ART\u00CDCULO 10\u00B0.- Prohibici\u00F3n. Se proh\u00EDbe en todo el territorio de la Provincia la publicidad directa o indirecta, as\u00ED como tambi\u00E9n la promoci\u00F3n por cualquier medio, de actividades o atractivos l\u00FAdicos que incentiven a las apuestas virtuales, empleando herramientas de informaci\u00F3n y comunicaci\u00F3n, orientadas a j\u00F3venes y adolescentes.[[/p]]"
+        },
+        {
+          "referencias-normativas": {
+            "referencia-normativa": {
+              "cr": null,
+              "id": "REFERENCIAS_NORMATIVAS_0",
+              "ref": "LEY C 025326 2000 10 04 0000 000 0000 000"
+            }
+          },
+          "numero-articulo": 11,
+          "texto": "[[p]]ARTICULO 11\u00B0.- Crease en el \u00E1mbito de la autoridad de aplicaci\u00F3n de la Ley 6071, el Registro de Autoexclusi\u00F3n de acuerdo a los principios emanados de la [[r uuid:CT001]]Ley Nacional de Protecci\u00F3n de Datos Personales 25326[[/r uuid:CT001]] y bajo apercibimiento de las sanciones all\u00ED impuestas. El Registro tiene por objeto recoger los datos de las personas que padecen la problem\u00E1tica regulada en la presente ley, y solicitan de manera voluntaria su autoexclusi\u00F3n, posibilitando las funciones de control y procesamiento de los datos mencionados, con la finalidad de restringir el acceso a los juegos de azar. El Registro deber\u00E1 ser efectuado en soporte electr\u00F3nico, adoptando todas las medidas necesarias para asegurar la conservaci\u00F3n e inalterabilidad de los datos.[[/p]]"
+        },
+        {
+          "numero-articulo": 12,
+          "texto": "[[p]]ARTICULO 12\u00B0.- La inclusi\u00F3n en el Registro deber\u00E1 ser realizada por propia petici\u00F3n del interesado y la permanencia en el Registro tendr\u00E1 una duraci\u00F3n de dos a\u00F1os. Transcurrido dicho plazo, podr\u00E1 solicitarse nuevamente la inclusi\u00F3n, en los t\u00E9rminos que establece esta ley.[[/p]]"
+        },
+        {
+          "numero-articulo": 13,
+          "texto": "[[p]]ART\u00CDCULO 13\u00B0. El presente podr\u00E1 ser complementado a trav\u00E9s de las disposiciones que establezca la autoridad de aplicaci\u00F3n para dar cumplimiento a los objetivos dispuestos por el Programa.[[/p]]"
+        },
+        {
+          "numero-articulo": 14,
+          "texto": "[[p]]ART\u00CDCULO 14\u00B0 - Vigencia. El presente decreto entrar\u00E1 en vigor a partir de su publicaci\u00F3n en el Bolet\u00EDn Oficial de la provincia de Santiago del Estero.[[/p]]"
+        },
+        {
+          "numero-articulo": 15,
+          "texto": "[[p]]ART\u00CDCULO 15\u00B0 - Comun\u00EDquese, publ\u00EDquese y arch\u00EDvese.-[[/p]]"
+        }
+      ],
+      "firmantes": {
+        "firmantes": "Dr. Gerardo Zamora Sr. El\u00EDas Miguel Su\u00E1rez Dra. Matilde O\u00B4Mill"
+      },
+      "id-infojus": "G20240001263",
+      "fecha-umod": 20240904141423
+    }
+  }
+}

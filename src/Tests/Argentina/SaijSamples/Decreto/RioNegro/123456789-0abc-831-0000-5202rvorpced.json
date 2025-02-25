@@ -1,0 +1,209 @@
+﻿{
+  "document": {
+    "metadata": {
+      "uuid": "123456789-0abc-831-0000-5202rvorpced",
+      "document-content-type": "legislacion",
+      "timestamp": 1740421458793,
+      "operation": "ADD",
+      "target-document-repository-id": "infojus",
+      "target-index-id": "index",
+      "target-document-indexing-id": "legislacion",
+      "document-recovery-strategy": "abstract-legislacion",
+      "friendly-url": {
+        "subdomain": "decreto",
+        "description": "138-local-rio-negro-declaracion-estado-emergencia-desastre-agropecuario-causa-heladas-tormentas-granizo-departamentos-general-roca-pichi-mahuida-cuy-avellaneda-termino-ano-r20250000138-2025-02-20"
+      }
+    },
+    "content": {
+      "mecanografico": "R20250000138",
+      "estado": "Vigente, de alcance general",
+      "tipo-norma": {
+        "codigo": "DEC",
+        "texto": "Decreto"
+      },
+      "numero-norma": 138,
+      "fecha": "2025-02-20",
+      "jurisdiccion": {
+        "codigo": "R",
+        "descripcion": "Local",
+        "capital": "Viedma",
+        "id-pais": 11
+      },
+      "provincia": "R\u00EDo Negro",
+      "standard-normativo": "DEC R 000138 2025 02 20",
+      "titulo-norma": "Declaraci\u00F3n del estado de Emergencia y/o Desastre Agropecuario por causa de heladas y tormentas de granizo en los Departamentos de General Roca, Pichi Mahuida, El Cuy y Avellaneda por el t\u00E9rmino de un a\u00F1o",
+      "nombre-coloquial": "DECRETO 138/2025",
+      "lugar-emision": "VIEDMA",
+      "publicacion-codificada": {
+        "publicacion-decodificada": {
+          "organismo": "Bolet\u00EDn Oficial",
+          "fecha": "2025 02 24"
+        }
+      },
+      "analista": "Mazza, Gustavo",
+      "responsable": "Mazza, Gustavo",
+      "uid-alta": "ABM",
+      "uid-mod": "ABM",
+      "fecha-alta": "2025-02-24",
+      "fecha-mod": "2025-02-24",
+      "timestamp": "2025-02-24T15:16:46",
+      "timestamp-alta": "2025-02-24T15:16:46",
+      "timestamp-m": "2025-02-24T15:16:46",
+      "generalidades": {
+        "sintesis": "[[p]]Declaraci\u00F3n del estado de Emergencia y/o Desastre Agropecuario por causa de heladas y tormentas de granizo en los Departamentos de General Roca, Pichi Mahuida, El Cuy y Avellaneda por el t\u00E9rmino de un a\u00F1o.[[/p]]",
+        "observaciones-generales": "[[p]]CANTIDAD DE ARTICULOS QUE COMPONEN LA NORMA: 7[[/p]]"
+      },
+      "descriptores": {
+        "descriptor": [
+          {
+            "elegido": {
+              "termino": "emergencia agropecuaria"
+            },
+            "preferido": {
+              "termino": "Actividades econ\u00F3micas/actividad agropecuaria/emergencia agropecuaria"
+            },
+            "sinonimos": {
+              "termino": [
+                "ganader\u00EDa",
+                "agricultura"
+              ]
+            }
+          },
+          {
+            "elegido": {
+              "termino": "heladas"
+            },
+            "preferido": {
+              "termino": "Actividades econ\u00F3micas/actividad agropecuaria/emergencia agropecuaria/heladas"
+            },
+            "sinonimos": {
+              "termino": [
+                "ganader\u00EDa",
+                "agricultura"
+              ]
+            }
+          },
+          {
+            "elegido": {
+              "termino": "actividad agropecuaria"
+            },
+            "preferido": {
+              "termino": "Actividades econ\u00F3micas/actividad agropecuaria"
+            },
+            "sinonimos": {
+              "termino": [
+                "ganader\u00EDa",
+                "agricultura"
+              ]
+            }
+          },
+          {
+            "elegido": {
+              "termino": "exenciones impositivas"
+            },
+            "preferido": {
+              "termino": "Derecho tributario y aduanero/derecho tributario/beneficios tributarios/exenciones impositivas"
+            },
+            "sinonimos": {
+              "termino": [
+                "franquicias tributarias",
+                "exenciones tributarias",
+                "derecho fiscal",
+                "exenci\u00F3n de pago del impuesto",
+                "beneficios impositivos",
+                "derecho p\u00FAblico fiscal",
+                "beneficios arancelarios",
+                "exenciones de tasas"
+              ]
+            }
+          }
+        ],
+        "suggest": {
+          "termino": [
+            "derecho p\u00FAblico fiscal (derecho tributario)",
+            "beneficios tributarios",
+            "exenciones de tasas (exenciones impositivas)",
+            "ganader\u00EDa (actividad agropecuaria)",
+            "beneficios arancelarios (beneficios tributarios)",
+            "Derecho tributario y aduanero",
+            "exenciones impositivas",
+            "exenci\u00F3n de pago del impuesto (exenciones impositivas)",
+            "beneficios impositivos (beneficios tributarios)",
+            "heladas",
+            "emergencia agropecuaria",
+            "actividad agropecuaria",
+            "agricultura (actividad agropecuaria)",
+            "derecho tributario",
+            "exenciones tributarias (exenciones impositivas)",
+            "franquicias tributarias (exenciones impositivas)",
+            "derecho fiscal (derecho tributario)",
+            "Actividades econ\u00F3micas"
+          ]
+        }
+      },
+      "visto": {
+        "texto": "[[p]]el Expediente N\u00B0 22.817-SCAC-2.025, del Registro del Ministerio de Desarrollo Econ\u00F3mico y Productivo de R\u00EDo Negro, y;[[/p]]"
+      },
+      "considerando": {
+        "referencias-normativas": {
+          "referencia-normativa": [
+            {
+              "cr": null,
+              "id": "REFERENCIAS_NORMATIVAS_0",
+              "ref": "LEY R 001857 2007 11 29 0005 000 0000 000"
+            },
+            {
+              "cr": null,
+              "id": "REFERENCIAS_NORMATIVAS_1",
+              "ref": "CON R 000000 1988 06 03 0181 000 0000 000"
+            }
+          ]
+        },
+        "sancion": "El Gobernador de la Provincia de R\u00EDo Negro DECRETA:",
+        "texto": "[[p]]Que el tr\u00E1mite de la declaraci\u00F3n del estado de Emergencia y/o Desastre Agropecuario se solicita en funci\u00F3n de las heladas primaverales tard\u00EDas y tormentas de viento y granizo sucedidas los d\u00EDas 26 de Septiembre y 14, 16 y 19 de Octubre del a\u00F1o 2.024 en diferentes localidades de los Departamentos General Roca, Pichi Mahuida, El Cuy y Avellaneda y que ha provocado da\u00F1os en explotaciones rurales vinculadas a las actividades productivas en el territorio de la provincia de R\u00EDo Negro;[[/p]][[p]]Que dicha situaci\u00F3n ha sido relevada por el servicio t\u00E9cnico espec\u00EDfico del Ministerio de Desarrollo Econ\u00F3mico y Productivo, de las dependencias t\u00E9cnicas de la Secretar\u00EDa de Fruticultura de R\u00EDo Negro;[[/p]][[p]]Que, de acuerdo al informe t\u00E9cnico, las tormentas mencionadas anteriormente, por sus caracter\u00EDsticas y magnitud, afectaron de manera considerable a explotaciones que desarrollan actividades productivas dentro de los departamentos mencionados;[[/p]][[p]]Que en algunos de los casos relevados la producci\u00F3n o capacidad de producci\u00F3n se encontr\u00F3 afectada en por lo menos el 50%;[[/p]][[p]]Que conforme al [[r uuid:CT001]]Art\u00EDculo 5\u00B0, Incisos a) y b) de la Ley Provincial E N\u00B0 1.857[[/r uuid:CT001]], son funciones de la Comisi\u00F3n Provincial de Emergencia y/o Desastre Agropecuario proponer al Poder Ejecutivo Provincial, la declaraci\u00F3n de emergencia de las zonas afectadas por factores de origen clim\u00E1tico, tel\u00FArico, biol\u00F3gico o f\u00EDsico, no previsible o si\u00E9ndolo fueren inevitables por su intensidad, afecten la producci\u00F3n o la capacidad de producci\u00F3n de una regi\u00F3n, dificultando gravemente la evoluci\u00F3n de las actividades agrarias;[[/p]][[p]]Que, la Comisi\u00F3n Provincial de Emergencia Agropecuaria, en reuni\u00F3n del d\u00EDa 13/02/2.025 consider\u00F3 necesario declarar el estado de emergencia y/o desastre agropecuario a los productores afectados en diferentes localidades los Departamentos de General Roca, Pichi Mahuida, El Cuy y Avellaneda;[[/p]][[p]]Que se encuentran configuradas las condiciones para el dictado del presente instrumento normativo, debiendo en consecuencia declarar el estado de Emergencia y/o Desastre Agropecuario por heladas primaverales tard\u00EDas y tormentas de viento y granizo, en lo que refiere a la actividad productiva, en los departamentos afectados;[[/p]][[p]]Que obra autorizaci\u00F3n del Se\u00F1or Ministro para dar curso a lo solicitado por el Secretario de Fruticultura a fojas 2, mediante el acto que se propicia;[[/p]][[p]]Que han tomado debida intervenci\u00F3n los Organismos de Control, Asuntos Jur\u00EDdicos del Ministerio de Desarrollo Econ\u00F3mico y Productivo de R\u00EDo Negro, la Secretar\u00EDa de Legal y T\u00E9cnica y Fiscal\u00EDa de Estado mediante Vista N\u00B0 00553-25 ;[[/p]][[p]]Que el presente Decreto se dicta en uso de las facultades conferidas por el [[r uuid:CT002]]Art\u00EDculo 181\u00BA, Inciso 1) de la Constituci\u00F3n Provincial[[/r uuid:CT002]];[[/p]][[p]]Por ello:[[/p]]"
+      },
+      "articulo": [
+        {
+          "numero-articulo": 1,
+          "texto": "[[p]]Art\u00EDculo 1\u00B0.- Declarar el estado de Emergencia y/o Desastre Agropecuario, seg\u00FAn corresponda en cada caso, por causa de heladas y tormentas de granizo, en lo que refiere a la actividad productiva, a partir del 15 de Febrero de 2.025 y por el t\u00E9rmino de un (1) a\u00F1o, en los Departamentos de General Roca, Pichi Mahuida, El Cuy y Avellaneda.[[/p]]"
+        },
+        {
+          "referencias-normativas": {
+            "referencia-normativa": {
+              "cr": null,
+              "id": "REFERENCIAS_NORMATIVAS_0",
+              "ref": "LEY R 001857 2007 11 29 0010 000 0000 000"
+            }
+          },
+          "numero-articulo": 2,
+          "texto": "[[p]]Art\u00EDculo 2\u00B0.- Eximir, total o parcialmente, en funci\u00F3n del nivel de afectaci\u00F3n, a los productores de las actividades productivas afectadas del pago del impuesto inmobiliario de inmuebles rurales y sub-rurales, y del impuesto a los automotores, conforme [[r uuid:CT001]]Art\u00EDculo 10\u00B0 apartado 2) Inciso b) de la Ley E N\u00B0 1.857[[/r uuid:CT001]][[/p]]"
+        },
+        {
+          "numero-articulo": 3,
+          "texto": "[[p]]Art\u00EDculo 3\u00B0.- Facultar a la Agencia de Recaudaci\u00F3n Tributaria a evaluar la capacidad contributiva de los productores afectados para contemplar las exenciones totales o parciales de los impuestos mencionados en el Art\u00EDculo 2\u00B0.[[/p]]"
+        },
+        {
+          "numero-articulo": 4,
+          "texto": "[[p]]Art\u00EDculo 4\u00B0.- Facultar a las dependencias del Ministerio de Desarrollo Econ\u00F3mico y Productivo a realizar contrataci\u00F3n directa para la adquisici\u00F3n de insumos, bienes y servicios necesarios para mitigar los perjuicios generados por el incendio.[[/p]]"
+        },
+        {
+          "numero-articulo": 5,
+          "texto": "[[p]]Art\u00EDculo 5\u00B0.- Solicitar, una vez declarado el Estado de Emergencia Agropecuaria la adopci\u00F3n de igual decisi\u00F3n en el orden nacional a la Comisi\u00F3n Nacional de Emergencia y Desastre Agropecuario (CNEyDA).[[/p]]"
+        },
+        {
+          "numero-articulo": 6,
+          "texto": "[[p]]Art\u00EDculo 6\u00B0.- El presente Decreto ser\u00E1 refrendado por el Se\u00F1or Ministro de Desarrollo Econ\u00F3mico y Productivo.[[/p]]"
+        },
+        {
+          "numero-articulo": 7,
+          "texto": "[[p]]Art\u00EDculo 7\u00B0.- Registrar comunicar, dar al Bolet\u00EDn Oficial, publicar y archivar.[[/p]]"
+        }
+      ],
+      "firmantes": {
+        "firmantes": "WERETILNECK.- C. Banacloy"
+      },
+      "id-infojus": "R20250000138",
+      "fecha-umod": 20250224152418
+    }
+  }
+}

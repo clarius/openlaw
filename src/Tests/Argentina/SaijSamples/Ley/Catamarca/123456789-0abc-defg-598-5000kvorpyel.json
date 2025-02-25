@@ -1,0 +1,134 @@
+﻿{
+  "document": {
+    "metadata": {
+      "uuid": "123456789-0abc-defg-598-5000kvorpyel",
+      "document-content-type": "legislacion",
+      "timestamp": 1740151284758,
+      "operation": "ADD",
+      "target-document-repository-id": "infojus",
+      "target-index-id": "index",
+      "target-document-indexing-id": "legislacion",
+      "document-recovery-strategy": "abstract-legislacion",
+      "friendly-url": {
+        "subdomain": "ley",
+        "description": "5895-local-catamarca-programa-provincial-para-personas-deterioro-cognitivo-alzheimer-alteraciones-semejantes-lpk0005895-2024-11-28"
+      }
+    },
+    "content": {
+      "mecanografico": "K0005895",
+      "estado": "Vigente, de alcance general",
+      "tipo-norma": {
+        "codigo": "LEY",
+        "texto": "Ley"
+      },
+      "numero-norma": 5895,
+      "fecha": "2024-11-28",
+      "jurisdiccion": {
+        "codigo": "K",
+        "descripcion": "Local",
+        "capital": "San Fernando del Valle de Catamarca",
+        "id-pais": 11
+      },
+      "provincia": "Catamarca",
+      "standard-normativo": "LEY K 005895 2024 11 28",
+      "identificacion-coloquial": {
+        "identificacion-coloquial": [
+          "LEY 5.895",
+          "SAN FERNANDO DEL VALLE DE CATAMARCA, 28 DE NOVIEMBRE DE 2024"
+        ]
+      },
+      "nombre-coloquial": "LEY 5.895",
+      "lugar-sancion": "SAN FERNANDO DEL VALLE DE CATAMARCA",
+      "titulo-norma": "Programa Provincial para Personas con Deterioro Cognitivo, Alzheimer y Alteraciones Semejantes",
+      "publicacion-codificada": {
+        "publicacion-decodificada": {
+          "organismo": "Bolet\u00EDn Oficial",
+          "fecha": "2025 02 21"
+        }
+      },
+      "sancion": "EL SENADO Y LA C\u00C1MARA DE DIPUTADOS DE LA PROVINCIA DE CATAMARCA SANCIONAN CON FUERZA DE LEY",
+      "analista": "Russo, Patricia",
+      "responsable": "Russo, Patricia",
+      "uid-alta": "ABM",
+      "uid-mod": "ABM",
+      "fecha-alta": "2025-02-21",
+      "fecha-mod": "2025-02-21",
+      "timestamp": "2025-02-21T12:14:07",
+      "timestamp-alta": "2025-02-21T12:14:07",
+      "timestamp-m": "2025-02-21T12:14:07",
+      "sumario": {
+        "sumario": "[[p]]ENFERMEDAD DE ALZHEIMER[[/p]]"
+      },
+      "descriptores": {
+        "descriptor": {
+          "elegido": {
+            "termino": "enfermedad de Alzheimer"
+          },
+          "preferido": {
+            "termino": "Salud p\u00FAblica/enfermedades/padecimientos mentales/enfermedad de Alzheimer"
+          },
+          "sinonimos": {
+            "termino": [
+              "trastornos mentales",
+              "demencia senil",
+              "enfermedad mental"
+            ]
+          }
+        },
+        "suggest": {
+          "termino": [
+            "enfermedad de Alzheimer",
+            "Salud p\u00FAblica",
+            "trastornos mentales (padecimientos mentales)",
+            "padecimientos mentales",
+            "enfermedad mental (padecimientos mentales)",
+            "enfermedades",
+            "demencia senil (enfermedad de Alzheimer)"
+          ]
+        }
+      },
+      "generalidades": {
+        "observaciones-generales": "[[p]]CANTIDAD DE ARTICULOS QUE COMPONEN LA NORMA:8[[/p]]"
+      },
+      "articulo": [
+        {
+          "numero-articulo": 1,
+          "texto": "[[p]]ART\u00CDCULO 1\u00B0.- Cr\u00E9ase el Programa Provincial para Personas con Deterioro Cognitivo, Alzheimer y Alteraciones Semejantes, para promover un sistema integral de salud, destinado a la investigaci\u00F3n b\u00E1sica y aplicada, la detecci\u00F3n temprana, la atenci\u00F3n, tratamiento y cuidados adecuados de las personas con estas patolog\u00EDas, as\u00ED como la asistencia y orientaci\u00F3n de los familiares convivientes y cuidadores de dichas personas.[[/p]]"
+        },
+        {
+          "numero-articulo": 2,
+          "texto": "[[p]]ART\u00CDCULO 2\u00B0.- La Autoridad de Aplicaci\u00F3n ser\u00E1 el Ministerio de Salud de la Provincia.[[/p]]"
+        },
+        {
+          "numero-articulo": 3,
+          "texto": "[[p]]ART\u00CDCULO 3\u00B0.- Los objetivos del Programa Provincial para Personas con Deterioro Cognitivo, Alzheimer y Alteraciones semejantes son:[[/p]][[p]]1) Crear y mantener un Plan Provincial Integral de salud para prevenir y atender a las Personas con Deterioro Cognitivo, Alzheimer y Alteraciones Semejantes, as\u00ED como informar, apoyar, capacitar y brindar contenci\u00F3n a las personas cuidadoras en coordinaci\u00F3n con los equipos de salud y organizaciones no gubernamentales que trabajen la tem\u00E1tica;[[/p]][[p]]2) Promover proyectos de investigaci\u00F3n b\u00E1sica y aplicada en los centros de investigaci\u00F3n e instituciones vinculadas;[[/p]][[p]]3) Organizar un protocolo de evaluaci\u00F3n que facilite el diagn\u00F3stico, tratamiento y cuidados de las Personas con Deterioro Cognitivo, Alzheimer y Alteraciones Semejantes;[[/p]][[p]]4) Garantizar los derechos de las Personas con Deterioro Cognitivo, Alzheimer y Alteraciones Semejantes a una vida digna, basada en una atenci\u00F3n y tratamiento que brinde calidad de vida;[[/p]][[p]]5) Fomentar campa\u00F1as de concientizaci\u00F3n y promoci\u00F3n en toda la Provincia para la detecci\u00F3n temprana;[[/p]][[p]]6) Promover la formaci\u00F3n gratuita de recursos humanos profesionales y t\u00E9cnicos para la evaluaci\u00F3n, diagn\u00F3stico, tratamiento y cuidados;[[/p]][[p]]7) Mantener un registro actualizado de los recursos humanos capacitados.[[/p]]"
+        },
+        {
+          "numero-articulo": 4,
+          "texto": "[[p]]ART\u00CDCULO 4\u00B0.- La Autoridad de Aplicaci\u00F3n deber\u00E1:[[/p]][[p]]1) Recopilar y coordinar la informaci\u00F3n de Personas con Deterioro Cognitivo, Alzheimer y Alteraciones Semejantes, manteniendo estad\u00EDsticas confiables y brindando un pron\u00F3stico de salud mental en la poblaci\u00F3n;[[/p]][[p]]2) Fomentar el desarrollo de tratamientos para prevenir, detener o revertir el curso del Deterioro Cognitivo, Alzheimer y Alteraciones Semejantes;[[/p]][[p]]3) Fortalecer el diagn\u00F3stico precoz, la coordinaci\u00F3n de la atenci\u00F3n y el tratamiento de las personas que padezcan esta patolog\u00EDa;[[/p]][[p]]4) Promover y generar convenios interinstitucionales, regionales y con organismos nacionales e internacionales que permitan establecer estrategias de trabajo conjunto, apuntadas a la detecci\u00F3n precoz de Personas con Deterioro Cognitivo, Alzheimer y Alteraciones Semejantes, dado que la detecci\u00F3n precoz de estas patolog\u00EDas requiere de alta tecnolog\u00EDa y formaci\u00F3n de recursos humanos capacitados, lo que genera un alto impacto financiero en los sistemas de salud.[[/p]]"
+        },
+        {
+          "numero-articulo": 5,
+          "texto": "[[p]]ART\u00CDCULO 5\u00B0.- La Autoridad de Aplicaci\u00F3n deber\u00E1, entre todas las funciones que le competen, supervisar la creaci\u00F3n y actualizaci\u00F3n del Programa para Personas con Deterioro Cognitivo, Alzheimer y Alteraciones Semejantes.[[/p]]"
+        },
+        {
+          "numero-articulo": 6,
+          "texto": "[[p]]ART\u00CDCULO 6\u00B0.- Previsiones Presupuestarias. Autorizase al Poder Ejecutivo Provincial a realizar los ajustes presupuestarios necesarios para la ejecuci\u00F3n de la presente ley.[[/p]]"
+        },
+        {
+          "numero-articulo": 7,
+          "texto": "[[p]]ART\u00CDCULO 7\u00B0.- El Poder Ejecutivo Provincial debe reglamentar la presente ley en un plazo de noventa (90) d\u00EDas contados a partir de su promulgaci\u00F3n.[[/p]]"
+        },
+        {
+          "numero-articulo": 8,
+          "texto": "[[p]]ART\u00CDCULO 8\u00B0.- De forma.[[/p]]"
+        }
+      ],
+      "firmantes": {
+        "firmantes": "Lobo-Fedeli-Dre-Cristal"
+      },
+      "id-infojus": "LPK0005895",
+      "fecha-umod": 20250221122124
+    }
+  }
+}

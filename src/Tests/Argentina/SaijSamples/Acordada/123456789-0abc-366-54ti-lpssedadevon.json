@@ -1,0 +1,100 @@
+﻿{
+  "document": {
+    "metadata": {
+      "uuid": "123456789-0abc-366-54ti-lpssedadevon",
+      "document-content-type": "novedad",
+      "timestamp": 1740501653178,
+      "operation": "ADD",
+      "target-document-repository-id": "infojus",
+      "target-index-id": "index",
+      "target-document-indexing-id": "novedad-legislacion",
+      "document-recovery-strategy": "abstract-novedad",
+      "friendly-url": {
+        "subdomain": null,
+        "description": "dispusieron-remision-documentacion-procuradores-al-colegio-abogados-provincial-nv45663-2025-02-14"
+      }
+    },
+    "content": {
+      "seq": 45663,
+      "archivo": 70,
+      "jurisdiccion": "LOCAL",
+      "tipo-norma": {
+        "codigo": "ACO",
+        "texto": "Acordada"
+      },
+      "nro_norma": 0,
+      "provincia": "Santiago del Estero",
+      "org_emisor": "SUPERIOR TRIBUNAL DE JUSTICIA",
+      "descriptores": {
+        "descriptor": {
+          "elegido": {
+            "termino": "\n\t\t\tColegio P\u00FAblico de Abogados\n\t\t"
+          },
+          "preferido": {
+            "termino": "\n\t\t\tDerecho civil/derechos personales/responsabilidad civil/responsabilidades especiales/ejercicio profesional/colegio profesional/Colegio P\u00FAblico de Abogados \n\t\t"
+          },
+          "sinonimos": {
+            "termino": [
+              "\n\t\t\tresponsabilidad por da\u00F1os\n\t\t",
+              "\n\t\t\tprofesional liberal\n\t\t",
+              "\n\t\t\tobligaciones y contratos\n\t\t",
+              "\n\t\t\tprofesional universitario\n\t\t",
+              "\n\t\t\tejercicio de profesiones liberales\n\t\t",
+              "\n\t\t\tprofesiones liberales\n\t\t",
+              "\n\t\t\tactividades profesionales\n\t\t",
+              "\n\t\t\tejercicio de la profesi\u00F3n\n\t\t",
+              "\n\t\t\tDerecho de da\u00F1os\n\t\t",
+              "\n\t\t\tconsejos profesionales\n\t\t",
+              "\n\t\t\tr\u00E9gimen de responsabilidad\n\t\t",
+              "\n\t\t\tcolegio de abogados\n\t\t"
+            ]
+          }
+        },
+        "suggest": {
+          "termino": [
+            "\n\t\tprofesional liberal (ejercicio profesional)\n\t",
+            "\n\t\tDerecho de da\u00F1os (responsabilidad civil)\n\t",
+            "\n\t\tr\u00E9gimen de responsabilidad (responsabilidad civil)\n\t",
+            "\n\t\tcolegio profesional\n\t",
+            "\n\t\tresponsabilidad por da\u00F1os (responsabilidad civil)\n\t",
+            "\n\t\tprofesional universitario (ejercicio profesional)\n\t",
+            "\n\t\tColegio P\u00FAblico de Abogados\n\t",
+            "\n\t\tejercicio de profesiones liberales (ejercicio profesional)\n\t",
+            "\n\t\tcolegio de abogados (Colegio P\u00FAblico de Abogados)\n\t",
+            "\n\t\tconsejos profesionales (colegio profesional)\n\t",
+            "\n\t\tresponsabilidades especiales\n\t",
+            "\n\t\tprofesiones liberales (ejercicio profesional)\n\t",
+            "\n\t\tejercicio de la profesi\u00F3n (ejercicio profesional)\n\t",
+            "\n\t\tejercicio profesional\n\t",
+            "\n\t\tactividades profesionales (ejercicio profesional)\n\t",
+            "\n\t\tobligaciones y contratos (derechos personales)\n\t",
+            "\n\t\tresponsabilidad civil\n\t",
+            "\n\t\tderechos personales\n\t",
+            "\n\t\tDerecho civil\n\t"
+          ]
+        },
+        "invalidos": {
+          "termino": "\n\t\t\t acordadas \u0096 Santiago del estero \u0096 superior tribunal provincial \u0096 procuradores \n\t\t"
+        }
+      },
+      "localidad": "SANTIAGO DEL ESTERO",
+      "sintesis": "En el marco de las reformas introducidas por la Ley Org\u00E1nica de Tribunales No 7394 el Superior Tribunal provincial ordena la remisi\u00F3n de toda la documentaci\u00F3n de los procuradores al Colegio de Abogados provincial.",
+      "fecha": "2025-02-14",
+      "fecha_alta": "2025-02-25",
+      "ppublic_nov": 7,
+      "d_link": {
+        "filename": "ac_sn_santiago_del_estero.pdf",
+        "uuid": "ovedades-acsn-sant-iago-delesteropdf"
+      },
+      "fecha_umod": "25/02/2025",
+      "status": "A",
+      "titulo_noticia": "Dispusieron la remisi\u00F3n de la documentaci\u00F3n de los procuradores al Colegio de Abogados provincial ",
+      "destacada": 0,
+      "fecha_newsletter": "25/02/2025 00:00:00-03",
+      "suplemento_bo": 0,
+      "subtipo": "Acordada",
+      "id-infojus": "NV45663",
+      "fecha-umod": 20250225134053
+    }
+  }
+}

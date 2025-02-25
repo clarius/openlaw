@@ -1,0 +1,51 @@
+﻿{
+  "document": {
+    "metadata": {
+      "uuid": "123456789-0abc-336-54ti-lpssedadevon",
+      "document-content-type": "novedad",
+      "timestamp": 1740397305932,
+      "operation": "ADD",
+      "target-document-repository-id": "infojus",
+      "target-index-id": "index",
+      "target-document-indexing-id": "novedad-legislacion",
+      "document-recovery-strategy": "abstract-novedad",
+      "friendly-url": {
+        "subdomain": null,
+        "description": "ingresos-brutos-fechas-termino-para-presentaciones-pago-ingresos-brutos-fechas-termino-para-presentaciones-pago-nv45633-2025-02-20"
+      }
+    },
+    "content": {
+      "seq": 45633,
+      "archivo": 31,
+      "jurisdiccion": "NACIONAL",
+      "tipo-norma": {
+        "codigo": "DIS",
+        "texto": "Disposici\u00F3n"
+      },
+      "nro_norma": 5,
+      "numero_norma": 5,
+      "org_emisor": "Comisi\u00F3n Arbitral de Convenio Multilateral del 18.8.77",
+      "sigla_emisor": "COMARB",
+      "titulo_1": "Ingresos Brutos fechas a t\u00E9rmino para las presentaciones y el pago",
+      "sintesis": "Tienen por realizadas en t\u00E9rmino las presentaciones de las declaraciones juradas y pagos del primer anticipo, mes de enero/2025, cuyos vencimientos operan los d\u00EDas 19 (d\u00EDgito verificador de CUIT 6 y 7) y 20 (d\u00EDgito verificador de CUIT 8 y 9) de febrero del corriente, correspondiente al Impuesto sobre los Ingresos Brutos-Convenio Multilateral (SIFERE), hasta el d\u00EDa 21 de febrero.",
+      "fecha": "2025-02-20",
+      "fecha_bo": "2025-02-21",
+      "fecha_alta": "2025-02-21",
+      "ppublic_nov": 7,
+      "d_link": {
+        "filename": "disposicion_5.pdf",
+        "uuid": "oprstuvw-nove-dade-sdis-posicion5pdf"
+      },
+      "fecha_umod": "24/02/2025",
+      "status": "A",
+      "titulo_noticia": "Ingresos Brutos fechas a t\u00E9rmino para las presentaciones y el pago",
+      "destacada": 0,
+      "fecha_newsletter": "21/02/2025 00:00:00-03",
+      "url_portal": "https://servicios.infoleg.gob.ar/infolegInternet/verNorma.do;jsessionid=2509FA2C51F547140EAB306CEBB6D999?id=409935",
+      "suplemento_bo": 0,
+      "subtipo": "Disposici\u00F3n",
+      "id-infojus": "NV45633",
+      "fecha-umod": 20250224084145
+    }
+  }
+}

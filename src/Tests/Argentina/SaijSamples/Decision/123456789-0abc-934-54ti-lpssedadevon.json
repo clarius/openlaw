@@ -1,0 +1,48 @@
+﻿{
+  "document": {
+    "metadata": {
+      "uuid": "123456789-0abc-934-54ti-lpssedadevon",
+      "document-content-type": "novedad",
+      "timestamp": 1738764338009,
+      "operation": "ADD",
+      "target-document-repository-id": "infojus",
+      "target-index-id": "index",
+      "target-document-indexing-id": "novedad-legislacion",
+      "document-recovery-strategy": "abstract-novedad",
+      "friendly-url": {
+        "subdomain": null,
+        "description": "prorrogaron-ano-intervencion-portal-educativo-ministerio-educacion-prorrogaron-ano-intervencion-portal-educativo-ministerio-educacion-nv45439-2025-01-31"
+      }
+    },
+    "content": {
+      "seq": 45439,
+      "archivo": 32,
+      "jurisdiccion": "LOCAL",
+      "tipo-norma": {
+        "codigo": "DAN",
+        "texto": "Decisi\u00F3n Administrativa"
+      },
+      "nro_norma": 4,
+      "numero_norma": 4,
+      "org_emisor": "Jefatura de Gabinete de Ministros",
+      "titulo_1": "Prorrogaron por un a\u00F1o la intervenci\u00F3n del Portal Educativo del Ministerio de Educaci\u00F3n",
+      "sintesis": "La intervenci\u00F3n a EDUC.AR SOCIEDAD AN\u00D3NIMA UNIPERSONAL, continuadora de EDUC.AR SOCIEDAD DEL ESTADO, bajo la responsabilidad de la Jefatura de Gabinete de Ministros se prorroga por un a\u00F1o. ",
+      "fecha": "2025-01-31",
+      "fecha_bo": "2025-02-04",
+      "fecha_alta": "2025-02-04",
+      "ppublic_nov": 7,
+      "fecha_umod": "04/02/2025",
+      "status": "A",
+      "titulo_noticia": "Prorrogaron por un a\u00F1o la intervenci\u00F3n del Portal Educativo del Ministerio de Educaci\u00F3n",
+      "destacada": 0,
+      "nro_orden": 99.000000,
+      "fecha_destacada": "04/02/2025 13:54:09.688103-03",
+      "fecha_newsletter": "04/02/2025 00:00:00-03",
+      "url_portal": "https://servicios.infoleg.gob.ar/infolegInternet/verNorma.do?id=409088",
+      "suplemento_bo": 0,
+      "subtipo": "Decisi\u00F3n Administrativa",
+      "id-infojus": "NV45439",
+      "fecha-umod": 20250205110538
+    }
+  }
+}

@@ -1,0 +1,141 @@
+﻿{
+  "document": {
+    "metadata": {
+      "uuid": "123456789-0abc-defg-934-6000yvorpyel",
+      "document-content-type": "legislacion",
+      "timestamp": 1739277746688,
+      "operation": "ADD",
+      "target-document-repository-id": "infojus",
+      "target-index-id": "index",
+      "target-document-indexing-id": "legislacion",
+      "document-recovery-strategy": "abstract-legislacion",
+      "friendly-url": {
+        "subdomain": "ley",
+        "description": "6439-local-jujuy-declara-afectacion-inmuebles-publicos-para-construccion-establecimiento-salud-lpy0006439-2024-12-11"
+      }
+    },
+    "content": {
+      "mecanografico": "Y0006439",
+      "estado": "Vigente, de alcance general",
+      "tipo-norma": {
+        "codigo": "LEY",
+        "texto": "Ley"
+      },
+      "numero-norma": 6439,
+      "fecha": "2024-12-11",
+      "jurisdiccion": {
+        "codigo": "Y",
+        "descripcion": "Local",
+        "capital": "San Salvador de Jujuy",
+        "id-pais": 11
+      },
+      "provincia": "Jujuy",
+      "standard-normativo": "LEY Y 006439 2024 12 11",
+      "identificacion-coloquial": {
+        "identificacion-coloquial": [
+          "LEY 6.439",
+          "SAN SALVADOR DE JUJUY, 11 DE DICIEMBRE DE 2024"
+        ]
+      },
+      "nombre-coloquial": "LEY 6.439",
+      "lugar-sancion": "SAN SALVADOR DE JUJUY",
+      "titulo-norma": "Declara la afectaci\u00F3n de inmuebles p\u00FAblicos para la construcci\u00F3n de un establecimiento de salud",
+      "publicacion-codificada": {
+        "publicacion-decodificada": {
+          "organismo": "Bolet\u00EDn Oficial",
+          "fecha": "2025 01 06"
+        }
+      },
+      "analista": "Signorelli, Angela",
+      "responsable": "Signorelli, Angela",
+      "uid-alta": "ABM",
+      "uid-mod": "ABM",
+      "fecha-alta": "2025-02-11",
+      "fecha-mod": "2025-02-11",
+      "timestamp": "2025-02-11T09:32:48",
+      "timestamp-alta": "2025-02-11T09:32:48",
+      "timestamp-m": "2025-02-11T09:32:48",
+      "sumario": {
+        "sumario": "[[p]]Declara la afectaci\u00F3n de inmuebles p\u00FAblicos para la construcci\u00F3n de un establecimiento de salud[[/p]]"
+      },
+      "descriptores": {
+        "descriptor": [
+          {
+            "elegido": {
+              "termino": "inmuebles"
+            },
+            "preferido": {
+              "termino": "Derecho civil/bienes/bienes inmuebles"
+            },
+            "sinonimos": {
+              "termino": [
+                "inmuebles",
+                "cosas inmuebles"
+              ]
+            }
+          },
+          {
+            "elegido": {
+              "termino": "desafectaci\u00F3n del inmueble (administrativo)"
+            },
+            "preferido": {
+              "termino": "Derecho administrativo/dominio del Estado/expropiaci\u00F3n/proceso expropiatorio/desafectaci\u00F3n del inmueble (administrativo)"
+            },
+            "sinonimos": {
+              "termino": "procedimiento expropiatorio"
+            }
+          }
+        ],
+        "suggest": {
+          "termino": [
+            "expropiaci\u00F3n",
+            "desafectaci\u00F3n del inmueble (administrativo)",
+            "proceso expropiatorio",
+            "bienes inmuebles",
+            "procedimiento expropiatorio (proceso expropiatorio)",
+            "cosas inmuebles (bienes inmuebles)",
+            "bienes",
+            "dominio del Estado",
+            "inmuebles (bienes inmuebles)",
+            "Derecho civil",
+            "Derecho administrativo"
+          ]
+        }
+      },
+      "generalidades": {
+        "observaciones-generales": "[[p]]CANTIDAD DE ARTICULOS QUE COMPONEN LA NORMA: 06[[/p]]"
+      },
+      "articulo": [
+        {
+          "numero-articulo": 1,
+          "texto": "[[p]]ART\u00CDCULO 1.- Decl\u00E1rase la afectaci\u00F3n de los inmuebles individualizados catastralmente como Matr\u00EDcula A-62505, Departamento Dr. Manuel Belgrano, B\u00BA Alto Comedero, Padr\u00F3n A-86085, propiedad del instituto de Vivienda y Urbanismo de Jujuy; Matr\u00EDcula A-53010, Departamento Dr. Manuel Belgrano, B\u00BA Alto Comedero, Padr\u00F3n A-77903, propiedad del Estado Provincial y Matr\u00EDcula A-6749, Departamento Dr. Manuel Belgrano, Padr\u00F3n A-57944, propiedad del Instituto de Vivienda y Urbanismo de Jujuy, para la construcci\u00F3n de un Establecimiento de Salud.[[/p]]"
+        },
+        {
+          "numero-articulo": 2,
+          "texto": "[[p]]ART\u00CDCULO 2.- La afectaci\u00F3n determinada en el Art\u00EDculo 1, tiene como objeto la puesta en funcionamiento de un establecimiento de salud, imponi\u00E9ndose como cargo y condici\u00F3n, para el mantenimiento de la afectaci\u00F3n declarada, la construcci\u00F3n de la edificaci\u00F3n que sea necesaria para cumplir con los objetivos de esta norma, dentro de un plazo no superior a tres (3) a\u00F1os de la fecha de promulgaci\u00F3n de la presente Ley.[[/p]]"
+        },
+        {
+          "numero-articulo": 3,
+          "texto": "[[p]]ART\u00CDCULO 3.- La inejecuci\u00F3n de la obligaci\u00F3n condicional impuesta en el Art\u00EDculo 2, sea cual fuera la causa de la falta de su cumplimiento, retrotrae la afectaci\u00F3n declarada.[[/p]]"
+        },
+        {
+          "numero-articulo": 4,
+          "texto": "[[p]]ART\u00CDCULO 4.- Derog\u00E1se toda afectaci\u00F3n o destino impuesto con anterioridad a esta norma, a los inmuebles individualizados en el Art\u00EDculo 1.[[/p]]"
+        },
+        {
+          "numero-articulo": 5,
+          "texto": "[[p]]ART\u00CDCULO 5.- Todas aquellas disposiciones complementarias que sea menester instrumentar para poner en ejecuci\u00F3n la presente Ley, ser\u00E1n reglamentadas y aplicadas por el Poder Ejecutivo Provincial.[[/p]]"
+        },
+        {
+          "numero-articulo": 6,
+          "texto": "[[p]]ART\u00CDCULO 6.- Comun\u00EDquese al Poder Ejecutivo Provincial.-[[/p]]"
+        }
+      ],
+      "firmantes": {
+        "firmantes": "Mart\u00EDn Luque Secretario Parlamentario Legislatura de Jujuy  Dip. Adolfo Fabi\u00E1n Tejerina Vicepresidente 1\u00B0 a/c Presidencia Legislatura de Jujuy"
+      },
+      "id-infojus": "LPY0006439",
+      "fecha-umod": 20250211094226
+    }
+  }
+}

@@ -1,0 +1,298 @@
+﻿{
+  "document": {
+    "metadata": {
+      "uuid": "123456789-0abc-281-0000-5202bvorpced",
+      "document-content-type": "legislacion",
+      "timestamp": 1740056201262,
+      "operation": "ADD",
+      "target-document-repository-id": "infojus",
+      "target-index-id": "index",
+      "target-document-indexing-id": "legislacion",
+      "document-recovery-strategy": "abstract-legislacion",
+      "friendly-url": {
+        "subdomain": "decreto",
+        "description": "182-local-buenos-aires-acta-acuerdo-mesa-tecnica-sectorial-organismo-provincial-ninez-adolescencia-propuesta-reglamento-personal-organismo-provincial-ninez-adolescencia-b20250000182-2025-02-16"
+      }
+    },
+    "content": {
+      "mecanografico": "B20250000182",
+      "estado": "Vigente, de alcance general",
+      "tipo-norma": {
+        "codigo": "DEC",
+        "texto": "Decreto"
+      },
+      "numero-norma": 182,
+      "fecha": "2025-02-16",
+      "jurisdiccion": {
+        "codigo": "B",
+        "descripcion": "Local",
+        "capital": "La Plata",
+        "id-pais": 11
+      },
+      "provincia": "Buenos Aires",
+      "standard-normativo": "DEC B 000182 2025 02 16",
+      "titulo-norma": "Acta Acuerdo Mesa T\u00E9cnica Sectorial Organismo Provincial de la Ni\u00F1ez y Adolescencia y la Propuesta de Reglamento de Personal del Organismo Provincial de la Ni\u00F1ez y Adolescencia",
+      "nombre-coloquial": "DECRETO 182/2025",
+      "lugar-emision": "LA PLATA",
+      "publicacion-codificada": {
+        "publicacion-decodificada": {
+          "organismo": "Bolet\u00EDn Oficial",
+          "fecha": "2025 02 20"
+        }
+      },
+      "analista": "Quirino, Maria Rosa",
+      "responsable": "Quirino, Maria Rosa",
+      "uid-alta": "ABM",
+      "uid-mod": "ABM",
+      "fecha-alta": "2025-02-20",
+      "fecha-mod": "2025-02-20",
+      "timestamp": "2025-02-20T09:36:11",
+      "timestamp-alta": "2025-02-20T09:36:11",
+      "timestamp-m": "2025-02-20T09:36:11",
+      "generalidades": {
+        "sintesis": "[[p]]Se aprueba el Acta Acuerdo Mesa T\u00E9cnica Sectorial Organismo Provincial de la Ni\u00F1ez y Adolescencia y la Propuesta de Reglamento de Personal del Organismo Provincial de la Ni\u00F1ez y Adolescencia[[/p]]",
+        "anexos-decreto": {
+          "anexo-ley": "A ANEXO"
+        },
+        "observaciones-generales": "[[p]]CANTIDAD DE ARTICULOS QUE COMPONEN LA NORMA: 14[[/p]]"
+      },
+      "descriptores": {
+        "descriptor": [
+          {
+            "elegido": {
+              "termino": "acta acuerdo"
+            },
+            "preferido": {
+              "termino": "Derecho laboral/derecho colectivo del trabajo/negociaci\u00F3n colectiva/acta acuerdo"
+            },
+            "sinonimos": {
+              "termino": "derecho del trabajo"
+            }
+          },
+          {
+            "elegido": {
+              "termino": "protecci\u00F3n de la ni\u00F1ez y la adolescencia"
+            },
+            "preferido": {
+              "termino": "Derechos humanos/derechos de las ni\u00F1as, ni\u00F1os y adolescentes"
+            },
+            "sinonimos": {
+              "termino": [
+                "derechos del ni\u00F1o y del adolescente",
+                "derechos de las ni\u00F1as",
+                "derechos fundamentales",
+                "derechos de los ni\u00F1os y j\u00F3venes",
+                "derecho de menores",
+                "protecci\u00F3n integral del ni\u00F1o",
+                "derechos humanos del menor",
+                "protecci\u00F3n integral de derechos de ni\u00F1os, ni\u00F1as y adolescentes",
+                "protecci\u00F3n del ni\u00F1o",
+                "derechos del ni\u00F1o",
+                "protecci\u00F3n de la ni\u00F1ez y la adolescencia"
+              ]
+            }
+          },
+          {
+            "elegido": {
+              "termino": "perspectiva de ni\u00F1ez y adolescencia"
+            },
+            "preferido": {
+              "termino": "Derechos humanos/derechos de las ni\u00F1as, ni\u00F1os y adolescentes/inter\u00E9s superior del ni\u00F1o/perspectiva de infancia"
+            },
+            "sinonimos": {
+              "termino": [
+                "mayor inter\u00E9s del menor",
+                "derechos de las ni\u00F1as",
+                "derechos del ni\u00F1o y del adolescente",
+                "derechos de los ni\u00F1os y j\u00F3venes",
+                "derecho de menores",
+                "derechos humanos del menor",
+                "protecci\u00F3n del ni\u00F1o",
+                "protecci\u00F3n integral de derechos de ni\u00F1os, ni\u00F1as y adolescentes",
+                "derechos fundamentales",
+                "inter\u00E9s del menor",
+                "protecci\u00F3n integral del ni\u00F1o",
+                "derechos del ni\u00F1o",
+                "perspectiva de ni\u00F1ez y adolescencia",
+                "perspectiva de ni\u00F1ez",
+                "protecci\u00F3n de la ni\u00F1ez y la adolescencia"
+              ]
+            }
+          }
+        ],
+        "suggest": {
+          "termino": [
+            "perspectiva de ni\u00F1ez y adolescencia (perspectiva de infancia)",
+            "derechos de las ni\u00F1as, ni\u00F1os y adolescentes",
+            "protecci\u00F3n integral del ni\u00F1o (derechos de las ni\u00F1as, ni\u00F1os y adolescentes)",
+            "inter\u00E9s del menor (inter\u00E9s superior del ni\u00F1o)",
+            "protecci\u00F3n de la ni\u00F1ez y la adolescencia (derechos de las ni\u00F1as, ni\u00F1os y adolescentes)",
+            "derechos del ni\u00F1o y del adolescente (derechos de las ni\u00F1as, ni\u00F1os y adolescentes)",
+            "Derechos humanos",
+            "derecho colectivo del trabajo",
+            "mayor inter\u00E9s del menor (inter\u00E9s superior del ni\u00F1o)",
+            "derechos de los ni\u00F1os y j\u00F3venes (derechos de las ni\u00F1as, ni\u00F1os y adolescentes)",
+            "derechos humanos del menor (derechos de las ni\u00F1as, ni\u00F1os y adolescentes)",
+            "derecho de menores (derechos de las ni\u00F1as, ni\u00F1os y adolescentes)",
+            "derecho del trabajo (Derecho laboral)",
+            "derechos fundamentales (Derechos humanos)",
+            "derechos de las ni\u00F1as (derechos de las ni\u00F1as, ni\u00F1os y adolescentes)",
+            "acta acuerdo",
+            "perspectiva de ni\u00F1ez (perspectiva de infancia)",
+            "inter\u00E9s superior del ni\u00F1o",
+            "derechos del ni\u00F1o (derechos de las ni\u00F1as, ni\u00F1os y adolescentes)",
+            "protecci\u00F3n integral de derechos de ni\u00F1os, ni\u00F1as y adolescentes (derechos de las ni\u00F1as, ni\u00F1os y adolescentes)",
+            "protecci\u00F3n del ni\u00F1o (derechos de las ni\u00F1as, ni\u00F1os y adolescentes)",
+            "Derecho laboral",
+            "perspectiva de infancia",
+            "negociaci\u00F3n colectiva"
+          ]
+        }
+      },
+      "visto": {
+        "referencias-normativas": {
+          "referencia-normativa": {
+            "cr": null,
+            "id": "REFERENCIAS_NORMATIVAS_0",
+            "ref": "TOR B 010430 1996 06 14 0000 000 0000 000"
+          }
+        },
+        "texto": "[[p]]el expediente EX-2024-41486599-GDEBA-DSTASGG de Secretar\u00EDa General, mediante el cual se propicia aprobar el Acta Acuerdo \u0022Mesa T\u00E9cnica Sectorial Organismo Provincial de la Ni\u00F1ez y Adolescencia\u0022 y la \u0022Propuesta de Reglamento de Personal del Organismo Provincial de la Ni\u00F1ez y Adolescencia - OPNYA\u0022, las [[r uuid:CT000]]Leyes N\u00BA 10.430 (T.O. por Decreto N\u00B0 1869/96[[/r uuid:CT000]]) y modificatorias, N\u00BA 13.453, y N\u00BA 15.477, y[[/p]]"
+      },
+      "considerando": {
+        "referencias-normativas": {
+          "referencia-normativa": [
+            {
+              "cr": null,
+              "id": "REFERENCIAS_NORMATIVAS_0",
+              "ref": "CON B 000000 1994 09 13 0000 000 0000 000"
+            },
+            {
+              "cr": null,
+              "id": "REFERENCIAS_NORMATIVAS_1",
+              "ref": "LEY B 015477 2023 12 20 0000 000 0000 000"
+            },
+            {
+              "cr": null,
+              "id": "REFERENCIAS_NORMATIVAS_2",
+              "ref": "TOR B 010430 1996 06 14 0000 000 0000 000"
+            },
+            {
+              "cr": null,
+              "id": "REFERENCIAS_NORMATIVAS_3",
+              "ref": "LEY B 013453 2006 04 05 0000 000 0000 000"
+            },
+            {
+              "cr": null,
+              "id": "REFERENCIAS_NORMATIVAS_4",
+              "ref": "CON B 000000 1994 09 13 0144 000 0000 000"
+            }
+          ]
+        },
+        "sancion": "EL GOBERNADOR DE LA PROVINCIA DE BUENOS AIRES DECRETA:",
+        "texto": "[[p]]Que la [[r uuid:CT000]]Constituci\u00F3n de la Provincia de Buenos Aires[[/r uuid:CT000]] dispone que la carrera administrativa se organiza sobre las bases de acceso por idoneidad, escalaf\u00F3n, estabilidad, uniformidad de sueldos en cada categor\u00EDa e incompatibilidades;[[/p]][[p]]Que la [[r uuid:CT001]]Ley N\u00B0 15.477[[/r uuid:CT001]], en el art\u00EDculo 35, atribuye a la Secretar\u00EDa General, entre otras, la funci\u00F3n de entender en las cuestiones del empleo p\u00FAblico provincial, su organizaci\u00F3n y capacitaci\u00F3n;[[/p]][[p]]Que conforme lo dispuesto en la [[r uuid:CT002]]Ley N\u00B0 10.430 (T.O. por Decreto N\u00B0 1869/96)[[/r uuid:CT002]] y sus modificatorias, en el art\u00EDculo 123, inciso 1), apartado a), compete al Organismo Central de Administraci\u00F3n de Personal, como \u00F3rgano asesor del gobernador, proponer los medios e instrumentos para el ejercicio de las facultades del titular del Poder Ejecutivo en materia de administraci\u00F3n de personal;[[/p]][[p]]Que, en diversas reuniones celebradas en la Mesa T\u00E9cnica Sectorial espec\u00EDfica del Organismo Provincial de la Ni\u00F1ez y Adolescencia, cuya apertura se propici\u00F3 en el marco de las negociaciones colectivas reguladas por la Ley N\u00B0 13.453, se expres\u00F3 la necesidad de abordar una serie de cuestiones que hacen al funcionamiento del Organismo y a las condiciones laborales en las que el personal desempe\u00F1a sus servicios;[[/p]][[p]]Que, en ese marco, se acord\u00F3 la formulaci\u00F3n de un Reglamento para el personal del Organismo, que contemple las distintas particularidades que fueran planteadas en dicha mesa y brinde mayor ordenamiento en el funcionamiento del mismo;[[/p]][[p]]Que, a tales fines, el Organismo Provincial de la Ni\u00F1ez y Adolescencia present\u00F3 un proyecto, con la vocaci\u00F3n de abordar integralmente aspectos que hacen tanto a las condiciones laborales de los trabajadores/as en el marco de las negociaciones colectivas establecidas en la Ley N\u00B0 13.453, como a cuestiones de competencias propias del Poder Ejecutivo Provincial en su car\u00E1cter de empleador;[[/p]][[p]]Que en virtud de lo expuesto y en el marco de la Mesa T\u00E9cnica aludida, las partes constituidas por representantes del Estado empleador y por las organizaciones gremiales que nuclean a trabajadores/as del Organismo, aprobaron los t\u00E9rminos de la \u0022Propuesta de Reglamento de Personal del Organismo Provincial de la Ni\u00F1ez y Adolescencia - OPNYA\u0022 , conforme surge del Acta \u0022Mesa Sectorial OPNyA\u0022 celebrada el d\u00EDa 7 de octubre de 2024 y las notas aprobatorias de las asociaciones gremiales participantes;[[/p]][[p]]Que el Reglamento ser\u00E1 de aplicaci\u00F3n al personal del Organismo Provincial de la Ni\u00F1ez y Adolescencia, en cuanto al marco general del trabajo y las tareas, el ingreso, la carrera, la capacitaci\u00F3n, la asignaci\u00F3n de responsabilidades espec\u00EDficas, la organizaci\u00F3n de la jornada de trabajo y el r\u00E9gimen disciplinario, en el marco de las previsiones de la Ley N\u00B0 10.430 y modificatorias, Texto Ordenado Decreto N\u00BA 1869/96 y su Decreto Reglamentario N\u00BA 4161/96;[[/p]][[p]]Que la aprobaci\u00F3n de este Reglamento forma parte del c\u00FAmulo de acciones que lleva adelante el Gobierno Provincial, con el objeto de fortalecer el funcionamiento y organizaci\u00F3n del Organismo Provincial de la Ni\u00F1ez y Adolescencia, ratificando a su vez el esfuerzo para mejorar las condiciones laborales de sus trabajadoras y trabajadores;[[/p]][[p]]Que, en virtud de lo expuesto, se estima oportuno y conveniente aprobar el citado Reglamento;[[/p]][[p]]Que han tomado intervenci\u00F3n y se han expedido favorablemente la Direcci\u00F3n Provincial de Personal, la Direcci\u00F3n Provincial de Planificaci\u00F3n y Gesti\u00F3n Estrat\u00E9gica, la Subsecretar\u00EDa de Gesti\u00F3n y Empleo P\u00FAblico y la Direcci\u00F3n de Analisis de Estructuras, Reglamentaciones y Gesti\u00F3n Administrativa, todas ellas pertenecientes a la Secretar\u00EDa General, como asimismo, la Direcci\u00F3n Provincial de la Negociaci\u00F3n Colectiva del Ministerio de Trabajo, y la Direcci\u00F3n Provincial de Econom\u00EDa Laboral del Sector P\u00FAblico, la Direcci\u00F3n Provincial de Presupuesto P\u00FAblico y la Subsecretar\u00EDa de Hacienda, dependientes del Ministerio de Econom\u00EDa;[[/p]][[p]]Que, asimismo, han tomado intervenci\u00F3n en raz\u00F3n de sus competencias Asesor\u00EDa General de Gobierno, Contadur\u00EDa General de la Provincia y Fiscal\u00EDa de Estado;[[/p]][[p]]Que la presente medida se dicta en uso de las atribuciones conferidas por el [[r uuid:CT004]]art\u00EDculo 144 - proemio e inciso 2- de la Constituci\u00F3n de la Provincia de Buenos Aires[[/r uuid:CT004]] y la [[r uuid:CT003]]Ley N\u00BA 13.453[[/r uuid:CT003]]; Por ello,[[/p]]"
+      },
+      "articulo": [
+        {
+          "numero-articulo": 1,
+          "texto": "[[p]]ART\u00CDCULO 1\u00B0. Aprobar el Acta Acuerdo \u0022Mesa T\u00E9cnica Sectorial Organismo Provincial de la Ni\u00F1ez y Adolescencia\u0022 del d\u00EDa 7 de octubre de 2024 identificada como IF-2024-37086562-GDEBA-DPNCMTGP.[[/p]]"
+        },
+        {
+          "numero-articulo": 2,
+          "texto": "[[p]]ART\u00CDCULO 2\u00B0. Aprobar la \u0022Propuesta de Reglamento de Personal del Organismo Provincial de la Ni\u00F1ez y AdolescenciaOPNYA\u0022 que como Anexo \u00DAnico (IF-2025-01177515-GDEBA-SSGYEPSGG) forma parte integrante del presente.[[/p]]"
+        },
+        {
+          "numero-articulo": 3,
+          "texto": "[[p]]ART\u00CDCULO 3\u00B0. Establecer que el Reglamento aprobado conforme lo estipulado en el art\u00EDculo 2\u00BA del presente, entrar\u00E1 en vigencia el primer d\u00EDa h\u00E1bil del mes siguiente al de su publicaci\u00F3n, con las reservas formuladas en los art\u00EDculos siguientes.[[/p]]"
+        },
+        {
+          "numero-articulo": 4,
+          "texto": "[[p]]ART\u00CDCULO 4\u00B0. Facultar a la Direcci\u00F3n Ejecutiva del Organismo Provincial de la Ni\u00F1ez y Adolescencia a establecer y aprobar el plan de transici\u00F3n del r\u00E9gimen horario de los dispositivos de alojamiento de ni\u00F1os, ni\u00F1as, adolescentes y/o j\u00F3venes, para la implementaci\u00F3n de las previsiones del art\u00EDculo 35, punto 1, de la \u0022Propuesta de Reglamento de Personal del Organismo Provincial de la Ni\u00F1ez y Adolescencia- OPNYA\u0022.[[/p]]"
+        },
+        {
+          "numero-articulo": 5,
+          "texto": "[[p]]ART\u00CDCULO 5\u00B0. Establecer que el plan de transici\u00F3n referido en el art\u00EDculo precedente, comenzar\u00E1 a regir partir del 1\u00B0 de julio de 2025, y su finalizaci\u00F3n deber\u00E1 ocurrir en un plazo de doce (12) meses desde la fecha mencionada. No obstante, el organismo podr\u00E1, con anterioridad al 1\u00B0 de julio de 2025, implementar la nueva jornada en aquellos dispositivos nuevos o que reabran, as\u00ED como llevar adelante caso/s testigo/s que permitan evaluar y ajustar la aplicaci\u00F3n del nuevo r\u00E9gimen horario.[[/p]]"
+        },
+        {
+          "numero-articulo": 6,
+          "texto": "[[p]]ART\u00CDCULO 6\u00B0. Establecer que a partir de la entrada en vigencia de la \u0022Propuesta de Reglamento de Personal del Organismo Provincial de la Ni\u00F1ez y Adolescencia- OPNYA\u0022, la Direcci\u00F3n Ejecutiva del Organismo Provincia de la Ni\u00F1ez y Adolescencia podr\u00E1 asignar las bonificaciones por asignaci\u00F3n de las Responsabilidades Espec\u00EDficas previstas en los art\u00EDculos 31 a 34 del Reglamento, las que deber\u00E1n otorgarse con fecha cierta, mediante acto administrativo del/de la titular del organismo y con la intervenci\u00F3n de las \u00E1reas competentes en materia de empleo p\u00FAblico y presupuesto de la Secretaria General y del Ministerio de Econom\u00EDa, respectivamente.[[/p]]"
+        },
+        {
+          "numero-articulo": 7,
+          "texto": "[[p]]ART\u00CDCULO 7\u00B0. Establecer que el Registro de Personal Suplente, previsto en el art\u00EDculo 18 de la \u0022Propuesta de Reglamento de Personal del Organismo Provincial de la Ni\u00F1ez y Adolescencia- OPNYA\u0022, se constituir\u00E1 una vez finalizada la primera cohorte del curso de ingreso posterior a la aprobaci\u00F3n del presente. La implementaci\u00F3n del Registro est\u00E1 sujeta a la reglamentaci\u00F3n que dicte el Organismo previa intervenci\u00F3n de las \u00E1reas con competencia de empleo p\u00FAblico y presupuesto de la Secretar\u00EDa General y del Ministerio de Econom\u00EDa, respectivamente.[[/p]]"
+        },
+        {
+          "referencias-normativas": {
+            "referencia-normativa": [
+              {
+                "cr": null,
+                "id": "REFERENCIAS_NORMATIVAS_0",
+                "ref": "DEC B 004161 1996 11 07 0111 000 0000 000"
+              },
+              {
+                "cr": null,
+                "id": "REFERENCIAS_NORMATIVAS_1",
+                "ref": "TOR B 010430 1996 06 14 0117 000 0000 000"
+              }
+            ]
+          },
+          "numero-articulo": 8,
+          "texto": "[[p]]ART\u00CDCULO 8\u00B0. Establecer que las suplencias previstas en el ART\u00CDCULO 16 de la \u0022Propuesta de Reglamento de Personal del Organismo Provincial de la Ni\u00F1ez y Adolescencia- OPNYA\u0022, aprobado por el ART\u00CDCULO 2\u00B0 del presente, ser\u00E1n enmarcadas en los [[r uuid:CT000]]art\u00EDculos 111 inciso d) apartado II[[/r uuid:CT000]] y [[r uuid:CT001]]117 del Decreto N\u00B0 4161/96,[[/r uuid:CT001]] reglamentario de la [[r uuid:CT001]]Ley N\u00B0 10.430[[/r uuid:CT001]] y modificatorias, comp personal Temporario Transitorio-Destajista-.[[/p]]"
+        },
+        {
+          "referencias-normativas": {
+            "referencia-normativa": [
+              {
+                "cr": null,
+                "id": "REFERENCIAS_NORMATIVAS_0",
+                "ref": "DEC B 000710 2022 06 30 0011 000 0000 000"
+              },
+              {
+                "cr": null,
+                "id": "REFERENCIAS_NORMATIVAS_1",
+                "ref": "DEC B 000710 2022 06 30 0013 000 0000 000"
+              },
+              {
+                "cr": null,
+                "id": "REFERENCIAS_NORMATIVAS_2",
+                "ref": "DEC B 004161 1996 11 07 0117 000 0000 000"
+              }
+            ]
+          },
+          "numero-articulo": 9,
+          "texto": "[[p]]ART\u00CDCULO 9\u00B0. Establecer que a fin de determinar la retribuci\u00F3n del personal aludido en el art\u00EDculo precedente, la unidad de medida estar\u00E1 constituida por una (1) suplencia en dispositivo, fij\u00E1ndose su valor unitario en el equivalente a una jornada diaria de trabajo en un dispositivo, en la categor\u00EDa 5, sin antig\u00FCedad, con la percepci\u00F3n de la Bonificaci\u00F3n Remunerativa No Bonificable prevista en el [[r uuid:CT000]]art\u00EDculo 11[[/r uuid:CT000]] o en el [[r uuid:CT001]]art\u00EDculo 13 del Decreto N\u00BA 710/22[[/r uuid:CT001]], seg\u00FAn corresponda, y un r\u00E9gimen de labor de cuarenta y ocho (48) horas semanales, el que se ajustar\u00E1 de acuerdo a lo normado en el [[r uuid:CT002]]art\u00EDculo 117 del Decreto N\u00BA 4161/96 apartado III[[/r uuid:CT002]][[/p]]"
+        },
+        {
+          "numero-articulo": 10,
+          "texto": "[[p]]ART\u00CDCULO 10. Establecer que una vez verificados los requisitos de admisibilidad de las personas inscriptas en el Registro de Personal Suplente, con intervenci\u00F3n de la Direcci\u00F3n Provincial de Personal dependiente de la Subsecretar\u00EDa de Gesti\u00F3n y Empleo P\u00FAblico de Secretar\u00EDa General, el Organismo realizar\u00E1 las contrataciones del personal suplente por plazo determinado, el que no podr\u00E1 superar los noventa (90) d\u00EDas. Dichas contrataciones podr\u00E1n prorrogarse por igual t\u00E9rmino en caso que se mantuvieren las causales que le dieron origen.[[/p]]"
+        },
+        {
+          "numero-articulo": 11,
+          "texto": "[[p]]ART\u00CDCULO 11. Establecer que, a los fines de la implementaci\u00F3n de los reemplazos de turno y cobertura de suplencias, los dispositivos de alojamiento de ni\u00F1os, ni\u00F1as, adolescentes y/o j\u00F3venes deber\u00E1n remitir a la Direcci\u00F3n Delegada de la Direcci\u00F3n Provincial de Personal o quien haga sus veces, a trav\u00E9s de las Subsecretar\u00EDas competentes, con al menos cinco (5) d\u00EDas h\u00E1biles de anticipaci\u00F3n del inicio de cada mes, la planificaci\u00F3n mensual de la organizaci\u00F3n de la jornada laboral de todo su personal, a fin de prever la necesidad de cobertura de turnos y suplencias con anticipaci\u00F3n, m\u00E1s all\u00E1 de las situaciones particulares que surjan y no puedan ser previstas con anterioridad. La Direcci\u00F3n Ejecutiva del Organismo Provincial de la Ni\u00F1ez y Adolescencia establecer\u00E1 el procedimiento de implementaci\u00F3n de los reemplazos de turnos, en caso de licencia, ausencia o faltante de personal.[[/p]]"
+        },
+        {
+          "numero-articulo": 12,
+          "texto": "[[p]]ART\u00CDCULO 12. Facultar a la Secretar\u00EDa General, para que, a trav\u00E9s de la Subsecretar\u00EDa de Gesti\u00F3n y Empleo P\u00FAblico, dicte las normas interpretativas, complementarias y/o aclaratorias del presente.[[/p]]"
+        },
+        {
+          "numero-articulo": 13,
+          "texto": "[[p]]ART\u00CDCULO 13. El presente decreto ser\u00E1 refrendado por los/as Ministros/as Secretarios/as en los Departamentos de Desarrollo de la Comunidad, de Trabajo, de Econom\u00EDa y de Gobierno.[[/p]]"
+        },
+        {
+          "numero-articulo": 14,
+          "texto": "[[p]]ART\u00CDCULO 14. Registrar, notificar al Fiscal de Estado, publicar, comunicar al Instituto de Previsi\u00F3n Social, a la Legislatura de la Provincia de Buenos Aires, dar al SINDMA y pasar a la Contadur\u00EDa General de la Provincia. Cumplido, archivar.[[/p]]"
+        }
+      ],
+      "firmantes": {
+        "firmantes": "LARROQUE-Correa-L\u00F3pez-Bianco-Kicillof"
+      },
+      "anexo": {
+        "anexo": "A",
+        "titulo-anexo": "ANEXO",
+        "texto": "[[p]][[a uuid:oprstuvw-decp-rovb-2025-0000182f1pdf name:B20250000182F1.PDF]]ANEXO [[/a uuid:oprstuvw-decp-rovb-2025-0000182f1pdf name:B20250000182F1.PDF]][[/p]]"
+      },
+      "id-infojus": "B20250000182",
+      "fecha-umod": 20250220095641
+    }
+  }
+}

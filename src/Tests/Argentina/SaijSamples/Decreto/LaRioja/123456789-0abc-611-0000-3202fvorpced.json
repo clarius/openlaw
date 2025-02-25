@@ -1,0 +1,306 @@
+﻿{
+  "document": {
+    "metadata": {
+      "uuid": "123456789-0abc-611-0000-3202fvorpced",
+      "document-content-type": "legislacion",
+      "timestamp": 1675782009689,
+      "operation": "ADD",
+      "target-document-repository-id": "infojus",
+      "target-index-id": "index",
+      "target-document-indexing-id": "legislacion",
+      "document-recovery-strategy": "abstract-legislacion",
+      "friendly-url": {
+        "subdomain": "decreto",
+        "description": "116-local-rioja-convoca-al-electorado-provincia-para-dia-07-mayo-2023-se-proceda-elegir-gobernador-vicegobernador-provincia-f20230000116-2023-02-03"
+      }
+    },
+    "content": {
+      "mecanografico": "F20230000116",
+      "numero-norma": 116,
+      "timestamp": "2023-02-07T11:33:48",
+      "timestamp-alta": "2023-02-07T11:33:48",
+      "timestamp-m": "2023-02-07T11:33:48",
+      "tipo-norma": {
+        "codigo": "DEC",
+        "texto": "Decreto"
+      },
+      "fecha": "2023-02-03",
+      "jurisdiccion": {
+        "codigo": "F",
+        "descripcion": "Local",
+        "capital": "La Rioja",
+        "id-pais": 11
+      },
+      "provincia": "La Rioja",
+      "standard-normativo": "DEC F 000116 2023 02 03",
+      "titulo-norma": "Convoca al electorado de la Provincia para que el d\u00EDa 07 de mayo de 2023 se proceda a elegir Gobernador y Vicegobernador de la Provincia",
+      "publicacion-codificada": {
+        "publicacion-decodificada": {
+          "organismo": "Bolet\u00EDn Oficial",
+          "fecha": "2023 02 03"
+        }
+      },
+      "lugar-emision": "LA RIOJA",
+      "nombre-coloquial": "DECRETO 116/2023",
+      "analista": "Signorelli, Angela",
+      "estado": "Vigente, de alcance general",
+      "fecha-alta": "2023-02-07",
+      "fecha-mod": "2023-02-07",
+      "responsable": "Signorelli, Angela",
+      "uid-alta": "ABM",
+      "uid-mod": "ABM",
+      "generalidades": {
+        "sintesis": "[[p]]Convoca al electorado de la Provincia para que el d\u00EDa 07 de mayo de 2023 se proceda a elegir Gobernador y Vicegobernador de la Provincia[[/p]]",
+        "observaciones-generales": "[[p]]CANTIDAD DE ARTICULOS QUE COMPONEN LA NORMA: 10[[/p]]"
+      },
+      "descriptores": {
+        "descriptor": [
+          {
+            "elegido": {
+              "termino": "elecciones"
+            },
+            "preferido": {
+              "termino": "Derecho constitucional/derechos pol\u00EDticos/derecho electoral/elecciones"
+            },
+            "sinonimos": null
+          },
+          {
+            "elegido": {
+              "termino": "gobernador"
+            },
+            "preferido": {
+              "termino": "Derecho constitucional/Estado/Estado Provincial/gobierno provincial/Poder Ejecutivo Provincial/gobernador"
+            },
+            "sinonimos": {
+              "termino": [
+                "provincias",
+                "provincia",
+                "gobernadores de provincia"
+              ]
+            }
+          },
+          {
+            "elegido": {
+              "termino": "vicegobernador"
+            },
+            "preferido": {
+              "termino": "Derecho constitucional/Estado/Estado Provincial/gobierno provincial/Poder Ejecutivo Provincial/vicegobernador"
+            },
+            "sinonimos": {
+              "termino": [
+                "provincias",
+                "provincia"
+              ]
+            }
+          }
+        ],
+        "suggest": {
+          "termino": [
+            "gobernadores de provincia (gobernador)",
+            "Estado",
+            "provincias (Estado Provincial)",
+            "Derecho constitucional",
+            "derechos pol\u00EDticos",
+            "provincia (Estado Provincial)",
+            "derecho electoral",
+            "gobierno provincial",
+            "gobernador",
+            "elecciones",
+            "Estado Provincial",
+            "Poder Ejecutivo Provincial",
+            "vicegobernador"
+          ]
+        }
+      },
+      "visto": {
+        "referencias-normativas": {
+          "referencia-normativa": [
+            {
+              "cr": null,
+              "id": "REFERENCIAS_NORMATIVAS_0",
+              "ref": "CON F 000000 2008 05 14 0126 000 0000 000"
+            },
+            {
+              "cr": null,
+              "id": "REFERENCIAS_NORMATIVAS_1",
+              "ref": "CON F 000000 2008 05 14 0087 000 0000 000"
+            },
+            {
+              "cr": null,
+              "id": "REFERENCIAS_NORMATIVAS_2",
+              "ref": "CON F 000000 2008 05 14 0091 000 0000 000"
+            },
+            {
+              "cr": null,
+              "id": "REFERENCIAS_NORMATIVAS_3",
+              "ref": "LEY F 005139 1988 12 15 0000 000 0000 000"
+            },
+            {
+              "cr": null,
+              "id": "REFERENCIAS_NORMATIVAS_4",
+              "ref": "LEY F 008141 2007 03 29 0000 000 0000 000"
+            },
+            {
+              "cr": null,
+              "id": "REFERENCIAS_NORMATIVAS_5",
+              "ref": "LEY F 008142 2007 03 29 0000 000 0000 000"
+            },
+            {
+              "cr": null,
+              "id": "REFERENCIAS_NORMATIVAS_6",
+              "ref": "LEY F 008212 2007 11 15 0000 000 0000 000"
+            },
+            {
+              "cr": null,
+              "id": "REFERENCIAS_NORMATIVAS_7",
+              "ref": "LEY F 008506 2009 04 30 0000 000 0000 000"
+            }
+          ]
+        },
+        "texto": "[[p]]El [[r uuid:CT000]]Art\u00EDculo 126 inciso 3[[/r uuid:CT000]], el [[r uuid:CT001]]Art\u00EDculo 87[[/r uuid:CT001]] y [[r uuid:CT002]]91 de la Constituci\u00F3n Provincial[[/r uuid:CT002]], la [[r uuid:CT003]]Ley Electoral Provincial N\u00B0 5.139[[/r uuid:CT003]], con las modificaciones introducidas por las [[r uuid:CT004]]Leyes N\u00B0 8.141[[/r uuid:CT004]], [[r uuid:CT005]]8.142[[/r uuid:CT005]], [[r uuid:CT006]]8.212[[/r uuid:CT006]] y [[r uuid:CT007]]8.506[[/r uuid:CT007]]; y,[[/p]]"
+      },
+      "considerando": {
+        "referencias-normativas": {
+          "referencia-normativa": {
+            "cr": null,
+            "id": "REFERENCIAS_NORMATIVAS_0",
+            "ref": "CON F 000000 2008 05 14 0126 000 0000 000"
+          }
+        },
+        "sancion": "EL GOBERNADOR DE LA PROVINCIA DECRETA:",
+        "texto": "[[p]]Que, teniendo en cuenta que a finales del presente a\u00F1o 2023 concluyen los mandatos vigentes de los cargos electivos, corresponde convocar a elecciones provinciales y municipales con la antelaci\u00F3n temporal necesaria.[[/p]][[p]]Que, es facultad de la Funci\u00F3n Ejecutiva Provincial convocar a elecciones para la renovaci\u00F3n de mandatos tanto de cargos ejecutivos como legislativos, de nivel provincial y municipal, en los casos y \u00E9pocas que en dichas normas se determinan.[[/p]][[p]]Que, la ley electoral provincial establece que la convocatoria debe efectuarse con una antelaci\u00F3n m\u00EDnima de 90 d\u00EDas a la fecha del comicio, debi\u00E9ndose expresar la fecha de elecci\u00F3n, clase y n\u00FAmero de cargos a cubrir, per\u00EDodo por el que se elige, n\u00FAmero de candidatos por los que puede votar el elector y la indicaci\u00F3n del sistema electoral aplicable.[[/p]][[p]]Que, asimismo el Art\u00EDculo 141\u00BA de la Ley Electoral Provincial establece expresamente que la Funci\u00F3n Ejecutiva Provincial convocar\u00E1 simult\u00E1neamente a elecciones provinciales y municipales.[[/p]][[p]]Por ello, en uso de las facultades conferidas por el [[r uuid:CT000]]Art\u00EDculo 126\u00B0, Inciso 3\u00B0 de la Constituci\u00F3n Provincial[[/r uuid:CT000]][[/p]]"
+      },
+      "articulo": [
+        {
+          "referencias-normativas": {
+            "referencia-normativa": [
+              {
+                "cr": null,
+                "id": "REFERENCIAS_NORMATIVAS_0",
+                "ref": "LEY F 005139 1988 12 15 0027 000 0000 000"
+              },
+              {
+                "cr": null,
+                "id": "REFERENCIAS_NORMATIVAS_1",
+                "ref": "LEY F 008141 2007 03 29 0000 000 0000 000"
+              },
+              {
+                "cr": null,
+                "id": "REFERENCIAS_NORMATIVAS_2",
+                "ref": "LEY F 008506 2009 04 30 0000 000 0000 000"
+              }
+            ]
+          },
+          "numero-articulo": 1,
+          "texto": "[[p]]Art\u00EDculo 1\u00BA.- Conv\u00F3case al electorado de la Provincia de La Rioja para que el d\u00EDa 07 de mayo de 2023 proceda a elegir Gobernador y Vicegobernador de la Provincia para el per\u00EDodo 2023-2027, tom\u00E1ndose a la misma como distrito electoral \u00FAnico, siendo de aplicaci\u00F3n el sistema electoral previsto por el [[r uuid:CT000]]Art\u00EDculo 127\u00B0 de la Ley Electoral Provincial N\u00B0 5.139[[/r uuid:CT000]], [[r uuid:CT001]]N\u00B0 8.141[[/r uuid:CT001]] y [[r uuid:CT002]]N\u00B0 8.506[[/r uuid:CT002]], sus respectivas normas concordantes y complementarias.[[/p]]"
+        },
+        {
+          "referencias-normativas": {
+            "referencia-normativa": [
+              {
+                "cr": null,
+                "id": "REFERENCIAS_NORMATIVAS_0",
+                "ref": "LEY F 005139 1988 12 15 0000 000 0000 000"
+              },
+              {
+                "cr": null,
+                "id": "REFERENCIAS_NORMATIVAS_1",
+                "ref": "LEY F 008506 2009 04 30 0000 000 0000 000"
+              }
+            ]
+          },
+          "numero-articulo": 2,
+          "texto": "[[p]]Art\u00EDculo 2\u00BA.- Conv\u00F3case al electorado de la Provincia de La Rioja para que el d\u00EDa referido en el art\u00EDculo anterior proceda a elegir Diputados Provinciales en el n\u00FAmero de titulares y suplentes para cada uno de los Departamentos que a continuaci\u00F3n se enumeran:[[/p]][[p]]Arauco: 3 Titulares 2 Suplentes Chamical: 3 Titulares 2 Suplentes Chilecito: 4 Titulares 3 Suplentes Gral. Belgrano: 1 Titular 1 Suplente Famatina: 1 Titular 1 Suplente Gral. Lamadrid: 1 Titular 1 Suplente Gral. Ortiz de Ocampo: 1Titular 1 Suplente Gral. San Mart\u00EDn: 1 Titular 1 Suplente Independencia: 1 Titular 1 Suplente San Blas de Los Sauces: 1 Titular 1 Suplente \u00C1ngel Vicente Pe\u00F1aloza: 1 Titular 1 Suplente  En todos los casos para esta categor\u00EDa electoral se tomar\u00E1 cada departamento como Distrito Electoral, siendo de aplicaci\u00F3n el sistema electoral previsto por el Art\u00EDculo 130\u00B0 y concordantes de la [[r uuid:CT000]]Ley Electoral Provincial N\u00B0 5.139[[/r uuid:CT000]], la [[r uuid:CT001]]Ley N\u00B0 8.506[[/r uuid:CT001]], sus respectivas normas concordantes y complementarias. El mandato de los diputados electos ser\u00E1 de 4 a\u00F1os y abarcar\u00E1 el per\u00EDodo 2023-2027.[[/p]]"
+        },
+        {
+          "referencias-normativas": {
+            "referencia-normativa": [
+              {
+                "cr": null,
+                "id": "REFERENCIAS_NORMATIVAS_0",
+                "ref": "CON F 000000 2008 05 14 0171 000 0000 000"
+              },
+              {
+                "cr": null,
+                "id": "REFERENCIAS_NORMATIVAS_1",
+                "ref": "LEY F 005139 1988 12 15 0000 000 0000 000"
+              },
+              {
+                "cr": null,
+                "id": "REFERENCIAS_NORMATIVAS_2",
+                "ref": "LEY F 008506 2009 04 30 0000 000 0000 000"
+              }
+            ]
+          },
+          "numero-articulo": 3,
+          "texto": "[[p]]Art\u00EDculo 3\u00B0.- Conv\u00F3case al electorado de la Provincia de La Rioja para que el d\u00EDa referido en el Art\u00EDculo 1\u00B0 del presente, proceda a elegir Intendente y Viceintendente en cada uno de los 18 Departamentos de la Provincia, los que ser\u00E1n tomados como distrito \u00FAnico, siendo de aplicaci\u00F3n el sistema electoral previsto por el [[r uuid:CT000]]Art\u00EDculo 171\u00B0 de la Constituci\u00F3n Provincial[[/r uuid:CT000]]; [[r uuid:CT001]]Ley Electoral Provincial N\u00B0 5.139[[/r uuid:CT001]]; [[r uuid:CT002]]Ley N\u00B0 8.506[[/r uuid:CT002]]; y sus respectivas normas modificatorias y complementarias. El mandato de los electos ser\u00E1 por 4 a\u00F1os comprendiendo el per\u00EDodo 2023-2027.[[/p]]"
+        },
+        {
+          "referencias-normativas": {
+            "referencia-normativa": [
+              {
+                "cr": null,
+                "id": "REFERENCIAS_NORMATIVAS_0",
+                "ref": "CON F 000000 2008 05 14 0171 000 0000 000"
+              },
+              {
+                "cr": null,
+                "id": "REFERENCIAS_NORMATIVAS_1",
+                "ref": "LEY F 005139 1988 12 15 0000 000 0000 000"
+              },
+              {
+                "cr": null,
+                "id": "REFERENCIAS_NORMATIVAS_2",
+                "ref": "LEY F 008506 2009 04 30 0000 000 0000 000"
+              }
+            ]
+          },
+          "numero-articulo": 4,
+          "texto": "[[p]]Art\u00EDculo 4\u00B0.- Conv\u00F3case al electorado de la Provincia de La Rioja para que el d\u00EDa referido en el Art\u00EDculo 1\u00B0 del presente, proceda a elegir Concejales Municipales en el n\u00FAmero de titulares y suplentes que a continuaci\u00F3n se indican:[[/p]][[p]]Arauco: 11 Titulares 6 Suplentes Capital: 15 Titulares 8 Suplentes Castro Barros: 7 Titulares 4 Suplentes Chamical: 11 Titulares 6 Suplentes Chilecito: 13 Titulares 7 Suplentes Famatina: 7 Titulares 4 Suplentes Gral. \u00C1ngel Vicente Pe\u00F1aloza: 7 Titulares 4 Suplentes Gral. Belgrano 7 Titulares 4 Suplentes Gral. Felipe Varela 9 Titulares 5 Suplentes Gral. Lamadrid 7 Titulares 4 Suplentes Gral. Ortiz de Ocampo 7 Titulares 4 Suplentes Gral. San Mart\u00EDn 7 Titulares 4 Suplentes Independencia 7 Titulares 4 Suplentes Gral. Juan Facundo Quiroga 7 Titulares 4 Suplentes Rosario Vera Pe\u00F1aloza 11 Titulares 6 Suplentes San Blas de Los Sauces 7 Titulares 4 Suplentes Sanagasta 7 Titulares 4 Suplentes Vinchina 7 Titulares 4 Suplentes  En todos los casos citados por este art\u00EDculo se tomar\u00E1 cada Departamento como distrito \u00FAnico, siendo de aplicaci\u00F3n el sistema electoral previsto por el [[r uuid:CT000]]Art\u00EDculo 171\u00B0 de la Constituci\u00F3n Provincial[[/r uuid:CT000]], [[r uuid:CT001]]Ley Electoral Provincial N\u00B0 5.139[[/r uuid:CT001]]; [[r uuid:CT002]]Ley N\u00B0 8.506[[/r uuid:CT002]]; y sus respectivas normas modificatorias y complementarias. El mandato de los electos ser\u00E1 por 4 a\u00F1os comprendiendo el per\u00EDodo 2023-2027.[[/p]]"
+        },
+        {
+          "referencias-normativas": {
+            "referencia-normativa": {
+              "cr": null,
+              "id": "REFERENCIAS_NORMATIVAS_0",
+              "ref": "CON F 000000 2008 05 14 0081 000 0000 000"
+            }
+          },
+          "numero-articulo": 5,
+          "texto": "[[p]]Art\u00EDculo 5\u00B0.- Exh\u00F3rtase a los partidos pol\u00EDticos reconocidos en el \u00E1mbito local, sean de orden provincial y departamental, a activar los mecanismos de selecci\u00F3n interna de modo que permitan la oportuna presentaci\u00F3n de candidatos a la elecci\u00F3n convocada por el presente, garantizando la igualdad real de oportunidades prevista en el [[r uuid:CT000]]Art\u00EDculo 81\u00B0 de la Constituci\u00F3n Provincial[[/r uuid:CT000]][[/p]]"
+        },
+        {
+          "referencias-normativas": {
+            "referencia-normativa": {
+              "cr": null,
+              "id": "REFERENCIAS_NORMATIVAS_0",
+              "ref": "LEY F 005139 1988 12 15 0000 000 0000 000"
+            }
+          },
+          "numero-articulo": 6,
+          "texto": "[[p]]Art\u00EDculo 6\u00B0.- Tendr\u00E1n vigencia en el acto comicial convocado por el presente y para la determinaci\u00F3n de los candidatos electos, las normas contenidas en la Constituci\u00F3n Provincial, en la [[r uuid:CT000]]Ley Electoral N\u00B0 5.139[[/r uuid:CT000]] y modificatorias; y normas electorales generales y complementarias.[[/p]]"
+        },
+        {
+          "numero-articulo": 7,
+          "texto": "[[p]]Art\u00EDculo 7\u00B0.- Rem\u00EDtase copia del presente decreto al Poder Ejecutivo Nacional; al Ministerio del Interior de la Naci\u00F3n; a la C\u00E1mara Nacional Electoral; al Sr. Juez Federal con competencia Electoral en el Distrito de La Rioja; al Tribunal Superior de Justicia; a la Presidente del Tribunal Electoral Provincial y a la Funci\u00F3n Legislativa de la Provincia.[[/p]]"
+        },
+        {
+          "numero-articulo": 8,
+          "texto": "[[p]]Art\u00EDculo 8\u00B0.- El presente decreto ser\u00E1 publicado y difundido en el Bolet\u00EDn Oficial, en los diarios locales de circulaci\u00F3n en la Provincia, en las emisoras de radiodifusi\u00F3n y Canal Provincial de Televisi\u00F3n, no menos de 3 veces durante los 10 primeros d\u00EDas de su dictado.[[/p]]"
+        },
+        {
+          "numero-articulo": 9,
+          "texto": "[[p]]Art\u00EDculo 9\u00B0.- El presente decreto ser\u00E1 refrendado por el se\u00F1or Jefe de Gabinete; el se\u00F1or Ministro de Seguridad, Justicia y Derechos Humanos; y el Sr. Secretario General de la Gobernaci\u00F3n.[[/p]]"
+        },
+        {
+          "numero-articulo": 10,
+          "texto": "[[p]]Art\u00EDculo 10\u00BA.- Comun\u00EDquese, publ\u00EDquese, ins\u00E9rtese en el Registro Oficial y arch\u00EDvese.[[/p]]"
+        }
+      ],
+      "firmantes": {
+        "firmantes": "Ricardo Clemente Quintela Gobernador de la Provincia de La Rioja  Dr. Miguel Z\u00E1rate Ministro de Seguridad, Justicia y DDHH  Armando Emilio Molina Secretario General de la Gobernaci\u00F3n Dr. Juan Jos\u00E9 Luna Jefe de Gabinete"
+      },
+      "id-infojus": "F20230000116"
+    }
+  }
+}

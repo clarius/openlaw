@@ -1,0 +1,480 @@
+﻿{
+  "document": {
+    "metadata": {
+      "uuid": "123456789-0abc-121-0000-5202soterced",
+      "document-content-type": "legislacion",
+      "timestamp": 1740502573066,
+      "operation": "ADD",
+      "target-document-repository-id": "infojus",
+      "target-index-id": "index",
+      "target-document-indexing-id": "legislacion",
+      "document-recovery-strategy": "abstract-legislacion",
+      "friendly-url": {
+        "subdomain": "decreto",
+        "description": "121-nacional-modificacion-estructura-organica-administracion-publica-nacional-dn20250000121-2025-02-24"
+      }
+    },
+    "content": {
+      "mecanografico": 20250000121,
+      "estado": "Vigente, de alcance general",
+      "tipo-norma": {
+        "codigo": "DEC",
+        "texto": "Decreto"
+      },
+      "numero-norma": 121,
+      "fecha": "2025-02-24",
+      "jurisdiccion": {
+        "codigo": "C",
+        "descripcion": "Nacional",
+        "capital": "Capital Federal",
+        "id-pais": 11
+      },
+      "standard-normativo": "DEC C 000121 2025 02 24",
+      "titulo-norma": "Modificaci\u00F3n de la Estructura Org\u00E1nica de la Administraci\u00F3n P\u00FAblica Nacional",
+      "nombre-coloquial": "DECRETO NACIONAL 121/2025",
+      "lugar-emision": "BUENOS AIRES",
+      "publicacion-codificada": {
+        "publicacion-decodificada": {
+          "organismo": "Bolet\u00EDn Oficial",
+          "fecha": "2025 02 25"
+        }
+      },
+      "analista": "Rocca, Adriana",
+      "responsable": "Rocca, Adriana",
+      "uid-alta": "ABM",
+      "uid-mod": "ABM",
+      "fecha-alta": "2025-02-25",
+      "fecha-mod": "2025-02-25",
+      "timestamp": "2025-02-25T13:35:49",
+      "timestamp-alta": "2025-02-25T13:35:49",
+      "timestamp-m": "2025-02-25T13:35:49",
+      "generalidades": {
+        "sintesis": "[[p]]Se Modifica la Estructura Org\u00E1nica de la Administraci\u00F3n P\u00FAblica Nacional[[/p]]",
+        "anexos-decreto": {
+          "anexo-ley": [
+            "A PLANILLA ANEXA AL ART\u00CDCULO 7",
+            "B ANEXOS",
+            "C ANEXO II",
+            "D ANEXO III",
+            "E ANEXO IV",
+            "F PLANILLA ANEXA AL ART\u00CDCULO 12"
+          ]
+        },
+        "observaciones-generales": "[[p]]CANTIDAD DE ARTICULOS QUE COMPONEN LA NORMA: 17[[/p]]"
+      },
+      "descriptores": {
+        "descriptor": [
+          {
+            "elegido": {
+              "termino": "Administraci\u00F3n P\u00FAblica Nacional"
+            },
+            "preferido": {
+              "termino": "Derecho administrativo/Administraci\u00F3n P\u00FAblica/Administraci\u00F3n P\u00FAblica Nacional"
+            },
+            "sinonimos": {
+              "termino": [
+                "Administraci\u00F3n Nacional",
+                "funci\u00F3n p\u00FAblica"
+              ]
+            }
+          },
+          {
+            "elegido": {
+              "termino": "presidencia de la Naci\u00F3n"
+            },
+            "preferido": {
+              "termino": "Derecho constitucional/poderes del Estado/Poder Ejecutivo/Poder Ejecutivo Nacional/presidencia de la Naci\u00F3n"
+            },
+            "sinonimos": {
+              "termino": "poderes p\u00FAblicos"
+            }
+          },
+          {
+            "elegido": {
+              "termino": "estructura org\u00E1nica"
+            },
+            "preferido": {
+              "termino": "Derecho administrativo/Administraci\u00F3n P\u00FAblica/administraci\u00F3n centralizada/organismos del Estado/estructura org\u00E1nica"
+            },
+            "sinonimos": {
+              "termino": [
+                "entidades gubernamentales",
+                "\u00F3rgano administrativo",
+                "organismos centralizados",
+                "entes p\u00FAblicos",
+                "funci\u00F3n p\u00FAblica",
+                "organismos p\u00FAblicos",
+                "organismos administrativos",
+                "reparticiones nacionales"
+              ]
+            }
+          },
+          {
+            "elegido": {
+              "termino": "modificaci\u00F3n de la estructura org\u00E1nica"
+            },
+            "preferido": {
+              "termino": "Derecho administrativo/Administraci\u00F3n P\u00FAblica/administraci\u00F3n centralizada/organismos del Estado/estructura org\u00E1nica/modificaci\u00F3n de la estructura org\u00E1nica"
+            },
+            "sinonimos": {
+              "termino": [
+                "entidades gubernamentales",
+                "\u00F3rgano administrativo",
+                "organismos centralizados",
+                "entes p\u00FAblicos",
+                "reforma de la estructura org\u00E1nica",
+                "funci\u00F3n p\u00FAblica",
+                "organismos p\u00FAblicos",
+                "organismos administrativos",
+                "reparticiones nacionales",
+                "reestructuraci\u00F3n del organismo"
+              ]
+            }
+          },
+          {
+            "elegido": {
+              "termino": "Secretar\u00EDa de Prensa"
+            },
+            "preferido": {
+              "termino": "SECRETAR\u00CDA DE ESTADO DE PRENSA Y DIFUSI\u00D3N"
+            },
+            "sinonimos": {
+              "termino": "Secretar\u00EDa de Prensa"
+            }
+          },
+          {
+            "elegido": {
+              "termino": "SECRETAR\u00CDA DE INTELIGENCIA DE ESTADO"
+            },
+            "preferido": {
+              "termino": "SIDE"
+            },
+            "sinonimos": {
+              "termino": [
+                "SECRETAR\u00CDA DE INTELIGENCIA DE ESTADO",
+                "SECRETAR\u00CDA DE INTELIGENCIA",
+                "SECRETAR\u00CDA DE INFORMACIONES DEL ESTADO"
+              ]
+            }
+          },
+          {
+            "elegido": {
+              "termino": "Secretar\u00EDa de Comunicaci\u00F3n y Medios"
+            },
+            "preferido": {
+              "termino": "Secretar\u00EDa de Comunicaci\u00F3n y Medios"
+            },
+            "sinonimos": null
+          }
+        ],
+        "suggest": {
+          "termino": [
+            "modificaci\u00F3n de la estructura org\u00E1nica",
+            "SECRETAR\u00CDA DE INTELIGENCIA (SIDE)",
+            "administraci\u00F3n centralizada",
+            "Administraci\u00F3n P\u00FAblica Nacional",
+            "organismos administrativos (organismos del Estado)",
+            "Secretar\u00EDa de Prensa (SECRETAR\u00CDA DE ESTADO DE PRENSA Y DIFUSI\u00D3N)",
+            "SECRETAR\u00CDA DE INFORMACIONES DEL ESTADO (SIDE)",
+            "organismos del Estado",
+            "poderes p\u00FAblicos (poderes del Estado)",
+            "Administraci\u00F3n Nacional (Administraci\u00F3n P\u00FAblica Nacional)",
+            "reparticiones nacionales (organismos del Estado)",
+            "Derecho administrativo",
+            "entes p\u00FAblicos (organismos del Estado)",
+            "reforma de la estructura org\u00E1nica (modificaci\u00F3n de la estructura org\u00E1nica)",
+            "Secretar\u00EDa de Comunicaci\u00F3n y Medios",
+            "organismos centralizados (administraci\u00F3n centralizada)",
+            "organismos p\u00FAblicos (organismos del Estado)",
+            "SIDE",
+            "funci\u00F3n p\u00FAblica (Administraci\u00F3n P\u00FAblica)",
+            "SECRETAR\u00CDA DE ESTADO DE PRENSA Y DIFUSI\u00D3N",
+            "presidencia de la Naci\u00F3n",
+            "entidades gubernamentales (organismos del Estado)",
+            "poderes del Estado",
+            "Poder Ejecutivo Nacional",
+            "Administraci\u00F3n P\u00FAblica",
+            "Derecho constitucional",
+            "estructura org\u00E1nica",
+            "reestructuraci\u00F3n del organismo (modificaci\u00F3n de la estructura org\u00E1nica)",
+            "Poder Ejecutivo",
+            "SECRETAR\u00CDA DE INTELIGENCIA DE ESTADO (SIDE)",
+            "\u00F3rgano administrativo (organismos del Estado)"
+          ]
+        }
+      },
+      "visto": {
+        "referencias-normativas": {
+          "referencia-normativa": [
+            {
+              "cr": null,
+              "id": "REFERENCIAS_NORMATIVAS_0",
+              "ref": "TOR C 022520 1992 03 12 0000 000 0000 000"
+            },
+            {
+              "cr": null,
+              "id": "REFERENCIAS_NORMATIVAS_1",
+              "ref": "DEC C 002098 2008 12 03 0000 000 0000 000"
+            },
+            {
+              "cr": null,
+              "id": "REFERENCIAS_NORMATIVAS_2",
+              "ref": "DEC C 000050 2019 12 19 0000 000 0000 000"
+            },
+            {
+              "cr": null,
+              "id": "REFERENCIAS_NORMATIVAS_3",
+              "ref": "DEC C 000195 2020 02 28 0000 000 0000 000"
+            },
+            {
+              "cr": null,
+              "id": "REFERENCIAS_NORMATIVAS_4",
+              "ref": "DEC C 000232 2024 03 07 0000 000 0000 000"
+            },
+            {
+              "cr": null,
+              "id": "REFERENCIAS_NORMATIVAS_5",
+              "ref": "DNU C 000058 2025 02 03 0000 000 0000 000"
+            }
+          ]
+        },
+        "texto": "[[p]]el Expediente N\u00B0\u00A0EX-2025-03165037-APN-CGD#SGP, la [[r uuid:CT001]]Ley de Ministerios N\u00BA\u00A022.520 (texto ordenado por Decreto N\u00B0\u00A0438 del 12 de marzo de 1992)[[/r uuid:CT001]] y sus modificatorias, los[[r uuid:CT002]] Decretos Nros. 2098 del 3 de diciembre de 2008[[/r uuid:CT002]], sus modificatorios y complementarios, [[r uuid:CT003]]50 del 19 de diciembre de 2019 [[/r uuid:CT003]]y sus modificatorios, [[r uuid:CT004]]195 del 28 de febrero de 2020[[/r uuid:CT004]] y su modificatorio, [[r uuid:CT007]]232 del 7 de marzo de 2024[[/r uuid:CT007]] y sus modificatorios y[[r uuid:CT008]] 58 del 3 de febrero de 2025 [[/r uuid:CT008]]y la Decisi\u00F3n Administrativa N\u00B0\u00A01865 del 14 de octubre de 2020 y sus modificatorias,\u00A0y[[/p]]"
+      },
+      "considerando": {
+        "referencias-normativas": {
+          "referencia-normativa": [
+            {
+              "cr": null,
+              "id": "REFERENCIAS_NORMATIVAS_0",
+              "ref": "TOR C 022520 1992 03 12 0000 000 0000 000"
+            },
+            {
+              "cr": null,
+              "id": "REFERENCIAS_NORMATIVAS_1",
+              "ref": "DEC C 002098 2008 12 03 0000 000 0000 000"
+            },
+            {
+              "cr": null,
+              "id": "REFERENCIAS_NORMATIVAS_2",
+              "ref": "DEC C 000050 2019 12 19 0000 000 0000 000"
+            },
+            {
+              "cr": null,
+              "id": "REFERENCIAS_NORMATIVAS_3",
+              "ref": "DEC C 000195 2020 02 28 0000 000 0000 000"
+            },
+            {
+              "cr": null,
+              "id": "REFERENCIAS_NORMATIVAS_4",
+              "ref": "DEC C 000232 2024 03 07 0000 000 0000 000"
+            },
+            {
+              "cr": null,
+              "id": "REFERENCIAS_NORMATIVAS_5",
+              "ref": "DNU C 000058 2025 02 03 0000 000 0000 000"
+            },
+            {
+              "cr": null,
+              "id": "REFERENCIAS_NORMATIVAS_6",
+              "ref": "DNU C 000834 2024 09 17 0000 000 0000 000"
+            },
+            {
+              "cr": null,
+              "id": "REFERENCIAS_NORMATIVAS_7",
+              "ref": "DNU C 000614 2024 07 15 0000 000 0000 000"
+            },
+            {
+              "cr": null,
+              "id": "REFERENCIAS_NORMATIVAS_8",
+              "ref": "DEC C 000839 2024 09 18 0000 000 0000 000"
+            },
+            {
+              "cr": null,
+              "id": "REFERENCIAS_NORMATIVAS_9",
+              "ref": "CON C 000000 1994 08 22 0099 000 0000 000"
+            }
+          ]
+        },
+        "sancion": "EL PRESIDENTE DE LA NACI\u00D3N ARGENTINA DECRETA:",
+        "texto": "[[p]]Que por la [[r uuid:CT001]]Ley de Ministerios (texto ordenado por Decreto N\u00BA\u00A0438/92)[[/r uuid:CT001]] y sus modificatorias se establecieron los Ministerios que tendr\u00E1n a su cargo el despacho de los negocios de la Naci\u00F3n y las Secretar\u00EDas de Presidencia necesarias para posibilitar la actividad del Presidente de la Naci\u00F3n.[[/p]][[p]]Que por el [[r uuid:CT009]]Decreto N\u00BA\u00A0834/24[[/r uuid:CT009]] se modific\u00F3 la citada ley, incorporando la SECRETAR\u00CDA DE COMUNICACI\u00D3N Y MEDIOS como Secretar\u00EDa Presidencial.[[/p]][[p]]Que por el [[r uuid:CT008]]Decreto N\u00BA\u00A058/25[[/r uuid:CT008]] se modific\u00F3 la citada ley, suprimiendo la SECRETAR\u00CDA DE PRENSA como Secretar\u00EDa Presidencial y estableciendo que los compromisos y obligaciones asumidos por la ex-SECRETAR\u00CDA DE PRENSA estar\u00E1n a cargo de la SECRETAR\u00CDA DE COMUNICACI\u00D3N Y MEDIOS de la PRESIDENCIA DE LA NACI\u00D3N, consider\u00E1ndose transferidos los cr\u00E9ditos presupuestarios, unidades organizativas, bienes, personal con sus cargos y dotaciones vigentes a la fecha.[[/p]][[p]]Que, por otra parte, resulta necesario incorporar en el Anexo I -Organigrama de Aplicaci\u00F3n de la Administraci\u00F3n P\u00FAblica Nacional centralizada hasta nivel de Subsecretar\u00EDa- aprobado por el [[r uuid:CT003]]Decreto N\u00B0\u00A050/19[[/r uuid:CT003]] y sus modificatorios la SECRETAR\u00CDA DE INTELIGENCIA DE ESTADO de la PRESIDENCIA DE LA NACI\u00D3N, creada por el [[r uuid:CT010]]Decreto N\u00B0\u00A0614/24.[[/r uuid:CT010]] Que por el Decreto N\u00BA\u00A050/19 y sus modificatorios se aprobaron el Organigrama de Aplicaci\u00F3n, los Objetivos de la Administraci\u00F3n Nacional centralizada hasta nivel de Subsecretar\u00EDa y los \u00E1mbitos jurisdiccionales en los que actuar\u00E1n los organismos desconcentrados y descentralizados.[[/p]][[p]]Que por el [[r uuid:CT011]]art\u00EDculo 1\u00B0 del Decreto N\u00BA\u00A0839/24[[/r uuid:CT011]], modificatorio del citado Decreto N\u00B0\u00A050/19, se transfiri\u00F3 de la SECRETAR\u00CDA GENERAL a la SECRETAR\u00CDA DE COMUNICACI\u00D3N Y MEDIOS, ambas de la PRESIDENCIA DE LA NACI\u00D3N, la SUBSECRETAR\u00CDA DE VOCER\u00CDA Y COMUNICACI\u00D3N DE GOBIERNO y sus unidades organizativas dependientes, como as\u00ED tambi\u00E9n diversas unidades organizativas detalladas en la planilla anexa a dicho art\u00EDculo, comprendiendo dicha transferencia las unidades organizativas, los cr\u00E9ditos presupuestarios, bienes y dotaciones vigentes a la fecha y el personal con sus respectivos cargos y niveles escalafonarios, situaci\u00F3n de revista y suplementos vigentes a la fecha asignados a las referidas unidades organizativas.[[/p]][[p]]Que por el[[r uuid:CT004]] Decreto N\u00B0\u00A0195/20[[/r uuid:CT004]] y su modificatorio se aprob\u00F3 la estructura organizativa de primer y segundo nivel operativo de la ex-SECRETAR\u00CDA DE COMUNICACI\u00D3N Y PRENSA de la PRESIDENCIA DE LA NACI\u00D3N.[[/p]][[p]]Que por el [[r uuid:CT007]]Decreto N\u00B0\u00A0232/24[[/r uuid:CT007]] y sus modificatorios se aprob\u00F3 la estructura organizativa de primer y segundo nivel operativo de la SECRETAR\u00CDA GENERAL de la PRESIDENCIA DE LA NACI\u00D3N.[[/p]][[p]]Que por la Decisi\u00F3n Administrativa N\u00B0\u00A01865/20 y sus modificatorias se aprob\u00F3 la entonces estructura organizativa de primer y segundo nivel operativo de la JEFATURA DE GABINETE DE MINISTROS, que inclu\u00EDa las unidades organizativas que fueran transferidas a la \u00F3rbita de la SECRETAR\u00CDA DE COMUNICACI\u00D3N Y MEDIOS de la PRESIDENCIA DE LA NACI\u00D3N.[[/p]][[p]]Que resulta necesario adecuar el Organigrama de Aplicaci\u00F3n de la Administraci\u00F3n P\u00FAblica Nacional centralizada hasta nivel de Subsecretar\u00EDa y los Objetivos de la SECRETAR\u00CDA GENERAL y de su dependiente SUBSECRETAR\u00CDA DE ASUNTOS PRESIDENCIALES y de la SECRETAR\u00CDA DE COMUNICACI\u00D3N Y MEDIOS, ambas dependientes de la PRESIDENCIA DE LA NACI\u00D3N.[[/p]][[p]]Que, por otra parte, resulta necesario aprobar la estructura organizativa de primer y segundo nivel operativo de la SECRETAR\u00CDA DE COMUNICACI\u00D3N Y MEDIOS de la PRESIDENCIA DE LA NACI\u00D3N, derogar, incorporar, homologar y reasignar diversos cargos en el Nomenclador de Funciones Ejecutivas del Convenio Colectivo de Trabajo Sectorial del Personal del SISTEMA NACIONAL DE EMPLEO P\u00DABLICO (SINEP), homologado por el [[r uuid:CT002]]Decreto N\u00BA\u00A02098/08[[/r uuid:CT002]], como as\u00ED tambi\u00E9n transferir unidades organizativas entre dicha Jurisdicci\u00F3n y la SECRETAR\u00CDA GENERAL de la PRESIDENCIA DE LA NACI\u00D3N.[[/p]][[p]]Que por el art\u00EDculo 7\u00B0 del citado Decreto N\u00B0\u00A0195/20 se cre\u00F3 el cargo extraescalafonario de Jefe de la Unidad de Gabinete de Asesores, dependiente de la entonces SECRETAR\u00CDA DE COMUNICACI\u00D3N Y PRENSA de la PRESIDENCIA DE LA NACI\u00D3N, con rango y jerarqu\u00EDa de Subsecretario, resultando conveniente, en esta instancia, su supresi\u00F3n.[[/p]][[p]]Que la presente medida no implica incremento en la cantidad de unidades organizativas que conforman la Administraci\u00F3n P\u00FAblica Nacional.[[/p]][[p]]Que la DIRECCI\u00D3N NACIONAL DE DISE\u00D1O ORGANIZACIONAL del MINISTERIO DE DESREGULACI\u00D3N Y TRANSFORMACI\u00D3N DEL ESTADO y la OFICINA NACIONAL DE PRESUPUESTO, dependiente de la SUBSECRETAR\u00CDA DE PRESUPUESTO de la SECRETAR\u00CDA DE HACIENDA del MINISTERIO DE ECONOM\u00CDA, han tomado la intervenci\u00F3n que les compete.[[/p]][[p]]Que el servicio jur\u00EDdico correspondiente ha tomado la intervenci\u00F3n de su competencia.[[/p]][[p]]Que la presente medida se dicta en ejercicio de las atribuciones conferidas por el [[r uuid:CT012]]art\u00EDculo 99, inciso 1 de la CONSTITUCI\u00D3N NACIONAL.[[/r uuid:CT012]] Por ello,[[/p]]"
+      },
+      "articulo": [
+        {
+          "modifica-a": {
+            "referencia-normativa": {
+              "cr": null,
+              "id": "MODIFICA_A_0",
+              "ref": "DEC C 000050 2019 12 19 0000 000 0000 000 A"
+            }
+          },
+          "numero-articulo": 1,
+          "texto": "[[p]]ART\u00CDCULO 1\u00B0.- Supr\u00EDmese del [[r uuid:MA001]]Anexo I -Organigrama de Aplicaci\u00F3n de la Administraci\u00F3n Nacional centralizada hasta nivel de Subsecretar\u00EDa-, aprobado por el art\u00EDculo 1\u00B0 del Decreto N\u00B0\u00A050 del 19 de diciembre de 2019 [[/r uuid:MA001]]y sus modificatorios, el Apartado IV, SECRETAR\u00CDA DE PRENSA de la PRESIDENCIA DE LA NACI\u00D3N.[[/p]]"
+        },
+        {
+          "modifica-a": {
+            "referencia-normativa": {
+              "cr": null,
+              "id": "MODIFICA_A_0",
+              "ref": "DEC C 000050 2019 12 19 0000 000 0000 000 A"
+            }
+          },
+          "numero-articulo": 2,
+          "texto": "[[p]]ART\u00CDCULO 2\u00B0.- Incorp\u00F3rase al [[r uuid:MA001]]Anexo I -Organigrama de Aplicaci\u00F3n de la Administraci\u00F3n Nacional centralizada hasta nivel de Subsecretar\u00EDa-, aprobado por el art\u00EDculo 1\u00B0 del Decreto N\u00B0\u00A050 del 19 de diciembre de 2019[[/r uuid:MA001]] y sus modificatorios, como Apartado IV BIS el siguiente:.[[/p]][[p]]\u0022IV BIS- SECRETAR\u00CDA DE INTELIGENCIA DE ESTADO\u0022[[/p]]"
+        },
+        {
+          "modifica-a": {
+            "referencia-normativa": {
+              "cr": null,
+              "id": "MODIFICA_A_0",
+              "ref": "DEC C 000050 2019 12 19 0000 000 0000 000 A"
+            }
+          },
+          "numero-articulo": 3,
+          "texto": "[[p]]ART\u00CDCULO 3\u00B0.- Sustit\u00FAyese del [[r uuid:MA001]]Anexo I -Organigrama de Aplicaci\u00F3n de la Administraci\u00F3n Nacional centralizada hasta nivel de Subsecretar\u00EDa-, aprobado por el art\u00EDculo 1\u00B0 del Decreto N\u00B0\u00A050 del 19 de diciembre de 2019 [[/r uuid:MA001]]y sus modificatorios, el Apartado IV TER, SECRETAR\u00CDA DE COMUNICACI\u00D3N Y MEDIOS de la PRESIDENCIA DE LA NACI\u00D3N por el siguiente: .[[/p]][[p]]\u0022IV TER. - SECRETAR\u00CDA DE COMUNICACI\u00D3N Y MEDIOS.[[/p]][[p]]- UNIDAD GABINETE DE ASESORES.[[/p]][[p]]- SUBSECRETAR\u00CDA DE COORDINACI\u00D3N ADMINISTRATIVA.[[/p]][[p]]- SUBSECRETAR\u00CDA DE VOCER\u00CDA Y COMUNICACI\u00D3N DE GOBIERNO.[[/p]][[p]]- SUBSECRETAR\u00CDA DE MEDIOS P\u00DABLICOS.[[/p]][[p]]- SUBSECRETAR\u00CDA DE PRENSA\u0022.[[/p]]"
+        },
+        {
+          "modifica-a": {
+            "referencia-normativa": {
+              "cr": null,
+              "id": "MODIFICA_A_0",
+              "ref": "DEC C 000050 2019 12 19 0000 000 0000 000 B"
+            }
+          },
+          "numero-articulo": 4,
+          "texto": "[[p]]ART\u00CDCULO 4\u00B0.- Incorp\u00F3rase al[[r uuid:MA001]] Anexo II -Objetivos-, aprobado por el art\u00EDculo 2\u00BA del Decreto N\u00BA\u00A050 del 19 de diciembre de 2019[[/r uuid:MA001]] y sus modificatorios, en el Apartado I, SECRETAR\u00CDA GENERAL de la PRESIDENCIA DE LA NACI\u00D3N, como Objetivo 22 el siguiente:.[[/p]][[p]]\u002222. Dirigir los procedimientos, la log\u00EDstica y las acciones necesarias para la realizaci\u00F3n de la cobertura fotogr\u00E1fica y videogr\u00E1fica de las actividades del Presidente de la Naci\u00F3n, junto con otras \u00E1reas de la PRESIDENCIA DE LA NACI\u00D3N con competencia en la materia\u0022.[[/p]]"
+        },
+        {
+          "modifica-a": {
+            "referencia-normativa": {
+              "cr": null,
+              "id": "MODIFICA_A_0",
+              "ref": "DEC C 000050 2019 12 19 0000 000 0000 000 B"
+            }
+          },
+          "numero-articulo": 5,
+          "texto": "[[p]]ART\u00CDCULO 5\u00B0.- Incorp\u00F3rase al [[r uuid:MA001]]Anexo II -Objetivos-, aprobado por el art\u00EDculo 2\u00BA del Decreto N\u00B0\u00A050 del 19 de diciembre de 2019 [[/r uuid:MA001]]y sus modificatorios, en el Apartado I, SECRETAR\u00CDA GENERAL de la PRESIDENCIA DE LA NACI\u00D3N, como Objetivo 5 de la SUBSECRETAR\u00CDA DE ASUNTOS PRESIDENCIALES, el siguiente:.[[/p]][[p]]\u00225. Asistir a la SECRETAR\u00CDA GENERAL de la PRESIDENCIA DE LA NACI\u00D3N en los procedimientos, la log\u00EDstica y las acciones necesarias para la realizaci\u00F3n de la cobertura fotogr\u00E1fica y videogr\u00E1fica de las actividades del Presidente de la Naci\u00F3n, junto con otras \u00E1reas de la PRESIDENCIA DE LA NACI\u00D3N con competencia en la materia\u0022.[[/p]]"
+        },
+        {
+          "modifica-a": {
+            "referencia-normativa": {
+              "cr": null,
+              "id": "MODIFICA_A_0",
+              "ref": "DEC C 000050 2019 12 19 0000 000 0000 000 B"
+            }
+          },
+          "numero-articulo": 6,
+          "texto": "[[p]]ART\u00CDCULO 6\u00B0.- Supr\u00EDmese del [[r uuid:MA001]]Anexo II -Objetivos-, aprobado por el art\u00EDculo 2\u00BA del Decreto N\u00BA\u00A050 del 19 de diciembre de 2019[[/r uuid:MA001]] y sus modificatorios, el Apartado IV, SECRETAR\u00CDA DE PRENSA de la PRESIDENCIA DE LA NACI\u00D3N.[[/p]]"
+        },
+        {
+          "modifica-a": {
+            "referencia-normativa": {
+              "cr": null,
+              "id": "MODIFICA_A_0",
+              "ref": "DEC C 000050 2019 12 19 0000 000 0000 000 B"
+            }
+          },
+          "numero-articulo": 7,
+          "texto": "[[p]]ART\u00CDCULO 7\u00B0.- Sustit\u00FAyese del [[r uuid:MA001]]Anexo II -Objetivos-, aprobado por el art\u00EDculo 2\u00BA del Decreto N\u00BA\u00A050 del 19 de diciembre de 2019[[/r uuid:MA001]] y sus modificatorios, el Apartado IV TER, SECRETAR\u00CDA DE COMUNICACI\u00D3N Y MEDIOS de la PRESIDENCIA DE LA NACI\u00D3N, por el obrante en la Planilla Anexa (IF-2025-18227566-APN-SCYM) al presente art\u00EDculo, que forma parte integrante del presente decreto.[[/p]]"
+        },
+        {
+          "numero-articulo": 8,
+          "texto": "[[p]]ART\u00CDCULO 8\u00B0.- Transfi\u00E9rese la Coordinaci\u00F3n de Administraci\u00F3n de Comunicaci\u00F3n y Medios, dependiente de la DIRECCI\u00D3N GENERAL DE ADMINISTRACI\u00D3N de la SUBSECRETAR\u00CDA DE COORDINACI\u00D3N ADMINISTRATIVA de la SECRETAR\u00CDA GENERAL de la PRESIDENCIA DE LA NACI\u00D3N, a la SUBSECRETAR\u00CDA DE COORDINACI\u00D3N ADMINISTRATIVA de la SECRETAR\u00CDA DE COMUNICACI\u00D3N Y MEDIOS de la PRESIDENCIA DE LA NACI\u00D3N.[[/p]][[p]]La transferencia de la referida unidad comprende los cr\u00E9ditos presupuestarios, bienes y dotaci\u00F3n asignados a la misma, como as\u00ED tambi\u00E9n su personal con sus respectivos cargos y niveles escalafonarios, situaci\u00F3n de revista y suplementos vigentes.[[/p]]"
+        },
+        {
+          "numero-articulo": 9,
+          "texto": "[[p]]ART\u00CDCULO 9\u00B0.- Transfi\u00E9rense la DIRECCI\u00D3N DE REALIZACI\u00D3N AUDIOVISUAL DE LA PRESIDENCIA DE LA NACI\u00D3N y sus dependientes Coordinaci\u00F3n de Contenido Audiovisual y Coordinaci\u00F3n de Postproducci\u00F3n Audiovisual de la SUBSECRETAR\u00CDA DE VOCER\u00CDA Y COMUNICACI\u00D3N DE GOBIERNO de la SECRETAR\u00CDA DE COMUNICACI\u00D3N Y MEDIOS de la PRESIDENCIA DE LA NACI\u00D3N a la SUBSECRETAR\u00CDA DE ASUNTOS PRESIDENCIALES de la SECRETAR\u00CDA GENERAL de la PRESIDENCIA DE LA NACI\u00D3N.[[/p]][[p]]La transferencia aludida comprende los cr\u00E9ditos presupuestarios, bienes y dotaciones vigentes a la fecha y el personal con sus respectivos cargos y niveles escalafonarios, situaci\u00F3n de revista y suplementos vigentes a la fecha asignados a las mencionadas unidades organizativas.[[/p]]"
+        },
+        {
+          "numero-articulo": 10,
+          "texto": "[[p]]ART\u00CDCULO 10.- Apru\u00E9base la estructura organizativa de primer nivel operativo de la SECRETAR\u00CDA DE COMUNICACI\u00D3N Y MEDIOS de la PRESIDENCIA DE LA NACI\u00D3N, de conformidad con el Organigrama y las Responsabilidades Primarias y Acciones que, como Anexos Ia, Ib, Ic, Id (IF-2025-15075935-APN-SCYM) y II (IF-2025-18227125-APN-SCYM), forman parte integrante del presente decreto.[[/p]]"
+        },
+        {
+          "numero-articulo": 11,
+          "texto": "[[p]]ART\u00CDCULO 11.- Apru\u00E9base la estructura organizativa de segundo nivel operativo de la SECRETAR\u00CDA DE COMUNICACI\u00D3N Y MEDIOS de la PRESIDENCIA DE LA NACI\u00D3N, de conformidad con el Organigrama y las Acciones que, como Anexos IIIa, IIIb, IIIc, IIId (IF-2025-15076874-APN-SCYM) y IV (IF-2025-18226075-APN-SCYM), forman parte integrante del presente decreto.[[/p]]"
+        },
+        {
+          "referencias-normativas": {
+            "referencia-normativa": {
+              "cr": null,
+              "id": "REFERENCIAS_NORMATIVAS_0",
+              "ref": "DEC C 002098 2008 12 03 0000 000 0000 000"
+            }
+          },
+          "numero-articulo": 12,
+          "texto": "[[p]]ART\u00CDCULO 12.- Der\u00F3ganse, incorp\u00F3ranse, homol\u00F3ganse y reas\u00EDgnanse en el Nomenclador de Funciones Ejecutivas del Convenio Colectivo de Trabajo Sectorial del Personal del SISTEMA NACIONAL DE EMPLEO P\u00DABLICO (SINEP), homologado por el [[r uuid:CT001]]Decreto N\u00BA\u00A02098/08,[[/r uuid:CT001]] sus modificatorios y complementarios, los cargos de la SECRETAR\u00CDA DE COMUNICACI\u00D3N Y MEDIOS de la PRESIDENCIA DE LA NACI\u00D3N que se detallan en la Planilla Anexa (IF-2025-15078755-APN-SCYM) al presente art\u00EDculo, que forma parte integrante del presente decreto.[[/p]]"
+        },
+        {
+          "numero-articulo": 13,
+          "texto": "[[p]]ART\u00CDCULO 13.- Fac\u00FAltase al titular de la SECRETAR\u00CDA DE COMUNICACI\u00D3N Y MEDIOS de la PRESIDENCIA DE LA NACI\u00D3N a modificar la estructura organizativa aprobada por el art\u00EDculo 11 del presente decreto, sin que ello implique incremento de las unidades organizativas que la componen ni de las correspondientes partidas presupuestarias, previa intervenci\u00F3n de la DIRECCI\u00D3N NACIONAL DE DISE\u00D1O ORGANIZACIONAL del MINISTERIO DE DESREGULACI\u00D3N Y TRANSFORMACI\u00D3N DEL ESTADO.[[/p]]"
+        },
+        {
+          "numero-articulo": 14,
+          "texto": "[[p]]ART\u00CDCULO 14.- Hasta tanto se efect\u00FAen las adecuaciones presupuestarias correspondientes, la atenci\u00F3n de las erogaciones de las \u00E1reas afectadas por la presente medida se atender\u00E1n con cargo a los cr\u00E9ditos presupuestarios previstos en las Jurisdicciones involucradas.[[/p]]"
+        },
+        {
+          "numero-articulo": 15,
+          "texto": "[[p]]ART\u00CDCULO 15.- Der\u00F3ganse los [[r uuid:DA001]]art\u00EDculos 1\u00B0, 2\u00B0, 3\u00B0, 4\u00B0, 5\u00B0[[/r uuid:DA001]] y [[r uuid:DA002]]7\u00B0 del Decreto N\u00B0\u00A0195 del 28 de febrero de 2020.[[/r uuid:DA002]][[/p]]",
+          "deroga-a": {
+            "referencia-normativa": [
+              {
+                "cr": null,
+                "id": "DEROGA_A_0",
+                "ref": "DEC C 000195 2020 02 28 0001 000 0005 000"
+              },
+              {
+                "cr": null,
+                "id": "DEROGA_A_1",
+                "ref": "DEC C 000195 2020 02 28 0007 000 0000 000"
+              }
+            ]
+          }
+        },
+        {
+          "numero-articulo": 16,
+          "texto": "[[p]]ART\u00CDCULO 16.- El gasto que demande el cumplimiento de la presente medida ser\u00E1 atendido con los cr\u00E9ditos asignados a la Jurisdicci\u00F3n 20-01 - SECRETAR\u00CDA GENERAL de la PRESIDENCIA DE LA NACI\u00D3N y 20-17 - SECRETAR\u00CDA DE COMUNICACI\u00D3N Y MEDIOS.[[/p]]"
+        },
+        {
+          "numero-articulo": 17,
+          "texto": "[[p]]ART\u00CDCULO 17.- Comun\u00EDquese, publ\u00EDquese, dese a la DIRECCI\u00D3N NACIONAL DEL REGISTRO OFICIAL y arch\u00EDvese.[[/p]]"
+        }
+      ],
+      "firmantes": {
+        "firmantes": "MILEI-Francos"
+      },
+      "anexo": [
+        {
+          "anexo": "A",
+          "titulo-anexo": "PLANILLA ANEXA AL ART\u00CDCULO 7\u00B0",
+          "texto": "[[p]][[a uuid:oprstuvw-decr-etos-2025-0000121f1pdf name:20250000121F1.PDF]]PLANILLA ANEXA AL ART\u00CDCULO 7\u00B0[[/a uuid:oprstuvw-decr-etos-2025-0000121f1pdf name:20250000121F1.PDF]][[/p]]"
+        },
+        {
+          "anexo": "B",
+          "titulo-anexo": "ANEXOS",
+          "texto": "[[p]][[a uuid:oprstuvw-decr-etos-2025-0000121f2pdf name:20250000121F2.PDF]]ANEXOS[[/a uuid:oprstuvw-decr-etos-2025-0000121f2pdf name:20250000121F2.PDF]][[/p]]"
+        },
+        {
+          "anexo": "C",
+          "titulo-anexo": "ANEXO II",
+          "texto": "[[p]][[a uuid:oprstuvw-decr-etos-2025-0000121f3pdf name:20250000121F3.PDF]]ANEXO II[[/a uuid:oprstuvw-decr-etos-2025-0000121f3pdf name:20250000121F3.PDF]][[/p]]"
+        },
+        {
+          "anexo": "D",
+          "titulo-anexo": "ANEXO III",
+          "texto": "[[p]][[a uuid:oprstuvw-decr-etos-2025-0000121f4pdf name:20250000121F4.PDF]]ANEXO III[[/a uuid:oprstuvw-decr-etos-2025-0000121f4pdf name:20250000121F4.PDF]][[/p]]"
+        },
+        {
+          "anexo": "E",
+          "titulo-anexo": "ANEXO IV",
+          "texto": "[[p]][[a uuid:oprstuvw-decr-etos-2025-0000121f5pdf name:20250000121F5.PDF]]ANEXO IV[[/a uuid:oprstuvw-decr-etos-2025-0000121f5pdf name:20250000121F5.PDF]][[/p]]"
+        },
+        {
+          "anexo": "F",
+          "titulo-anexo": "PLANILLA ANEXA AL ART\u00CDCULO 12",
+          "texto": "[[p]][[a uuid:oprstuvw-decr-etos-2025-0000121f6pdf name:20250000121F6.PDF]]PLANILLA ANEXA AL ART\u00CDCULO 12[[/a uuid:oprstuvw-decr-etos-2025-0000121f6pdf name:20250000121F6.PDF]][[/p]]"
+        }
+      ],
+      "id-infojus": "DN20250000121",
+      "fecha-umod": 20250225135613
+    }
+  }
+}

@@ -1,0 +1,244 @@
+﻿{
+  "document": {
+    "metadata": {
+      "uuid": "123456789-0abc-033-1000-3202vvorpced",
+      "document-content-type": "legislacion",
+      "timestamp": 1684850770435,
+      "operation": "ADD",
+      "target-document-repository-id": "infojus",
+      "target-index-id": "index",
+      "target-document-indexing-id": "legislacion",
+      "document-recovery-strategy": "abstract-legislacion",
+      "friendly-url": {
+        "subdomain": "decreto",
+        "description": "1330-local-tierra-fuego-reglamentacion-ley-provincial-1430-tiene-objeto-regulacion-ejercicio-profesional-tecnicos-emergencias-salud-v20230001330-2023-05-16"
+      }
+    },
+    "content": {
+      "mecanografico": "V20230001330",
+      "estado": "Vigente, de alcance general",
+      "tipo-norma": {
+        "codigo": "DEC",
+        "texto": "Decreto"
+      },
+      "numero-norma": 1330,
+      "fecha": "2023-05-16",
+      "jurisdiccion": {
+        "codigo": "V",
+        "descripcion": "Local",
+        "capital": "Ushuaia",
+        "id-pais": 11
+      },
+      "provincia": "Tierra del Fuego",
+      "standard-normativo": "DEC V 001330 2023 05 16",
+      "titulo-norma": "Reglamentaci\u00F3n de la Ley Provincial 1430 que tiene por objeto la Regulaci\u00F3n del Ejercicio Profesional de los T\u00E9cnicos en Emergencias de Salud",
+      "nombre-coloquial": "DECRETO 1.330/2023",
+      "lugar-emision": "USHUAIA",
+      "publicacion-codificada": {
+        "publicacion-decodificada": {
+          "organismo": "Bolet\u00EDn Oficial",
+          "fecha": "2023 05 22"
+        }
+      },
+      "analista": "Mazza, Gustavo",
+      "responsable": "Mazza, Gustavo",
+      "uid-alta": "ABM",
+      "uid-mod": "ABM",
+      "fecha-alta": "2023-05-23",
+      "fecha-mod": "2023-05-23",
+      "timestamp": "2023-05-23T11:01:02",
+      "timestamp-alta": "2023-05-23T11:01:02",
+      "timestamp-m": "2023-05-23T11:01:02",
+      "generalidades": {
+        "sintesis": "[[p]]Reglamentaci\u00F3n de la Ley Provincial 1430 que tiene por objeto la Regulaci\u00F3n del Ejercicio Profesional de los T\u00E9cnicos en Emergencias de Salud.[[/p]]",
+        "anexos-decreto": {
+          "anexo-ley": "A ANEXO I"
+        },
+        "observaciones-generales": "[[p]]CANTIDAD DE ARTICULOS QUE COMPONEN LA NORMA: 2[[/p]]",
+        "reglamenta-a": {
+          "referencia-normativa": {
+            "cr": null,
+            "id": "REGLAMENTA_A_0",
+            "ref": "LEY V 001430 2022 09 08 0000 000 0000 000"
+          }
+        }
+      },
+      "descriptores": {
+        "descriptor": [
+          {
+            "elegido": {
+              "termino": "Salud p\u00FAblica"
+            },
+            "preferido": {
+              "termino": "Salud p\u00FAblica"
+            },
+            "sinonimos": null
+          },
+          {
+            "elegido": {
+              "termino": "ejercicio profesional"
+            },
+            "preferido": {
+              "termino": "Derecho civil/derechos personales/responsabilidad civil/responsabilidades especiales/ejercicio profesional"
+            },
+            "sinonimos": {
+              "termino": [
+                "responsabilidad por da\u00F1os",
+                "obligaciones y contratos",
+                "profesional liberal",
+                "profesional universitario",
+                "ejercicio de profesiones liberales",
+                "profesiones liberales",
+                "actividades profesionales",
+                "ejercicio de la profesi\u00F3n",
+                "Derecho de da\u00F1os",
+                "r\u00E9gimen de responsabilidad"
+              ]
+            }
+          }
+        ],
+        "suggest": {
+          "termino": [
+            "Derecho de da\u00F1os (responsabilidad civil)",
+            "profesional liberal (ejercicio profesional)",
+            "Salud p\u00FAblica",
+            "r\u00E9gimen de responsabilidad (responsabilidad civil)",
+            "responsabilidad por da\u00F1os (responsabilidad civil)",
+            "profesional universitario (ejercicio profesional)",
+            "ejercicio de profesiones liberales (ejercicio profesional)",
+            "responsabilidades especiales",
+            "profesiones liberales (ejercicio profesional)",
+            "ejercicio de la profesi\u00F3n (ejercicio profesional)",
+            "ejercicio profesional",
+            "actividades profesionales (ejercicio profesional)",
+            "obligaciones y contratos (derechos personales)",
+            "Derecho civil",
+            "derechos personales",
+            "responsabilidad civil"
+          ]
+        }
+      },
+      "visto": {
+        "referencias-normativas": {
+          "referencia-normativa": {
+            "cr": null,
+            "id": "REFERENCIAS_NORMATIVAS_0",
+            "ref": "LEY V 001430 2022 09 08 0000 000 0000 000"
+          }
+        },
+        "texto": "[[p]]el expediente MS-E-83839-2022 del registro de esta Gobernaci\u00F3n y la [[r uuid:CT001]]Ley Provincial N\u00B0 1430[[/r uuid:CT001]] y[[/p]]"
+      },
+      "considerando": {
+        "referencias-normativas": {
+          "referencia-normativa": [
+            {
+              "cr": null,
+              "id": "REFERENCIAS_NORMATIVAS_0",
+              "ref": "LEY V 001430 2022 09 08 0000 000 0000 000"
+            },
+            {
+              "cr": null,
+              "id": "REFERENCIAS_NORMATIVAS_1",
+              "ref": "CON V 000000 1991 05 17 0135 000 0000 000"
+            }
+          ]
+        },
+        "sancion": "EL GOBERNADOR DE LA PROVINCIA DE TIERRA DEL FUEoo; ANT\u00C1RTIDA E ISLAS DEL ATL\u00C1NTICO SUR DECRETA:",
+        "texto": "[[p]]Que con fecha ocho (08) de septiembre de 2022 fue sancionada la [[r uuid:CT001]]Ley Provincial N\u00BA 1430[[/r uuid:CT001]], la que tiene por objeto regular el ejercicio profesional de los T\u00E9cnicos en Emergencias de Salud.[[/p]][[p]]Que la citada normativa ha sido promulgada en fecha 21 (veintiuno) de septiembre de 2022, mediante el Decreto Provincial N.0 2439/22.[[/p]][[p]]Que la norma a reglamentar, en su art\u00EDculo 2\u00B0, establece que se considera T\u00E9cnicos en Emergencias de Salud a las personas humanas con fomiaci\u00F3n universitaria o terciaria debidamente capacitadas para actuar en la organizaci\u00F3n, preparaci\u00F3n, asistencia y recuperaci\u00F3n de personas que requieren el auxilio de los sistemas de emergencia p\u00FAblicos o privados para la atenci\u00F3n prehospitalaria de soporte vital b\u00E1sico y soporte vital avanzado, conforme a los l\u00EDmites de competencias derivados de los t\u00EDtulos habilitantes.[[/p]][[p]]Que asimismo, la Ley establece que los T\u00E9cnicos en Emergencias de Salud ejercen aut\u00F3nomamente sus funciones e incumbencias de manera individual o en equipos interdisciplinarios de instituciones p\u00FAblicas o privadas debidamente habilitadas.[[/p]][[p]]Que es necesario promover y preservar la salud de la poblaci\u00F3n por medio del control y regulaci\u00F3n efectiva de la pr\u00E1ctica de la profesi\u00F3n de los T\u00E9cnicos en Emergencias de Salud.[[/p]][[p]]Que con \u00E9ste prop\u00F3sito, surge la necesidad de reglamentar la norma que regula dicha actividad profesional, atendiendo as\u00ED a su implementaci\u00F3n.[[/p]][[p]]Que es facultad del Poder Ejecutivo reglamentar las disposiciones contenidas en el referido texto legal, a efectos de dotarlo de definiciones y normas claras para su adecuada instrumentaci\u00F3n en todo el territorio de la Provincia.[[/p]][[p]]Que ha tomado la debida intervenci\u00F3n el servicio jur\u00EDdico correspondiente.[[/p]][[p]]Que el suscripto se encuentra facultado para dictar el presente acto administrativo en virtud de lo establecido en el [[r uuid:CT002]]Art\u00EDculo 135\u00B0 de la Constituci\u00F3n Provincial[[/r uuid:CT002]].[[/p]][[p]]Por ello:[[/p]]"
+      },
+      "articulo": [
+        {
+          "numero-articulo": 1,
+          "texto": "[[p]]ART\u00CDCULO 1 \u00BA.-Aprobar la reglamentaci\u00F3n de la [[r uuid:RG001]]Ley Provincial N\u00BA 1430[[/r uuid:RG001]], que tiene por objeto la Regulaci\u00F3n del Ejercicio Profesional de los T\u00E9cnicos en Emergencias de Salud en el territorio de la Provincia de Tierra del Fuego, Ant\u00E1rtida e Islas del Atl\u00E1ntico Sur, y que como Anexo I forma parte del presente. Ello, por los motivos expuestos en el exordio.[[/p]]",
+          "reglamenta-a": {
+            "referencia-normativa": {
+              "cr": null,
+              "id": "REGLAMENTA_A_0",
+              "ref": "LEY V 001430 2022 09 08 0000 000 0000 000"
+            }
+          }
+        },
+        {
+          "numero-articulo": 2,
+          "texto": "[[p]]ART\u00CDCULO 2\u00B0.- Comunicar, dar al Bolet\u00EDn Oficial de la Provincia y archivar.[[/p]]"
+        }
+      ],
+      "firmantes": {
+        "firmantes": "DI GIGLIO-MELELLA"
+      },
+      "anexo": {
+        "anexo": "A",
+        "titulo-anexo": "ANEXO I",
+        "articulo": [
+          {
+            "numero-articulo": 1,
+            "texto": "[[p]]ART\u00CDCULO 1 \u00BA.- El presente tiene por objeto principal la reglamentaci\u00F3n para la Regulaci\u00F3n del Ejercicio Profesional de los T\u00E9cnicos en Emergencias de Salud en el territorio de la provincia.[[/p]]"
+          },
+          {
+            "numero-articulo": 2,
+            "texto": "[[p]]ART\u00CDCULO 2\u00B0.- Sin reglamentar.[[/p]]"
+          },
+          {
+            "numero-articulo": 3,
+            "texto": "[[p]]ART\u00CDCULO 3\u00B0.- Los T\u00E9cnicos en Emergencias de Salud debidamente habilitados para el ejercicio de la profesi\u00F3n, deber\u00E1n para ello, ser incorporados en el Registro \u00DAnico de Profesionales, T\u00E9cnicos y Auxiliares de la Salud de la provincia, creado por la Resoluci\u00F3n M.S. N\u00BA 1097/2021 y/o normativa que la reemplace en un futuro.[[/p]]"
+          },
+          {
+            "numero-articulo": 4,
+            "texto": "[[p]]ART\u00CDCULO 4\u00B0.- La autoridad de aplicaci\u00F3n, a trav\u00E9s de las Direcciones de Fiscalizaci\u00F3n Sanitaria, Zona Norte o Sur, seg\u00FAn corresponda, ejercer\u00E1 el control y cumplimiento de las normas establecidas para el ejercicio profesional de los T\u00E9cnicos en Emergencias de Salud dentro del marco de la jurisdicci\u00F3n provincial.[[/p]]"
+          },
+          {
+            "referencias-normativas": {
+              "referencia-normativa": {
+                "cr": null,
+                "id": "REFERENCIAS_NORMATIVAS_0",
+                "ref": "LEY V 001430 2022 09 08 0005 000 0000 000"
+              }
+            },
+            "numero-articulo": 5,
+            "texto": "[[p]]ART\u00CDCULO 5\u00B0.- Para el ejercicio de la profesi\u00F3n de T\u00E9cnico en Emergencia de Salud, se deber\u00E1 acreditar fehacientemente, al menos uno (1) de los t\u00EDtulos de formaci\u00F3n habilitantes contemplados en los incisos a) al d), del [[r uuid:CT001]]art\u00EDculo 5\u00B0 de la Ley Provincial N\u00BA 1430[[/r uuid:CT001]].[[/p]][[p]]a) Sin reglamentar.[[/p]][[p]]b) Sin reglamentar.[[/p]][[p]]c) Sin reglamentar.[[/p]][[p]]d) Sin reglamentar.[[/p]][[p]]e) Sin reglamentar.[[/p]]"
+          },
+          {
+            "numero-articulo": 6,
+            "texto": "[[p]]ART\u00CDCULO 6\u00B0.- Sin reglamentar.[[/p]]"
+          },
+          {
+            "numero-articulo": 7,
+            "texto": "[[p]]ART\u00CDCULO 7\u00BA.- a) Sin reglamentar.[[/p]][[p]]b) Sin reglamentar.[[/p]][[p]]e) Deber\u00E1n acreditar asistencia a la/s capacitaci\u00F3n/es determinadas por la Direcci\u00F3n de Docencia y Capacitaci\u00F3n en conjunto con la Direcci\u00F3n General de Atenci\u00F3n a la Emergencia, ambas dependientes del Ministerio de Salud, o las que en un futuro las reemplacen, previo a su incorporaci\u00F3n en los sistemas de atenci\u00F3n m\u00E9dica extrahospitalaria de la provincia, como as\u00ED tambi\u00E9n deber\u00E1n acreditar anualmente, la asistencia a aquellas capacitaciones que sean reconocidas y requerida, oportunamente por la autoridad de aplicaci\u00F3n.[[/p]]"
+          },
+          {
+            "numero-articulo": 8,
+            "texto": "[[p]]ART\u00CDCULO 8\u00B0. - Sin reglamentar.[[/p]]"
+          },
+          {
+            "referencias-normativas": {
+              "referencia-normativa": {
+                "cr": null,
+                "id": "REFERENCIAS_NORMATIVAS_0",
+                "ref": "LEY C 017132 1967 01 24 0000 000 0000 000"
+              }
+            },
+            "numero-articulo": 9,
+            "texto": "[[p]]ART\u00CDCULO 9\u0022.- La autoridad competente en el ejercicio de contralor de la\u00B7 actividad profesional del T\u00E9cnico de Emergencia de Salud y como as\u00ED tambi\u00E9n del \u00E1mbito de su desarrollo, p\u00FAblico o privado, cumplimentar\u00E1 con los procedimientos previstos para sancionar las infracciones en las que se incurran sobre la presente Ley y/o aquellas infracciones vinculadas a la [[r uuid:CT001]]Ley Nacional N\u00BA 17132[[/r uuid:CT001]], aplicando supletoriamente lo establecido en Resoluci\u00F3n M.S. N\u00BA 231/2021 o normativa que la reemplace en un futuro.[[/p]]"
+          },
+          {
+            "numero-articulo": 10,
+            "texto": "[[p]]ART\u00CDCULO 10\u00B0.- Sin reglamentar.[[/p]]"
+          },
+          {
+            "numero-articulo": 11,
+            "texto": "[[p]]ART\u00CDCULO 11 \u00B0.- Sin reglamentar.[[/p]]"
+          },
+          {
+            "numero-articulo": 12,
+            "texto": "[[p]]ART\u00CDCULO 12\u00B0.- Sin reglamentar.[[/p]]"
+          },
+          {
+            "numero-articulo": 13,
+            "texto": "[[p]]ART\u00CDCULO 13\u00B0.- Sin reglamentar.[[/p]]"
+          }
+        ]
+      },
+      "id-infojus": "V20230001330"
+    }
+  }
+}

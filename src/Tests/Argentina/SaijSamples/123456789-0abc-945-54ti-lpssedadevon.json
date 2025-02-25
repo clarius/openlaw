@@ -1,0 +1,159 @@
+﻿{
+  "document": {
+    "metadata": {
+      "uuid": "123456789-0abc-945-54ti-lpssedadevon",
+      "document-content-type": "novedad",
+      "timestamp": 1739810186816,
+      "operation": "ADD",
+      "target-document-repository-id": "infojus",
+      "target-index-id": "index",
+      "target-document-indexing-id": "novedad-legislacion",
+      "document-recovery-strategy": "abstract-novedad",
+      "friendly-url": {
+        "subdomain": null,
+        "description": "camara-nacional-crimen-desconocio-al-maximo-tribunal-ciudad-como-su-organo-judicial-alzada-nv45549-2025-02-12"
+      }
+    },
+    "content": {
+      "seq": 45549,
+      "archivo": 70,
+      "jurisdiccion": "NACIONAL",
+      "tipo-norma": {
+        "codigo": "ACO",
+        "texto": "Acordada"
+      },
+      "nro_norma": 0,
+      "provincia": "Ciudad Aut\u00F3noma de Buenos Aires",
+      "org_emisor": "CAMARA NACIONAL DE APELACIONES EN LO CRIMINAL Y CORRECCIONAL",
+      "descriptores": {
+        "descriptor": [
+          {
+            "elegido": {
+              "termino": "\n\t\t\tTRIBUNAL SUPERIOR DE JUSTICIA DE LA CIUDAD AUT\u00D3NOMA DE BUENOS AIRES\n\t\t"
+            },
+            "preferido": {
+              "termino": "\n\t\t\tTRIBUNAL SUPERIOR DE JUSTICIA DE LA CIUDAD AUT\u00D3NOMA DE BUENOS AIRES \n\t\t"
+            },
+            "sinonimos": "\n \t"
+          },
+          {
+            "elegido": {
+              "termino": "\n\t\t\tSuperior Tribunal de la Causa\n\t\t"
+            },
+            "preferido": {
+              "termino": "\n\t\t\tDerecho procesal/recursos/Superior Tribunal de la Causa \n\t\t"
+            },
+            "sinonimos": {
+              "termino": [
+                "\n\t\t\trecursos judiciales\n\t\t",
+                "\n\t\t\tacci\u00F3n recursoria\n\t\t",
+                "\n\t\t\tTribunal Superior de la Causa\n\t\t",
+                "\n\t\t\trecursos procesales\n\t\t",
+                "\n\t\t\ttribunal superior\n\t\t"
+              ]
+            }
+          },
+          {
+            "elegido": {
+              "termino": "\n\t\t\ttribunal de alzada\n\t\t"
+            },
+            "preferido": {
+              "termino": "\n\t\t\tDerecho procesal/organizaci\u00F3n de la justicia/tribunal de alzada \n\t\t"
+            },
+            "sinonimos": {
+              "termino": [
+                "\n\t\t\torganizaci\u00F3n del Poder Judicial\n\t\t",
+                "\n\t\t\torganizaci\u00F3n judicial\n\t\t"
+              ]
+            }
+          },
+          {
+            "elegido": {
+              "termino": "\n\t\t\tfacultades del Poder Legislativo\n\t\t"
+            },
+            "preferido": {
+              "termino": "\n\t\t\tDerecho constitucional/poderes del Estado/Poder Legislativo/facultades del Poder Legislativo \n\t\t"
+            },
+            "sinonimos": {
+              "termino": [
+                "\n\t\t\tpoderes p\u00FAblicos\n\t\t",
+                "\n\t\t\tactos del Poder Legislativo\n\t\t"
+              ]
+            }
+          },
+          {
+            "elegido": {
+              "termino": "\n\t\t\tprincipio de legalidad\n\t\t"
+            },
+            "preferido": {
+              "termino": "\n\t\t\tDerecho constitucional/derechos y garant\u00EDas constitucionales/garant\u00EDas procesales/principio de legalidad \n\t\t"
+            },
+            "sinonimos": {
+              "termino": [
+                "\n\t\t\tgarant\u00EDas constitucionales\n\t\t",
+                "\n\t\t\tnullum crimen nulla poena sine lege\n\t\t",
+                "\n\t\t\tprincipios constitucionales\n\t\t",
+                "\n\t\t\tnulla poena sine lege\n\t\t",
+                "\n\t\t\tley anterior al hecho del proceso\n\t\t",
+                "\n\t\t\tdisposiciones constitucionales\n\t\t"
+              ]
+            }
+          }
+        ],
+        "suggest": {
+          "termino": [
+            "\n\t\torganizaci\u00F3n judicial (organizaci\u00F3n de la justicia)\n\t",
+            "\n\t\tfacultades del Poder Legislativo\n\t",
+            "\n\t\trecursos\n\t",
+            "\n\t\tley anterior al hecho del proceso (principio de legalidad)\n\t",
+            "\n\t\torganizaci\u00F3n del Poder Judicial (organizaci\u00F3n de la justicia)\n\t",
+            "\n\t\ttribunal superior (Superior Tribunal de la Causa)\n\t",
+            "\n\t\tacci\u00F3n recursoria (recursos)\n\t",
+            "\n\t\tnullum crimen nulla poena sine lege (principio de legalidad)\n\t",
+            "\n\t\tDerecho procesal\n\t",
+            "\n\t\tpoderes p\u00FAblicos (poderes del Estado)\n\t",
+            "\n\t\tdisposiciones constitucionales (derechos y garant\u00EDas constitucionales)\n\t",
+            "\n\t\trecursos judiciales (recursos)\n\t",
+            "\n\t\ttribunal de alzada\n\t",
+            "\n\t\tprincipios constitucionales (derechos y garant\u00EDas constitucionales)\n\t",
+            "\n\t\tSuperior Tribunal de la Causa\n\t",
+            "\n\t\tpoderes del Estado\n\t",
+            "\n\t\tDerecho constitucional\n\t",
+            "\n\t\tgarant\u00EDas constitucionales (derechos y garant\u00EDas constitucionales)\n\t",
+            "\n\t\tprincipio de legalidad\n\t",
+            "\n\t\trecursos procesales (recursos)\n\t",
+            "\n\t\tnulla poena sine lege (principio de legalidad)\n\t",
+            "\n\t\tderechos y garant\u00EDas constitucionales\n\t",
+            "\n\t\tTribunal Superior de la Causa (Superior Tribunal de la Causa)\n\t",
+            "\n\t\tTRIBUNAL SUPERIOR DE JUSTICIA DE LA CIUDAD AUT\u00D3NOMA DE BUENOS AIRES\n\t",
+            "\n\t\tPoder Legislativo\n\t",
+            "\n\t\tactos del Poder Legislativo (facultades del Poder Legislativo)\n\t",
+            "\n\t\torganizaci\u00F3n de la justicia\n\t",
+            "\n\t\tgarant\u00EDas procesales\n\t"
+          ]
+        },
+        "invalidos": {
+          "termino": "\n\t\t\t sentencia de la corte suprema \u0096 acordadas \n\t\t"
+        }
+      },
+      "localidad": "CAPITAL FEDERAL",
+      "sintesis": "En acuerdo general y por unanimidad sus integrantes se pronunciaron a ra\u00EDz de la sentencia reca\u00EDda en Ferrari c/Levinas dictada por la Corte Suprema en diciembre pasado, resaltaron que ubicar al tribunal porte\u00F1o como superior respecto de los nacionales representa una configuraci\u00F3n ajena a las v\u00EDas recursivas previstas por ley y cuya modificaci\u00F3n no es competencia del M\u00E1ximo Tribunal Nacional el que no puede crear tales instancias sin afectar el principio de legalidad constitucional. ",
+      "fecha": "2025-02-12",
+      "fecha_alta": "2025-02-14",
+      "ppublic_nov": 7,
+      "d_link": {
+        "filename": "ac_camara_apelaciones.pdf",
+        "uuid": "wnovedad-esac-cama-raap-elacionespdf"
+      },
+      "fecha_umod": "17/02/2025",
+      "status": "A",
+      "titulo_noticia": "La C\u00E1mara Nacional del Crimen desconoci\u00F3 al M\u00E1ximo Tribunal de la Ciudad como su \u00F3rgano judicial de alzada ",
+      "destacada": 0,
+      "fecha_newsletter": "14/02/2025 00:00:00-03",
+      "suplemento_bo": 0,
+      "subtipo": "Acordada",
+      "id-infojus": "NV45549",
+      "fecha-umod": 20250217133626
+    }
+  }
+}
