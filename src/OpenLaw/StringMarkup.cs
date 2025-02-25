@@ -18,6 +18,9 @@ public static partial class StringMarkup
         if (value == null)
             return null;
 
+        if (value.Length == 0)
+            return value;
+
         // First add proper paragraph breaks
         var paragraphs = value.Replace("\r\n", "\n").Replace("[[p]]", "\n").Replace("[[/p]]", "\n");
         // Next collapse multiple paragraph separators (unnecessary newlines) into a single one
