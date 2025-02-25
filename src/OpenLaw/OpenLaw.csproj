@@ -21,6 +21,7 @@
     <PackageReference Include="NuGetizer" Version="1.2.4" PrivateAssets="all" />
     <PackageReference Include="Polly" Version="8.5.2" />
     <PackageReference Include="Spectre.Console.Cli" Version="0.49.1" />
+    <PackageReference Include="Spectre.Console.Json" Version="0.49.1" />
     <PackageReference Include="ThisAssembly.Strings" Version="2.0.12" PrivateAssets="all" />
     <PackageReference Include="ThisAssembly.AssemblyInfo" Version="2.0.12" PrivateAssets="all" />
     <PackageReference Include="ThisAssembly.Project" Version="2.0.12" PrivateAssets="all" />
@@ -35,6 +36,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <EmbeddedResource Include="Argentina\SaijIdType.jq" />
     <EmbeddedResource Include="Argentina\SaijAbstract.jq" />
     <EmbeddedResource Include="Argentina\SaijDocument.jq" />
     <EmbeddedResource Include="Argentina\SaijMetadata.jq" />
