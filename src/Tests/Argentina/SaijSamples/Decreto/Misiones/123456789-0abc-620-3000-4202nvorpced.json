@@ -1,0 +1,166 @@
+﻿{
+  "document": {
+    "metadata": {
+      "uuid": "123456789-0abc-620-3000-4202nvorpced",
+      "document-content-type": "legislacion",
+      "timestamp": 1736964667950,
+      "operation": "ADD",
+      "target-document-repository-id": "infojus",
+      "target-index-id": "index",
+      "target-document-indexing-id": "legislacion",
+      "document-recovery-strategy": "abstract-legislacion",
+      "friendly-url": {
+        "subdomain": "decreto",
+        "description": "3026-local-misiones-declaracion-emergencia-ignea-termino-180-dias-todo-territorio-provincia-n20240003026-2024-12-30"
+      }
+    },
+    "content": {
+      "mecanografico": "N20240003026",
+      "estado": "Vigente, de alcance general",
+      "tipo-norma": {
+        "codigo": "DEC",
+        "texto": "Decreto"
+      },
+      "numero-norma": 3026,
+      "fecha": "2024-12-30",
+      "jurisdiccion": {
+        "codigo": "N",
+        "descripcion": "Local",
+        "capital": "Posadas",
+        "id-pais": 11
+      },
+      "provincia": "Misiones",
+      "standard-normativo": "DEC N 003026 2024 12 30",
+      "titulo-norma": "Declaraci\u00F3n de Emergencia \u00CDgnea por el t\u00E9rmino de 180 d\u00EDas en todo el territorio de la provincia",
+      "nombre-coloquial": "DECRETO 3.026/2024",
+      "lugar-emision": "POSADAS",
+      "publicacion-codificada": {
+        "publicacion-decodificada": {
+          "organismo": "Bolet\u00EDn Oficial",
+          "fecha": "2025 01 15"
+        }
+      },
+      "analista": "Mazza, Gustavo",
+      "responsable": "Mazza, Gustavo",
+      "uid-alta": "ABM",
+      "uid-mod": "ABM",
+      "fecha-alta": "2025-01-15",
+      "fecha-mod": "2025-01-15",
+      "timestamp": "2025-01-15T15:01:44",
+      "timestamp-alta": "2025-01-15T15:01:44",
+      "timestamp-m": "2025-01-15T15:01:44",
+      "generalidades": {
+        "sintesis": "[[p]]Declaraci\u00F3n de Emergencia \u00CDgnea por el t\u00E9rmino de 180 d\u00EDas en todo el territorio de la provincia.[[/p]]",
+        "observaciones-generales": "[[p]]CANTIDAD DE ARTICULOS QUE COMPONEN LA NORMA: 6[[/p]]"
+      },
+      "descriptores": {
+        "descriptor": [
+          {
+            "elegido": {
+              "termino": "emergencia \u00EDgnea"
+            },
+            "preferido": {
+              "termino": "Bienestar social/pol\u00EDticas sociales/desarrollo sostenible/emergencia \u00EDgnea"
+            },
+            "sinonimos": {
+              "termino": [
+                "acci\u00F3n social",
+                "pol\u00EDticas sociales comunitarias"
+              ]
+            }
+          },
+          {
+            "elegido": {
+              "termino": "incendio"
+            },
+            "preferido": {
+              "termino": "Bienestar social/emergencias sociales/cat\u00E1strofe/incendio"
+            },
+            "sinonimos": {
+              "termino": "acci\u00F3n social"
+            }
+          }
+        ],
+        "suggest": {
+          "termino": [
+            "pol\u00EDticas sociales comunitarias (pol\u00EDticas sociales)",
+            "emergencias sociales",
+            "incendio",
+            "Bienestar social",
+            "acci\u00F3n social (Bienestar social)",
+            "pol\u00EDticas sociales",
+            "desarrollo sostenible",
+            "emergencia \u00EDgnea",
+            "cat\u00E1strofe"
+          ]
+        }
+      },
+      "visto": {
+        "referencias-normativas": {
+          "referencia-normativa": {
+            "cr": null,
+            "id": "REFERENCIAS_NORMATIVAS_0",
+            "ref": "LEY N 000006 2009 12 03 0009 000 0000 000"
+          }
+        },
+        "texto": "[[p]]Las atribuciones conferidas por [[r uuid:CT001]]Ley XVIII - N\u00B0 6, Art\u00EDculo 9\u00B0 Inc. D)[[/r uuid:CT001]] y las escasas precipitaciones que favorecen a la situaci\u00F3n \u00EDgnea que afecta a todo el territorio de la Provincia, y;[[/p]]"
+      },
+      "considerando": {
+        "referencias-normativas": {
+          "referencia-normativa": {
+            "cr": null,
+            "id": "REFERENCIAS_NORMATIVAS_0",
+            "ref": "LEY N 000011 2016 10 27 0085 000 0000 000 B"
+          }
+        },
+        "sancion": "EL GOBERNADOR DE LA PROVINCIA DE MISIONES DECRETA:",
+        "texto": "[[p]]QUE, se registra en la Provincia una extensa sequ\u00EDa, registr\u00E1ndose precipitaciones por debajo de la media; este persistente d\u00E9ficit de precipitaciones sobre las cuencas de los r\u00EDos Paran\u00E1, Iguaz\u00FA y Uruguay ha provocado bajantes hist\u00F3ricas de r\u00EDos y arroyos, como tambi\u00E9n escases de los recursos h\u00EDdricos subterr\u00E1neos, con notorios impactos sociales y ambientales en todo el territorio provincial;[[/p]][[p]]QUE, el pron\u00F3stico clim\u00E1tico extendido para los meses de Enero, Febrero y Marzo del 2.025 publicado por el Servicio Meteorol\u00F3gico Nacional indica temperaturas superiores a las media y precipitaciones por debajo de lo normal para la Provincia;[[/p]][[p]]QUE, en el escenario clim\u00E1tico anteriormente descripto, las actuales condiciones meteorol\u00F3gicas propician la aparici\u00F3n y diseminaci\u00F3n de focos de incendios urbanos, rurales y forestales; siendo su mayor impacto la destrucci\u00F3n de \u00E1reas naturales con la consiguiente p\u00E9rdida de biodiversidad nativa, contaminaci\u00F3n de r\u00EDos y lagos, la desertificaci\u00F3n y erosi\u00F3n del suelo, como el peligro para las personas y los bienes en caso de incendios en zonas urbanas;[[/p]][[p]]QUE, es necesario implementar las acciones tendientes a la reparaci\u00F3n de los da\u00F1os producidos o que se puedan producir a futuro como consecuencia del fen\u00F3meno clim\u00E1tico, y en tal sentido llevar a cabo acciones de gobierno que permitan adoptar en forma inmediata las medidas pertinentes para afrontar la situaci\u00F3n \u00E1tica y atenuar los efectos de manera eficiente;[[/p]][[p]]QUE, en atenci\u00F3n a la envergadura de la problem\u00E1tica a nivel provincial y necesidad de adoptar e intensificar medidas de prevenci\u00F3n de forma urgente y con la premura que se impone, resulta apropiado encuadrar las contrataciones que resulten prioritarias en los alcances del [[r uuid:CT001]]Art\u00EDculo 85\u00B0, apartado 3\u00B0, Inc. O), de la Ley VII - N\u00B0 11, Ley de Contabilidad[[/r uuid:CT001]], y normas reglamentarias, para la adquisici\u00F3n de servicios, productos y/o elementos necesarios para la ejecuci\u00F3n de las acciones de mitigaci\u00F3n de los efectos de este fen\u00F3meno;[[/p]][[p]]QUE, por las razones expuestas y en m\u00E9rito a la normativa constitucional y legal provincial, el titular del Poder Ejecutivo estima oportuno dictar el dispositivo pertinente declarando formalmente en Estado de Emergencia de car\u00E1cter \u00CDgneo, en todo el territorio provincial por los fen\u00F3menos clim\u00E1ticos mencionados;[[/p]][[p]]QUE, a tal efecto procede el dictado del presente instrumento;[[/p]][[p]]POR ELLO:[[/p]]"
+      },
+      "articulo": [
+        {
+          "referencias-normativas": {
+            "referencia-normativa": {
+              "cr": null,
+              "id": "REFERENCIAS_NORMATIVAS_0",
+              "ref": "LEY N 000006 2009 12 03 0000 000 0000 000"
+            }
+          },
+          "numero-articulo": 1,
+          "texto": "[[p]]ART\u00CDCULO 1\u00B0.- DECL\u00C1RESE la Emergencia \u00CDgnea en el Marco de la [[r uuid:CT001]]Ley Provincial XVIII - N\u00B0 6[[/r uuid:CT001]] por el t\u00E9rmino de ciento ochenta (180) d\u00EDas corridos, desde el dictado del presente decreto en todo el territorio de la Provincia de Misiones, pudiendo disponer su pr\u00F3rroga en caso de continuar verific\u00E1ndose la situaci\u00F3n que diera lugar a la presente declaraci\u00F3n.-[[/p]]"
+        },
+        {
+          "numero-articulo": 2,
+          "texto": "[[p]]ART\u00CDCULO 2\u00B0.- ENCOMI\u00C9NDESE al Ministerio de Hacienda, Finanzas, Obras y Servicios P\u00FAblicos, Ministerio de Gobierno, Ministerio del Agro y la Producci\u00F3n, Ministerio de Salud P\u00FAblica, Ministerio de Coordinaci\u00F3n General de Gabinete y Ministerio de Ecolog\u00EDa y Recursos Naturales Renovables, Secretar\u00EDa de Estado de Cambio clim\u00E1tico, Secretar\u00EDa de Estado de Agricultura Familiar, Instituto Misionero de Biodiversidad (IMIBIO), a la adopci\u00F3n de medidas y acciones t\u00E9cnicas necesarias para la prevenci\u00F3n, combate y presupresi\u00F3n de incendios urbanos, rurales y forestales en el territorio de la Provincia y la mitigaci\u00F3n de las consecuencias de los mismos.-[[/p]]"
+        },
+        {
+          "referencias-normativas": {
+            "referencia-normativa": {
+              "cr": null,
+              "id": "REFERENCIAS_NORMATIVAS_0",
+              "ref": "LEY N 000011 2016 10 27 0085 000 0000 000 B"
+            }
+          },
+          "numero-articulo": 3,
+          "texto": "[[p]]ART\u00CDCULO 3\u00B0.- ENCU\u00C1DRESE en los alcances del[[r uuid:CT001]] Art\u00EDculo 85\u00B0, apartado 3\u00B0, Inc. O), de la Ley VII - N\u00B0 6, Ley de Contabilidad[[/r uuid:CT001]], y normas reglamentarias, a todas las contrataciones y adquisiciones que se efect\u00FAen con motivo de aplicaci\u00F3n del presente Decreto.-[[/p]]"
+        },
+        {
+          "numero-articulo": 4,
+          "texto": "[[p]]ART\u00CDCULO 4\u00B0.- FAC\u00DALTASE al Sr. Ministro de Hacienda, Finanzas, Obras y Servicios P\u00FAblicos para que, en funci\u00F3n de la emergencia declarada en el art\u00EDculo 1\u00B0 del presente, efect\u00FAe las adecuaciones presupuestarias que resulten pertinentes para atender el gasto que demande la implementaci\u00F3n de las acciones a adoptar.-[[/p]]"
+        },
+        {
+          "numero-articulo": 5,
+          "texto": "[[p]]ART\u00CDCULO 5\u00B0.- REFRENDAR\u00C1 el presente Decreto el Sr. Ministro de Gobierno.-[[/p]]"
+        },
+        {
+          "numero-articulo": 6,
+          "texto": "[[p]]ART\u00CDCULO 6\u00B0.- REG\u00CDSTRESE, comun\u00EDquese, notif\u00EDquese, dese a publicidad. Tomen conocimiento Ministerios y Secretar\u00EDas de Estado, entes aut\u00E1rquicos y organismos descentralizados, Sociedades del Estado, Sociedades An\u00F3nimas con Participaci\u00F3n Estatal Mayoritaria y Sociedades de Econom\u00EDa Mixta controladas por el Estado Provincial. Direcci\u00F3n General de Presupuesto y Contadur\u00EDa General de la Provincia. Cumplido, ARCH\u00CDVESE.-[[/p]]"
+        }
+      ],
+      "firmantes": {
+        "firmantes": "PASSALACQUA - P\u00E9rez"
+      },
+      "id-infojus": "N20240003026",
+      "fecha-umod": 20250115151107
+    }
+  }
+}

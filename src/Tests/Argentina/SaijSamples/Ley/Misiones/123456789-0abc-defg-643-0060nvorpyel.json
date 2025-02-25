@@ -1,0 +1,171 @@
+﻿{
+  "document": {
+    "metadata": {
+      "uuid": "123456789-0abc-defg-643-0060nvorpyel",
+      "document-content-type": "legislacion",
+      "timestamp": 1732299508085,
+      "operation": "ADD",
+      "target-document-repository-id": "infojus",
+      "target-index-id": "index",
+      "target-document-indexing-id": "legislacion",
+      "document-recovery-strategy": "abstract-legislacion",
+      "friendly-url": {
+        "subdomain": "ley",
+        "description": "346-local-misiones-institucion-2025-como-ano-proteccion-integral-para-ninas-ninos-adolescentes-lucha-contra-abuso-violencia-todas-sus-formas-ciberdelitos-accesibilidad-digital-para-personas-discapacidad-contribucion-cooperativas-objetivos-desarrollo-sostenible-asi-como-concientizacion-promocion-funga-misionera-lpn0600346-2024-10-31"
+      }
+    },
+    "content": {
+      "mecanografico": "N0600346",
+      "estado": "Vigente, de alcance general",
+      "tipo-norma": {
+        "codigo": "LEY",
+        "texto": "Ley"
+      },
+      "numero-norma": 346,
+      "fecha": "2024-10-31",
+      "jurisdiccion": {
+        "codigo": "N",
+        "descripcion": "Local",
+        "capital": "Posadas",
+        "id-pais": 11
+      },
+      "provincia": "Misiones",
+      "standard-normativo": "LEY N 000346 2024 10 31",
+      "identificacion-coloquial": {
+        "identificacion-coloquial": [
+          "LEY VI-346",
+          "POSADAS, 31 DE OCTUBRE DE 2024"
+        ]
+      },
+      "nombre-coloquial": "LEY VI-346",
+      "lugar-sancion": "POSADAS",
+      "titulo-norma": "Instituci\u00F3n del 2.025 como \u0022A\u00F1o de la Protecci\u00F3n Integral para Ni\u00F1as, Ni\u00F1os y Adolescentes y la Lucha contra el Abuso, la Violencia en Todas sus Formas, los Ciberdelitos, por la Accesibilidad Digital para Personas con Discapacidad y la Contribuci\u00F3n de las Cooperativas a los Objetivos de Desarrollo Sostenible, as\u00ED como la Concientizaci\u00F3n y Promoci\u00F3n de la Funga Misionera\u0022",
+      "publicacion-codificada": {
+        "publicacion-decodificada": {
+          "organismo": "Bolet\u00EDn Oficial",
+          "fecha": "2024 11 14"
+        }
+      },
+      "sancion": "LA C\u00C1MARA DE REPRESENTANTES DE LA PROVINCIA DE MISIONES SANCIONA CON FUERZA DE LEY:",
+      "analista": "Mazza, Gustavo",
+      "responsable": "Mazza, Gustavo",
+      "rama-digesto": "VI",
+      "uid-alta": "ABM",
+      "uid-mod": "ABM",
+      "fecha-alta": "2024-11-22",
+      "fecha-mod": "2024-11-22",
+      "timestamp": "2024-11-22T15:11:58",
+      "timestamp-alta": "2024-11-22T15:11:58",
+      "timestamp-m": "2024-11-22T15:11:58",
+      "sumario": {
+        "sumario": "[[p]]Instituci\u00F3n del 2.025 como \u0022A\u00F1o de la Protecci\u00F3n Integral para Ni\u00F1as, Ni\u00F1os y Adolescentes y la Lucha contra el Abuso, la Violencia en Todas sus Formas, los Ciberdelitos, por la Accesibilidad Digital para Personas con Discapacidad y la Contribuci\u00F3n de las Cooperativas a los Objetivos de Desarrollo Sostenible, as\u00ED como la Concientizaci\u00F3n y Promoci\u00F3n de la Funga Misionera\u0022.[[/p]]"
+      },
+      "descriptores": {
+        "descriptor": [
+          {
+            "elegido": {
+              "termino": "conmemoraciones"
+            },
+            "preferido": {
+              "termino": "Cultura y educaci\u00F3n/cultura/pol\u00EDtica cultural/conmemoraciones"
+            },
+            "sinonimos": {
+              "termino": [
+                "Educaci\u00F3n y Cultura",
+                "pol\u00EDtica cient\u00EDfica",
+                "pol\u00EDtica tecnol\u00F3gica"
+              ]
+            }
+          },
+          {
+            "elegido": {
+              "termino": "protecci\u00F3n integral de derechos de ni\u00F1os, ni\u00F1as y adolescentes"
+            },
+            "preferido": {
+              "termino": "Derechos humanos/derechos de las ni\u00F1as, ni\u00F1os y adolescentes"
+            },
+            "sinonimos": {
+              "termino": [
+                "derechos del ni\u00F1o y del adolescente",
+                "derechos de las ni\u00F1as",
+                "derechos fundamentales",
+                "derechos de los ni\u00F1os y j\u00F3venes",
+                "derecho de menores",
+                "protecci\u00F3n integral del ni\u00F1o",
+                "derechos humanos del menor",
+                "protecci\u00F3n integral de derechos de ni\u00F1os, ni\u00F1as y adolescentes",
+                "protecci\u00F3n del ni\u00F1o",
+                "derechos del ni\u00F1o",
+                "protecci\u00F3n de la ni\u00F1ez y la adolescencia"
+              ]
+            }
+          },
+          {
+            "elegido": {
+              "termino": "ciberdelitos"
+            },
+            "preferido": {
+              "termino": "Derecho inform\u00E1tico/delitos inform\u00E1ticos"
+            },
+            "sinonimos": {
+              "termino": "ciberdelitos"
+            }
+          }
+        ],
+        "suggest": {
+          "termino": [
+            "derechos de las ni\u00F1as, ni\u00F1os y adolescentes",
+            "delitos inform\u00E1ticos",
+            "Educaci\u00F3n y Cultura (Cultura y educaci\u00F3n)",
+            "Cultura y educaci\u00F3n",
+            "protecci\u00F3n integral del ni\u00F1o (derechos de las ni\u00F1as, ni\u00F1os y adolescentes)",
+            "protecci\u00F3n de la ni\u00F1ez y la adolescencia (derechos de las ni\u00F1as, ni\u00F1os y adolescentes)",
+            "derechos del ni\u00F1o y del adolescente (derechos de las ni\u00F1as, ni\u00F1os y adolescentes)",
+            "Derechos humanos",
+            "conmemoraciones",
+            "pol\u00EDtica tecnol\u00F3gica (pol\u00EDtica cultural)",
+            "pol\u00EDtica cient\u00EDfica (pol\u00EDtica cultural)",
+            "Derecho inform\u00E1tico",
+            "derechos de los ni\u00F1os y j\u00F3venes (derechos de las ni\u00F1as, ni\u00F1os y adolescentes)",
+            "derechos humanos del menor (derechos de las ni\u00F1as, ni\u00F1os y adolescentes)",
+            "derecho de menores (derechos de las ni\u00F1as, ni\u00F1os y adolescentes)",
+            "pol\u00EDtica cultural",
+            "derechos fundamentales (Derechos humanos)",
+            "derechos de las ni\u00F1as (derechos de las ni\u00F1as, ni\u00F1os y adolescentes)",
+            "derechos del ni\u00F1o (derechos de las ni\u00F1as, ni\u00F1os y adolescentes)",
+            "protecci\u00F3n integral de derechos de ni\u00F1os, ni\u00F1as y adolescentes (derechos de las ni\u00F1as, ni\u00F1os y adolescentes)",
+            "protecci\u00F3n del ni\u00F1o (derechos de las ni\u00F1as, ni\u00F1os y adolescentes)",
+            "cultura",
+            "ciberdelitos (delitos inform\u00E1ticos)"
+          ]
+        }
+      },
+      "generalidades": {
+        "observaciones-generales": "[[p]]CANTIDAD DE ARTICULOS QUE COMPONEN LA NORMA: 4[[/p]]"
+      },
+      "articulo": [
+        {
+          "numero-articulo": 1,
+          "texto": "[[p]]ART\u00CDCULO 1.- Se instituye al 2.025 como \u0022A\u00F1o de la Protecci\u00F3n Integral para Ni\u00F1as, Ni\u00F1os y Adolescentes y la Lucha contra el Abuso, la Violencia en Todas sus Formas, los Ciberdelitos, por la Accesibilidad Digital para Personas con Discapacidad y la Contribuci\u00F3n de las Cooperativas a los Objetivos de Desarrollo Sostenible, as\u00ED como la Concientizaci\u00F3n y Promoci\u00F3n de la Funga Misionera\u0022.[[/p]]"
+        },
+        {
+          "numero-articulo": 2,
+          "texto": "[[p]]ART\u00CDCULO 2.- Se establece que a partir del 1\u00BA de Enero de 2.025 toda documentaci\u00F3n oficial expedida por las distintas reparticiones que conforman el sector p\u00FAblico provincial, deben incluir en el margen superior derecho la leyenda:[[/p]][[p]]\u00222.025 - A\u00F1o de la Protecci\u00F3n Integral para Ni\u00F1as, Ni\u00F1os y Adolescentes y la Lucha contra el Abuso, la Violencia en Todas sus Formas, los Ciberdelitos, por la Accesibilidad Digital para Personas con Discapacidad y la Contribuci\u00F3n de las Cooperativas a los Objetivos de Desarrollo Sostenible, as\u00ED como la Concientizaci\u00F3n y Promoci\u00F3n de la Funga Misionera\u0022.[[/p]]"
+        },
+        {
+          "numero-articulo": 3,
+          "texto": "[[p]]ART\u00CDCULO 3.- Se invita a los municipios a adherir a la presente ley.[[/p]]"
+        },
+        {
+          "numero-articulo": 4,
+          "texto": "[[p]]ART\u00CDCULO 4.- Comun\u00EDquese al Poder Ejecutivo.[[/p]]"
+        }
+      ],
+      "firmantes": {
+        "firmantes": "HERRERA AHUAD - Manitto A/C"
+      },
+      "id-infojus": "LPN0600346",
+      "fecha-umod": 20241122151828
+    }
+  }
+}

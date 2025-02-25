@@ -1,0 +1,141 @@
+﻿{
+  "document": {
+    "metadata": {
+      "uuid": "123456789-0abc-080-0000-5202tvorpced",
+      "document-content-type": "legislacion",
+      "timestamp": 1739282233364,
+      "operation": "ADD",
+      "target-document-repository-id": "infojus",
+      "target-index-id": "index",
+      "target-document-indexing-id": "legislacion",
+      "document-recovery-strategy": "abstract-legislacion",
+      "friendly-url": {
+        "subdomain": "decreto",
+        "description": "80-local-tucuman-crea-programa-tarjeta-alimentaria-independencia-cual-sera-ejecutado-ministerio-desarrollo-social-t20250000080-2025-01-17"
+      }
+    },
+    "content": {
+      "mecanografico": "T20250000080",
+      "estado": "Vigente, de alcance general",
+      "tipo-norma": {
+        "codigo": "DEC",
+        "texto": "Decreto"
+      },
+      "numero-norma": 80,
+      "fecha": "2025-01-17",
+      "jurisdiccion": {
+        "codigo": "T",
+        "descripcion": "Local",
+        "capital": "San Miguel de Tucum\u00E1n",
+        "id-pais": 11
+      },
+      "provincia": "Tucum\u00E1n",
+      "standard-normativo": "DEC T 000080 2025 01 17",
+      "titulo-norma": "Crea el Programa Tarjeta Alimentaria Independencia el cual ser\u00E1 ejecutado por el Ministerio de Desarrollo Social",
+      "nombre-coloquial": "DECRETO 80/2025",
+      "lugar-emision": "San Miguel de Tucum\u00E1n",
+      "publicacion-codificada": {
+        "publicacion-decodificada": {
+          "organismo": "Bolet\u00EDn Oficial",
+          "fecha": "2025 01 28"
+        }
+      },
+      "analista": "Signorelli, Angela",
+      "responsable": "Signorelli, Angela",
+      "uid-alta": "ABM",
+      "uid-mod": "ABM",
+      "fecha-alta": "2025-02-11",
+      "fecha-mod": "2025-02-11",
+      "timestamp": "2025-02-11T10:36:43",
+      "timestamp-alta": "2025-02-11T10:36:43",
+      "timestamp-m": "2025-02-11T10:36:43",
+      "generalidades": {
+        "sintesis": "[[p]]Crea el Programa Tarjeta Alimentaria Independencia el cual ser\u00E1 ejecutado por el Ministerio de Desarrollo Social[[/p]]",
+        "observaciones-generales": "[[p]]CANTIDAD DE ARTICULOS QUE COMPONEN LA NORMA: 07[[/p]]"
+      },
+      "descriptores": {
+        "descriptor": [
+          {
+            "elegido": {
+              "termino": "pol\u00EDtica alimentaria"
+            },
+            "preferido": {
+              "termino": "Bienestar social/asistencia alimentaria/pol\u00EDtica alimentaria"
+            },
+            "sinonimos": {
+              "termino": [
+                "acci\u00F3n social",
+                "ayuda alimentaria"
+              ]
+            }
+          },
+          {
+            "elegido": {
+              "termino": "ayuda alimentaria"
+            },
+            "preferido": {
+              "termino": "Bienestar social/asistencia alimentaria"
+            },
+            "sinonimos": {
+              "termino": [
+                "acci\u00F3n social",
+                "ayuda alimentaria"
+              ]
+            }
+          }
+        ],
+        "suggest": {
+          "termino": [
+            "pol\u00EDtica alimentaria",
+            "Bienestar social",
+            "acci\u00F3n social (Bienestar social)",
+            "ayuda alimentaria (asistencia alimentaria)",
+            "asistencia alimentaria"
+          ]
+        }
+      },
+      "visto": {
+        "texto": "[[p]]las presentes actuaciones por las cuales la Direcci\u00F3n de Pol\u00EDticas Alimentaria dependiente de la Secretar\u00EDa de Estado de Articulaci\u00F3n Territorial y Desarrollo Local del Ministerio de Desarrollo Social, eleva para su creaci\u00F3n y aprobaci\u00F3n el \u0022Programa Tarjeta Alimentaria Independencia\u0022, y[[/p]]"
+      },
+      "considerando": {
+        "sancion": "EL GOBERNADOR DE LA PROVINCIA DECRETA:",
+        "texto": "[[p]]Que el citado Programa tiene como objetivo implementar un sistema complementario a los ingresos familiares para la compra de alimentos esenciales en pos de garantizar la seguridad alimentaria de familias tucumanas en condiciones de vulnerabilidad econ\u00F3mica y social.[[/p]][[p]]Que en este marco, el Programa busca poner en funcionamiento la entrega de tarjetas precargadas destinadas exclusivamente a la adquisici\u00F3n de dichos alimentos y as\u00ED combatir la inseguridad alimentaria, respetando al mismo tiempo, la autonom\u00EDa de las familias beneficiarias.[[/p]][[p]]Que asimismo se destaca que en una primera etapa del Programa en cuesti\u00F3n se alcanzar\u00E1n 32.331 titulares con derecho a la Tarjeta Alimentaria Independencia, quedando la n\u00F3mina de beneficiarios sujeta a modificaciones mensuales por altas, bajas y actualizaci\u00F3n de padr\u00F3n adem\u00E1s de disponibilidad financiera; el monto inicial mensual a percibir por tarjeta ser\u00E1 de $20.000 por beneficiario, el cual puede variar sujeto a modificaciones.[[/p]][[p]]Que a fs. 02/13 se adjunta el Programa en cuesti\u00F3n.[[/p]][[p]]Que a fojas 15/16 interviene la Direcci\u00F3n de Administraci\u00F3n y la Direcci\u00F3n de Asuntos Jur\u00EDdicos del Ministerio de Desarrollo Social.[[/p]][[p]]Que a fs. 18 la Direcci\u00F3n General de Presupuesto indica la imputaci\u00F3n presupuestaria pertinente.[[/p]][[p]]Que a fs. 20/30 corre agregado modelo de Convenio de Pago de Beneficio Social Tarjeta Alimentaria Independencia y la Solicitud de Adhesi\u00F3n al Servicio de Pago - Banco Macro.[[/p]][[p]]Que a fojas 32/34 obra Dictamen N\u00BA 0063 del 16/01/2025 emitido por Fiscal\u00EDa de Estado.[[/p]][[p]]Que por lo expuesto, encuadr\u00E1ndose por lo dispuesto en la Ley Provincial N\u00BA 8.450, Arts. 28 y 29, en el Decreto Acuerdo de Necesidad y Urgencia N\u00B0 1/1 del 30/10/2023. Decreto Acuerdo N\u00B0 1/1 del 30/10/2023, en el Art. 101 inc. 1 de la Constituci\u00F3n Provincial y Art. 2 inc. a) y 6\u00B0 del Decreto N\u00B0 2348/4-MDS del 02/08/10 se estima procedente dictar el acto administrativo pertinente.[[/p]][[p]]Por ello,[[/p]]"
+      },
+      "articulo": [
+        {
+          "numero-articulo": 1,
+          "texto": "[[p]]ARTICULO 1\u00B0. Cr\u00E9ase el Programa \u0022Tarjeta Alimentaria Independencia\u0022 el cual ser\u00E1 ejecutado por el Ministerio de Desarrollo Social, por el plazo inicial de doce (12) meses, con un importe estimado de siete mil setecientos cincuenta y nueve millones cuatrocientos cuarenta mil pesos ($7.759.440.000,00), cuyo modelo queda aprobado y como Anexo I pasa a formar parte del presente Decreto, en virtud de los considerandos que preceden.[[/p]]"
+        },
+        {
+          "numero-articulo": 2,
+          "texto": "[[p]]ARTICULO 2\u00B0. Facultase al Ministro de Desarrollo Social, para que en representaci\u00F3n de la Provincia, suscriba el Convenio de Pago de Beneficio Social Tarjeta Alimentaria Independencia con el Banco Macro S.A. a los fines de la implementaci\u00F3n del citado Programa, cuyo modelo como Anexo II queda aprobado y pasa a formar parte del presente Acto.[[/p]]"
+        },
+        {
+          "numero-articulo": 3,
+          "texto": "[[p]]ARTICULO 3\u00B0. Fac\u00FAltase a la Direcci\u00F3n de Administraci\u00F3n dependiente del Ministro de Desarrollo Social a suscribir la Solicitud de Adhesi\u00F3n al Servicio de Pago con el Banco Macro S.A., cuyo modelo como Anexo III queda aprobado y pasa a formar parte del presente Acto.[[/p]]"
+        },
+        {
+          "numero-articulo": 4,
+          "texto": "[[p]]ARTICULO 4\u00B0. Fac\u00FAltase a la Direcci\u00F3n de Pol\u00EDticas Alimentarias dependiente de la Secretar\u00EDa de Estado de Articulaci\u00F3n Territorial y Desarrollo Local del Ministerio de Desarrollo Socia a elaborar los padrones definitivos de beneficiarios y sus actualizaciones por altas y bajas.[[/p]]"
+        },
+        {
+          "numero-articulo": 5,
+          "texto": "[[p]]ARTICULO 5\u00B0. Imp\u00FAtase la presente erogaci\u00F3n a la Jurisdicci\u00F3n 33 - SAF MDS DIR. DE ADM. MIN DE DESARROLLO SOCIAL - Programa 44: C E. N\u00B0 826.8 - Plan Nacional de Seguridad Alimentaria - El Hambre M\u00E1s Urgente, Finalidad/Funci\u00F3n 320, Subprograma 00, Proyecto 00, Actividad 25: C.E. N\u00B0 826.8 - Plan Nacional de Seguridad Alimentaria - El Hambre M\u00E1s Urgente, Partida Subparcial 514 - Ayudas sociales a personas, Financiamiento: Fuente 10 - Recurso Tesoro General de la Provincia, del Presupuesto General 2025.[[/p]]"
+        },
+        {
+          "numero-articulo": 6,
+          "texto": "[[p]]ARTICULO 6\u00B0. El presente Decreto ser\u00E1 refrendado por el se\u00F1or Ministro de Gobierno y Justicia.[[/p]]"
+        },
+        {
+          "numero-articulo": 7,
+          "texto": "[[p]]ARTICULO 7\u00B0. D\u00E9se al Registro Oficial de Leyes y Decretos; comun\u00EDquese, publ\u00EDquese en el Bolet\u00EDn Oficial y arch\u00EDvese.[[/p]]"
+        }
+      ],
+      "firmantes": {
+        "firmantes": "FIRMANTES"
+      },
+      "id-infojus": "T20250000080",
+      "fecha-umod": 20250211105713
+    }
+  }
+}

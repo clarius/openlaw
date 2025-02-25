@@ -1,0 +1,334 @@
+﻿{
+  "document": {
+    "metadata": {
+      "uuid": "123456789-0abc-defg-393-7000gvorpyel",
+      "document-content-type": "legislacion",
+      "timestamp": 1732661957244,
+      "operation": "ADD",
+      "target-document-repository-id": "infojus",
+      "target-index-id": "index",
+      "target-document-indexing-id": "legislacion",
+      "document-recovery-strategy": "abstract-legislacion",
+      "friendly-url": {
+        "subdomain": "ley",
+        "description": "7393-local-santiago-estero-regimen-especial-regularizacion-tributaria-lpg0007393-2024-11-19"
+      }
+    },
+    "content": {
+      "mecanografico": "G0007393",
+      "estado": "Vigente, de alcance general",
+      "tipo-norma": {
+        "codigo": "LEY",
+        "texto": "Ley"
+      },
+      "numero-norma": 7393,
+      "fecha": "2024-11-19",
+      "jurisdiccion": {
+        "codigo": "G",
+        "descripcion": "Local",
+        "capital": "Santiago del Estero",
+        "id-pais": 11
+      },
+      "provincia": "Santiago del Estero",
+      "standard-normativo": "LEY G 007393 2024 11 19",
+      "identificacion-coloquial": {
+        "identificacion-coloquial": [
+          "LEY 7.393",
+          "SANTIAGO DEL ESTERO, 19 DE NOVIEMBRE DE 2024"
+        ]
+      },
+      "nombre-coloquial": "LEY 7.393",
+      "lugar-sancion": "SANTIAGO DEL ESTERO",
+      "titulo-norma": "R\u00E9gimen Especial de Regularizaci\u00F3n Tributaria",
+      "publicacion-codificada": {
+        "publicacion-decodificada": {
+          "organismo": "Bolet\u00EDn Oficial",
+          "fecha": "2024 11 26"
+        }
+      },
+      "sancion": "La Legislatura de la provincia sanciona con fuerza de Ley:",
+      "analista": "Mazza, Gustavo",
+      "responsable": "Mazza, Gustavo",
+      "uid-alta": "ABM",
+      "uid-mod": "ABM",
+      "fecha-alta": "2024-11-26",
+      "fecha-mod": "2024-11-26",
+      "timestamp": "2024-11-26T19:52:56",
+      "timestamp-alta": "2024-11-26T19:52:56",
+      "timestamp-m": "2024-11-26T19:52:56",
+      "sumario": {
+        "sumario": "[[p]]R\u00E9gimen Especial de Regularizaci\u00F3n Tributaria.[[/p]]"
+      },
+      "descriptores": {
+        "descriptor": [
+          {
+            "elegido": {
+              "termino": "regularizaci\u00F3n tributaria"
+            },
+            "preferido": {
+              "termino": "Derecho tributario y aduanero/derecho tributario/obligaci\u00F3n tributaria/extinci\u00F3n de la obligaci\u00F3n tributaria/regularizaci\u00F3n impositiva"
+            },
+            "sinonimos": {
+              "termino": [
+                "deberes fiscales",
+                "regularizaci\u00F3n fiscal",
+                "obligaci\u00F3n impositiva",
+                "derecho fiscal",
+                "r\u00E9gimen de normalizaci\u00F3n tributaria",
+                "regularizaci\u00F3n tributaria",
+                "obligaciones fiscales",
+                "derecho p\u00FAblico fiscal"
+              ]
+            }
+          },
+          {
+            "elegido": {
+              "termino": "Impuesto sobre los ingresos brutos"
+            },
+            "preferido": {
+              "termino": "Derecho tributario y aduanero/derecho tributario/tributos/impuestos/Impuesto sobre los ingresos brutos"
+            },
+            "sinonimos": {
+              "termino": [
+                "ingresos brutos",
+                "grav\u00E1menes",
+                "derecho fiscal",
+                "derecho p\u00FAblico fiscal"
+              ]
+            }
+          },
+          {
+            "elegido": {
+              "termino": "impuesto inmobiliario"
+            },
+            "preferido": {
+              "termino": "Derecho tributario y aduanero/derecho tributario/tributos/impuestos/impuesto inmobiliario"
+            },
+            "sinonimos": {
+              "termino": [
+                "grav\u00E1menes",
+                "derecho fiscal",
+                "impuesto sobre los inmuebles",
+                "tasa general de inmuebles",
+                "contribuciones inmobiliarias",
+                "derecho p\u00FAblico fiscal"
+              ]
+            }
+          },
+          {
+            "elegido": {
+              "termino": "Impuesto de sellos"
+            },
+            "preferido": {
+              "termino": "Derecho tributario y aduanero/derecho tributario/tributos/impuestos/Impuesto de sellos"
+            },
+            "sinonimos": {
+              "termino": [
+                "grav\u00E1menes",
+                "derecho fiscal",
+                "derecho p\u00FAblico fiscal"
+              ]
+            }
+          }
+        ],
+        "suggest": {
+          "termino": [
+            "derecho p\u00FAblico fiscal (derecho tributario)",
+            "extinci\u00F3n de la obligaci\u00F3n tributaria",
+            "regularizaci\u00F3n tributaria (regularizaci\u00F3n impositiva)",
+            "grav\u00E1menes (tributos)",
+            "Impuesto sobre los ingresos brutos",
+            "impuesto sobre los inmuebles (impuesto inmobiliario)",
+            "regularizaci\u00F3n impositiva",
+            "obligaciones fiscales (obligaci\u00F3n tributaria)",
+            "Impuesto de sellos",
+            "Derecho tributario y aduanero",
+            "obligaci\u00F3n tributaria",
+            "tributos",
+            "contribuciones inmobiliarias (impuesto inmobiliario)",
+            "tasa general de inmuebles (impuesto inmobiliario)",
+            "obligaci\u00F3n impositiva (obligaci\u00F3n tributaria)",
+            "r\u00E9gimen de normalizaci\u00F3n tributaria (regularizaci\u00F3n impositiva)",
+            "impuestos",
+            "derecho tributario",
+            "derecho fiscal (derecho tributario)",
+            "regularizaci\u00F3n fiscal (regularizaci\u00F3n impositiva)",
+            "impuesto inmobiliario",
+            "ingresos brutos (Impuesto sobre los ingresos brutos)",
+            "deberes fiscales (obligaci\u00F3n tributaria)"
+          ]
+        }
+      },
+      "generalidades": {
+        "observaciones-generales": "[[p]]CANTIDAD DE ARTICULOS QUE COMPONEN LA NORMA: 26[[/p]]"
+      },
+      "segmento": {
+        "titulo-particion": "TITULO UNICO  REGIMEN ESPECIAL DE REGULARIZACI\u00D3N TRIBUTARIA",
+        "segmento": [
+          {
+            "titulo-particion": "CAPITULO I DISPOSICIONES GENERALES Y DE ACOGIMIENTO",
+            "articulo": [
+              {
+                "numero-articulo": 1,
+                "texto": "[[p]]ART. 1\u00B0.- Establ\u00E9cese, bajo los t\u00E9rminos y condiciones de la presente Ley, un R\u00E9gimen de Regularizaci\u00F3n Tributaria, para el pago voluntario del Impuesto sobre los Ingresos Brutos, Inmobiliario, Sellos, Automotores y Remolcados, y multas de los Art. 109\u00B0 y 110\u00B0 de la Ley 6.792, por las obligaciones vencidas al 30 de Septiembre del 2024, inclusive, y cuya aplicaci\u00F3n, percepci\u00F3n y fiscalizaci\u00F3n se encuentra a cargo de la Direcci\u00F3n General de Rentas.[[/p]][[p]]Los contribuyentes y responsables que se acojan alr\u00E9gimen obtendr\u00E1n distintos beneficios, entre ellos condonaci\u00F3n de multas e intereses, seg\u00FAn la modalidad de adhesi\u00F3n y conforme a lo normado en la presente Ley. Podr\u00E1n formularse desde la fecha de entrada en vigencia de la misma y hasta transcurrido noventa (90) d\u00EDas corridos desde aquella fecha, inclusive.[[/p]][[p]]Los contribuyentes podr\u00E1n acogerse a un (1) plan de facilidades de pago por cada impuesto, salvo el caso de lo previsto en el art\u00EDculo 16\u00BA del presente r\u00E9gimen.[[/p]]"
+              },
+              {
+                "numero-articulo": 2,
+                "texto": "[[p]]ART. 2\u00B0.- Quedan incluidas en el presente r\u00E9gimen las siguientes obligaciones sin perjuicio de hallarse exteriorizadas o no:[[/p]][[p]]a) Las provenientes de declaraciones juradas, determinaciones de oficio, anticipos, y pagos a cuenta.[[/p]][[p]]b) Las que se encuentren en curso de discusi\u00F3n administrativa, contencioso administrativo o en cobro ejecutivo, incluso aquellas con sentencia firme a la fecha de sanci\u00F3n de la presente ley.[[/p]][[p]]c) Las provenientes de retenciones, percepciones o recaudaciones omitidas.[[/p]][[p]]d) Saldos impagos de los planes de facilidades de pago previstos en el C\u00F3digo Fiscal, vigentes o no.[[/p]]"
+              },
+              {
+                "numero-articulo": 3,
+                "texto": "[[p]]ART. 3\u00B0.- Quedan excluidos del r\u00E9gimen de regularizaci\u00F3n tributaria los siguientes contribuyentes y responsables:[[/p]][[p]]a) Aquellos, que a la fecha de acogimiento en el presente r\u00E9gimen hayan sido declarados en Estado de Quiebra conforme a la Ley N\u00B0 24.522 y sus modificatorias;[[/p]][[p]]b) Contribuyentes, que a la fecha de acogimiento hayan sido denunciados formalmente o querellados penalmente por delitos comunes que tengan conexi\u00F3n con el incumplimiento de sus obligaciones tributarias o de terceros. Al momento del acogimiento el contribuyente o responsable presentar\u00E1 declaraci\u00F3n jurada sobre la inexistencia de las causales se\u00F1aladas.[[/p]][[p]]c) Aquellos a quienes se les haya aplicado la multa prevista en el Art. 111\u00B0 del C\u00F3digo Fiscal.[[/p]][[p]]d) Los agentes de Retenci\u00F3n, Percepci\u00F3n y/o Recaudaci\u00F3n, por los importes retenidos, percibidos o recaudados y no ingresados.[[/p]][[p]]En caso de verificarse algunas de las causales mencionadas, producir\u00E1 la caducidad inmediata y de pleno derecho del r\u00E9gimen.[[/p]][[p]]Adem\u00E1s, se proceder\u00E1 con la interposici\u00F3n de la denuncia penal correspondiente.[[/p]]"
+              },
+              {
+                "numero-articulo": 4,
+                "texto": "[[p]]ART. 4\u00B0.-Los pagos efectuados porcontribuyentes o responsables en concepto de grav\u00E1menes, intereses, recargos, actualizaciones y multas, realizados antes de la entrada en vigencia de la presente ley, quedar\u00E1n firmes y consentidos, no dando derecho a acciones de repetici\u00F3n, acreditaci\u00F3n o compensaci\u00F3n.[[/p]]"
+              },
+              {
+                "numero-articulo": 5,
+                "texto": "[[p]]ART. 5\u00B0.- Se establece, las siguientes opciones de planes de regularizaci\u00F3n tributaria, conforme a las previsiones del Art\u00EDculo 1\u00BA:[[/p]][[p]]a) Un plan de regularizaci\u00F3n tributaria especial por pago de contado;[[/p]][[p]]b) Un plan de regularizaci\u00F3n tributaria especial de hasta 3 cuotas mensuales;[[/p]][[p]]c) Un plan de regularizaci\u00F3n tributaria especial de hasta 48 cuotas mensuales;[[/p]]"
+              },
+              {
+                "numero-articulo": 6,
+                "texto": "[[p]]ART. 6\u00B0.- Seg\u00FAn el Art\u00EDculo 5\u00BA, se establece que el anticipo para los contribuyentes que accedan a los beneficios de la presente ley ser\u00E1 del 20% del total de la deuda consolidada, aplicable tanto para:[[/p]][[p]]a) Personas humanas y Sucesiones indivisas.[[/p]][[p]]b) Personas Jur\u00EDdicas.[[/p]]"
+              },
+              {
+                "numero-articulo": 7,
+                "texto": "[[p]]ART. 7\u00B0.- El importe m\u00EDnimo de la cuota mensual para cada uno de los planes de regularizaci\u00F3n tributaria establecidos por la presente ley no puede ser inferior a $ 2.000 (Pesos Dos mil c/00/100).[[/p]]"
+              },
+              {
+                "numero-articulo": 8,
+                "texto": "[[p]]ART. 8\u00B0.- Los contribuyentes con planes de pagos vigentes podr\u00E1n optar por ingresar al r\u00E9gimen establecido en la presente ley por las cuotas vencidas y no pagadas, as\u00ED como por aquellas cuotas que a\u00FAn restan por vencer, siempre que estas contengan obligaciones vencidas al 30 de Septiembre de 2024, inclusive.[[/p]][[p]]Los contribuyentes con planes de pagos caducos podr\u00E1n beneficiarse del r\u00E9gimen, pero solo por el saldo residual que sea determinado por la autoridad de aplicaci\u00F3n.[[/p]]"
+              },
+              {
+                "numero-articulo": 9,
+                "texto": "[[p]]ART. 9\u00B0.- El pago de contado o mediante plan de facilidades de pagos de las obligaciones que se pretenden adherir al presente r\u00E9gimen son las \u00FAnicas formas aceptadas, no permiti\u00E9ndose regularizar mediante compensaciones.[[/p]]"
+              }
+            ]
+          },
+          {
+            "titulo-particion": "CAPITULO II REGIMEN ESPECIAL DE REGULARIZACION Y PAGO CONTADO O HASTA EN TRES (3) CUOTAS PARA OBLIGACIONES IMPOSITIVAS",
+            "articulo": {
+              "numero-articulo": 10,
+              "texto": "[[p]]ART. 10\u00B0.- Los contribuyentes y responsables de tributos adeudados de los Impuestos sobre los Ingresos Brutos, Automotores y Remolcados, Inmobiliario, Sellos; tienen la opci\u00F3n de regularizar sus deudas vencidas al 30 de Septiembre de 2024, inclusive, a trav\u00E9s de un pago de contado o un plan de facilidades de pago dehasta tres (3) cuotas mensuales, con los siguientes beneficios, seg\u00FAn la fecha de adhesi\u00F3n y la forma de pago elegida:[[/p]][[p]]a) Adhesi\u00F3n al presente r\u00E9gimen dentro de los primeros treinta (30) d\u00EDas corridos desde la fecha de entrada en vigencia de la presente ley:[[/p]][[p]]Quita del 70% de los intereses consolidados devengados a la fecha de adhesi\u00F3n, en la medida que la totalidad de la deuda a regularizar se cancele de contado o en un plan de pago que no exceda tres (3) cuotas mensuales.[[/p]][[p]]b) Adhesi\u00F3n al presente r\u00E9gimen a partir de los treinta y un d\u00EDas (31) corridos y hasta los sesenta (60) d\u00EDas corridos desde la fecha de entrada en vigencia de la presente ley:[[/p]][[p]]Quita del 60% de los intereses consolidados devengados a la fecha de adhesi\u00F3n, en la medida que la totalidad de la deuda a regularizar se cancele de contado o en un plan de pago que no exceda tres (3) cuotas mensuales.[[/p]][[p]]c) Adhesi\u00F3n al presente r\u00E9gimen a partir de los sesenta y un d\u00EDas (61) corridos y hasta los noventa (90) d\u00EDas corridos desde la fecha de entrada en vigencia de la presente ley:[[/p]][[p]]Quita del 50% de los intereses consolidados devengados a la fecha de adhesi\u00F3n, en la medida que la totalidad de la deuda a regularizar se cancele de contado o en un plan de pago que no exceda tres (3) cuotas mensuales.[[/p]][[p]]d) Condonaci\u00F3n de Multas establecidas en los Art\u00EDculos 109\u00BA y 110\u00BA del C\u00F3digo Fiscal Provincial vigente:[[/p]][[p]]Las multas que no se encuentren firmes ni abonadas y dem\u00E1s sanciones correspondientes a infracciones formales y por omisi\u00F3n de pago en que hayan incurrido los contribuyentes hasta el 30 de Septiembre del 2024, inclusive, solo ser\u00E1n condonadas cuando con anterioridad a la fecha en que finalice el plazo para el acogimiento al presente r\u00E9gimen, se haya cumplido o se cumpla la respectiva obligaci\u00F3n formal.[[/p]][[p]]La condici\u00F3n prevista en el p\u00E1rrafo anterior, deber\u00E1 ser cumplida cuando las mismas se encuentren en actuaciones conjuntas con los tributos o bien en actuaciones por separadas.[[/p]]"
+            }
+          },
+          {
+            "titulo-particion": "CAPITULO III REGIMEN ESPECIAL DE REGULARIZACION Y FACILIDADES DE PAGO PARA OBLIGACIONES IMPOSITIVAS HASTA 48 CUOTAS",
+            "articulo": {
+              "numero-articulo": 11,
+              "texto": "[[p]]ART. 11\u00B0.- Los contribuyentes y responsables de tributos adeudados de los Impuestos sobre los Ingresos Brutos, Automotores y Remolcados, Inmobiliario, Sellos y cuya recaudaci\u00F3n administra la Direcci\u00F3n General de Rentas pueden regularizar sus deudas vencidas al 30 de Septiembre de 2024, inclusive, a trav\u00E9s de un plan de facilidades de pago, dentro de los primeros noventa (90) d\u00EDas corridos desde la fecha de entrada en vigencia de la presente ley, con los siguientes beneficios:[[/p]][[p]]a) Quita del 40% de los intereses consolidados devengados a la fecha de adhesi\u00F3n al presente r\u00E9gimen en la medida que se cancele la totalidad de la deuda en un plan de cuotas de hasta cuarenta y ocho (48) meses.[[/p]][[p]]b) Condonaci\u00F3n de Multas establecidas en los Art\u00EDculos 109\u00BA y 110\u00BA del C\u00F3digo Fiscal Provincial vigente:[[/p]][[p]]Las multas que no se encuentren firmes ni abonadas y dem\u00E1s sanciones correspondientes a infracciones formales y por omisi\u00F3n de pago en que hayan incurrido los contribuyentes hasta el 30 de Septiembre del 2024, inclusive, solo ser\u00E1n condonadas cuando con anterioridad a la fecha en que finalice el plazo para el acogimiento al presente r\u00E9gimen, se haya cumplido o se cumpla la respectiva obligaci\u00F3n formal.[[/p]][[p]]La condici\u00F3n prevista en el p\u00E1rrafo anterior, deber\u00E1 ser cumplida cuando las mismas se encuentren en actuaciones conjuntas con los tributos o bien en actuaciones por separadas.[[/p]]"
+            }
+          },
+          {
+            "titulo-particion": "CAPITULO IV REGIMEN ESPECIAL DE REGULARIZACION PARA OBLIGACIONES DE LOS AGENTES DE RETENCION, PERCEPCION Y/O RECAUDACION",
+            "articulo": [
+              {
+                "numero-articulo": 12,
+                "texto": "[[p]]ART. 12\u00B0.- Los agentes de Retenci\u00F3n, Percepci\u00F3n y/o Recaudaci\u00F3n, pueden acceder a los beneficios establecidos en la presente ley para la regularizaci\u00F3n de deudas vencidas al 30 de Septiembre de 2024, inclusive, por retenciones, percepciones o recaudaciones omitidas, siempre y cuando \u00E9stas sean exteriorizadas de forma espont\u00E1nea.[[/p]]"
+              },
+              {
+                "numero-articulo": 13,
+                "texto": "[[p]]ART. 13\u00BA.- Para el caso de regularizaci\u00F3n de deudas por los tributos mencionados en el art\u00EDculo anterior, tendr\u00E1n los siguientes beneficios seg\u00FAn la fecha de adhesi\u00F3n y la forma de pago elegida:[[/p]][[p]]a) Adhesi\u00F3n al presente r\u00E9gimen dentro de los primeros treinta (30) d\u00EDas corridos desde la fecha de entrada en vigencia de la presente ley:[[/p]][[p]]Quita del 70% de los intereses consolidados devengados a la fecha de adhesi\u00F3n, en la medida que la totalidad de la deuda a regularizar se cancele de contado o en un plan de pago que no exceda tres (3) cuotas mensuales.[[/p]][[p]]b) Adhesi\u00F3n al presente r\u00E9gimen a partir de los treinta y un d\u00EDas (31) corridos y hasta los sesenta (60) d\u00EDas corridos desde la fecha de entrada en vigencia de la presente ley:[[/p]][[p]]Quita del60% de los intereses consolidados devengados a la fecha de adhesi\u00F3n, en la medida que la totalidad de la deuda a regularizar se cancele de contado o en un plan de pago que no exceda tres (3) cuotas mensuales.[[/p]][[p]]c) Adhesi\u00F3n al presente r\u00E9gimen a partir de los sesenta y un d\u00EDas (61) corridos y hasta los noventa (90) d\u00EDas corridos desde la fecha de entrada en vigencia de la presente ley:[[/p]][[p]]Quita del 50% de los intereses consolidados devengados a la fecha de adhesi\u00F3n, en la medida que la totalidad de la deuda a regularizar se cancele de contado o en un plan de pago que no exceda tres (3) cuotas mensuales.[[/p]][[p]]d) Adhesi\u00F3n al presente r\u00E9gimen dentro de los primeros noventa (90) d\u00EDas corridos desde la fecha de entrada en vigencia de la presente ley:[[/p]][[p]]Quita del 40% de los intereses consolidados devengados a la fecha de adhesi\u00F3n en la medida que la totalidad de la deuda a regularizar se incluya en un plan de cuotas de hasta cuarenta y ocho (48) meses.[[/p]][[p]]e) Condonaci\u00F3n de Multas establecidas en los Art\u00EDculos 109\u00BA y 110\u00BA del C\u00F3digo Fiscal Provincial vigente:[[/p]][[p]]Las multas que no se encuentren firmes ni abonadas y dem\u00E1s sanciones correspondientes a infracciones formales y por omisi\u00F3n de pago en que hayan incurrido los contribuyentes hasta el 30 de Septiembre del 2024, inclusive, solo ser\u00E1n condonadas cuando con anterioridad a la fecha en que finalice el plazo para el acogimiento alpresente r\u00E9gimen, se haya cumplido o se cumpla la respectiva obligaci\u00F3n formal.[[/p]][[p]]La condici\u00F3n prevista en el p\u00E1rrafo anterior, deber\u00E1 ser cumplida cuando las mismas se encuentren en actuaciones conjuntas con los tributos o bien en actuaciones por separadas.[[/p]]"
+              }
+            ]
+          },
+          {
+            "titulo-particion": "CAPITULO V INTERESES DE FINANCIACION",
+            "articulo": {
+              "numero-articulo": 14,
+              "texto": "[[p]]ART. 14\u00B0.- El inter\u00E9s de financiaci\u00F3n del r\u00E9gimen estipulado en la presente ley, se establece de la siguiente manera:[[/p]][[p]]1) Planes de facilidades de pago de hasta 3 cuotas mensuales:[[/p]][[p]]- Para los planes que incluyen hasta 3 cuotas mensuales, seg\u00FAn lo indicado en los incisos a), b) y c) del art\u00EDculo 10\u00BA, inciso a), b) y c) del art\u00EDculo 13\u00BA, el inter\u00E9s de financiaci\u00F3n ser\u00E1 del 1,00% mensual sobre el saldo.[[/p]][[p]]2) Planes de facilidades de pago de hasta 48 cuotas mensuales:[[/p]][[p]]- En el caso de los planes de facilidades de pago que comprenden hasta 48 cuotas, conforme al inciso a) del art\u00EDculo 11\u00BA, e inciso d) del art\u00EDculo 13\u00BA, el inter\u00E9s de financiaci\u00F3n ser\u00E1 del 2,00% mensual sobre el saldo.[[/p]]"
+            }
+          },
+          {
+            "titulo-particion": "CAPUTULO VI CONTRIBUYENTES EN CONCURSO PREVENTIVO",
+            "articulo": [
+              {
+                "referencias-normativas": {
+                  "referencia-normativa": {
+                    "cr": null,
+                    "id": "REFERENCIAS_NORMATIVAS_0",
+                    "ref": "LEY C 024522 1995 07 20 0000 000 0000 000"
+                  }
+                },
+                "numero-articulo": 15,
+                "texto": "[[p]]ART. 15\u00B0.- Los contribuyentes y/o responsables que hayan solicitado su concurso preventivo hasta la fecha fijada en el segundo p\u00E1rrafo del Art. 1\u00BA, inclusive, podr\u00E1n acogerse a los beneficios de la presente ley por las obligaciones fiscales se haya o no verificado el cr\u00E9dito ante la sindicatura y aun cuando hayan sido declarados admisibles, para lo cual deber\u00E1n presentar una nota manifestando su voluntad de incorporarse al r\u00E9gimen.[[/p]][[p]]Sin perjuicio de los beneficios se\u00F1alados, el contribuyente concursado podr\u00E1 optar entre cancelar sus deudas por obligaciones fiscales que resulten verificadas o declaradas admisibles, en los t\u00E9rminos del acuerdo preventivo conforme a las previsiones de la [[r uuid:CT001]]Ley 24.522[[/r uuid:CT001]][[/p]]"
+              },
+              {
+                "numero-articulo": 16,
+                "texto": "[[p]]ART. 16\u00B0.- Sin perjuicio de lo establecido precedentemente, los contribuyentes y/o responsables se\u00F1alados, deber\u00E1n efectuar la propuesta para el acuerdo preventivo respecto de la totalidad de la deuda verificada o declarada admisible.[[/p]][[p]]Dictada la sentencia homologatoria el contribuyente concursado, siempre que haya hecho reserva de tal derecho y cumpla con los dem\u00E1s requisitos y condiciones se\u00F1alados para el acogimiento, podr\u00E1 ejercer, por las deudas se\u00F1aladas en el Art. 1\u00B0, la opci\u00F3n de acogerse a los beneficios de esta ley.[[/p]][[p]]En tal caso, deber\u00E1 formalizar el acogimiento dentro de los treinta (30) d\u00EDas corridos desde la fecha de la sentencia de homologaci\u00F3n del acuerdo preventivo. Transcurrido el plazo antes citado se extinguir\u00E1 el derecho de acogimiento determinado para estos casos.[[/p]][[p]]En los casos de Concursos y Quiebras la declaraci\u00F3n de caducidad de r\u00E9gimen tendr\u00E1 por efecto inmediato la p\u00E9rdida de los beneficios se\u00F1alados recobrando exigibilidad la totalidad de la deuda verificada o declarada admisible, procedi\u00E9ndose en adelante al cobro en los t\u00E9rminos del acuerdo preventivo homologado.[[/p]]"
+              },
+              {
+                "numero-articulo": 17,
+                "texto": "[[p]]ART. 17\u00B0.-Respecto de los cr\u00E9ditos verificados o no, y en los que en su caso hayan sido declarados admisibles, los beneficios de la moratoria se practicar\u00E1n sobre el remanente de tales conceptos.[[/p]]"
+              }
+            ]
+          },
+          {
+            "titulo-particion": "CAPITULO VII DEUDAS EN DISCUSI\u00D3N ADMINISTRATIVA Y/O JUDICIAL",
+            "articulo": [
+              {
+                "numero-articulo": 18,
+                "texto": "[[p]]ART. 18\u00B0.- La inclusi\u00F3n de las obligaciones que se encuentren en curso de discusi\u00F3n administrativa, contencioso administrativa y/o judicial, requerir\u00E1 el allanamiento total e incondicional del demandado y, en su caso, el desistimiento y renuncia a toda acci\u00F3n y derecho, incluso el de repetici\u00F3n, asumiendo el pago de las costas y gastos caus\u00EDdicos.[[/p]][[p]]Honorarios:[[/p]][[p]]Si la causa judicial versara \u00FAnicamente sobre la aplicaci\u00F3n de multas e intereses resarcitorios y/o punitorios y que por esta ley resulten condonados, no corresponder\u00E1 pagar los honorarios a la representaci\u00F3n letrada del fisco, siempre y cuando se verifique el cumplimiento de la obligaci\u00F3n principal con anterioridad, al vencimiento de la moratoria. En los dem\u00E1s casos, el contribuyente que se allane a la pretensi\u00F3n fiscal o que desistiera de los recursos o acciones interpuestas deber\u00E1 afrontar el pago de los honorarios que sufrir\u00E1n una reducci\u00F3n del 50% y que no podr\u00E1n ser inferiores a los honorarios m\u00EDnimos establecidos por la Ley de Honorarios vigente.[[/p]][[p]]El ejecutado podr\u00E1 formalizar un plan de facilidades de pago para la cancelaci\u00F3n de los honorarios en un m\u00E1ximo de 12 cuotas mensuales, iguales y consecutivas.[[/p]][[p]]La solicitud del referido plan debe solicitarse ante el habilitado a cargo de las causas judiciales, previa demostraci\u00F3n del acogimiento al plan de facilidades de la obligaci\u00F3n principal. La caducidad del plan de facilidades operar\u00E1 de pleno derecho cuando se verifique la falta de pago de cualquiera de las cuotas a los 30 d\u00EDas corridos de su vencimiento, pudi\u00E9ndose ejecutar el saldo impago por honorarios.[[/p]]"
+              },
+              {
+                "numero-articulo": 19,
+                "texto": "[[p]]ART. 19\u00B0.- A los efectos se\u00F1alados en art\u00EDculo anterior, en relaci\u00F3n a las deudas en curso de discusi\u00F3n judicial, se deber\u00E1 formalizar un convenio por ante el Juez interviniente, mediante el cualse continuar\u00E1 el tr\u00E1mite hasta el dictado de sentencia y se suspender\u00E1 la ejecuci\u00F3n de la misma hasta tanto se constate el efectivo cumplimiento de las obligaciones asumidas, en virtud de su acogimiento al r\u00E9gimen establecido en la presente.[[/p]][[p]]La verificaci\u00F3n del cumplimiento y seguimiento de las obligaciones asumidas estar\u00E1 a cargo del abogado de la causa, del Departamento de Organizaci\u00F3n y Control Judicial de la Direcci\u00F3n General de Rentas, conjuntamente con la oficina de habilitaci\u00F3n de planes de pagos de Fiscal\u00EDa de Estado.[[/p]][[p]]En caso de verificarse la caducidad del r\u00E9gimen, se reanudar\u00E1 inmediatamente la tramitaci\u00F3n de la Ejecuci\u00F3n Fiscal, por los conceptos originariamente incluidos, reducidos en proporci\u00F3n a los pagos oportunamente efectuados, previa confecci\u00F3n de la planilla de liquidaci\u00F3n ante el Juez de Ejecuci\u00F3n, renaciendo los conceptos condonados e imput\u00E1ndose los pagos efectuados conforme al siguiente orden de prelaci\u00F3n: recargos, intereses, multa y capital.[[/p]]"
+              }
+            ]
+          },
+          {
+            "titulo-particion": "CAPITULO VIII CADUCIDAD DEL R\u00C9GIMEN",
+            "articulo": [
+              {
+                "referencias-normativas": {
+                  "referencia-normativa": {
+                    "cr": null,
+                    "id": "REFERENCIAS_NORMATIVAS_0",
+                    "ref": "LEY C 024522 1995 07 20 0000 000 0000 000"
+                  }
+                },
+                "numero-articulo": 20,
+                "texto": "[[p]]ART. 20\u00B0.- La caducidad del r\u00E9gimen establecido en la presente ley operar\u00E1 en forma autom\u00E1tica y de pleno derecho, sin necesidad de interpelaci\u00F3n previa:Planes de hasta 3 cuotas:falta de Ingreso de una (1) cuota, a los sesenta (60) d\u00EDas corridos posteriores a su vencimiento, a) Planes de hasta 48 cuotas: falta de Ingreso de tres (3)cuotas, consecutivas o alternadas a los sesenta (60) d\u00EDas corridos posteriores a la fecha de vencimiento de la tercera de ellas.[[/p]][[p]]b) Cuando se encuentre firme la apertura de Concurso Preventivo o Quiebra en los t\u00E9rminos de la [[r uuid:CT001]]Ley N\u00B0 24.522[[/r uuid:CT001]] del contribuyente o responsable titular del plan, sin necesidad de interpelaci\u00F3n previa.[[/p]]"
+              },
+              {
+                "numero-articulo": 21,
+                "texto": "[[p]]ART. 21\u00B0.- La declaraci\u00F3n de caducidad delr\u00E9gimen tendr\u00E1 por efecto inmediato, salvo que se le asigne otro tratamiento expresamente dentro de esta ley, la p\u00E9rdida de todos los beneficios acordados.[[/p]][[p]]La Autoridad de aplicaci\u00F3n recupera la exigibilidad sobre la totalidad de los conceptos incluidos en el r\u00E9gimen, con m\u00E1s sus intereses y multas, tom\u00E1ndose los pagos efectuados a cuenta de las obligaciones incluidas y reimput\u00E1ndose los mismos en el siguiente orden de prelaci\u00F3n: recargos, intereses, multas y capital.[[/p]]"
+              }
+            ]
+          },
+          {
+            "titulo-particion": "CAPITULO IX DISPOSICIONES COMPLEMENTARIAS",
+            "articulo": [
+              {
+                "numero-articulo": 22,
+                "texto": "[[p]]ART. 22\u00B0.- El acogimiento al presente r\u00E9gimen, quedar\u00E1 conformado con el pago contado y/o del anticipo previsto en el Art. 6\u00B0 en la presente ley. En los casos regulados en el T\u00EDtulo VI la condici\u00F3n antes citada se considerar\u00E1 cumplida cuando junto a los formularios de acogimiento se acompa\u00F1ar\u00E1 el oficio judicial autorizando el acogimiento.[[/p]]"
+              },
+              {
+                "numero-articulo": 23,
+                "texto": "[[p]]ART. 23\u00B0.- La inclusi\u00F3n de deudas, multas y dem\u00E1s conceptos en el presente r\u00E9gimen, implica su reconocimiento expreso y la renuncia a la prescripci\u00F3n ganada por parte de los contribuyentes y/o responsables, en relaci\u00F3n a los mismos.[[/p]]"
+              },
+              {
+                "numero-articulo": 24,
+                "texto": "[[p]]ART. 24\u00BA.- A los fines de dar cumplimiento a las obligaciones emergentes del presente r\u00E9gimen, ser\u00E1n admisibles los medios de pago que estipule la Autoridad de Aplicaci\u00F3n.[[/p]]"
+              },
+              {
+                "numero-articulo": 25,
+                "texto": "[[p]]ART. 25\u00B0.- Facultase al Poder Ejecutivo a disponer la pr\u00F3rroga de cualquiera de los t\u00E9rminos o fechas establecidas, como as\u00ED tambi\u00E9n a dictar normas complementarias a la presente Ley.[[/p]]"
+              },
+              {
+                "numero-articulo": 26,
+                "texto": "[[p]]ART. 26\u00B0.- Comun\u00EDquese al Poder Ejecutivo.[[/p]]"
+              }
+            ],
+            "firmantes": {
+              "firmantes": "Dr. CARLOS SILVA NEDER - VICEGOBERNADOR - PRESIDENTE H. LEGISLATURA Dr. RA\u00DAL LEONI BELTRAN - SECRETARIO LEGISLATIVO H. CAMARA DE DIPUTADOS"
+            }
+          }
+        ]
+      },
+      "id-infojus": "LPG0007393",
+      "fecha-umod": 20241126195917
+    }
+  }
+}

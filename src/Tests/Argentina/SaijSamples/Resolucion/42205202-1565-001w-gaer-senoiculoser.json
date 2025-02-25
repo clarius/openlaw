@@ -1,0 +1,199 @@
+﻿{
+  "document": {
+    "metadata": {
+      "uuid": "42205202-1565-001w-gaer-senoiculoser",
+      "document-content-type": "legislacion",
+      "timestamp": 1740484960764,
+      "operation": "ADD",
+      "target-document-repository-id": "infojus",
+      "target-index-id": "index",
+      "target-document-indexing-id": "resolucion",
+      "document-recovery-strategy": "abstract-legislacion",
+      "friendly-url": {
+        "subdomain": "resolucion",
+        "description": "rsreagw100565120250224-2025-02-24"
+      }
+    },
+    "content": {
+      "standard-normativo": "REAGW1005651 2025 02 24",
+      "numero": 5651,
+      "fecha": "2025-02-24",
+      "estado": "Vigente, de alcance general",
+      "tipo-resolucion": "G",
+      "tipo-norma": {
+        "codigo": "REA",
+        "texto": "Resoluci\u00F3n"
+      },
+      "organismo-emisor": {
+        "codigo-2": "W1",
+        "organismo": "Agencia de Recaudaci\u00F3n y Control Aduanero",
+        "sigla": "ARCA",
+        "sigla-oficial": "*",
+        "codigo": 300
+      },
+      "publicacion-codificada": {
+        "publicacion-decodificada": {
+          "organismo": "Bolet\u00EDn Oficial",
+          "fecha": "2025 02 25"
+        }
+      },
+      "asunto": "Resoluciones Generales Conjuntas N\u00B0 5.429 y N\u00B0 5.466 y su modificatoria. Su abrogaci\u00F3n",
+      "analista": "Signorelli, Angela",
+      "responsable": "Signorelli, Angela",
+      "uid-alta": "ABM",
+      "uid-mod": "ABM",
+      "fecha-alta": "2025-02-25",
+      "fecha-mod": "2025-02-25",
+      "timestamp": "2025-02-25T08:52:38",
+      "timestamp-alta": "2025-02-25T08:52:38",
+      "timestamp-m": "2025-02-25T08:52:38",
+      "generalidades": {
+        "observaciones-generales": "[[p]]ACN 0003 FEV 2025 02 26 AEV 0002[[/p]]"
+      },
+      "descriptores": {
+        "descriptor": [
+          {
+            "elegido": {
+              "termino": "importaciones"
+            },
+            "preferido": {
+              "termino": "Derecho tributario y aduanero/Derecho Aduanero/comercio exterior/operaciones aduaneras/importaciones"
+            },
+            "sinonimos": {
+              "termino": "comercio internacional"
+            }
+          },
+          {
+            "elegido": {
+              "termino": "Sistema estad\u00EDstico de importaciones"
+            },
+            "preferido": {
+              "termino": "Derecho tributario y aduanero/Derecho Aduanero/control aduanero/Sistema estad\u00EDstico de importaciones"
+            },
+            "sinonimos": {
+              "termino": [
+                "SEDI",
+                "inspecci\u00F3n aduanera"
+              ]
+            }
+          },
+          {
+            "elegido": {
+              "termino": "padr\u00F3n de deuda comercial por importaciones con proveedores del exterior"
+            },
+            "preferido": {
+              "termino": "Derecho tributario y aduanero/Derecho Aduanero/control aduanero/Sistema estad\u00EDstico de importaciones/padr\u00F3n de deuda comercial por importaciones con proveedores del exterior"
+            },
+            "sinonimos": {
+              "termino": [
+                "SEDI",
+                "inspecci\u00F3n aduanera"
+              ]
+            }
+          }
+        ],
+        "suggest": {
+          "termino": [
+            "Derecho Aduanero",
+            "operaciones aduaneras",
+            "Sistema estad\u00EDstico de importaciones",
+            "comercio exterior",
+            "SEDI (Sistema estad\u00EDstico de importaciones)",
+            "inspecci\u00F3n aduanera (control aduanero)",
+            "padr\u00F3n de deuda comercial por importaciones con proveedores del exterior",
+            "Derecho tributario y aduanero",
+            "control aduanero",
+            "comercio internacional (comercio exterior)",
+            "importaciones"
+          ]
+        }
+      },
+      "visto": {
+        "texto": "[[p]]los Expedientes Electr\u00F3nicos Nros. EX-2025-06693808- -APN-DGDMDP#MEC y EX-2025-00664163- -AFIP-SADMDILEGI#SDGASJ y CONSIDERANDO:[[/p]]"
+      },
+      "considerando": {
+        "referencias-normativas": {
+          "referencia-normativa": [
+            {
+              "cr": null,
+              "id": "REFERENCIAS_NORMATIVAS_0",
+              "ref": "TRA C 024425 1994 12 07 0000 000 0000 000"
+            },
+            {
+              "cr": null,
+              "id": "REFERENCIAS_NORMATIVAS_1",
+              "ref": "REAG01005271 2022 10 11 0000 000 0000 000"
+            },
+            {
+              "cr": null,
+              "id": "REFERENCIAS_NORMATIVAS_2",
+              "ref": "REAG01005429 2023 10 09 0000 000 0000 000"
+            },
+            {
+              "cr": null,
+              "id": "REFERENCIAS_NORMATIVAS_3",
+              "ref": "REAG01005466 2023 12 22 0000 000 0000 000"
+            },
+            {
+              "cr": null,
+              "id": "REFERENCIAS_NORMATIVAS_4",
+              "ref": "REAG01005478 2024 01 10 0000 000 0000 000"
+            },
+            {
+              "cr": null,
+              "id": "REFERENCIAS_NORMATIVAS_5",
+              "ref": "DNU C 000618 1997 07 10 0007 000 0000 000"
+            },
+            {
+              "cr": null,
+              "id": "REFERENCIAS_NORMATIVAS_6",
+              "ref": "DEC C 000050 2019 12 19 0000 000 0000 000"
+            },
+            {
+              "cr": null,
+              "id": "REFERENCIAS_NORMATIVAS_7",
+              "ref": "DEC C 000953 2024 10 24 0007 000 0000 000"
+            }
+          ]
+        },
+        "texto": "[[p]]Que la [[r uuid:CT000]]Ley N\u00B0 24.425[[/r uuid:CT000]] aprob\u00F3 el Acta Final en la que se incorporan los resultados de la Ronda Uruguay de Negociaciones Comerciales Multilaterales, las Decisiones, Declaraciones y Entendimientos Ministeriales y el Acuerdo de Marrakech por el que se establece la ORGANIZACI\u00D3N MUNDIAL DEL COMERCIO (OMC).[[/p]][[p]]Que, entre los diversos Acuerdos Multilaterales sobre el Comercio de Mercanc\u00EDas, se aprob\u00F3 el Acuerdo sobre Procedimientos para el Tr\u00E1mite de Licencias de Importaci\u00F3n de la ORGANIZACI\u00D3N MUNDIAL DEL COMERCIO (OMC), mediante el cual se establece que dichos sistemas no deben utilizarse para restringir el comercio.[[/p]][[p]]Que, en este marco, se dict\u00F3 la [[r uuid:CT001]]Resoluci\u00F3n General Conjunta N\u00B0 5.271 del 11 de octubre de 2022[[/r uuid:CT001]] de la ex ADMINISTRACI\u00D3N FEDERAL DE INGRESOS P\u00DABLICOS y la ex SECRETAR\u00CDA DE COMERCIO del MINISTERIO DE ECONOM\u00CDA y sus modificatorias, en pos de instaurar un r\u00E9gimen de informaci\u00F3n anticipada para el an\u00E1lisis y seguimiento de los datos estad\u00EDsticos de importaci\u00F3n de bienes, obrando este como transici\u00F3n a fin de normalizar y facilitar el comercio exterior.[[/p]][[p]]Que, por su parte, la [[r uuid:CT002]]Resoluci\u00F3n General Conjunta N\u00B0 5.429 del 9 de octubre de 2023[[/r uuid:CT002]] de la ex ADMINISTRACI\u00D3N FEDERAL DE INGRESOS P\u00DABLICOS y la ex SECRETAR\u00CDA DE COMERCIO del MINISTERIO DE ECONOM\u00CDA y su modificatoria, estableci\u00F3 el procedimiento para aquellas importaciones vinculadas a normas con aprobaci\u00F3n de Reglamentos T\u00E9cnicos, en el marco del r\u00E9gimen de informaci\u00F3n anticipada de la Resoluci\u00F3n General Conjunta N\u00B0 5.271 (ex AFIP-SC) y sus modificatorias.[[/p]][[p]]Que, mediante la [[r uuid:CT003]]Resoluci\u00F3n General Conjunta N\u00B0 5.466 del 22 de diciembre de 2023[[/r uuid:CT003]] de la ex ADMINISTRACI\u00D3N FEDERAL DE INGRESOS P\u00DABLICOS y la ex SECRETAR\u00CDA DE COMERCIO del MINISTERIO DE ECONOM\u00CDA y su modificatoria, se cre\u00F3 el \u0022Sistema Estad\u00EDstico de Importaciones (SEDI)\u0022 y el \u0022Padr\u00F3n de Deuda Comercial por Importaciones con Proveedores del Exterior\u0022, derog\u00E1ndose consecuentemente la Resoluci\u00F3n General Conjunta N\u00B0 5.271/22 (ex AFIP-SC) y sus modificatorias.[[/p]][[p]]Que, como consecuencia de la informaci\u00F3n recabada por el \u0022Padr\u00F3n de Deuda Comercial por Importaciones con Proveedores del Exterior\u0022, el BANCO CENTRAL DE LA REP\u00DABLICA ARGENTINA -mediante la Comunicaci\u00F3n \u0022A\u0022 7918- cre\u00F3 los \u0022Bonos para la Reconstrucci\u00F3n de una Argentina Libre (BOPREAL)\u0022, a fin de ofrecer una soluci\u00F3n ordenada, transparente y efectiva para importadores de bienes y servicios con obligaciones pendientes de pago.[[/p]][[p]]Que, el Acuerdo Sobre Obst\u00E1culos T\u00E9cnicos al Comercio (OTC) de la ORGANIZACI\u00D3N MUNDIAL DEL COMERCIO (OMC) establece que los reglamentos t\u00E9cnicos, normas y los procedimientos de evaluaci\u00F3n de la conformidad, no deben crear obst\u00E1culos innecesarios al comercio internacional.[[/p]][[p]]Que, en relaci\u00F3n a ello, dentro de los principios de la ORGANIZACI\u00D3N MUNDIAL DEL COMERCIO (OMC) se erige como piedra basal el libre comercio y a partir de all\u00ED la competencia leal, la no discriminaci\u00F3n, previsibilidad y promoci\u00F3n del desarrollo.[[/p]][[p]]Que resulta necesario que las operaciones de importaci\u00F3n se conduzcan de manera sencilla, transparente, eficiente y previsible, ajenos a toda discrecionalidad, garantizando de este modo, las reglas internacionales establecidas por la ORGANIZACI\u00D3N MUNDIAL DEL COMERCIO (OMC).[[/p]][[p]]Que, el cumplimiento de las normas t\u00E9cnicas no debe ser condici\u00F3n necesaria para efectuar una declaraci\u00F3n de importaci\u00F3n, sino que ello debe garantizarse al momento de su uso y/o comercializaci\u00F3n, mediante los controles estipulados a tal fin por la SECRETAR\u00CDA DE INDUSTRIA Y COMERCIO en el marco de sus competencias.[[/p]][[p]]Que, en consecuencia, habi\u00E9ndose tornado innecesario recabar informaci\u00F3n anticipada para fines estad\u00EDsticos, deviene prioritario continuar implementando pol\u00EDticas de facilitaci\u00F3n, a fin de normalizar el comercio exterior, cumpliendo con el acuerdo con la ORGANIZACI\u00D3N MUNDIAL DEL COMERCIO (OMC), cuyo objetivo es garantizar que los intercambios comerciales se realicen conforme los principios antes indicados.[[/p]][[p]]Que, en raz\u00F3n de lo expresado precedentemente, resulta oportuno abrogar la Resoluci\u00F3n General Conjunta N\u00B0 5.429/23 (ex AFIP-SC) y derogar los art\u00EDculos 1\u00B0 a 9\u00B0, 13 y 14 de la Resoluci\u00F3n General Conjunta N\u00B0 5.466/23 (ex AFIP-SC) y el art\u00EDculo 1\u00B0 inciso a) de la [[r uuid:CT004]]Resoluci\u00F3n General Conjunta N\u00B0 5.478 del 10 de enero de 2024[[/r uuid:CT004]], de la ex ADMINISTRACI\u00D3N FEDERAL DE INGRESOS P\u00DABLICOS y la ex SECRETAR\u00CDA DE COMERCIO del MINISTERIO DE ECONOM\u00CDA.[[/p]][[p]]Que han tomado la intervenci\u00F3n que les compete las \u00E1reas t\u00E9cnicas y los servicios jur\u00EDdicos permanentes de la AGENCIA DE RECAUDACI\u00D3N Y CONTROL ADUANERO y del MINISTERIO DE ECONOM\u00CDA.[[/p]][[p]]Que la presente se dicta en ejercicio de las facultades conferidas por el [[r uuid:CT005]]art\u00EDculo 7\u00B0 del Decreto N\u00B0 618 del 10 de julio de 1997[[/r uuid:CT005]], sus modificatorios y sus complementarios, por el [[r uuid:CT006]]Decreto N\u00B0 50 del 19 de diciembre de 2019[[/r uuid:CT006]] y sus modificatorios, y por el [[r uuid:CT007]]art\u00EDculo 7\u00B0 del Decreto N\u00B0 953 del 24 de octubre de 2024[[/r uuid:CT007]].[[/p]][[p]]Por ello,[[/p]]",
+        "resuelve": "EL DIRECTOR EJECUTIVO DE LA AGENCIA DE RECAUDACI\u00D3N Y CONTROL ADUANERO  Y  EL SECRETARIO DE INDUSTRIA Y COMERCIO  RESUELVEN:"
+      },
+      "articulo": [
+        {
+          "numero-articulo": 1,
+          "texto": "[[p]]ART\u00CDCULO 1\u00B0.- Abrogar la Resoluci\u00F3n General Conjunta N\u00B0 5.429 del 9 de octubre de 2023 de la ex ADMINISTRACI\u00D3N FEDERAL DE INGRESOS P\u00DABLICOS y la ex SECRETAR\u00CDA DE COMERCIO del MINISTERIO DE ECONOM\u00CDA y derogar los art\u00EDculos 1\u00B0 a 9\u00B0, 13 y 14 de la Resoluci\u00F3n General Conjunta N\u00B0 5.466 del 22 de diciembre de 2023 y el art\u00EDculo 1\u00B0 inciso a) de la Resoluci\u00F3n General Conjunta N\u00B0 5.478 del 10 de enero de 2024, de la ex ADMINISTRACI\u00D3N FEDERAL DE INGRESOS P\u00DABLICOS y la ex SECRETAR\u00CDA DE COMERCIO del MINISTERIO DE ECONOM\u00CDA.[[/p]][[p]]Las declaraciones registradas a trav\u00E9s del \u0022Sistema Estad\u00EDstico de Importaciones\u0022 (SEDI), conforme la Resoluci\u00F3n General Conjunta N\u00B0 5.466 del 22 de diciembre de 2023 y su modificatoria de la ex ADMINISTRACI\u00D3N FEDERAL DE INGRESOS P\u00DABLICOS y la ex SECRETAR\u00CDA DE COMERCIO del MINISTERIO DE ECONOM\u00CDA, quedar\u00E1n sin efecto a la fecha de entrada en vigencia de la presente.[[/p]]",
+          "deroga-a": {
+            "referencia-normativa": [
+              {
+                "cr": null,
+                "id": "DEROGA_A_0",
+                "ref": "REAG01005429 2023 10 09 0000 000 0000 000"
+              },
+              {
+                "cr": "Arts. 1, 9, 13 y 14 derogados",
+                "id": "DEROGA_A_1",
+                "ref": "REAG01005466 2023 12 22 0000 000 0000 000"
+              },
+              {
+                "cr": "Inc.a) derogado",
+                "id": "DEROGA_A_2",
+                "ref": "REAG01005478 2024 01 10 0001 000 0000 000"
+              }
+            ]
+          }
+        },
+        {
+          "numero-articulo": 2,
+          "texto": "[[p]]ART\u00CDCULO 2\u00B0.- La presente resoluci\u00F3n general conjunta entrar\u00E1 en vigencia el d\u00EDa siguiente al de su publicaci\u00F3n en el Bolet\u00EDn Oficial.[[/p]]"
+        },
+        {
+          "numero-articulo": 3,
+          "texto": "[[p]]ART\u00CDCULO 3\u00B0.- Comun\u00EDquese, d\u00E9se a la DIRECCI\u00D3N NACIONAL DEL REGISTRO OFICIAL para su publicaci\u00F3n en el Bolet\u00EDn Oficial y arch\u00EDvese. Rem\u00EDtase copia a la Secretar\u00EDa Administrativa del Grupo Mercado Com\u00FAn -Secci\u00F3n Nacional-, a la Secretar\u00EDa Administrativa de la ALADI (Montevideo R.O.U.) y a la Secretar\u00EDa del Convenio Multilateral sobre Cooperaci\u00F3n y Asistencia Mutua entre las Direcciones de Aduana de Am\u00E9rica Latina, Espa\u00F1a y Portugal (M\u00E9xico D.F.).[[/p]]"
+        }
+      ],
+      "id-infojus": "RSREAGW100565120250224",
+      "fecha-umod": 20250225090240
+    }
+  }
+}

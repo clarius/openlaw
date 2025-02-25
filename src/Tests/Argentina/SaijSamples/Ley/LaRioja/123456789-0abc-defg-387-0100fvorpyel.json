@@ -1,0 +1,160 @@
+﻿{
+  "document": {
+    "metadata": {
+      "uuid": "123456789-0abc-defg-387-0100fvorpyel",
+      "document-content-type": "legislacion",
+      "timestamp": 1738672480662,
+      "operation": "ADD",
+      "target-document-repository-id": "infojus",
+      "target-index-id": "index",
+      "target-document-indexing-id": "legislacion",
+      "document-recovery-strategy": "abstract-legislacion",
+      "friendly-url": {
+        "subdomain": "ley",
+        "description": "10783-local-rioja-crea-marca-denominada-rioja-objetivo-distinguir-origen-bienes-servicios-producidos-desarrollados-personas-humanas-juridicas-radicadas-provincia-lpf0010783-2024-12-12"
+      }
+    },
+    "content": {
+      "mecanografico": "F0010783",
+      "estado": "Vigente, de alcance general",
+      "tipo-norma": {
+        "codigo": "LEY",
+        "texto": "Ley"
+      },
+      "numero-norma": 10783,
+      "fecha": "2024-12-12",
+      "jurisdiccion": {
+        "codigo": "F",
+        "descripcion": "Local",
+        "capital": "La Rioja",
+        "id-pais": 11
+      },
+      "provincia": "La Rioja",
+      "standard-normativo": "LEY F 010783 2024 12 12",
+      "identificacion-coloquial": {
+        "identificacion-coloquial": [
+          "LEY 10.783",
+          "LA RIOJA, 12 DE DICIEMBRE DE 2024"
+        ]
+      },
+      "nombre-coloquial": "LEY 10.783",
+      "lugar-sancion": "LA RIOJA",
+      "titulo-norma": "Crea la marca denominada La Rioja, con el objetivo de distinguir el origen de los bienes y servicios producidos y/o desarrollados por personas humanas o jur\u00EDdicas radicadas en la Provincia",
+      "publicacion-codificada": {
+        "publicacion-decodificada": {
+          "organismo": "Bolet\u00EDn Oficial",
+          "fecha": "2025 01 03"
+        }
+      },
+      "sancion": "La Legislatura de la provincia sanciona con fuerza de Ley:",
+      "analista": "Signorelli, Angela",
+      "responsable": "Signorelli, Angela",
+      "uid-alta": "ABM",
+      "uid-mod": "ABM",
+      "fecha-alta": "2025-02-04",
+      "fecha-mod": "2025-02-04",
+      "timestamp": "2025-02-04T09:24:50",
+      "timestamp-alta": "2025-02-04T09:24:50",
+      "timestamp-m": "2025-02-04T09:24:50",
+      "sumario": {
+        "sumario": "[[p]]Crea la marca denominada La Rioja, con el objetivo de distinguir el origen de los bienes y servicios producidos y/o desarrollados por personas humanas o jur\u00EDdicas radicadas en la Provincia[[/p]]"
+      },
+      "descriptores": {
+        "descriptor": [
+          {
+            "elegido": {
+              "termino": "proveedor de bienes y servicios"
+            },
+            "preferido": {
+              "termino": "Derecho civil/derechos personales/contratos de consumo/relaci\u00F3n de consumo/proveedor de bienes y servicios"
+            },
+            "sinonimos": {
+              "termino": [
+                "obligaciones y contratos",
+                "relaci\u00F3n jur\u00EDdica de consumo"
+              ]
+            }
+          },
+          {
+            "elegido": {
+              "termino": "LA RIOJA"
+            },
+            "preferido": {
+              "termino": "LA RIOJA"
+            },
+            "sinonimos": null
+          }
+        ],
+        "suggest": {
+          "termino": [
+            "proveedor de bienes y servicios",
+            "relaci\u00F3n jur\u00EDdica de consumo (relaci\u00F3n de consumo)",
+            "LA RIOJA",
+            "relaci\u00F3n de consumo",
+            "obligaciones y contratos (derechos personales)",
+            "Derecho civil",
+            "derechos personales",
+            "contratos de consumo"
+          ]
+        }
+      },
+      "generalidades": {
+        "observaciones-generales": "[[p]]CANTIDAD DE ARTICULOS QUE COMPONEN LA NORMA: 10[[/p]]"
+      },
+      "articulo": [
+        {
+          "numero-articulo": 1,
+          "texto": "[[p]]Art\u00EDculo 1\u00BA.- Objeto. Cr\u00E9ase la marca denominada \u0022La Rioja\u0022, con el objetivo de distinguir el origen de los bienes y servicios producidos y/o desarrollados por personas humanas o jur\u00EDdicas radicadas en la Provincia, como instrumento estrat\u00E9gico con el fin de incrementar su valor y competitividad en el mercado interno, regional, nacional e internacional.[[/p]]"
+        },
+        {
+          "numero-articulo": 2,
+          "texto": "[[p]]Art\u00EDculo 2\u00BA.- Objetivos. La marca \u0022La Rioja\u0022 tendr\u00E1 como objetivos: a) Reconocer y seleccionar los atributos y caracteres que configuran y distinguen la identidad propia de los bienes y servicios producidos en el territorio provincial.[[/p]][[p]]b) Promocionar e instalar la marca \u0022La Rioja\u0022 en el mercado local, regional, nacional e internacional, a fin de constituir un instrumento estrat\u00E9gico que permita agregar valor e incrementar la competitividad de la producci\u00F3n local.[[/p]][[p]]c) Integrar en las diversas estrategias o pol\u00EDticas p\u00FAblicas productivas a las denominaciones de origen y las indicaciones geogr\u00E1ficas formalmente creadas o a crearse en los \u00E1mbitos regionales o municipales de la provincia de La Rioja.[[/p]][[p]]d) Acompa\u00F1ar a las empresas locales en el posicionamiento de los bienes y servicios que producen en los locales, regionales, nacionales e internacionales e) Incentivar la inversi\u00F3n en agregado de valor y producci\u00F3n de bienes y servicios con \u00E9nfasis en la creaci\u00F3n y desarrollo de PyMEs.[[/p]][[p]]f) Fortalecer el desarrollo de la industria del turismo local e internacional.[[/p]][[p]]g) Estimular y promover la creaci\u00F3n de comisiones t\u00E9cnicas que permitan desarrollar estrategias vinculadas a la marca \u0022La Rioja\u0022.[[/p]][[p]]h) Estimular el crecimiento de las exportaciones mediante la colocaci\u00F3n de productos calificados por la marca.[[/p]][[p]]i) Generar estrategias de comunicaci\u00F3n para la difusi\u00F3n de la marca.[[/p]][[p]]j) Fomentar el desarrollo de eventos culturales, acad\u00E9micos, deportivos, religiosos, gastron\u00F3micos o de caracter\u00EDsticas similares vinculados a la marca \u0022La Rioja\u0022.[[/p]][[p]]k) Favorecer el proceso de inversi\u00F3n para la producci\u00F3n de bienes y servicios.[[/p]]"
+        },
+        {
+          "numero-articulo": 3,
+          "texto": "[[p]]Art\u00EDculo 3\u00BA.- Autoridad de Aplicaci\u00F3n. La Secretar\u00EDa de Comunicaci\u00F3n y Planificaci\u00F3n P\u00FAblica o el organismo que en el futuro la remplace ser\u00E1 la Autoridad de Aplicaci\u00F3n de la presente ley.[[/p]]"
+        },
+        {
+          "numero-articulo": 4,
+          "texto": "[[p]]Art\u00EDculo 4\u00BA.- Atribuciones. La Autoridad de Aplicaci\u00F3n tendr\u00E1 a su cargo la gesti\u00F3n t\u00E9cnica, administrativa y operativa de la marca \u0022La Rioja\u0022, para lo cual contar\u00E1 con las siguientes atribuciones:[[/p]][[p]]a) Administrar y gerenciar la Estrategia Marca y la marca \u0022La Rioja\u0022.[[/p]][[p]]b) Administrar con el sector p\u00FAblico y el privado la utilizaci\u00F3n de la marca \u0022La Rioja\u0022, teniendo en cuenta el manual de marca, los instructivos y normativas que la rigen.[[/p]][[p]]c) Coordinar el trabajo Interinstitucional en materia log\u00EDstica, administrativa y organizativa y en todo aquello que resulte pertinente para el cumplimiento de sus objetivos.[[/p]][[p]]d) Celebrar convenios.[[/p]][[p]]e) Dictar los Actos Administrativos correspondientes para la ejecuci\u00F3n de la presente ley.[[/p]]"
+        },
+        {
+          "numero-articulo": 5,
+          "texto": "[[p]]Art\u00EDculo 5\u00BA.- Registro. La Autoridad de Aplicaci\u00F3n realizar\u00E1 las gestiones necesarias para registrar la marca \u0022La Rioja\u0022 bajo titularidad del Estado Provincial en los organismos competentes y de conformidad al marco legal aplicable, como as\u00ED tambi\u00E9n para lograr su reconocimiento a nivel nacional e internacional.[[/p]]"
+        },
+        {
+          "referencias-normativas": {
+            "referencia-normativa": {
+              "cr": null,
+              "id": "REFERENCIAS_NORMATIVAS_0",
+              "ref": "LEY C 022362 1980 12 26 0000 000 0000 000"
+            }
+          },
+          "numero-articulo": 6,
+          "texto": "[[p]]Art\u00EDculo 6\u00BA.- Acceso a la Marca. Los requisitos para acceder a la marca \u0022La Rioja\u0022, as\u00ED como los mecanismos de control respecto a su uso correcto, lo establecer\u00E1 la Autoridad de Aplicaci\u00F3n mediante reglamentaci\u00F3n de la presente Ley; en cuanto a las sanciones por uso indebido de la marca registrada se aplicar\u00E1 lo establecido en la normativa nacional vigente [[r uuid:CT000]]Ley N\u00BA 22.362[[/r uuid:CT000]].[[/p]]"
+        },
+        {
+          "numero-articulo": 7,
+          "texto": "[[p]]Art\u00EDculo 7\u00BA.- Manual de Marca. El Manual de marca \u0022La Rioja\u0022, el cual determina el isologotipo que representa su identidad visual, como as\u00ED tambi\u00E9n los par\u00E1metros necesarios para su uso y manejo, figura en la presente como Anexo.[[/p]]"
+        },
+        {
+          "numero-articulo": 8,
+          "texto": "[[p]]Art\u00EDculo 8\u00BA.- Comit\u00E9 Consultivo. Fac\u00FAltase a la Autoridad de Aplicaci\u00F3n a conformar un Comit\u00E9 Consultivo de car\u00E1cter ad honorem, el que tendr\u00E1 a su cargo el asesoramiento respecto de todas aquellas cuestiones que dicha autoridad someta a su opini\u00F3n, la que ser\u00E1 de car\u00E1cter no vinculante. Dicho Comit\u00E9 podr\u00E1 integrarse con representantes de aquellos organismos de la Administraci\u00F3n P\u00FAblica, de organismos no gubernamentales, y otros actores estrat\u00E9gicos de la sociedad, cuyas competencias materiales resulten vinculadas a la gesti\u00F3n de la marca \u0022La Rioja\u0022. La Secretar\u00EDa de Comunicaci\u00F3n y Planificaci\u00F3n P\u00FAblica podr\u00E1 solicitar asimismo la colaboraci\u00F3n circunstancial de otros organismos p\u00FAblicos nacionales, provinciales o municipales y no gubernamentales cuando lo considere necesario para el cumplimiento de los fines previstos en la presente ley. En caso de conformarse el Comit\u00E9 Consultivo, la Autoridad de Aplicaci\u00F3n deber\u00E1 establecer sus normas de funcionamiento y actuaci\u00F3n como as\u00ED tambi\u00E9n las dem\u00E1s cuestiones operativas relativas a la misma.[[/p]]"
+        },
+        {
+          "numero-articulo": 9,
+          "texto": "[[p]]Art\u00EDculo 9\u00BA.- Articulaci\u00F3n. Los organismos p\u00FAblico provinciales cuya intervenci\u00F3n sea requerida en virtud de sus competencias para la aplicaci\u00F3n y ejecuci\u00F3n de la presente Ley, deber\u00E1n prestar su colaboraci\u00F3n de forma expedita y diligente.[[/p]]"
+        },
+        {
+          "numero-articulo": 10,
+          "texto": "[[p]]Art\u00EDculo 10\u00BA.- Comunicar, publicar, insertar en el Registro Oficial y archivar.[[/p]]"
+        }
+      ],
+      "firmantes": {
+        "firmantes": "Teresita Leonor Madera - Presidenta - C\u00E1mara de Diputados - Juan Manuel \u00C1rtico - Secretario Legislativo"
+      },
+      "id-infojus": "LPF0010783",
+      "fecha-umod": 20250204093440
+    }
+  }
+}

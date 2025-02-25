@@ -1,0 +1,194 @@
+﻿{
+  "document": {
+    "metadata": {
+      "uuid": "123456789-0abc-defg-006-3000lvorpyel",
+      "document-content-type": "legislacion",
+      "timestamp": 1736774875428,
+      "operation": "ADD",
+      "target-document-repository-id": "infojus",
+      "target-index-id": "index",
+      "target-document-indexing-id": "legislacion",
+      "document-recovery-strategy": "abstract-legislacion",
+      "friendly-url": {
+        "subdomain": "ley",
+        "description": "3600-local-pampa-adhesion-provincia-ley-nacional-26281-declaracion-interes-nacional-prevencion-control-todas-formas-transmision-enfermedad-chagas-lpl0003600-2024-11-29"
+      }
+    },
+    "content": {
+      "mecanografico": "L0003600",
+      "estado": "Vigente, de alcance general",
+      "tipo-norma": {
+        "codigo": "LEY",
+        "texto": "Ley"
+      },
+      "numero-norma": 3600,
+      "fecha": "2024-11-29",
+      "jurisdiccion": {
+        "codigo": "L",
+        "descripcion": "Local",
+        "capital": "Santa Rosa",
+        "id-pais": 11
+      },
+      "provincia": "La Pampa",
+      "standard-normativo": "LEY L 003600 2024 11 29",
+      "identificacion-coloquial": {
+        "identificacion-coloquial": [
+          "LEY 3.600",
+          "SANTA ROSA, 29 DE NOVIEMBRE DE 2024"
+        ]
+      },
+      "nombre-coloquial": "LEY 3.600",
+      "lugar-sancion": "SANTA ROSA",
+      "titulo-norma": "Adhesi\u00F3n de la provincia a la Ley Nacional 26.281 de Declaraci\u00F3n de Inter\u00E9s Nacional a la Prevenci\u00F3n y Control de Todas las Formas de Transmisi\u00F3n de la Enfermedad de Chagas",
+      "publicacion-codificada": {
+        "publicacion-decodificada": {
+          "organismo": "Bolet\u00EDn Oficial",
+          "fecha": "2025 01 10"
+        }
+      },
+      "sancion": "LA CAMARA DE DIPUTADOS DE LA PROVINCIA DE LA PAMPA SANCIONA CON FUERZA DE LEY:",
+      "analista": "Mazza, Gustavo",
+      "responsable": "Mazza, Gustavo",
+      "uid-alta": "ABM",
+      "uid-mod": "ABM",
+      "fecha-alta": "2025-01-13",
+      "fecha-mod": "2025-01-13",
+      "timestamp": "2025-01-13T10:16:45",
+      "timestamp-alta": "2025-01-13T10:16:45",
+      "timestamp-m": "2025-01-13T10:16:45",
+      "sumario": {
+        "sumario": "[[p]]Adhesi\u00F3n de la provincia a la Ley Nacional 26.281 de Declaraci\u00F3n de Inter\u00E9s Nacional a la Prevenci\u00F3n y Control de Todas las Formas de Transmisi\u00F3n de la Enfermedad de Chagas.[[/p]]"
+      },
+      "descriptores": {
+        "descriptor": [
+          {
+            "elegido": {
+              "termino": "adhesi\u00F3n provincial"
+            },
+            "preferido": {
+              "termino": "adhesi\u00F3n provincial"
+            },
+            "sinonimos": null
+          },
+          {
+            "elegido": {
+              "termino": "enfermedades"
+            },
+            "preferido": {
+              "termino": "Salud p\u00FAblica/enfermedades"
+            },
+            "sinonimos": null
+          },
+          {
+            "elegido": {
+              "termino": "mal de Chagas"
+            },
+            "preferido": {
+              "termino": "Salud p\u00FAblica/enfermedades/mal de Chagas"
+            },
+            "sinonimos": null
+          },
+          {
+            "elegido": {
+              "termino": "Salud p\u00FAblica"
+            },
+            "preferido": {
+              "termino": "Salud p\u00FAblica"
+            },
+            "sinonimos": null
+          }
+        ],
+        "suggest": {
+          "termino": [
+            "Salud p\u00FAblica",
+            "mal de Chagas",
+            "enfermedades",
+            "adhesi\u00F3n provincial"
+          ]
+        }
+      },
+      "generalidades": {
+        "observaciones-generales": "[[p]]CANTIDAD DE ARTICULOS QUE COMPONEN LA NORMA: 11[[/p]]",
+        "adhiere-a": {
+          "referencia-normativa": {
+            "cr": null,
+            "id": "ADHIERE_A_0",
+            "ref": "LEY C 026281 2007 08 08 0000 000 0000 000"
+          }
+        }
+      },
+      "articulo": [
+        {
+          "numero-articulo": 1,
+          "texto": "[[p]]Art\u00EDculo 1\u00B0: Adhi\u00E9rese la provincia de La Pampa a la Ley Nacional N\u00B0 26.281, de Declaraci\u00F3n de Inter\u00E9s Nacional a la Prevenci\u00F3n y Control de Todas las Formas de Transmisi\u00F3n de la Enfermedad de Chagas, y a su Decreto Reglamentario 202/2022.[[/p]]"
+        },
+        {
+          "numero-articulo": 2,
+          "texto": "[[p]]Art\u00EDculo 2\u00B0: Cr\u00E9ase el \u0022Programa Provincial Materno-Infantil de detecci\u00F3n, tratamiento y erradicaci\u00F3n de la Enfermedad de Chagas\u0022 (\u0022Programa\u0022), en el \u00E1mbito del Ministerio de Salud de la provincia de La Pampa.[[/p]]"
+        },
+        {
+          "numero-articulo": 3,
+          "texto": "[[p]]Art\u00EDculo 3\u00B0: El \u0022Programa Provincial Materno-Infantil de detecci\u00F3n, tratamiento y erradicaci\u00F3n de la Enfermedad de Chagas\u0022 es de aplicaci\u00F3n obligatoria en todos los establecimientos sanitarios y asistenciales, p\u00FAblicos y privados, de la provincia de La Pampa.[[/p]]"
+        },
+        {
+          "numero-articulo": 4,
+          "texto": "[[p]]Art\u00EDculo 4\u00B0: En el marco del \u0022Programa\u0022, se establece la obligatoriedad de los establecimientos sanitarios p\u00FAblicos y privados a cubrir gratuitamente:[[/p]][[p]]1- La realizaci\u00F3n del estudio serol\u00F3gico en personas gestantes, como medida tendiente a la detecci\u00F3n temprana en el embarazo de la infecci\u00F3n de la enfermedad de Chagas;[[/p]][[p]]2- La realizaci\u00F3n del estudio serol\u00F3gico a reci\u00E9n nacidos de madres chag\u00E1sicas, con el objetivo de diagnosticar en forma precoz para poder aplicar el tratamiento;[[/p]][[p]]3- La realizaci\u00F3n del tratamiento integral y completo en ni\u00F1os y ni\u00F1as, en los que se detecte la enfermedad de Chagas para contribuir a la disminuci\u00F3n de nuevos casos agudos y por consiguiente de enfermos en etapa cr\u00F3nica; y 4- El tratamiento antiparasitario espec\u00EDfico y a los establecimientos de la seguridad social y entidades de medicina prepaga a reconocer en su cobertura los test diagn\u00F3sticos y el tratamiento de la enfermedad.[[/p]]"
+        },
+        {
+          "numero-articulo": 5,
+          "texto": "[[p]]Art\u00EDculo 5\u00B0: Los objetivos de la presente Ley son:[[/p]][[p]]1- Impulsar el desarrollo, fortalecimiento e implementaci\u00F3n de pol\u00EDticas y planes de acci\u00F3n de control y prevenci\u00F3n de la enfermedad de Chagas, con el fin de que estrat\u00E9gicamente se avance en su control en todo el territorio provincial;[[/p]][[p]]2- Promover controles y seguimientos en toda persona gestante tendientes a la detecci\u00F3n temprana de la enfermedad de Chagas;[[/p]][[p]]3- Garantizar el derecho a la salud en las infancias a trav\u00E9s de la detecci\u00F3n temprana de la enfermedad de Chagas, comprometi\u00E9ndonos a impulsar una adultez saludable;[[/p]][[p]]4- Incentivar la capacitaci\u00F3n y formaci\u00F3n permanente sobre la tem\u00E1tica en los profesionales de la salud, como as\u00ED tambi\u00E9n en los espacios educativos mediante campa\u00F1as de sensibilizaci\u00F3n, prevenci\u00F3n y promoci\u00F3n de la enfermedad de Chagas.[[/p]]"
+        },
+        {
+          "numero-articulo": 6,
+          "texto": "[[p]]Art\u00EDculo 6\u00B0: Ser\u00E1 Autoridad de Aplicaci\u00F3n el Ministerio de Salud de la provincia de La Pampa y sus \u00E1mbitos de competencia.[[/p]]"
+        },
+        {
+          "referencias-normativas": {
+            "referencia-normativa": {
+              "cr": null,
+              "id": "REFERENCIAS_NORMATIVAS_0",
+              "ref": "LEY C 026281 2007 08 08 0000 000 0000 000"
+            }
+          },
+          "numero-articulo": 7,
+          "texto": "[[p]]Art\u00EDculo 7\u00B0: Las funciones de la Autoridad de Aplicaci\u00F3n son:[[/p]][[p]]1- Velar por el cumplimiento e implementaci\u00F3n de la [[r uuid:CT001]]Ley Nacional N\u00B0 26.281[[/r uuid:CT001]] y su reglamentaci\u00F3n;[[/p]][[p]]2- Desarrollar el \u0022Programa Provincial Materno-Infantil de detecci\u00F3n, tratamiento y erradicaci\u00F3n de la Enfermedad de Chagas\u0022 e implementarlo de manera obligatoria en todo el territorio provincial de acuerdo a lo establecido en la reglamentaci\u00F3n;[[/p]][[p]]3- Incorporar en la rutina serol\u00F3gica del reci\u00E9n nacido de madre chag\u00E1sica el testeo de Trypanosoma cruzi;[[/p]][[p]]4- Promover la incorporaci\u00F3n del estudio serol\u00F3gico de Trypanosoma cruzi, de acuerdo a los criterios que defina la reglamentaci\u00F3n, en ni\u00F1os, ni\u00F1as y adolescentes menores de doce (12) a\u00F1os;[[/p]][[p]]5- Desarrollar campa\u00F1as de seguimiento en aquellos casos positivos de Chagas;[[/p]][[p]]6- Promover la conformaci\u00F3n de equipos t\u00E9cnicos transdisciplinarios que se ocupen del seguimiento del paciente y su familia para que el cumplimiento del tratamiento sea efectivo;[[/p]][[p]]7- Incentivar en los profesionales de la salud intervinientes en el proceso de embarazo y posparto, la capacitaci\u00F3n y actualizaci\u00F3n en materia de la Enfermad de Chagas;[[/p]][[p]]8- Definir una propuesta pedag\u00F3gica para trabajar en el aula y el hogar con estudiantes del Ciclo B\u00E1sico de la escuela secundaria sobre el Chagas.[[/p]]"
+        },
+        {
+          "referencias-normativas": {
+            "referencia-normativa": [
+              {
+                "cr": null,
+                "id": "REFERENCIAS_NORMATIVAS_0",
+                "ref": "LEY C 026281 2007 08 08 0000 000 0000 000"
+              },
+              {
+                "cr": null,
+                "id": "REFERENCIAS_NORMATIVAS_1",
+                "ref": "DEC C 000202 2022 04 20 0002 000 0000 000"
+              }
+            ]
+          },
+          "numero-articulo": 8,
+          "texto": "[[p]]Art\u00EDculo 8\u00B0: Para la aplicaci\u00F3n del \u0022Programa\u0022 creado en el art\u00EDculo 2o de la presente Ley, la Autoridad de Aplicaci\u00F3n deber\u00E1 mantener una actualizaci\u00F3n permanente respecto a las Normas T\u00E9cnicas del Ministerio de Salud de la Naci\u00F3n, con particular atenci\u00F3n en las indicaciones de los incisos a), b) y c) del [[r uuid:CT002]]art\u00EDculo 2\u00B0 del Decreto Reglamentario 202/2022[[/r uuid:CT002]] de la [[r uuid:CT001]]Ley Nacional N\u00B0 26.281[[/r uuid:CT001]][[/p]]"
+        },
+        {
+          "numero-articulo": 9,
+          "texto": "[[p]]Art\u00EDculo 9\u00B0: La Autoridad de Aplicaci\u00F3n tendr\u00E1 180 d\u00EDas para reglamentar la presente Ley.[[/p]]"
+        },
+        {
+          "numero-articulo": 10,
+          "texto": "[[p]]Art\u00EDculo 10: Se autoriza al Poder Ejecutivo Provincial a realizar las adecuaciones presupuestarias necesarias para el cumplimiento de la presente Ley.[[/p]]"
+        },
+        {
+          "numero-articulo": 11,
+          "texto": "[[p]]Art\u00EDculo 11: Comun\u00EDquese al Poder Ejecutivo.-[[/p]]"
+        }
+      ],
+      "firmantes": {
+        "firmantes": "PEREZ ARAUJO-MEANA"
+      },
+      "id-infojus": "LPL0003600",
+      "fecha-umod": 20250113102755
+    }
+  }
+}

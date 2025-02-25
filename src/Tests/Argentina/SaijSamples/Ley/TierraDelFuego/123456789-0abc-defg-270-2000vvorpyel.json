@@ -1,0 +1,120 @@
+﻿{
+  "document": {
+    "metadata": {
+      "uuid": "123456789-0abc-defg-270-2000vvorpyel",
+      "document-content-type": "legislacion",
+      "timestamp": 1740502591184,
+      "operation": "ADD",
+      "target-document-repository-id": "infojus",
+      "target-index-id": "index",
+      "target-document-indexing-id": "legislacion",
+      "document-recovery-strategy": "abstract-legislacion",
+      "friendly-url": {
+        "subdomain": "ley",
+        "description": "1577-local-tierra-fuego-se-denomina-submarino-ara-san-juan-al-cerro-conocido-como-submarino-lpv0002072-2024-12-14"
+      }
+    },
+    "content": {
+      "mecanografico": "V0002072",
+      "estado": "Vigente, de alcance general",
+      "tipo-norma": {
+        "codigo": "LEY",
+        "texto": "Ley"
+      },
+      "numero-norma": 1577,
+      "fecha": "2024-12-14",
+      "jurisdiccion": {
+        "codigo": "V",
+        "descripcion": "Local",
+        "capital": "Ushuaia",
+        "id-pais": 11
+      },
+      "provincia": "Tierra del Fuego",
+      "standard-normativo": "LEY V 001577 2024 12 14",
+      "identificacion-coloquial": {
+        "identificacion-coloquial": [
+          "LEY 1.577",
+          "USHUAIA, 14 DE DICIEMBRE DE 2024"
+        ]
+      },
+      "nombre-coloquial": "LEY 1.577",
+      "lugar-sancion": "USHUAIA",
+      "titulo-norma": "Se denomina \u0022Submarino ARA San Juan\u0022 al cerro conocido como \u0022Submarino\u0022",
+      "publicacion-codificada": {
+        "publicacion-decodificada": {
+          "organismo": "Bolet\u00EDn Oficial",
+          "fecha": "2024 12 20"
+        }
+      },
+      "analista": "Guardia, Emanuel - Tierra del Fuego",
+      "responsable": "Guardia, Emanuel -Tierra del Fuego",
+      "uid-alta": "ABM",
+      "uid-mod": "ABM",
+      "fecha-alta": "2025-02-25",
+      "fecha-mod": "2025-02-25",
+      "timestamp": "2025-02-25T13:35:49",
+      "timestamp-alta": "2025-02-25T13:35:49",
+      "timestamp-m": "2025-02-25T13:35:49",
+      "sumario": {
+        "sumario": "[[p]]DENOM\u00CDNASE \u0022SUBMARINO ARA SAN JUAN\u0022 AL CERRO CONOCIDO COMO \u0022SUBMARINO\u0022, EN HOMENAJE PERMANENTE DEL PUEBLO FUEGUINO.[[/p]]"
+      },
+      "descriptores": {
+        "descriptor": [
+          {
+            "elegido": {
+              "termino": "Submarino Ara San Juan"
+            },
+            "preferido": {
+              "termino": "Submarino Ara San Juan"
+            },
+            "sinonimos": null
+          },
+          {
+            "elegido": {
+              "termino": "Tierra del Fuego, Ant\u00E1rtida e Islas del Atl\u00E1ntico Sur"
+            },
+            "preferido": {
+              "termino": "TIERRA DEL FUEGO"
+            },
+            "sinonimos": {
+              "termino": [
+                "Tierra del Fuego, Ant\u00E1rtida e Islas del Atl\u00E1ntico Sur",
+                "TERRITORIO NACIONAL DE TIERRA DEL FUEGO, ANT\u00C1RTIDA E ISLAS DEL ATL\u00C1NTICO SUR"
+              ]
+            }
+          }
+        ],
+        "suggest": {
+          "termino": [
+            "TERRITORIO NACIONAL DE TIERRA DEL FUEGO, ANT\u00C1RTIDA E ISLAS DEL ATL\u00C1NTICO SUR (TIERRA DEL FUEGO)",
+            "Submarino Ara San Juan",
+            "TIERRA DEL FUEGO",
+            "Tierra del Fuego, Ant\u00E1rtida e Islas del Atl\u00E1ntico Sur (TIERRA DEL FUEGO)"
+          ]
+        }
+      },
+      "generalidades": {
+        "observaciones-generales": "[[p]]CANTIDAD DE ARTICULOS QUE COMPONEN LA NORMA: 0003[[/p]]"
+      },
+      "articulo": [
+        {
+          "numero-articulo": 1,
+          "texto": "[[p]]Art\u00EDculo 1\u00BA.- Denom\u00EDnase \u0022Submarino ARA San Juan\u0022 al cerro conocido como \u0022Submarino\u0022, en homenaje permanente del Pueblo Fueguino a la memoria de los 44 h\u00E9roes que dieron su vida en servicio por la Patria.[[/p]]"
+        },
+        {
+          "numero-articulo": 2,
+          "texto": "[[p]]Art\u00EDculo 2\u00BA.- Comun\u00EDquese al Instituto Fueguino de Turismo (Infuetur) o el organismo que en un futuro lo reemplace y a quien corresponda que la denominaci\u00F3n sea utilizada oficialmente en los mapas y folleter\u00EDa tur\u00EDstica.[[/p]]"
+        },
+        {
+          "numero-articulo": 3,
+          "texto": "[[p]]Art\u00EDculo 3\u00BA.- Comun\u00EDquese al Poder Ejecutivo.[[/p]]"
+        }
+      ],
+      "firmantes": {
+        "firmantes": "RODRIGUEZ-URQUIZA."
+      },
+      "id-infojus": "LPV0002072",
+      "fecha-umod": 20250225135631
+    }
+  }
+}

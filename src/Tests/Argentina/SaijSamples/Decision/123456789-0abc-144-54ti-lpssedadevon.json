@@ -1,0 +1,48 @@
+﻿{
+  "document": {
+    "metadata": {
+      "uuid": "123456789-0abc-144-54ti-lpssedadevon",
+      "document-content-type": "novedad",
+      "timestamp": 1738764323911,
+      "operation": "ADD",
+      "target-document-repository-id": "infojus",
+      "target-index-id": "index",
+      "target-document-indexing-id": "novedad-legislacion",
+      "document-recovery-strategy": "abstract-novedad",
+      "friendly-url": {
+        "subdomain": null,
+        "description": "prorrogaron-intervencion-medios-transmision-tele-radiodifusion-prorrogaron-intervencion-medios-transmision-tele-radiodifusion-nv45441-2025-01-31"
+      }
+    },
+    "content": {
+      "seq": 45441,
+      "archivo": 32,
+      "jurisdiccion": "LOCAL",
+      "tipo-norma": {
+        "codigo": "DAN",
+        "texto": "Decisi\u00F3n Administrativa"
+      },
+      "nro_norma": 5,
+      "numero_norma": 5,
+      "org_emisor": "Jefatura de Gabinete de Ministros",
+      "titulo_1": "Prorrogaron  la intervenci\u00F3n a medios de transmisi\u00F3n por tele radiodifusi\u00F3n ",
+      "sintesis": "La intervenci\u00F3n fue prorrogada por un a\u00F1o para  reorganizar las empresas p\u00FAblicas bajo el marco de la Ley N\u00B0 26.522 y los Decretos relacionados, en un contexto de emergencia p\u00FAblica declarado hasta diciembre de 2025, la pr\u00F3rroga tambi\u00E9n incluye la intervenci\u00F3n de la Agencia de Publicidad del Estado SA unipersonal, hasta que se designen nuevas autoridades. ",
+      "fecha": "2025-01-31",
+      "fecha_bo": "2025-02-04",
+      "fecha_alta": "2025-02-04",
+      "ppublic_nov": 7,
+      "fecha_umod": "04/02/2025",
+      "status": "A",
+      "titulo_noticia": "Prorrogaron  la intervenci\u00F3n a medios de transmisi\u00F3n por tele radiodifusi\u00F3n ",
+      "destacada": 0,
+      "nro_orden": 99.000000,
+      "fecha_destacada": "04/02/2025 13:54:09.688103-03",
+      "fecha_newsletter": "04/02/2025 00:00:00-03",
+      "url_portal": "https://servicios.infoleg.gob.ar/infolegInternet/verNorma.do?id=409089",
+      "suplemento_bo": 0,
+      "subtipo": "Decisi\u00F3n Administrativa",
+      "id-infojus": "NV45441",
+      "fecha-umod": 20250205110523
+    }
+  }
+}

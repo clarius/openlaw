@@ -97,7 +97,7 @@ public class SaijClientTests(ITestOutputHelper output)
         Assert.Equal(10, count);
     }
 
-    [LocalFact]
+    [DebuggerFact]
     public async Task AllDocsContainPublication()
     {
         var total = 0;
@@ -162,7 +162,7 @@ public class SaijClientTests(ITestOutputHelper output)
         Assert.Equal(10, count);
     }
 
-    [LocalFact]
+    [DebuggerFact]
     public async Task EnumerateAllDocs()
     {
         var client = CreateClient(output);
@@ -188,6 +188,12 @@ public class SaijClientTests(ITestOutputHelper output)
     [InlineData("123456789-0abc-defg-g56-95000scanyel")]
     [InlineData("123456789-0abc-defg-704-6000xvorpyel")]
     [InlineData("123456789-0abc-defg-382-5100bvorpyel")]
+    [InlineData("123456789-0abc-945-54ti-lpssedadevon")]
+    [InlineData("123456789-0abc-934-54ti-lpssedadevon")]
+    [InlineData("123456789-0abc-281-0000-5202bvorpced")]
+    [InlineData("123456789-0abc-430-0000-5202kvorpced")]
+    [InlineData("123456789-0abc-104-0000-4202xvorpced")]
+    [InlineData("123456789-0abc-defg-g07-67000tcanyel")]
     public async Task CanFetchSpecificById(string id)
     {
         var client = CreateClient(output);
@@ -213,6 +219,14 @@ public class SaijClientTests(ITestOutputHelper output)
         var client = CreateClient(output);
         await foreach (var doc in client.EnumerateAsync(tipo, null))
         {
+            output.WriteLine(doc.ToYaml());
+
+            var path = $@"..\..\..\Argentina\SaijSamples\{tipo}";
+            Directory.CreateDirectory(path);
+            var full = await client.FetchJsonAsync(doc.Id);
+            Assert.NotNull(full);
+            await File.WriteAllTextAsync($@"{path}\{doc.Id}.json", full.ToJsonString(options), System.Text.Encoding.UTF8);
+
             return;
         }
 
@@ -227,6 +241,14 @@ public class SaijClientTests(ITestOutputHelper output)
         var client = CreateClient(output);
         await foreach (var doc in client.EnumerateAsync(tipo, Jurisdiccion.Provincial, provincia))
         {
+            output.WriteLine(doc.ToYaml());
+
+            var path = $@"..\..\..\Argentina\SaijSamples\{tipo}\{provincia}";
+            Directory.CreateDirectory(path);
+            var full = await client.FetchJsonAsync(doc.Id);
+            Assert.NotNull(full);
+            await File.WriteAllTextAsync(@$"{path}\{doc.Id}.json", full.ToJsonString(options), System.Text.Encoding.UTF8);
+
             return;
         }
 

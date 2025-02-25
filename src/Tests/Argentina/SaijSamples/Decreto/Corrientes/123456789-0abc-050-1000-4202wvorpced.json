@@ -1,0 +1,195 @@
+﻿{
+  "document": {
+    "metadata": {
+      "uuid": "123456789-0abc-050-1000-4202wvorpced",
+      "document-content-type": "legislacion",
+      "timestamp": 1723809133307,
+      "operation": "ADD",
+      "target-document-repository-id": "infojus",
+      "target-index-id": "index",
+      "target-document-indexing-id": "legislacion",
+      "document-recovery-strategy": "abstract-legislacion",
+      "friendly-url": {
+        "subdomain": "decreto",
+        "description": "1050-local-corrientes-prorroga-emergencia-energetica-todo-territorio-provincia-w20240001050-2024-05-17"
+      }
+    },
+    "content": {
+      "mecanografico": "W20240001050",
+      "estado": "Vigente, de alcance general",
+      "tipo-norma": {
+        "codigo": "DEC",
+        "texto": "Decreto"
+      },
+      "numero-norma": 1050,
+      "fecha": "2024-05-17",
+      "jurisdiccion": {
+        "codigo": "W",
+        "descripcion": "Local",
+        "capital": "Corrientes",
+        "id-pais": 11
+      },
+      "provincia": "Corrientes",
+      "standard-normativo": "DEC W 001050 2024 05 17",
+      "titulo-norma": "Pr\u00F3rroga de la emergencia energ\u00E9tica, en todo el territorio de la Provincia",
+      "nombre-coloquial": "DECRETO 1.050/2024",
+      "lugar-emision": "Corrientes",
+      "publicacion-codificada": {
+        "publicacion-decodificada": {
+          "organismo": "Bolet\u00EDn Oficial",
+          "fecha": "2024 06 13"
+        }
+      },
+      "analista": "Signorelli, Angela",
+      "responsable": "Signorelli, Angela",
+      "uid-alta": "ABM",
+      "uid-mod": "ABM",
+      "fecha-alta": "2024-08-16",
+      "fecha-mod": "2024-08-16",
+      "timestamp": "2024-08-16T08:46:04",
+      "timestamp-alta": "2024-08-16T08:46:04",
+      "timestamp-m": "2024-08-16T08:46:04",
+      "generalidades": {
+        "sintesis": "[[p]]Pr\u00F3rroga de la emergencia energ\u00E9tica, en todo el territorio de la Provincia[[/p]]",
+        "observaciones-generales": "[[p]]CANTIDAD DE ARTICULOS QUE COMPONEN LA NORMA: 05[[/p]]"
+      },
+      "descriptores": {
+        "descriptor": [
+          {
+            "elegido": {
+              "termino": "emergencia energ\u00E9tica"
+            },
+            "preferido": {
+              "termino": "Recursos naturales/recursos energ\u00E9ticos/emergencia energ\u00E9tica"
+            },
+            "sinonimos": null
+          },
+          {
+            "elegido": {
+              "termino": "recursos energ\u00E9ticos"
+            },
+            "preferido": {
+              "termino": "Recursos naturales/recursos energ\u00E9ticos"
+            },
+            "sinonimos": null
+          },
+          {
+            "elegido": {
+              "termino": "pr\u00F3rroga de vigencia"
+            },
+            "preferido": {
+              "termino": "Derecho civil/derechos personales/obligaciones/clasificaci\u00F3n de las obligaciones/obligaciones a plazo/plazo/pr\u00F3rroga del plazo"
+            },
+            "sinonimos": {
+              "termino": [
+                "t\u00E9rmino",
+                "plazo de pr\u00F3rroga",
+                "obligaciones y contratos",
+                "pr\u00F3rroga de vigencia",
+                "obligaciones personales"
+              ]
+            }
+          }
+        ],
+        "suggest": {
+          "termino": [
+            "emergencia energ\u00E9tica",
+            "clasificaci\u00F3n de las obligaciones",
+            "plazo",
+            "pr\u00F3rroga de vigencia (pr\u00F3rroga del plazo)",
+            "obligaciones a plazo",
+            "obligaciones",
+            "plazo de pr\u00F3rroga (pr\u00F3rroga del plazo)",
+            "recursos energ\u00E9ticos",
+            "t\u00E9rmino (plazo)",
+            "Recursos naturales",
+            "obligaciones y contratos (derechos personales)",
+            "derechos personales",
+            "Derecho civil",
+            "obligaciones personales (obligaciones)",
+            "pr\u00F3rroga del plazo"
+          ]
+        }
+      },
+      "visto": {
+        "texto": "[[p]]El expediente N\u00B0 875-1.408/2024, CARATULADO SIIF: 151875000-001.408/2024 - \u0022DPEC - REF.: SOLICITA PR\u00D3RROGA EMERGENCIA ENERG\u00C9TICA\u0022, y[[/p]]"
+      },
+      "considerando": {
+        "referencias-normativas": {
+          "referencia-normativa": [
+            {
+              "cr": null,
+              "id": "REFERENCIAS_NORMATIVAS_0",
+              "ref": "DEC W 001503 2023 06 21 0000 000 0000 000"
+            },
+            {
+              "cr": null,
+              "id": "REFERENCIAS_NORMATIVAS_1",
+              "ref": "LEY W 005571 2004 07 02 0000 000 0000 000"
+            },
+            {
+              "cr": null,
+              "id": "REFERENCIAS_NORMATIVAS_2",
+              "ref": "LEY W 006233 2013 11 13 0000 000 0000 000"
+            },
+            {
+              "cr": null,
+              "id": "REFERENCIAS_NORMATIVAS_3",
+              "ref": "CON W 000000 2007 06 08 0162 000 0000 000"
+            }
+          ]
+        },
+        "sancion": "El Gobernador de la Provincia En Acuerdo de Ministros Decreta:",
+        "texto": "[[p]]Que por las presentes actuaciones tramita la pr\u00F3rroga de la emergencia energ\u00E9tica dispuesta por [[r uuid:CT000]]Decreto N\u00B0 1.503 de fecha 21 de junio de 2023[[/r uuid:CT000]], en el territorio de la Provincia de Corrientes por el t\u00E9rmino de 360 d\u00EDas, prorrogable por igual t\u00E9rmino.[[/p]][[p]]Que a fs. 1/3 interviene el Gerente de Explotaci\u00F3n de la Direcci\u00F3n Provincial de Energ\u00EDa de Corrientes (DPEC), expresando: \u0022El presente se emite para consideraci\u00F3n, atento a los t\u00E9rminos del Decreto N\u00B0 1.503/2023 de fecha 21 de Junio 2023 del Poder Ejecutivo Provincial, donde establece la pr\u00F3rroga de la emergencia energ\u00E9tica por 360 d\u00EDas a partir del vencimiento del citado anterior. Como es de conocimiento de esa Superioridad, y habiendo transcurrido el a\u00F1o 2023 con distintas emergencias en el Servicio, una temporada estival con temperaturas extremas fuera de las medidas normales, m\u00E1s la situaci\u00F3n generadas por incendios en distintas zonas de nuestra Provincia, tornados e inundaciones fuera de la medida hist\u00F3rica que determino el dictado del Poder Ejecutivo, por el cual declarara las Emergencias en todo el territorio Provincial. Por lo expuesto y como es de conocimiento p\u00FAblico se ejecutan constantemente los trabajos necesarios para la reposici\u00F3n del Servicio en situaci\u00F3n de emergencia, y se programan los mantenimientos que correspondan a fin de mantener la calidad en el suministro de energ\u00EDa el\u00E9ctrica, y acompa\u00F1ar al aumento continuo del consumo, por el crecimiento demogr\u00E1fico propio de la regi\u00F3n seg\u00FAn informaci\u00F3n del mercado el\u00E9ctrico, como as\u00ED tambi\u00E9n la situaci\u00F3n que se presenta ante el aumento de la demanda inusual frente a las altas temperaturas requiriendo instalaciones aptas para soportar dichos picos y permitir el abastecimiento de energ\u00EDa a las distintas zonas de la Provincia. Tambi\u00E9n se realizan tareas tendientes a la normalizaci\u00F3n y correcci\u00F3n de las distintas obras y trabajos programados, para lo cual se puede determinar que el avance de los mismos es sostenido en el tiempo, a pesar de las limitaciones que se CORRIENTES, 13 DE JUNIO DE 2024 presenta en el mercado el\u00E9ctrico Argentino frente a la falta de elementos y/o materiales por las limitaciones a las importaciones, ante las restricciones del mercado financiero, lo que limita la fabricaci\u00F3n de componentes b\u00E1sicos para el mantenimiento y ejecuci\u00F3n de trabajos a f in de concluir obras imprescindibles, que indudablemente repercuten en el servicio.\u0022.[[/p]][[p]]Que a fs. 5 se expide la Gerencia de Ingenier\u00EDa de la DPEC, expresando: \u0022.en coincidencia con lo planteado por la Gerencia de Explotaci\u00F3n, ser\u00EDa importante prorrogar la Emergencia Energ\u00E9tica m\u00E1s all\u00E1 del pr\u00F3ximo vencimiento del Decreto N\u00B0 1503/2023, vigente.\u0022.[[/p]][[p]]Que a fs. 7/8 y vta., interviene la Subgerencia Legal de la DPEC luego de analizar las actuaciones, manifestando: \u0022.En lo que respecta a la declaraci\u00F3n de emergencia propiamente dicha, la Constituci\u00F3n de la Provincia de Corrientes en su Art. 162 incisos 1\u00BA y 17 establecen que el Gobernador es el primer mandatario legal de la provincia y ejerce la Jefatura de su administraci\u00F3n, conforme la Constituci\u00F3n y las leyes que en su consecuencia se dicten; y toma las medidas necesarias para conservar la paz y el orden p\u00FAblico por todos los medios que no est\u00E9n expresamente prohibidos por la Constituci\u00F3n y las leyes vigentes. Por tales consideraciones y en el marco de la situaci\u00F3n de emergencia habida en el sector es que se solicita la pr\u00F3rroga de la emergencia energ\u00E9tica oportunamente dispuesta, siendo que, en caso de que se prorrogue la misma, corresponder\u00EDa que se autorice por todo el t\u00E9rmino de la misma a que esta DPEC lleve a cabo contrataciones por v\u00EDa de excepci\u00F3n, de conformidad a lo indicado por el Art. 109 inciso 3, apartado d de la [[r uuid:CT001]]Ley 5.571[[/r uuid:CT001]] y del Art. 12 inciso c de la Ley 3079 y sus respectivos Decretos reglamentarios.\u0022.[[/p]][[p]]Que a fs. 9/12 el Interventor de la DPEC, luego de considerar el caso, concluye expresando: \u0022.En atenci\u00F3n a las cuestiones expuestas, la proximidad del vencimiento del plazo dispuesto por Decreto N\u00B0 1503/2023, y en virtud de que persisten las causas que determinaron la declaraci\u00F3n de emergencia energ\u00E9tica referida, se solicita a esa Secretar\u00EDa emita opini\u00F3n al respecto y, posteriormente, remita las actuaciones al Ministerio de Obras y Servicios P\u00FAblicos a efectos de su intervenci\u00F3n en procura del dictado del Decreto que disponga la pr\u00F3rroga de la emergencia energ\u00E9tica en todo el territorio provincial.\u0022.[[/p]][[p]]Que a fs. 14 interviene la Direcci\u00F3n de Desarrollo El\u00E9ctrico de la Secretar\u00EDa de Energ\u00EDa, manifestando: \u0022.Por lo expuesto en estas actuaciones es razonable y precisa la solicitud planteada por DPEC a fin de solicitar al PE provincial la sanci\u00F3n de la norma que permita, bajos los criterios expuestos, de pr\u00F3rroga de la Emergencia Energ\u00E9tica en vista del vencimiento de plazo dispuesto por el Decreto N\u00B0 1503/2023.\u0022.[[/p]][[p]]Que a fs. 15 la Direcci\u00F3n de Desarrollo Hidrocarbur\u00EDfero considera: \u0022.Por lo expuesto en estas actuaciones es razonable y precisa la solicitud planteada por DPEC a fin de solicitar al PE provincial la sanci\u00F3n de la norma que permita, bajos los criterios expuestos, de pr\u00F3rroga de la Emergencia Energ\u00E9tica en vista del vencimiento de plazo dispuesto por el Decreto N\u00B0 1503/2023.\u0022.[[/p]][[p]]Que a fs. 16 interviene la Direcci\u00F3n de Desarrollo en Energ\u00EDas Renovables, expresando: \u0022.Los mecanismos de excepci\u00F3n previstos en lo antes mencionados Decretos han permitido una r\u00E1pida contrataci\u00F3n para algunas obras consideradas fundamentales y permitieron continuar con tareas que permiten el acceso a energ\u00EDa el\u00E9ctrica a comunidades rurales, as\u00ED como la realizaci\u00F3n de mantenimiento y otras actividades necesarias para la universalizaci\u00F3n del acceso a la energ\u00EDa en la provincia. Entre estas actividades se pueden destacar obras realizadas en islas aleda\u00F1as de Isla Apip\u00E9 Chico, San Luis del Palmar, Herlitzka, Sauce, entre otros. Es importante destacar que las medidas implementadas hasta el momento, adem\u00E1s de permitir las ejecuciones de importantes obras, son un mecanismo que ayuda a dinamizar las tareas administrativas impulsando el desarrollo energ\u00E9tico provincial.\u0022.[[/p]][[p]]Que a fs. 17 el Secretario de Energ\u00EDa de la Provincia no tiene objeciones que formular, propiciando la prosecuci\u00F3n de su tr\u00E1mite.[[/p]][[p]]Que a fs. 19 interviene el Presidente Provisorio del Ente Provincial Regulador El\u00E9ctrico.[[/p]][[p]]Que a fs. 21/22 y vta. se expide la Direcci\u00F3n de Asuntos Jur\u00EDdicos y Administrativos del Ministerio de Obras y Servicios P\u00FAblicos.[[/p]][[p]]Que a fs. 24/25 y vta. Fiscal\u00EDa de Estado emite Dictamen N\u00BA 03069 de fecha 29 de abril de 2024.[[/p]][[p]]Que en base a lo precedentemente expuesto y lo establecido en la [[r uuid:CT002]]Ley N\u00B0 6.233[[/r uuid:CT002]], art\u00EDculos 6\u00B0 y 15, a fs. 30, el Ministro de Obras y Servicios P\u00FAblicos, estima pertinente la continuidad de lo gestionado. Que atento a los antecedentes y constancias obrantes en estos actuados, se estima pertinente dar continuidad a la pr\u00F3rroga de la emergencia energ\u00E9tica, cuyo plazo fuera establecido por los Decretos Nros. 1.890/2014, 1.312/2015, 1.821/2016, 1.797/2017, 2.208/2018, 2.052/2019, 1.342/2020, 2.048/2021, 1.880/2022 y 1.503/2023, a partir del vencimiento de este \u00FAltimo.[[/p]][[p]]Por ello y en ejercicio de las facultades conferidas por el [[r uuid:CT003]]art\u00EDculo 162, incisos 1, 2 y 17 de la Constituci\u00F3n de la Provincia de Corrientes[[/r uuid:CT003]],[[/p]]"
+      },
+      "articulo": [
+        {
+          "observa-a": {
+            "referencia-normativa": {
+              "cr": null,
+              "id": "OBSERVA_A_0",
+              "ref": "DEC W 001503 2023 05 17 0000 000 0000 000"
+            }
+          },
+          "numero-articulo": 1,
+          "texto": "[[p]]ART\u00CDCULO 1\u00BA: PRORR\u00D3GASE la emergencia energ\u00E9tica establecida por [[r uuid:OA000]]Decreto N\u00B0 1.503 de fecha 21 de junio de 2023[[/r uuid:OA000]], en todo el territorio de la Provincia de Corrientes, por el t\u00E9rmino de TRESCIENTOS SESENTA (360) d\u00EDas, a partir del vencimiento de este \u00FAltimo.[[/p]]"
+        },
+        {
+          "referencias-normativas": {
+            "referencia-normativa": [
+              {
+                "cr": null,
+                "id": "REFERENCIAS_NORMATIVAS_0",
+                "ref": "LEY W 005571 2004 07 02 0109 000 0000 000"
+              },
+              {
+                "cr": null,
+                "id": "REFERENCIAS_NORMATIVAS_1",
+                "ref": "LEY W 003079 1972 12 01 0012 000 0000 000"
+              }
+            ]
+          },
+          "numero-articulo": 2,
+          "texto": "[[p]]ART\u00CDCULO 2\u00BA: AUTOR\u00CDZASE por el tiempo que dure la emergencia energ\u00E9tica, a la Secretar\u00EDa de Energ\u00EDa y a la Direcci\u00F3n Provincial de Energ\u00EDa de Corrientes, a llevar a cabo las contrataciones por v\u00EDa de excepci\u00F3n que sean necesarias para afrontar la situaci\u00F3n de emergencia declarada, de conformidad con el [[r uuid:CT000]]art\u00EDculo 109, apartado 3, inciso d, de la Ley N\u00B0 5.571[[/r uuid:CT000]] y del [[r uuid:CT001]]art\u00EDculo 12, inciso c, de la Ley N\u00B0 3.079[[/r uuid:CT001]] y sus decretos reglamentarios.[[/p]]"
+        },
+        {
+          "numero-articulo": 3,
+          "texto": "[[p]]ART\u00CDCULO 3\u00BA: AUTOR\u00CDZASE al Ministro de Hacienda y Finanzas a determinar la compensaci\u00F3n de las partidas necesarias para mantener el equilibrio presupuestario.[[/p]]"
+        },
+        {
+          "numero-articulo": 4,
+          "texto": "[[p]]ART\u00CDCULO 4\u00BA: EL presente decreto es refrendado por los Ministros: de Producci\u00F3n, de Hacienda y Finanzas, de Seguridad, de Justicia y Derechos Humanos, de Coordinaci\u00F3n y Planificaci\u00F3n, de Secretar\u00EDa General, de Turismo, de Industria, Trabajo y Comercio, de Obras y Servicios P\u00FAblicos, de Desarrollo Social, de Ciencia y Tecnolog\u00EDa, de Educaci\u00F3n y de Salud P\u00FAblica.[[/p]]"
+        },
+        {
+          "numero-articulo": 5,
+          "texto": "[[p]]ART\u00CDCULO 5\u00BA: COMUN\u00CDQUESE, publ\u00EDquese, dese al Registro Oficial, l\u00EDbrense copias al Ministerio de Hacienda y Finanzas, Direcci\u00F3n Provincial de Energ\u00EDa de Corrientes, Ente Provincial Regulador El\u00E9ctrico, Secretar\u00EDa de Energ\u00EDa y p\u00E1sese al Ministerio de Obras y servicios P\u00FAblicos, a sus efectos.[[/p]]"
+        }
+      ],
+      "firmantes": {
+        "firmantes": "Dr. Gustavo Adolfo Vald\u00E9s Dr. Carlos Jos\u00E9 Vignolo C.P. Marcelo Gustavo Rivas Piasentini Dr. Ricardo Cardozo Dr. Juan Jos\u00E9 L\u00F3pez Desimoni C.P. Jorge Antonio G\u00F3mez Ing. Mar\u00EDa Alejandra Eliciri Ing. Claudio Horacio Anselmo Lic. Pr\u00E1xedes Ytat\u00ED L\u00F3pez Sr. Osvaldo Claudio Polich C.P. Miguel \u00C1ngel Olivieri Sr. Gustavo Ad\u00E1n Gaya Dr. Herminda Mar\u00EDa Gabur"
+      },
+      "id-infojus": "W20240001050",
+      "fecha-umod": 20240816085213
+    }
+  }
+}

@@ -1,0 +1,238 @@
+﻿{
+  "document": {
+    "metadata": {
+      "uuid": "123456789-0abc-defg-951-1000dvorpyel",
+      "document-content-type": "legislacion",
+      "timestamp": 1733944092983,
+      "operation": "ADD",
+      "target-document-repository-id": "infojus",
+      "target-index-id": "index",
+      "target-document-indexing-id": "legislacion",
+      "document-recovery-strategy": "abstract-legislacion",
+      "friendly-url": {
+        "subdomain": "ley",
+        "description": "1159-local-san-luis-adhesion-ley-nacional-27348-complementaria-ley-sobre-riesgos-trabajo-lpd0001159-2024-11-28"
+      }
+    },
+    "content": {
+      "mecanografico": "D0001159",
+      "estado": "Vigente, de alcance general",
+      "tipo-norma": {
+        "codigo": "LEY",
+        "texto": "Ley"
+      },
+      "numero-norma": 1159,
+      "fecha": "2024-11-28",
+      "jurisdiccion": {
+        "codigo": "D",
+        "descripcion": "Local",
+        "capital": "San Luis",
+        "id-pais": 11
+      },
+      "provincia": "San Luis",
+      "standard-normativo": "LEY D 001159 2024 11 28",
+      "identificacion-coloquial": {
+        "identificacion-coloquial": [
+          "LEY V 1.159",
+          "SAN LUIS, 28 DE NOVIEMBRE DE 2024"
+        ]
+      },
+      "nombre-coloquial": "LEY V 1.159",
+      "lugar-sancion": "SAN LUIS",
+      "titulo-norma": "Adhesi\u00F3n a la Ley Nacional 27.348 Complementaria de la Ley Sobre Riesgos del Trabajo",
+      "publicacion-codificada": {
+        "publicacion-decodificada": {
+          "organismo": "Bolet\u00EDn Oficial",
+          "fecha": "2024 12 11"
+        }
+      },
+      "analista": "Russo, Patricia",
+      "responsable": "Russo, Patricia",
+      "uid-alta": "ABM",
+      "uid-mod": "ABM",
+      "fecha-alta": "2024-12-11",
+      "fecha-mod": "2024-12-11",
+      "timestamp": "2024-12-11T16:01:40",
+      "timestamp-alta": "2024-12-11T16:01:40",
+      "timestamp-m": "2024-12-11T16:01:40",
+      "sumario": {
+        "sumario": "[[p]]LEY SOBRE RIESGOS DEL TRABAJO-RIESGOS DEL TRABAJO-ASEGURADOR POR RIESGOS DEL TRABAJO-COMISIONES MEDICAS[[/p]]"
+      },
+      "descriptores": {
+        "descriptor": [
+          {
+            "elegido": {
+              "termino": "ley sobre riesgos del trabajo"
+            },
+            "preferido": {
+              "termino": "Derecho laboral/accidentes de trabajo/riesgos del trabajo/ley sobre riesgos del trabajo"
+            },
+            "sinonimos": {
+              "termino": [
+                "derecho del trabajo",
+                "R\u00E9gimen de Prevenci\u00F3n y Cobertura de Riesgos del Trabajo",
+                "accidentes y enfermedades de trabajo"
+              ]
+            }
+          },
+          {
+            "elegido": {
+              "termino": "riesgos del trabajo"
+            },
+            "preferido": {
+              "termino": "Derecho laboral/accidentes de trabajo/riesgos del trabajo"
+            },
+            "sinonimos": {
+              "termino": [
+                "derecho del trabajo",
+                "accidentes y enfermedades de trabajo"
+              ]
+            }
+          },
+          {
+            "elegido": {
+              "termino": "asegurador por riesgos del trabajo"
+            },
+            "preferido": {
+              "termino": "Derecho laboral/accidentes de trabajo/riesgos del trabajo/seguro por accidente de trabajo/asegurador por riesgos del trabajo"
+            },
+            "sinonimos": {
+              "termino": [
+                "derecho del trabajo",
+                "aseguradora de riesgos del trabajo",
+                "ART",
+                "seguro de riesgos del trabajo",
+                "accidentes y enfermedades de trabajo",
+                "aseguradora de riesgos"
+              ]
+            }
+          },
+          {
+            "elegido": {
+              "termino": "comisiones m\u00E9dicas"
+            },
+            "preferido": {
+              "termino": "Derecho laboral/accidentes de trabajo/riesgos del trabajo/comisiones m\u00E9dicas"
+            },
+            "sinonimos": {
+              "termino": [
+                "derecho del trabajo",
+                "accidentes y enfermedades de trabajo"
+              ]
+            }
+          }
+        ],
+        "suggest": {
+          "termino": [
+            "ley sobre riesgos del trabajo",
+            "seguro de riesgos del trabajo (seguro por accidente de trabajo)",
+            "accidentes de trabajo",
+            "comisiones m\u00E9dicas",
+            "ART (asegurador por riesgos del trabajo)",
+            "asegurador por riesgos del trabajo",
+            "accidentes y enfermedades de trabajo (accidentes de trabajo)",
+            "Derecho laboral",
+            "aseguradora de riesgos del trabajo (asegurador por riesgos del trabajo)",
+            "aseguradora de riesgos (asegurador por riesgos del trabajo)",
+            "R\u00E9gimen de Prevenci\u00F3n y Cobertura de Riesgos del Trabajo (ley sobre riesgos del trabajo)",
+            "riesgos del trabajo",
+            "seguro por accidente de trabajo",
+            "derecho del trabajo (Derecho laboral)"
+          ]
+        }
+      },
+      "generalidades": {
+        "observaciones-generales": "[[p]]CANTIDAD DE ARTICULOS QUE COMPONEN LA NORMA:7[[/p]]"
+      },
+      "articulo": [
+        {
+          "referencias-normativas": {
+            "referencia-normativa": [
+              {
+                "cr": null,
+                "id": "REFERENCIAS_NORMATIVAS_0",
+                "ref": "LEY C 027348 2017 02 15 0000 000 0000 000"
+              },
+              {
+                "cr": null,
+                "id": "REFERENCIAS_NORMATIVAS_1",
+                "ref": "LEY C 024557 1995 09 13 0000 000 0000 000"
+              }
+            ]
+          },
+          "numero-articulo": 1,
+          "texto": "[[p]]ARTICULO 1\u00B0.- ADHI\u00C9RASE la provincia de San Luis a las disposiciones contenidas en el T\u00EDtulo I de la [[r uuid:CT001]]Ley Nacional N\u00B0 27.348[[/r uuid:CT001]] \u0022Complementaria de la [[r uuid:CT002]]Ley sobre Riesgos del Trabajo N\u00B0 24.557[[/r uuid:CT002]]\u0022, quedando delegadas expresamente a la jurisdicci\u00F3n administrativa nacional las competencias necesarias para dar cumplimiento a lo dispuesto en los Art\u00EDculos 1\u00B0, 2\u00B0 y 3 de la norma precitada, con sujeci\u00F3n a las condiciones establecidas en la presente Ley.-[[/p]]"
+        },
+        {
+          "referencias-normativas": {
+            "referencia-normativa": {
+              "cr": null,
+              "id": "REFERENCIAS_NORMATIVAS_0",
+              "ref": "LEY C 024241 1993 09 23 0051 000 0000 000"
+            }
+          },
+          "numero-articulo": 2,
+          "texto": "[[p]]ARTICULO 2\u00B0.- Encomi\u00E9ndese al Poder Ejecutivo Provincial la celebraci\u00F3n de convenios de colaboraci\u00F3n y coordinaci\u00F3n con la Superintendencia de Riesgo de Trabajo a los fines de que las Comisiones M\u00E9dicas Jurisdiccionales instituidas por el [[r uuid:CT001]]Art\u00EDculo 51 de la Ley Nacional N\u00B0 24.241[[/r uuid:CT001]] o la que en el futuro la modifique y/o reemplace, act\u00FAen en el \u00E1mbito de la provincia de San Luis como instancia prejurisdiccional, sujetas a las condiciones de la presente Ley.-[[/p]]"
+        },
+        {
+          "referencias-normativas": {
+            "referencia-normativa": {
+              "cr": null,
+              "id": "REFERENCIAS_NORMATIVAS_0",
+              "ref": "LEY D 000086 2021 08 11 0000 000 0000 000"
+            }
+          },
+          "numero-articulo": 3,
+          "texto": "[[p]]ART\u00CDCULO 3\u00B0.- Las Comisiones M\u00E9dicas Jurisdiccionales se constituyen de acuerdo con la competencia territorial asignadas a las Circunscripciones Judiciales (conforme [[r uuid:CT001]]Ley Provincial N\u00B0 IV-0086-2021[[/r uuid:CT001]]) Ley Org\u00E1nica de la Administraci\u00F3n de Justicia de la provincia de San Luis y seg\u00FAn la siguiente asignaci\u00F3n sin perjuicio de ulteriores ampliaciones:[[/p]][[p]]A)1) Primera Circunscripci\u00F3n Judicial UNA (1) Comisi\u00F3n M\u00E9dica Jurisdiccional, con asiento en la ciudad de San Luis;[[/p]][[p]]2)Segunda Circunscripci\u00F3n Judicial: UNA (1) Comisi\u00F3n M\u00E9dica Jurisdiccional, con asiento en la ciudad de Villa Mercedes;[[/p]][[p]]3)Tercera Circunscripci\u00F3n Judicial: UNA (1) Comisi\u00F3n M\u00E9dica Jurisdiccional, con asiento en la ciudad de Concar\u00E1n.[[/p]][[p]]B)Celeridad, sencillez y gratuidad en el procedimiento para las personas trabajadoras;[[/p]][[p]]C)Calidad de atenci\u00F3n;[[/p]][[p]]D)Fundamentaci\u00F3n cient\u00EDfica, imparcialidad, objetividad y profesionalidad en los dict\u00E1menes m\u00E9dicos, asegurando la correcta aplicaci\u00F3n de las reglas para la cuantificaci\u00F3n del da\u00F1o prevista en el sistema de riesgos del trabajo;[[/p]][[p]]E)Publicidad de los indicadores de gesti\u00F3n.-[[/p]]"
+        },
+        {
+          "referencias-normativas": {
+            "referencia-normativa": [
+              {
+                "cr": null,
+                "id": "REFERENCIAS_NORMATIVAS_0",
+                "ref": "LEY C 027348 2017 02 15 0002 000 0000 000"
+              },
+              {
+                "cr": null,
+                "id": "REFERENCIAS_NORMATIVAS_1",
+                "ref": "LEY C 024557 1995 09 13 0046 000 0000 000"
+              },
+              {
+                "cr": null,
+                "id": "REFERENCIAS_NORMATIVAS_2",
+                "ref": "LEY C 027348 2017 02 15 0000 000 0000 000"
+              }
+            ]
+          },
+          "numero-articulo": 4,
+          "texto": "[[p]]ARTICULO 4\u00B0.- Enti\u00E9ndase que los recursos ante el fuero laboral aludidos en el [[r uuid:CT001]]Art\u00EDculo 2\u00B0 de la Ley Nacional N\u00B0 27.348[[/r uuid:CT001]] y en el [[r uuid:CT002]]Art\u00EDculo 46 de la Ley Nacional N\u00B0 24.557[[/r uuid:CT002]] (texto seg\u00FAn modificaci\u00F3n introducida por [[r uuid:CT003]]Ley N\u00B0 27.348[[/r uuid:CT003]]), deber\u00E1n formalizarse a trav\u00E9s de la acci\u00F3n laboral ordinaria, dentro del plazo de CUARENTA Y CINCO (45) d\u00EDas h\u00E1biles judiciales computados desde la notificaci\u00F3n de la resoluci\u00F3n emanada de la Comisi\u00F3n M\u00E9dica Jurisdiccional, bajo apercibimiento de caducidad.-  Las personas trabajadoras deber\u00E1n acompa\u00F1ar, bajo sanci\u00F3n de inadmisibilidad de la acci\u00F3n, los instrumentos que acrediten el agotamiento de la v\u00EDa administrativa por ante la Comisi\u00F3n M\u00E9dica correspondiente, la certificaci\u00F3n m\u00E9dica que consigne diagn\u00F3stico, grado de incapacidad y calificaci\u00F3n legal y que explicite los fundamentos que sustentaron un criterio divergente al sostenido por la Comisi\u00F3n M\u00E9dica Jurisdiccional. Las cuestiones planteadas ante \u00E9sta, constituir\u00E1n el objeto del debate judicial de la acci\u00F3n prevista en esta norma.-  La acci\u00F3n laboral ordinaria que por esta Ley se otorga a las personas trabajadoras, produce la atracci\u00F3n del recurso que eventualmente interponga la aseguradora de riesgos del trabajo ante la Comisi\u00F3n M\u00E9dica Central y las sentencia que se dicte en sede laboral resultar\u00E1 vinculante para ambas partes.-[[/p]]"
+        },
+        {
+          "referencias-normativas": {
+            "referencia-normativa": {
+              "cr": null,
+              "id": "REFERENCIAS_NORMATIVAS_0",
+              "ref": "LEY C 024557 1995 09 13 0000 000 0000 000"
+            }
+          },
+          "numero-articulo": 5,
+          "texto": "[[p]]ART\u00CDCULO 5\u00B0.- Las controversias judiciales que se susciten en el marco de la [[r uuid:CT001]]Ley Nacional N\u00B0 24.557[[/r uuid:CT001]] y sus modificatorias y complementarias, deber\u00E1n resolverse con intervenci\u00F3n de los profesionales que integran el Cuerpo Profesional Forense del Poder Judicial de la provincia de San Luis creado y reglamentado por el Acuerdo N\u00B0 782 de fecha 5 de octubre de 2011 del Superior Tribunal de Justicia.-  Los informes y pronunciamientos de los profesionales deber\u00E1n ajustarse al Listado de Enfermedades Profesionales previsto en el Anexo I del Decreto N\u00B0 658/96 y a la Tabla de Evaluaci\u00F3n de Incapacidades establecida en el Anexo I del Decreto N\u00B0 659/96, y sus respectivas modificatorias, como as\u00ED tambi\u00E9n las que surjan de la prueba rendida judicialmente. Los honorarios por su intervenci\u00F3n, no ser\u00E1n variables ni estar\u00E1n vinculados a la cuant\u00EDa del respectivo juicio y su regulaci\u00F3n responder\u00E1 exclusivamente a la labor realizada en el pleito. Encomi\u00E9ndese al Poder Judicial de la Provincia la suscripci\u00F3n de programas de capacitaci\u00F3n con la Superintendencia de Riesgos del Trabajo (SRT), orientados a los profesionales que integran el Cuerpo Profesional Forense, en materia de riesgos del trabajo y peritajes especializados.[[/p]]"
+        },
+        {
+          "numero-articulo": 6,
+          "texto": "[[p]]ART\u00CDCULO 6\u00B0.- La entrada en vigencia de esta Ley queda supeditada a la instrumentaci\u00F3n de los convenios a los que alude el Art\u00EDculo 2\u00B0 de la presente norma.-[[/p]]"
+        },
+        {
+          "numero-articulo": 7,
+          "texto": "[[p]]ART\u00CDCULO 7\u00B0.- Reg\u00EDstrese, comun\u00EDquese al Poder Ejecutivo y arch\u00EDvese.-[[/p]]"
+        }
+      ],
+      "firmantes": {
+        "firmantes": "Claudio Javier Poggi - Facundo Andr\u00E9s Endeiza"
+      },
+      "id-infojus": "LPD0001159",
+      "fecha-umod": 20241211160812
+    }
+  }
+}

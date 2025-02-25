@@ -1,0 +1,117 @@
+﻿{
+  "document": {
+    "metadata": {
+      "uuid": "123456789-0abc-defg-093-4100svorpyel",
+      "document-content-type": "legislacion",
+      "timestamp": 1737464733924,
+      "operation": "ADD",
+      "target-document-repository-id": "infojus",
+      "target-index-id": "index",
+      "target-document-indexing-id": "legislacion",
+      "document-recovery-strategy": "abstract-legislacion",
+      "friendly-url": {
+        "subdomain": "ley",
+        "description": "14390-local-santa-fe-declaran-interes-general-sujeto-expropiacion-lote-terreno-lps0014390-2024-12-19"
+      }
+    },
+    "content": {
+      "mecanografico": "S0014390",
+      "estado": "Vigente, de alcance general",
+      "tipo-norma": {
+        "codigo": "LEY",
+        "texto": "Ley"
+      },
+      "numero-norma": 14390,
+      "fecha": "2024-12-19",
+      "jurisdiccion": {
+        "codigo": "S",
+        "descripcion": "Local",
+        "capital": "Santa Fe",
+        "id-pais": 11
+      },
+      "provincia": "Santa Fe",
+      "standard-normativo": "LEY S 014390 2024 12 19",
+      "identificacion-coloquial": {
+        "identificacion-coloquial": [
+          "LEY 14.390",
+          "SANTA FE, 19 DE DICIEMBRE DE 2024"
+        ]
+      },
+      "nombre-coloquial": "LEY 14.390",
+      "lugar-sancion": "SANTA FE",
+      "titulo-norma": "Declaran de inter\u00E9s general y sujeto a expropiaci\u00F3n un lote de terreno",
+      "publicacion-codificada": {
+        "publicacion-decodificada": {
+          "organismo": "Bolet\u00EDn Oficial",
+          "fecha": "2025 01 06"
+        }
+      },
+      "sancion": "La Legislatura de la Provincia de Santa Fe sanciona con fuerza de Ley:",
+      "analista": "Barnichea, Iv\u00E1n",
+      "responsable": "Barnichea, Iv\u00E1n",
+      "uid-alta": "ABM",
+      "uid-mod": "ABM",
+      "fecha-alta": "2025-01-21",
+      "fecha-mod": "2025-01-21",
+      "timestamp": "2025-01-21T09:55:48",
+      "timestamp-alta": "2025-01-21T09:55:48",
+      "timestamp-m": "2025-01-21T09:55:48",
+      "sumario": {
+        "sumario": "[[p]]Declararon de inter\u00E9s general y sujeto a expropiaci\u00F3n un lote de terreno ubicado en calle E. Favar\u00EDo S/N de la zona urbana de la ciudad de Rosario[[/p]]"
+      },
+      "descriptores": {
+        "descriptor": {
+          "elegido": {
+            "termino": "ley de expropiaci\u00F3n"
+          },
+          "preferido": {
+            "termino": "Derecho administrativo/dominio del Estado/expropiaci\u00F3n/ley de expropiaci\u00F3n"
+          },
+          "sinonimos": null
+        },
+        "suggest": {
+          "termino": [
+            "expropiaci\u00F3n",
+            "ley de expropiaci\u00F3n",
+            "dominio del Estado",
+            "Derecho administrativo"
+          ]
+        }
+      },
+      "generalidades": {
+        "observaciones-generales": "[[p]]CANTIDAD DE ARTICULOS QUE COMPONEN LA NORMA: 6[[/p]]"
+      },
+      "articulo": [
+        {
+          "numero-articulo": 1,
+          "texto": "[[p]]ART\u00CDCULO 1.- Decl\u00E1rase de utilidad p\u00FAblica y sujeto a expropiaci\u00F3n un (1) lote de terreno ubicado en calle E. Favar\u00EDo S/N de la zona urbana de la ciudad de Rosario, departamento Rosario, seg\u00FAn lo descripto en el art\u00EDculo 2.[[/p]]"
+        },
+        {
+          "numero-articulo": 2,
+          "texto": "[[p]]ART\u00CDCULO 2.- El inmueble sujeto a expropiaci\u00F3n se describe de la siguiente manera:[[/p]][[p]]1 - Lote inscripto matr\u00EDcula 16065956, fecha 28/07/2021, del Registro de la Propiedad de Rosario, Partida de Impuesto Inmobiliario N\u00B0 16-03-17 316955/0000, que encierra una superficie total de terreno de 15967,97m2. Datos Catastrales: Departamento 16 - Rosario, Distrito 03 Rosario, Secci\u00F3n 17, Manzana/ Parcela 0001/00017, Estado Activa lote A, N\u00B0 de Plano/A\u00F1o 185578 a\u00F1o 2014. Titularidad dominial a nombre de SEGE INDUSTRIAS S.A. CUIT N\u00B0 30-71704746-6.[[/p]]"
+        },
+        {
+          "numero-articulo": 3,
+          "texto": "[[p]]ART\u00CDCULO 3.- El lote referenciado en el art\u00EDculo anterior ser\u00E1 destinado a la construcci\u00F3n de un complejo penitenciario, adyacente al existente en el inmueble sito en calle Av. Las Palmeras N\u00B0 3816 de la ciudad de Rosario, modific\u00E1ndose cualquier destino y/o zonificaci\u00F3n que se le haya asignado al mismo, tanto por normas comunales y/o provinciales.[[/p]]"
+        },
+        {
+          "numero-articulo": 4,
+          "texto": "[[p]]ART\u00CDCULO 4.- Las erogaciones provenientes de la aplicaci\u00F3n de la presente ley, la confecci\u00F3n de los respectivos planos de mensura y subdivisi\u00F3n y dem\u00E1s documentaci\u00F3n que fuere necesaria, est\u00E1n a cargo del Poder Ejecutivo.[[/p]]"
+        },
+        {
+          "numero-articulo": 5,
+          "texto": "[[p]]ART\u00CDCULO 5.- Autor\u00EDzase al Poder Ejecutivo a realizar las adecuaciones presupuestar\u00EDas necesarias para el cumplimiento de esta ley.[[/p]]"
+        },
+        {
+          "numero-articulo": 6,
+          "texto": "[[p]]ART\u00CDCULO 6.- Comun\u00EDquese al Poder Ejecutivo.[[/p]]"
+        }
+      ],
+      "firmantes": {
+        "firmantes": "Clara Garc\u00EDa, Presidenta C\u00E1mara de Diputadas y Diputados - Gisela Scaglia, Presidente C\u00E1mara de Senadores - Mar\u00EDa Paula Salari, Secretaria Parlamentaria C\u00E1mara de Diputadas y Diputados - CPN Patricia Boni, Subsecretaria C\u00E1mara de Senadores"
+      },
+      "id-infojus": "LPS0014390",
+      "fecha-umod": 20250121100533
+    }
+  }
+}

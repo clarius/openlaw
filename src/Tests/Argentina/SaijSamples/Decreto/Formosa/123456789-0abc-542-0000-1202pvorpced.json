@@ -1,0 +1,169 @@
+﻿{
+  "document": {
+    "metadata": {
+      "uuid": "123456789-0abc-542-0000-1202pvorpced",
+      "document-content-type": "legislacion",
+      "timestamp": 1647961470390,
+      "operation": "ADD",
+      "target-document-repository-id": "infojus",
+      "target-index-id": "index",
+      "target-document-indexing-id": "legislacion",
+      "document-recovery-strategy": "abstract-legislacion",
+      "friendly-url": {
+        "subdomain": "decreto",
+        "description": "245-local-formosa-declaran-interes-provincial-xix-fiesta-corvina-rio-expo-industrial-comercial-gastronomica-turistica-p20210000245-2021-11-29"
+      }
+    },
+    "content": {
+      "mecanografico": "P20210000245",
+      "numero-norma": 245,
+      "timestamp": "2022-03-22T11:58:20",
+      "timestamp-alta": "2022-03-22T11:58:20",
+      "timestamp-m": "2022-03-22T11:58:20",
+      "tipo-norma": {
+        "codigo": "DEC",
+        "texto": "Decreto"
+      },
+      "fecha": "2021-11-29",
+      "jurisdiccion": {
+        "codigo": "P",
+        "descripcion": "Local",
+        "capital": "Formosa",
+        "id-pais": 11
+      },
+      "provincia": "Formosa",
+      "standard-normativo": "DEC P 000245 2021 11 29",
+      "titulo-norma": "Declaran de Inter\u00E9s Provincial la XIX Fiesta de la Corvina de R\u00EDo, Expo industrial, Comercial, Gastron\u00F3mica y Tur\u00EDstica",
+      "publicacion-codificada": {
+        "publicacion-decodificada": {
+          "organismo": "Bolet\u00EDn Oficial",
+          "fecha": "2021 11 29"
+        }
+      },
+      "lugar-emision": "FORMOSA",
+      "nombre-coloquial": "DECRETO 245/2021",
+      "analista": "Quirino, Maria Rosa",
+      "estado": "Vigente, de alcance general",
+      "fecha-alta": "2022-03-22",
+      "fecha-mod": "2022-03-22",
+      "responsable": "Quirino, Maria Rosa",
+      "uid-alta": "ABM",
+      "uid-mod": "ABM",
+      "generalidades": {
+        "sintesis": "[[p]]Declaran de Inter\u00E9s Provincial la XIX Fiesta de la Corvina de R\u00EDo, Expo industrial, Comercial, Gastron\u00F3mica y Tur\u00EDsticaa a llevarse a cabo en la localidad de Herradura los d\u00EDas 11, 12 y 13 de febrero de 2022.[[/p]]",
+        "observaciones-generales": "[[p]]CANTIDAD DE ARTICULOS QUE COMPONEN LA NORMA: 3[[/p]]"
+      },
+      "descriptores": {
+        "descriptor": [
+          {
+            "elegido": {
+              "termino": "declaraci\u00F3n de inter\u00E9s provincial"
+            },
+            "preferido": {
+              "termino": "Cultura y educaci\u00F3n/cultura/pol\u00EDtica cultural/conmemoraciones/declaraci\u00F3n de inter\u00E9s provincial"
+            },
+            "sinonimos": {
+              "termino": [
+                "Educaci\u00F3n y Cultura",
+                "pol\u00EDtica cient\u00EDfica",
+                "pol\u00EDtica tecnol\u00F3gica"
+              ]
+            }
+          },
+          {
+            "elegido": {
+              "termino": "fiestas provinciales"
+            },
+            "preferido": {
+              "termino": "Cultura y educaci\u00F3n/cultura/pol\u00EDtica cultural/conmemoraciones/fiestas provinciales"
+            },
+            "sinonimos": {
+              "termino": [
+                "Educaci\u00F3n y Cultura",
+                "pol\u00EDtica cient\u00EDfica",
+                "pol\u00EDtica tecnol\u00F3gica"
+              ]
+            }
+          },
+          {
+            "elegido": {
+              "termino": "corvina"
+            },
+            "preferido": {
+              "termino": "Actividades econ\u00F3micas/actividad industrial/industria pesquera/productos pesqueros/corvina"
+            },
+            "sinonimos": {
+              "termino": [
+                "actividad pesquera",
+                "productos industriales",
+                "industria"
+              ]
+            }
+          },
+          {
+            "elegido": {
+              "termino": "exposiciones"
+            },
+            "preferido": {
+              "termino": "Cultura y educaci\u00F3n/cultura/pol\u00EDtica cultural/exposiciones"
+            },
+            "sinonimos": {
+              "termino": [
+                "Educaci\u00F3n y Cultura",
+                "pol\u00EDtica cient\u00EDfica",
+                "pol\u00EDtica tecnol\u00F3gica"
+              ]
+            }
+          }
+        ],
+        "suggest": {
+          "termino": [
+            "actividad pesquera (industria pesquera)",
+            "declaraci\u00F3n de inter\u00E9s provincial",
+            "Educaci\u00F3n y Cultura (Cultura y educaci\u00F3n)",
+            "industria pesquera",
+            "Cultura y educaci\u00F3n",
+            "productos industriales (actividad industrial)",
+            "conmemoraciones",
+            "pol\u00EDtica tecnol\u00F3gica (pol\u00EDtica cultural)",
+            "pol\u00EDtica cient\u00EDfica (pol\u00EDtica cultural)",
+            "corvina",
+            "fiestas provinciales",
+            "pol\u00EDtica cultural",
+            "cultura",
+            "industria (actividad industrial)",
+            "Actividades econ\u00F3micas",
+            "productos pesqueros",
+            "exposiciones",
+            "actividad industrial"
+          ]
+        }
+      },
+      "visto": {
+        "texto": "[[p]]La Nota N\u00B0 1.073/21 del Ministerio de Turismo; y[[/p]]"
+      },
+      "considerando": {
+        "sancion": "El GOBERNADOR DE LA PROVINCIA DECRETA:",
+        "texto": "[[p]]Que por la misma se tramita la declaraci\u00F3n de Inter\u00E9s Provincial de la \u0022XIX FIESTA DE LA CORVINA DE RIO, EXPO INDUSTRIAL, COMERCIAL, GASTRON\u00D3MICA y TUR\u00CDSTICA\u0022, a llevarse a cabo en la localidad de Herradura los d\u00EDas 11, 12 y 13 de febrero de 2022;[[/p]][[p]]Que para dicho evento se ha previsto el desarrollo de distintas actividades, destac\u00E1ndose como particular atracci\u00F3n la tradicional pesca de la corvina de r\u00EDo, as\u00ED como el festival musical con la actuaci\u00F3n de artistas de renombre en el \u00E1mbito provincial, nacional e internacional;[[/p]][[p]]Que, adem\u00E1s, en el marco de la pol\u00EDtica de difusi\u00F3n tur\u00EDstica impulsada por este Gobierno, la fiesta ofrecer\u00E1 una amplia exposici\u00F3n de productos gastron\u00F3micos, servicios y artesan\u00EDas regionales;[[/p]][[p]]Que dado el \u00E9xito logrado en ediciones anteriores, dicho acontecimiento trascendi\u00F3 los l\u00EDmites de la provincia y de la regi\u00F3n, proyect\u00E1ndose a nivel internacional. En este contexto, la finalidad es integrar a los aficionados a esa actividad y constituir una fiesta formose\u00F1a hacia el pa\u00EDs;[[/p]][[p]]Que en la convicci\u00F3n de la importancia que reviste este tipo de manifestaciones populares, se estima oportuna la declaraci\u00F3n oficial propiciada;[[/p]][[p]]Que por el Ministerio de Econom\u00EDa, Hacienda y se adoptar\u00E1n las medidas presupuestarias, financieras y de contrataci\u00F3n para la realizaci\u00F3n del evento, de conformidad con lo establecido en el art\u00EDculo 102 de la Ley N\u00B0 1.180;[[/p]][[p]]Por ello:[[/p]]"
+      },
+      "articulo": [
+        {
+          "numero-articulo": 1,
+          "texto": "[[p]]ARTICULO 1\u00B0: Declarase Inter\u00E9s Provincial la \u0022XIX FIESTA DE LA CORVINA DE RIO, EXPO INDUSTRIAL, COMERCIAL, GASTRON\u00D3MICA y TUR\u00CDSTICA\u0022, a llevarse a cabo en la localidad de Herradura los d\u00EDas 11, 12 y 13 de febrero de 2022.[[/p]]"
+        },
+        {
+          "numero-articulo": 2,
+          "texto": "[[p]]ARTICULO 2\u00B0: Autorizase al Ministerio de Econom\u00EDa, Hacienda y Finanzas, a adoptar las medidas presupuestarias, financieras, de procedimientos y montos de contrataci\u00F3n para la realizaci\u00F3n del evento mencionado en el art\u00EDculo anterior.[[/p]]"
+        },
+        {
+          "numero-articulo": 3,
+          "texto": "[[p]]ARTICULO 3\u00B0 y 4\u00B0: De Forma.[[/p]]"
+        }
+      ],
+      "firmantes": {
+        "firmantes": "-G. INSFRAN -J. O. IBA\u00D1EZ -S. A. SEGOVIA"
+      },
+      "id-infojus": "P20210000245"
+    }
+  }
+}

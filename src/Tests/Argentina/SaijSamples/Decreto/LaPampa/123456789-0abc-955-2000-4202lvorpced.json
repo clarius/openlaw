@@ -1,0 +1,226 @@
+﻿{
+  "document": {
+    "metadata": {
+      "uuid": "123456789-0abc-955-2000-4202lvorpced",
+      "document-content-type": "legislacion",
+      "timestamp": 1721136278533,
+      "operation": "ADD",
+      "target-document-repository-id": "infojus",
+      "target-index-id": "index",
+      "target-document-indexing-id": "legislacion",
+      "document-recovery-strategy": "abstract-legislacion",
+      "friendly-url": {
+        "subdomain": "decreto",
+        "description": "2559-local-pampa-creacion-programa-provincial-prevencion-abordaje-integral-consumos-problematicos-adiccion-videojuegos-juegos-linea-azar-apuestas-entornos-digitales-ninas-ninos-adolescentes-l20240002559-2024-07-04"
+      }
+    },
+    "content": {
+      "mecanografico": "L20240002559",
+      "estado": "Vigente, de alcance general",
+      "tipo-norma": {
+        "codigo": "DEC",
+        "texto": "Decreto"
+      },
+      "numero-norma": 2559,
+      "fecha": "2024-07-04",
+      "jurisdiccion": {
+        "codigo": "L",
+        "descripcion": "Local",
+        "capital": "Santa Rosa",
+        "id-pais": 11
+      },
+      "provincia": "La Pampa",
+      "standard-normativo": "DEC L 002559 2024 07 04",
+      "titulo-norma": "Creaci\u00F3n del Programa Provincial de Prevenci\u00F3n y Abordaje Integral de consumos problem\u00E1ticos y adicci\u00F3n a videojuegos, juegos en l\u00EDnea, de azar y apuestas en entornos digitales de ni\u00F1as, ni\u00F1os y adolescentes",
+      "nombre-coloquial": "DECRETO 2.559/2024",
+      "lugar-emision": "SANTA ROSA",
+      "publicacion-codificada": {
+        "publicacion-decodificada": {
+          "organismo": "Bolet\u00EDn Oficial",
+          "fecha": "2024 07 12"
+        }
+      },
+      "analista": "Mazza, Gustavo",
+      "responsable": "Mazza, Gustavo",
+      "uid-alta": "ABM",
+      "uid-mod": "ABM",
+      "fecha-alta": "2024-07-16",
+      "fecha-mod": "2024-07-16",
+      "timestamp": "2024-07-16T10:19:04",
+      "timestamp-alta": "2024-07-16T10:19:04",
+      "timestamp-m": "2024-07-16T10:19:04",
+      "generalidades": {
+        "sintesis": "[[p]]Creaci\u00F3n del Programa Provincial de Prevenci\u00F3n y Abordaje Integral de consumos problem\u00E1ticos y adicci\u00F3n a videojuegos, juegos en l\u00EDnea, de azar y apuestas en entornos digitales de ni\u00F1as, ni\u00F1os y adolescentes.[[/p]]",
+        "observaciones-generales": "[[p]]CANTIDAD DE ARTICULOS QUE COMPONEN LA NORMA: 10[[/p]]"
+      },
+      "descriptores": {
+        "descriptor": [
+          {
+            "elegido": {
+              "termino": "adicciones"
+            },
+            "preferido": {
+              "termino": "Salud p\u00FAblica/adicciones"
+            },
+            "sinonimos": null
+          },
+          {
+            "elegido": {
+              "termino": "prevenci\u00F3n de adicciones"
+            },
+            "preferido": {
+              "termino": "Salud p\u00FAblica/adicciones/prevenci\u00F3n de adicciones"
+            },
+            "sinonimos": null
+          },
+          {
+            "elegido": {
+              "termino": "juegos de azar"
+            },
+            "preferido": {
+              "termino": "Derecho civil/derechos personales/contratos/clasificaci\u00F3n de los contratos/contratos aleatorios/contratos de juegos de azar/juegos de azar"
+            },
+            "sinonimos": {
+              "termino": [
+                "juegos de azar permitidos",
+                "obligaciones y contratos"
+              ]
+            }
+          },
+          {
+            "elegido": {
+              "termino": "videojuegos"
+            },
+            "preferido": {
+              "termino": "Actividades econ\u00F3micas/actividad industrial/industria de la electr\u00F3nica/productos electr\u00F3nicos/videojuegos"
+            },
+            "sinonimos": {
+              "termino": [
+                "productos industriales",
+                "industria"
+              ]
+            }
+          },
+          {
+            "elegido": {
+              "termino": "adolescente"
+            },
+            "preferido": {
+              "termino": "Derecho civil/persona humana/menores/pubertad/adolescente"
+            },
+            "sinonimos": {
+              "termino": [
+                "menores de edad",
+                "personas de existencia visible",
+                "personas f\u00EDsicas"
+              ]
+            }
+          },
+          {
+            "elegido": {
+              "termino": "ni\u00F1os, ni\u00F1as y adolescentes"
+            },
+            "preferido": {
+              "termino": "Derechos humanos/grupos vulnerables/ni\u00F1os, ni\u00F1as y adolescentes"
+            },
+            "sinonimos": {
+              "termino": [
+                "derechos fundamentales",
+                "NNA",
+                "NNyA",
+                "protecci\u00F3n de las minor\u00EDas"
+              ]
+            }
+          }
+        ],
+        "suggest": {
+          "termino": [
+            "NNA (ni\u00F1os, ni\u00F1as y adolescentes)",
+            "clasificaci\u00F3n de los contratos",
+            "contratos de juegos de azar",
+            "productos industriales (actividad industrial)",
+            "Derechos humanos",
+            "adicciones",
+            "prevenci\u00F3n de adicciones",
+            "protecci\u00F3n de las minor\u00EDas (grupos vulnerables)",
+            "personas de existencia visible (persona humana)",
+            "pubertad",
+            "productos electr\u00F3nicos",
+            "industria (actividad industrial)",
+            "Derecho civil",
+            "derechos personales",
+            "Actividades econ\u00F3micas",
+            "actividad industrial",
+            "juegos de azar permitidos (juegos de azar)",
+            "Salud p\u00FAblica",
+            "contratos aleatorios",
+            "adolescente",
+            "industria de la electr\u00F3nica",
+            "juegos de azar",
+            "grupos vulnerables",
+            "personas f\u00EDsicas (persona humana)",
+            "derechos fundamentales (Derechos humanos)",
+            "menores",
+            "persona humana",
+            "menores de edad (menores)",
+            "ni\u00F1os, ni\u00F1as y adolescentes",
+            "videojuegos",
+            "NNyA (ni\u00F1os, ni\u00F1as y adolescentes)",
+            "obligaciones y contratos (derechos personales)",
+            "contratos"
+          ]
+        }
+      },
+      "visto": {
+        "texto": "[[p]]y[[/p]]"
+      },
+      "articulo": [
+        {
+          "numero-articulo": 1,
+          "texto": "[[p]]Art. 1\u00B0.- Cr\u00E9ase en la provincia de La Pampa el \u0022Programa Provincial de Prevenci\u00F3n y Abordaje Integral de consumos problem\u00E1ticos y adicci\u00F3n a videojuegos, juegos en l\u00EDnea, de azar y apuestas en entornos digitales de ni\u00F1as, ni\u00F1os y adolescentes\u0022.[[/p]]"
+        },
+        {
+          "numero-articulo": 2,
+          "texto": "[[p]]Art. 2\u00B0.- El Programa tiene por objeto la prevenci\u00F3n y el abordaje integral e interdisciplinario de abuso, consumo problem\u00E1tico y adicci\u00F3n de ni\u00F1os, ni\u00F1as y adolescentes a videojuegos, juegos en l\u00EDnea, de azar y apuestas en entornos digitales, cualesquiera sean los medios y plataformas utilizadas.[[/p]]"
+        },
+        {
+          "numero-articulo": 3,
+          "texto": "[[p]]Art. 3\u00BA.- El desarrollo del programa ser\u00E1 interinstitucional entre los Ministerios de Educaci\u00F3n, de Salud, de Conectividad y Modernizaci\u00F3n, de Desarrollo Social y Derechos Humanos y de Seguridad y Justicia. Asimismo, se invita al Instituto de Seguridad Social a trav\u00E9s de la Direcci\u00F3n de Ayuda Financiera para la Acci\u00F3n Social (DAFAS), a la Defensor\u00EDa Provincial de Ni\u00F1os, Ni\u00F1as y Adolescentes y a entidades afines a colaborar con la implementaci\u00F3n del programa.[[/p]]"
+        },
+        {
+          "numero-articulo": 4,
+          "texto": "[[p]]Art. 4\u00B0.- El Programa deber\u00E1 contemplar, las siguientes acciones:[[/p]][[p]]a) Coordinar actividades de concientizaci\u00F3n a la comunidad en todos los \u00E1mbitos, especialmente en el educativo, sobre los riesgos del abuso, consumo problem\u00E1tico y adicci\u00F3n de ni\u00F1os, ni\u00F1as y adolescentes a videojuegos, juegos en l\u00EDnea, de azar y apuestas en entornos digitales, como as\u00ED tambi\u00E9n sobre las consecuencias para el proceso pedag\u00F3gico en el \u00E1mbito escolar.[[/p]][[p]]b) Dise\u00F1ar y planificar acciones y actividades destinadas a la formaci\u00F3n de una ciudadan\u00EDa digital responsable para ni\u00F1as, ni\u00F1os y adolescentes, en todos los \u00E1mbitos, y especialmente en el \u00E1mbito educativo, ense\u00F1ando la importancia de la privacidad online y del manejo de la informaci\u00F3n personal.[[/p]][[p]]c) Desarrollar capacitaciones para la formaci\u00F3n sobre salud mental y uso, abuso, consumo problem\u00E1tico y adicci\u00F3n, donde se aborden contenidos sobre ciudadan\u00EDa y convivencia digital, juegos y apuestas en entornos digitales, para el personal de las \u00E1reas de gobierno involucradas, en especial docentes, profesionales de la salud y equipos t\u00E9cnicos.[[/p]][[p]]d) Coordinar actividades de concientizaci\u00F3n para la poblaci\u00F3n en general, mediante propuestas de intercambio sobre la tem\u00E1tica en el Programa Despu\u00E9s de Hora, u otros espacios de abordajes territoriales.[[/p]][[p]]e) Dise\u00F1ar y desarrollar campa\u00F1as de prevenci\u00F3n de contenido audiovisual sobre estrategias de cuidado para reducir los riesgos y da\u00F1os asociados al uso y consumo de tecnolog\u00EDas y plataformas digitales en general, y de juegos y apuestas en entornos digitales, en particular. Deber\u00E1n promoverse la participaci\u00F3n de ni\u00F1as, ni\u00F1os y adolescentes mediante foros de intercambio.[[/p]][[p]]f) Evaluar y resolver medidas pertinentes a fin de evitar publicidad, promoci\u00F3n e ingreso a juegos online para ni\u00F1os, ni\u00F1as y adolescentes en medios de comunicaci\u00F3n de la provincia de La Pampa (AUDIVISUALES, WEB, APP).[[/p]][[p]]g) Realizar actividades formativas y de sensibilizaci\u00F3n sobre los riesgos del uso precoz de tecnolog\u00EDas y plataformas digitales en ni\u00F1as y ni\u00F1os durante la infancia y pre adolescencia.[[/p]][[p]]h) Desarrollar actividades de prevenci\u00F3n, inhibici\u00F3n y bloqueo de sitios, p\u00E1ginas, plataformas y otras herramientas digitales en medios de comunicaci\u00F3n de la provincia de La Pampa que promocionen y/o permitan jugar y/o realizar apuestas en entornos digitales a ni\u00F1os, ni\u00F1as y adolescentes.[[/p]][[p]]i) Trabajar en exigencias de identificaci\u00F3n por datos biom\u00E9tricos tanto para la registraci\u00F3n en sitios, p\u00E1ginas u otras plataformas de videojuegos, juegos en l\u00EDnea, de azar y/o apuestas en entornos digitales, como para toda acci\u00F3n que implique ingreso y egreso de dinero.[[/p]][[p]]j) Construir herramientas de relevamiento epidemiol\u00F3gico sobre el uso, abuso consumo problem\u00E1tico y adicci\u00F3n de ni\u00F1os, ni\u00F1as y adolescentes a videojuegos, juegos en l\u00EDnea y apuestas en entornos digitales.[[/p]][[p]]k) Ampliar los canales de denuncia de plataformas de juegos en l\u00EDnea y apuestas en entornos digitales y actividades relacionadas a estas que resultan ilegales o no autorizadas.[[/p]]"
+        },
+        {
+          "numero-articulo": 5,
+          "texto": "[[p]]Art. 5\u00BA.- Campa\u00F1as preventivas. Implementar en todo el territorio provincial campa\u00F1as preventivas, dirigidas a ni\u00F1os, ni\u00F1as y adolescentes sobre los riesgos del juego en entornos digitales mediante apuestas, juegos en l\u00EDnea, de azar o videojuegos.[[/p]]"
+        },
+        {
+          "numero-articulo": 6,
+          "texto": "[[p]]Art. 6\u00BA.- Campa\u00F1as de difusi\u00F3n. En el marco del programa se deber\u00E1n llevar a cabo campa\u00F1as de difusi\u00F3n dirigidas a concientizar a ni\u00F1os, ni\u00F1as y adolescentes y sus familias sobre el uso, abuso, consumo problem\u00E1tico y adicci\u00F3n, como as\u00ED tambi\u00E9n dar a conocer los canales de comunicaci\u00F3n, orientaci\u00F3n, asistencia y abordaje.[[/p]]"
+        },
+        {
+          "numero-articulo": 7,
+          "texto": "[[p]]Art. 7\u00B0.- Participaci\u00F3n de ni\u00F1os, ni\u00F1as y adolescentes en juegos en l\u00EDnea, de azar virtuales. Los operadores de juegos en l\u00EDnea, de azar virtuales autorizados por la Provincia deber\u00E1n informar sobre la prohibici\u00F3n de la participaci\u00F3n de ni\u00F1os, ni\u00F1as y adolescentes en juegos en l\u00EDnea, de azar o de apuestas en entornos digitales. Asimismo, deber\u00E1n implementar medidas efectivas para garantizar que sus usuarios sean mayores de 18 a\u00F1os, incluyendo la verificaci\u00F3n de identidad por sistemas biom\u00E9tricos al momento del registro y el asiento de toda transacci\u00F3n de dinero o valores.[[/p]]"
+        },
+        {
+          "numero-articulo": 8,
+          "texto": "[[p]]Art. 8\u00B0.- Publicidad. Se desarrollen acciones en materia de publicidad a fin de evitar toda forma de publicidad, promoci\u00F3n y patrocinio de videojuegos, juegos en l\u00EDnea, de azar y/o de apuestas en entornos digitales y cualquier otra plataforma de este tipo que est\u00E9 dirigida directa o indirectamente a ni\u00F1os, ni\u00F1as y adolescentes o actividades que est\u00E9n destinadas a la persuasi\u00F3n o incitaci\u00F3n al juego de este colectivo de personas en todos los \u00E1mbitos en los cuales desarrollan su personalidad.[[/p]]"
+        },
+        {
+          "numero-articulo": 9,
+          "texto": "[[p]]Art. 9\u00B0.- Cada Ministerio designar\u00E1 a las personas responsables para la implementaci\u00F3n y desarrollo del Programa que se crea por el presente, conforme a sus respectivas competencias.[[/p]]"
+        },
+        {
+          "numero-articulo": 10,
+          "texto": "[[p]]Art. 10.- A trav\u00E9s del Ministerio de Hacienda y Finanzas se asignar\u00E1n los recursos que se consideren necesarios para el desarrollo del Programa.[[/p]]"
+        }
+      ],
+      "firmantes": {
+        "firmantes": "FIRMANTES"
+      },
+      "id-infojus": "L20240002559",
+      "fecha-umod": 20240716102438
+    }
+  }
+}
