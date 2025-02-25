@@ -42,7 +42,7 @@ public class EnumerateCommand(IAnsiConsole console, IHttpClientFactory http) : A
                 if (Debugger.IsAttached)
                     options.MaxDegreeOfParallelism = 1;
 
-                await Parallel.ForEachAsync(client.EnumerateAsync(), options, (doc, cancellation) =>
+                await Parallel.ForEachAsync(client.EnumerateAsync(null, null, null), options, (doc, cancellation) =>
                 {
                     Debugger.Log(0, "", doc.Modified.ToString());
                     return ValueTask.CompletedTask;
