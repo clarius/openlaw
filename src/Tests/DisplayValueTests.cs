@@ -39,6 +39,34 @@ public class DisplayValueTests
         Assert.Equal(Foo.Bar, foo);
     }
 
+    [Fact]
+    public void CanTryParseFromDisplay()
+    {
+        Assert.True(DisplayValue.TryParse<Foo>("The Bar", out var foo));
+        Assert.Equal(Foo.Bar, foo);
+    }
+
+    [Fact]
+    public void CanTryParseFromSecondDisplay()
+    {
+        Assert.True(DisplayValue.TryParse<Foo>("Second", out var foo));
+        Assert.Equal(Foo.Baz, foo);
+    }
+
+    [Fact]
+    public void CanTryParseCaseInsensitive()
+    {
+        Assert.True(DisplayValue.TryParse<Foo>("the bar", true, out var foo));
+        Assert.Equal(Foo.Bar, foo);
+    }
+
+    [Fact]
+    public void CanTryParseDirectEnum()
+    {
+        Assert.True(DisplayValue.TryParse<Foo>(nameof(Foo.Bar), out var foo));
+        Assert.Equal(Foo.Bar, foo);
+    }
+
     public enum Foo
     {
         [DisplayValue("The Bar")]

@@ -40,7 +40,9 @@ static class DisplayValue<T> where T : struct, Enum
         return Enum.Parse<T>(value, ignoreCase);
     }
 
-    public static bool TryParse(string? value, out T result, bool ignoreCase = false)
+    public static bool TryParse(string? value, out T result) => TryParse(value, false, out result);
+
+    public static bool TryParse(string? value, bool ignoreCase, out T result)
     {
         if (value == null)
         {
@@ -52,6 +54,6 @@ static class DisplayValue<T> where T : struct, Enum
         if (map.TryGetValue(value, out result))
             return true;
 
-        return map.TryGetValue(value, out result);
+        return Enum.TryParse(value, ignoreCase, out result);
     }
 }
