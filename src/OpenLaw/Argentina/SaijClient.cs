@@ -11,7 +11,7 @@ namespace Clarius.OpenLaw.Argentina;
 
 public class SaijClient(IHttpClientFactory httpFactory, IProgress<ProgressMessage> progress)
 {
-    const string UrlFormat = "https://www.saij.gob.ar/busqueda?o={0}&p={1}&f=Total|Tipo+de+Documento{2}|Fecha|Organismo|Publicación|Tema|Estado+de+Vigencia/Vigente,+de+alcance+general|Autor|Jurisdicción{3}&s=fecha-rango|DESC&v=colapsada";
+    const string UrlFormat = "https://www.saij.gob.ar/busqueda?o={0}&p={1}&f=Total|Tipo+de+Documento{2}|Fecha|Organismo|Publicación|Tema|{3}Autor|Jurisdicción{4}&s=fecha-rango|DESC&v=colapsada";
 
     static readonly JsonSerializerOptions options = new(JsonSerializerDefaults.Web)
     {
@@ -23,12 +23,14 @@ public class SaijClient(IHttpClientFactory httpFactory, IProgress<ProgressMessag
         Encoder = System.Text.Encodings.Web.JavaScriptEncoder.UnsafeRelaxedJsonEscaping,
     };
 
-    public async IAsyncEnumerable<DocumentAbstract> EnumerateAsync(string? tipo = "Ley", string? jurisdiccion = "Nacional", int skip = 0, int take = 25, [EnumeratorCancellation] CancellationToken cancellation = default)
+    public async IAsyncEnumerable<DocumentAbstract> EnumerateAsync(
+        TipoNorma? tipo = TipoNorma.Ley,
+        Jurisdiccion? jurisdiccion = Jurisdiccion.Nacional,
+        Provincia? provincia = null,
+        int skip = 0, int take = 25, [EnumeratorCancellation] CancellationToken cancellation = default)
     {
         using var http = httpFactory.CreateClient("saij");
-        var url = string.Format(CultureInfo.InvariantCulture, UrlFormat, skip, take,
-            !string.IsNullOrEmpty(tipo) ? $"/Legislación/{tipo}" : "",
-            !string.IsNullOrEmpty(jurisdiccion) ? "/" + jurisdiccion : "");
+        var url = BuildUrl(tipo, jurisdiccion, provincia, skip, take);
 
         progress.Report(new("Initiating query...", 0));
         var json = await http.GetStringAsync(url, cancellation);
@@ -41,6 +43,9 @@ public class SaijClient(IHttpClientFactory httpFactory, IProgress<ProgressMessag
 
         while (true)
         {
+            if (result.Total == 0)
+                break;
+
             var percentage = skip * 100 / result.Total;
             var count = 0;
             foreach (var item in result.Docs)
@@ -61,9 +66,7 @@ public class SaijClient(IHttpClientFactory httpFactory, IProgress<ProgressMessag
             }
 
             skip = skip + take;
-            url = string.Format(CultureInfo.InvariantCulture, UrlFormat, skip, take,
-                !string.IsNullOrEmpty(tipo) ? $"/Legislación/{tipo}" : "",
-                !string.IsNullOrEmpty(jurisdiccion) ? "/" + jurisdiccion : "");
+            url = BuildUrl(tipo, jurisdiccion, provincia, skip, take);
 
             var response = await http.GetAsync(url, cancellation);
             if (!response.IsSuccessStatusCode)
@@ -76,6 +79,14 @@ public class SaijClient(IHttpClientFactory httpFactory, IProgress<ProgressMessag
                 break;
         }
     }
+
+    static string BuildUrl(TipoNorma? tipo, Jurisdiccion? jurisdiccion, Provincia? provincia, int skip, int take) => string.Format(
+        CultureInfo.InvariantCulture, UrlFormat, skip, take,
+        tipo == null ? "" : $"/Legislación/{DisplayValue.ToString(tipo.Value)}",
+        tipo == TipoNorma.Ley || tipo == TipoNorma.Decreto ? "Estado+de+Vigencia/Vigente,+de+alcance+general|" : "",
+        provincia == null ?
+            jurisdiccion == null ? "" : $"/{DisplayValue.ToString(jurisdiccion.Value)}" :
+            $"/{DisplayValue.ToString(Jurisdiccion.Provincial)}/{DisplayValue.ToString(provincia.Value)}");
 
     public async Task<JsonObject?> FetchJsonAsync(string id)
     {
