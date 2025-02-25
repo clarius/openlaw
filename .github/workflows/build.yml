@@ -64,10 +64,13 @@ jobs:
           submodules: recursive
           fetch-depth: 0
 
-      - name: ⚙️ dotnet
+      - name: ⚙ dotnet
         uses: actions/setup-dotnet@v4
         with:
-          dotnet-version: '9.0.x'
+          dotnet-version: |
+            6.x
+            8.x
+            9.x
 
       - name: 🙏 build
         run: dotnet build -m:1 -bl:build.binlog
@@ -101,10 +104,13 @@ jobs:
           submodules: recursive
           fetch-depth: 0
 
-      - name: ⚙️ dotnet
+      - name: ⚙ dotnet
         uses: actions/setup-dotnet@v4
         with:
-          dotnet-version: '9.0.x'
+          dotnet-version: |
+            6.x
+            8.x
+            9.x
 
       - name: ✓ ensure format
         run: |
