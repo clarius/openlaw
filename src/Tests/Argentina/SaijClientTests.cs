@@ -200,4 +200,42 @@ public class SaijClientTests(ITestOutputHelper output)
             doc.ToJsonString(options),
             System.Text.Encoding.UTF8);
     }
+
+    [Theory]
+    [InlineData(TipoNorma.Ley)]
+    [InlineData(TipoNorma.Decreto)]
+    [InlineData(TipoNorma.Resolucion)]
+    [InlineData(TipoNorma.Disposicion)]
+    [InlineData(TipoNorma.Decision)]
+    [InlineData(TipoNorma.Acordada)]
+    public async Task CanEnumerateAllTypes(TipoNorma tipo)
+    {
+        var client = CreateClient(output);
+        await foreach (var doc in client.EnumerateAsync(tipo, null))
+        {
+            return;
+        }
+
+        Assert.Fail("Did not get at least one document of the specified type");
+    }
+
+    [Theory]
+    [MemberData(nameof(ForJurisdiction), TipoNorma.Ley)]
+    [MemberData(nameof(ForJurisdiction), TipoNorma.Decreto)]
+    public async Task CanEnumerateAllJurisdictions(TipoNorma tipo, Provincia provincia)
+    {
+        var client = CreateClient(output);
+        await foreach (var doc in client.EnumerateAsync(tipo, Jurisdiccion.Provincial, provincia))
+        {
+            return;
+        }
+
+        Assert.Fail("Did not get at least one document of the specified type");
+    }
+
+    public static IEnumerable<object[]> ForJurisdiction(TipoNorma tipo)
+    {
+        foreach (var jurisdiccion in Enum.GetValues<Provincia>())
+            yield return new object[] { tipo, jurisdiccion };
+    }
 }
