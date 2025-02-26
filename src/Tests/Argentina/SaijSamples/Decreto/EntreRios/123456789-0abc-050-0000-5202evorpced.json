@@ -3,7 +3,7 @@
     "metadata": {
       "uuid": "123456789-0abc-050-0000-5202evorpced",
       "document-content-type": "legislacion",
-      "timestamp": 1740407466077,
+      "timestamp": 1740407481907,
       "operation": "ADD",
       "target-document-repository-id": "infojus",
       "target-index-id": "index",
@@ -111,7 +111,7 @@
         "firmantes": "Frigerio-Berisso"
       },
       "id-infojus": "E20250000050",
-      "fecha-umod": 20250224113106
+      "fecha-umod": 20250224113121
     }
   }
 }

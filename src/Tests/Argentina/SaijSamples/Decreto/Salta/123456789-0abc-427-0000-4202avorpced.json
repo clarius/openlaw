@@ -3,7 +3,7 @@
     "metadata": {
       "uuid": "123456789-0abc-427-0000-4202avorpced",
       "document-content-type": "legislacion",
-      "timestamp": 1731419828933,
+      "timestamp": 1731419835583,
       "operation": "ADD",
       "target-document-repository-id": "infojus",
       "target-index-id": "index",
@@ -214,7 +214,7 @@
         "firmantes": "S\u00C1ENZ - Dib Ashur (I) - Dib Ashur - Fiore Vi\u00F1uales (I) - Fiore Vi\u00F1uales - Mangione -Camacho (I), Camacho (I) - Camacho (I) - Camacho - L\u00F3pez Morillo"
       },
       "id-infojus": "A20240000724",
-      "fecha-umod": 20241112105708
+      "fecha-umod": 20241112105715
     }
   }
 }

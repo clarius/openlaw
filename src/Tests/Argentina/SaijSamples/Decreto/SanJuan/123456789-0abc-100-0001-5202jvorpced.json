@@ -3,7 +3,7 @@
     "metadata": {
       "uuid": "123456789-0abc-100-0001-5202jvorpced",
       "document-content-type": "legislacion",
-      "timestamp": 1739986235602,
+      "timestamp": 1739986216772,
       "operation": "ADD",
       "target-document-repository-id": "infojus",
       "target-index-id": "index",
@@ -134,7 +134,7 @@
         "firmantes": "Dr. Fabi\u00E1n Mart\u00EDn Vice Gobernador de San Juan en Ejercicio del Poder Ejecutivo Dra. Laura Palma Pel\u00E1ez Ministro de Gobierno a/c Ministerio de Econom\u00EDa, Finanzas y Hacienda a/c Ministerio de Infraestructura agua y Energ\u00EDa a/c Ministerio de Turismo, Cultura y Deportes a/c Ministerio de la Familia y del Desarrollo Humano a/c Ministerio de Salud a/c Ministerio de Educaci\u00F3n Dr. Juan P. Perea Fontivero Ministro de Mineria a/c Ministerio de Producci\u00F3n, Trabajo e Innovaci\u00F3n"
       },
       "id-infojus": "J20251000001",
-      "fecha-umod": 20250219143035
+      "fecha-umod": 20250219143016
     }
   }
 }

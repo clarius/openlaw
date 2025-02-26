@@ -3,7 +3,7 @@
     "metadata": {
       "uuid": "123456789-0abc-007-2000-5202yvorpced",
       "document-content-type": "legislacion",
-      "timestamp": 1738863632273,
+      "timestamp": 1738863622412,
       "operation": "ADD",
       "target-document-repository-id": "infojus",
       "target-index-id": "index",
@@ -173,7 +173,7 @@
         "firmantes": "C.P.N. CARLOS ALBERTO SADIR GOBERNADOR"
       },
       "id-infojus": "Y20250002700",
-      "fecha-umod": 20250206144032
+      "fecha-umod": 20250206144022
     }
   }
 }

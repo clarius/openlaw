@@ -1,0 +1,130 @@
+﻿{
+  "document": {
+    "metadata": {
+      "uuid": "123456789-0abc-defg-080-2000vvorpyel",
+      "document-content-type": "legislacion",
+      "timestamp": 1740502585263,
+      "operation": "ADD",
+      "target-document-repository-id": "infojus",
+      "target-index-id": "index",
+      "target-document-indexing-id": "legislacion",
+      "document-recovery-strategy": "abstract-legislacion",
+      "friendly-url": {
+        "subdomain": "ley",
+        "description": "1583-local-tierra-fuego-fondo-residual-ley-provincial-478-banco-tierra-fuego-suspension-ambito-provincial-terminos-procesales-subastas-hasta-31-diciembre-2025-lpv0002080-2024-12-14"
+      }
+    },
+    "content": {
+      "mecanografico": "V0002080",
+      "estado": "Vigente, de alcance general",
+      "tipo-norma": {
+        "codigo": "LEY",
+        "texto": "Ley"
+      },
+      "numero-norma": 1583,
+      "fecha": "2024-12-14",
+      "jurisdiccion": {
+        "codigo": "V",
+        "descripcion": "Local",
+        "capital": "Ushuaia",
+        "id-pais": 11
+      },
+      "provincia": "Tierra del Fuego",
+      "standard-normativo": "LEY V 001583 2024 12 14",
+      "identificacion-coloquial": {
+        "identificacion-coloquial": [
+          "LEY 1.583",
+          "USHUAIA, 14 DE DICIEMBRE DE 2024"
+        ]
+      },
+      "nombre-coloquial": "LEY 1.583",
+      "lugar-sancion": "USHUAIA",
+      "titulo-norma": "FONDO RESIDUAL LEY PROVINCIAL 478, BANCO DE TIERRA DEL FUEGO - SUSPENSI\u00D3N EN EL \u00C1MBITO PROVINCIAL DE LOS T\u00C9RMINOS PROCESALES Y SUBASTAS - HASTA EL 31 DE DICIEMBRE DE 2025.",
+      "publicacion-codificada": {
+        "publicacion-decodificada": {
+          "organismo": "Bolet\u00EDn Oficial",
+          "fecha": "2024 12 30"
+        }
+      },
+      "analista": "Guardia, Emanuel - Tierra del Fuego",
+      "responsable": "Guardia, Emanuel -Tierra del Fuego",
+      "uid-alta": "ABM",
+      "uid-mod": "ABM",
+      "fecha-alta": "2025-02-25",
+      "fecha-mod": "2025-02-25",
+      "timestamp": "2025-02-25T13:35:49",
+      "timestamp-alta": "2025-02-25T13:35:49",
+      "timestamp-m": "2025-02-25T13:35:49",
+      "sumario": {
+        "sumario": "[[p]]Suspensi\u00F3n, hasta el 31 de diciembre de 2025, los t\u00E9rminos procesales en los juicios iniciados por la entidad Fondo Residual Ley provincial 478, Banco de Tierra del Fuego: Transformaci\u00F3n en Sociedad An\u00F3nima[[/p]]"
+      },
+      "descriptores": {
+        "descriptor": {
+          "elegido": {
+            "termino": "Tierra del Fuego, Ant\u00E1rtida e Islas del Atl\u00E1ntico Sur"
+          },
+          "preferido": {
+            "termino": "TIERRA DEL FUEGO"
+          },
+          "sinonimos": {
+            "termino": [
+              "Tierra del Fuego, Ant\u00E1rtida e Islas del Atl\u00E1ntico Sur",
+              "TERRITORIO NACIONAL DE TIERRA DEL FUEGO, ANT\u00C1RTIDA E ISLAS DEL ATL\u00C1NTICO SUR"
+            ]
+          }
+        },
+        "suggest": {
+          "termino": [
+            "TERRITORIO NACIONAL DE TIERRA DEL FUEGO, ANT\u00C1RTIDA E ISLAS DEL ATL\u00C1NTICO SUR (TIERRA DEL FUEGO)",
+            "TIERRA DEL FUEGO",
+            "Tierra del Fuego, Ant\u00E1rtida e Islas del Atl\u00E1ntico Sur (TIERRA DEL FUEGO)"
+          ]
+        }
+      },
+      "generalidades": {
+        "observaciones-generales": "[[p]]CANTIDAD DE ARTICULOS QUE COMPONEN LA NORMA: 0005[[/p]]"
+      },
+      "articulo": [
+        {
+          "referencias-normativas": {
+            "referencia-normativa": {
+              "cr": null,
+              "id": "REFERENCIAS_NORMATIVAS_0",
+              "ref": "LEY V 000478 1991 10 10 0000 000 0000 000"
+            }
+          },
+          "numero-articulo": 1,
+          "texto": "[[p]]Art\u00EDculo 1\u00BA.- [[r uuid:CT000]]Susp\u00E9ndense, en todo el \u00E1mbito de la provincia de Tierra del Fuego, Ant\u00E1rtida e Islas del Atl\u00E1ntico Sur, hasta el 31 de diciembre de 2025, los t\u00E9rminos procesales en los juicios iniciados por la entidad Fondo Residual Ley provincial 478, Banco de Tierra del Fuego: Transformaci\u00F3n en Sociedad An\u00F3nima. Estatuto.[[/r uuid:CT000]][[/p]]"
+        },
+        {
+          "numero-articulo": 2,
+          "texto": "[[p]]Art\u00EDculo 2\u00BA.- Susp\u00E9ndense, en todo el \u00E1mbito de la Provincia, hasta el 31 de diciembre de 2025, los t\u00E9rminos procesales en los juicios de ejecuci\u00F3n de sentencia por cobro de honorarios profesionales, cuya causa o t\u00EDtulo, provengan de los procesos aludidos en el art\u00EDculo 1\u00B0 de esta ley.[[/p]]"
+        },
+        {
+          "referencias-normativas": {
+            "referencia-normativa": {
+              "cr": null,
+              "id": "REFERENCIAS_NORMATIVAS_0",
+              "ref": "LEY V 000478 2000 03 23 0000 000 0000 000"
+            }
+          },
+          "numero-articulo": 3,
+          "texto": "[[p]]Art\u00EDculo 3\u00BA.- [[r uuid:CT000]]Susp\u00E9ndense, en todo el \u00E1mbito de la Provincia hasta el 31 de diciembre de 2025, los tr\u00E1mites de subasta en los juicios que involucren bienes sobre los cuales la entidad Fondo Residual Ley provincial 478, tenga constituido a su favor derecho real de hipoteca o prenda.[[/r uuid:CT000]][[/p]]"
+        },
+        {
+          "numero-articulo": 4,
+          "texto": "[[p]]Art\u00EDculo 4\u00B0.- Durante la vigencia de la presente ley, el Poder Legislativo trabajar\u00E1 en la sanci\u00F3n del procedimiento para la liquidaci\u00F3n del Fondo Residual creado por Ley provincial 478, remitido por el Poder Ejecutivo.[[/p]]"
+        },
+        {
+          "numero-articulo": 5,
+          "texto": "[[p]]Art\u00EDculo 5\u00B0- Comun\u00EDquese al Poder Ejecutivo.[[/p]]"
+        }
+      ],
+      "firmantes": {
+        "firmantes": "RODRIGUEZ-URQUIZA."
+      },
+      "id-infojus": "LPV0002080",
+      "fecha-umod": 20250225135625
+    }
+  }
+}

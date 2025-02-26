@@ -3,7 +3,7 @@
     "metadata": {
       "uuid": "123456789-0abc-366-54ti-lpssedadevon",
       "document-content-type": "novedad",
-      "timestamp": 1740501653178,
+      "timestamp": 1740501640480,
       "operation": "ADD",
       "target-document-repository-id": "infojus",
       "target-index-id": "index",
@@ -94,7 +94,7 @@
       "suplemento_bo": 0,
       "subtipo": "Acordada",
       "id-infojus": "NV45663",
-      "fecha-umod": 20250225134053
+      "fecha-umod": 20250225134040
     }
   }
 }

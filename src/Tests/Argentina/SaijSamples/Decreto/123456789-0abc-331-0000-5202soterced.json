@@ -1,0 +1,206 @@
+﻿{
+  "document": {
+    "metadata": {
+      "uuid": "123456789-0abc-331-0000-5202soterced",
+      "document-content-type": "legislacion",
+      "timestamp": 1740574901292,
+      "operation": "ADD",
+      "target-document-repository-id": "infojus",
+      "target-index-id": "index",
+      "target-document-indexing-id": "legislacion",
+      "document-recovery-strategy": "abstract-legislacion",
+      "friendly-url": {
+        "subdomain": "decreto",
+        "description": "133-nacional-habilitaron-exportacion-ganado-vacuno-pie-dn20250000133-2025-02-25"
+      }
+    },
+    "content": {
+      "mecanografico": 20250000133,
+      "estado": "Vigente, de alcance general",
+      "tipo-norma": {
+        "codigo": "DEC",
+        "texto": "Decreto"
+      },
+      "numero-norma": 133,
+      "fecha": "2025-02-25",
+      "jurisdiccion": {
+        "codigo": "C",
+        "descripcion": "Nacional",
+        "capital": "Capital Federal",
+        "id-pais": 11
+      },
+      "standard-normativo": "DEC C 000133 2025 02 25",
+      "titulo-norma": "Habilitaron la exportaci\u00F3n de ganado vacuno en pie",
+      "nombre-coloquial": "DECRETO NACIONAL 133/2025",
+      "lugar-emision": "BUENOS AIRES",
+      "publicacion-codificada": {
+        "publicacion-decodificada": {
+          "organismo": "Bolet\u00EDn Oficial",
+          "fecha": "2025 02 26"
+        }
+      },
+      "analista": "Rocca, Adriana",
+      "responsable": "Rocca, Adriana",
+      "uid-alta": "ABM",
+      "uid-mod": "ABM",
+      "fecha-alta": "2025-02-26",
+      "fecha-mod": "2025-02-26",
+      "timestamp": "2025-02-26T09:50:46",
+      "timestamp-alta": "2025-02-26T09:50:46",
+      "timestamp-m": "2025-02-26T09:50:46",
+      "generalidades": {
+        "sintesis": "[[p]]Se habilita la exportaci\u00F3n de ganado vacuno en pie al derogar el decreto 322/73 que prohib\u00EDa la exportaci\u00F3n de ganado vacuno en pie destinado a faena para consumo.[[/p]]",
+        "observaciones-generales": "[[p]]CANTIDAD DE ARTICULOS QUE COMPONEN LA NORMA: 3.[[/p]][[p]]NRO. DE ART. QUE ESTABLECE LA ENTRADA EN VIGENCIA: 2.[[/p]][[p]]FECHA DE ENTRADA EN VIGENCIA: 27/2/2025[[/p]]"
+      },
+      "descriptores": {
+        "descriptor": [
+          {
+            "elegido": {
+              "termino": "exportaciones"
+            },
+            "preferido": {
+              "termino": "Derecho tributario y aduanero/Derecho Aduanero/comercio exterior/operaciones aduaneras/exportaciones"
+            },
+            "sinonimos": {
+              "termino": "comercio internacional"
+            }
+          },
+          {
+            "elegido": {
+              "termino": "ganado"
+            },
+            "preferido": {
+              "termino": "Actividades econ\u00F3micas/actividad agropecuaria/productos agropecuarios/cr\u00EDa de animales/ganado"
+            },
+            "sinonimos": {
+              "termino": [
+                "ganader\u00EDa",
+                "agricultura",
+                "productos agr\u00EDcolas"
+              ]
+            }
+          },
+          {
+            "elegido": {
+              "termino": "carnes"
+            },
+            "preferido": {
+              "termino": "Actividades econ\u00F3micas/actividad industrial/industria alimenticia/industria de la carne/carnes"
+            },
+            "sinonimos": {
+              "termino": [
+                "productos industriales",
+                "industria"
+              ]
+            }
+          }
+        ],
+        "suggest": {
+          "termino": [
+            "Derecho Aduanero",
+            "operaciones aduaneras",
+            "productos agropecuarios",
+            "carnes",
+            "cr\u00EDa de animales",
+            "ganader\u00EDa (actividad agropecuaria)",
+            "productos industriales (actividad industrial)",
+            "exportaciones",
+            "Derecho tributario y aduanero",
+            "comercio internacional (comercio exterior)",
+            "industria alimenticia",
+            "actividad agropecuaria",
+            "productos agr\u00EDcolas (productos agropecuarios)",
+            "agricultura (actividad agropecuaria)",
+            "comercio exterior",
+            "ganado",
+            "industria de la carne",
+            "industria (actividad industrial)",
+            "Actividades econ\u00F3micas",
+            "actividad industrial"
+          ]
+        }
+      },
+      "visto": {
+        "referencias-normativas": {
+          "referencia-normativa": [
+            {
+              "cr": null,
+              "id": "REFERENCIAS_NORMATIVAS_0",
+              "ref": "CAD C 022415 1981 03 02 0000 000 0000 000"
+            },
+            {
+              "cr": null,
+              "id": "REFERENCIAS_NORMATIVAS_1",
+              "ref": "DEC C 000322 1973 06 25 0000 000 0000 000"
+            },
+            {
+              "cr": null,
+              "id": "REFERENCIAS_NORMATIVAS_2",
+              "ref": "DEC C 000070 2023 02 09 0000 000 0000 000"
+            }
+          ]
+        },
+        "texto": "[[p]]el Expediente N\u00B0\u00A0EX-2025-10117867-APN-DGDYD#JGM, la[[r uuid:CT001]] Ley N\u00B0\u00A022.415[[/r uuid:CT001]] (C\u00F3digo Aduanero) y sus modificatorias, el [[r uuid:CT002]]Decreto N\u00BA\u00A0322 del 25 de junio de 1973 [[/r uuid:CT002]]y el [[r uuid:CT003]]Decreto N\u00BA\u00A070 del 20 de diciembre de 2023[[/r uuid:CT003]],\u00A0y[[/p]]"
+      },
+      "considerando": {
+        "referencias-normativas": {
+          "referencia-normativa": [
+            {
+              "cr": null,
+              "id": "REFERENCIAS_NORMATIVAS_0",
+              "ref": "CAD C 022415 1981 03 02 0609 000 0000 000"
+            },
+            {
+              "cr": null,
+              "id": "REFERENCIAS_NORMATIVAS_1",
+              "ref": "DEC C 000322 1973 06 25 0000 000 0000 000"
+            },
+            {
+              "cr": null,
+              "id": "REFERENCIAS_NORMATIVAS_2",
+              "ref": "DEC C 000070 2023 02 09 0000 000 0000 000"
+            },
+            {
+              "cr": null,
+              "id": "REFERENCIAS_NORMATIVAS_3",
+              "ref": "DEC C 000070 2023 02 09 0142 000 0000 000"
+            },
+            {
+              "cr": null,
+              "id": "REFERENCIAS_NORMATIVAS_4",
+              "ref": "CON C 000000 1994 08 22 0099 000 0000 000"
+            }
+          ]
+        },
+        "sancion": "EL PRESIDENTE DE LA NACI\u00D3N ARGENTINA DECRETA:",
+        "texto": "[[p]]Que el[[r uuid:CT002]] art\u00EDculo 1\u00B0 del Decreto N\u00BA\u00A0322/73[[/r uuid:CT002]] proh\u00EDbe la exportaci\u00F3n de ganado vacuno en pie cuyo destino final sea la faena para consumo.[[/p]][[p]]Que el art\u00EDculo 2\u00B0 del citado decreto facultaba a la entonces JUNTA NACIONAL DE CARNES a autorizar exportaciones de ganado vacuno en pie con destino a los pa\u00EDses lim\u00EDtrofes y a la REP\u00DABLICA DEL PER\u00DA.[[/p]][[p]]Que mediante el [[r uuid:CT003]]Decreto N\u00BA\u00A070/23 [[/r uuid:CT003]]se eliminaron las facultades del PODER EJECUTIVO NACIONAL de imponer prohibiciones de importaci\u00F3n y exportaci\u00F3n econ\u00F3micas, con el objeto de brindar certeza jur\u00EDdica a quienes inviertan en el pa\u00EDs.[[/p]][[p]]Que el referido decreto, en su art\u00EDculo 2\u00B0, establece que el ESTADO NACIONAL promover\u00E1 y asegurar\u00E1 la vigencia efectiva, en todo el territorio nacional, de un sistema econ\u00F3mico basado en decisiones libres, adoptadas en un \u00E1mbito de libre concurrencia, con respeto a la propiedad privada y a los principios constitucionales de libre circulaci\u00F3n de bienes, servicios y trabajo.[[/p]][[p]]Que, asimismo, el referido art\u00EDculo 2\u00B0 agrega que, para cumplir con ese fin, se dispondr\u00E1 la m\u00E1s amplia desregulaci\u00F3n del comercio, los servicios y la industria en todo el territorio nacional y quedar\u00E1n sin efecto todas las restricciones a la oferta de bienes y servicios, as\u00ED como toda exigencia normativa que distorsione los precios de mercado, impida la libre iniciativa privada o evite la interacci\u00F3n espont\u00E1nea de la oferta y de la demanda.[[/p]][[p]]Que por el art\u00EDculo 3\u00B0 del citado decreto se establece que las autoridades argentinas, en el \u00E1mbito de sus competencias, promover\u00E1n una mayor inserci\u00F3n de la REP\u00DABLICA ARGENTINA en el comercio mundial.[[/p]][[p]]Que, asimismo, mediante el [[r uuid:CT004]]art\u00EDculo 142 del Decreto N\u00BA\u00A070/23 [[/r uuid:CT004]]se sustituy\u00F3 el [[r uuid:CT001]]art\u00EDculo 609 de la Ley N\u00B0\u00A022.415 (C\u00F3digo Aduanero)[[/r uuid:CT001]] y sus modificatorias, determinando que el PODER EJECUTIVO NACIONAL no podr\u00E1 establecer prohibiciones ni restricciones a las exportaciones o importaciones por motivos econ\u00F3micos, las cuales solo se podr\u00E1n realizar por Ley.[[/p]][[p]]Que, en este sentido, el Decreto N\u00BA\u00A0322/73 constituye una prohibici\u00F3n para exportar, bas\u00E1ndose en una pol\u00EDtica en materia de comercializaci\u00F3n de carne vacuna contraria a lo dispuesto por el Decreto N\u00B0\u00A070/23 y por la Ley N\u00B0\u00A022.415 (C\u00F3digo Aduanero) y sus modificatorias.[[/p]][[p]]Que por lo expuesto, deviene necesario derogar el Decreto N\u00BA\u00A0322/73.[[/p]][[p]]Que ha tomado la intervenci\u00F3n que le compete el servicio de asesoramiento jur\u00EDdico pertinente.[[/p]][[p]]Que el presente decreto se dicta en uso de las facultades conferidas por el [[r uuid:CT005]]art\u00EDculo 99, inciso 1 de la CONSTITUCI\u00D3N NACIONAL.[[/r uuid:CT005]] Por ello,[[/p]]"
+      },
+      "articulo": [
+        {
+          "numero-articulo": 1,
+          "texto": "[[p]]ART\u00CDCULO 1\u00B0.- Der\u00F3gase el[[r uuid:DA001]] Decreto N\u00BA\u00A0322 del 25 de junio de 1973.[[/r uuid:DA001]][[/p]]",
+          "deroga-a": {
+            "referencia-normativa": {
+              "cr": null,
+              "id": "DEROGA_A_0",
+              "ref": "DEC C 000322 1973 06 25 0000 000 0000 000"
+            }
+          }
+        },
+        {
+          "numero-articulo": 2,
+          "texto": "[[p]]ART\u00CDCULO 2\u00B0.- La presente medida entrar\u00E1 en vigencia el d\u00EDa siguiente al de su publicaci\u00F3n en el BOLET\u00CDN OFICIAL.[[/p]]"
+        },
+        {
+          "numero-articulo": 3,
+          "texto": "[[p]]ART\u00CDCULO 3\u00B0- Comun\u00EDquese, publ\u00EDquese, dese a la DIRECCI\u00D3N NACIONAL DEL REGISTRO OFICIAL y arch\u00EDvese.[[/p]]"
+        }
+      ],
+      "firmantes": {
+        "firmantes": "MILEI-Caputo"
+      },
+      "id-infojus": "DN20250000133",
+      "fecha-umod": 20250226100141
+    }
+  }
+}

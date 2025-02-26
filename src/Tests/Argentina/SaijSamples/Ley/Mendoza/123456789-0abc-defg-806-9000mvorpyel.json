@@ -3,7 +3,7 @@
     "metadata": {
       "uuid": "123456789-0abc-defg-806-9000mvorpyel",
       "document-content-type": "legislacion",
-      "timestamp": 1738941145808,
+      "timestamp": 1738941129769,
       "operation": "ADD",
       "target-document-repository-id": "infojus",
       "target-index-id": "index",
@@ -173,7 +173,7 @@
         "firmantes": "Casado-Lombardi-Faure-Lettry"
       },
       "id-infojus": "LPM0009608",
-      "fecha-umod": 20250207121225
+      "fecha-umod": 20250207121209
     }
   }
 }

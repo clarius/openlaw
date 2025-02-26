@@ -3,7 +3,7 @@
     "metadata": {
       "uuid": "123456789-0abc-553-0000-5202mvorpced",
       "document-content-type": "legislacion",
-      "timestamp": 1740484950552,
+      "timestamp": 1740484943180,
       "operation": "ADD",
       "target-document-repository-id": "infojus",
       "target-index-id": "index",
@@ -144,7 +144,7 @@
         "firmantes": "ALFREDO V. CORNEJO -NATALIO L. MEMA RODRIGUEZ "
       },
       "id-infojus": "M20250000355",
-      "fecha-umod": 20250225090230
+      "fecha-umod": 20250225090223
     }
   }
 }

@@ -1,0 +1,134 @@
+﻿{
+  "document": {
+    "metadata": {
+      "uuid": "123456789-0abc-defg-138-9000tvorpyel",
+      "document-content-type": "legislacion",
+      "timestamp": 1734112028934,
+      "operation": "ADD",
+      "target-document-repository-id": "infojus",
+      "target-index-id": "index",
+      "target-document-indexing-id": "legislacion",
+      "document-recovery-strategy": "abstract-legislacion",
+      "friendly-url": {
+        "subdomain": "ley",
+        "description": "9831-local-tucuman-secuestros-prendarios-ejecuciones-prendarias-se-dispone-suspension-inicio-juicios-procesos-judiciales-modifica-ley-9405-lpt0009831-2024-11-21"
+      }
+    },
+    "content": {
+      "mecanografico": "T0009831",
+      "estado": "Vigente, de alcance general",
+      "tipo-norma": {
+        "codigo": "LEY",
+        "texto": "Ley"
+      },
+      "numero-norma": 9831,
+      "fecha": "2024-11-21",
+      "jurisdiccion": {
+        "codigo": "T",
+        "descripcion": "Local",
+        "capital": "San Miguel de Tucum\u00E1n",
+        "id-pais": 11
+      },
+      "provincia": "Tucum\u00E1n",
+      "standard-normativo": "LEY T 009831 2024 11 21",
+      "identificacion-coloquial": {
+        "identificacion-coloquial": [
+          "LEY 9.831",
+          "SAN MIGUEL DE TUCUMAN, 21 DE NOVIEMBRE DE 2024"
+        ]
+      },
+      "nombre-coloquial": "LEY 9.831",
+      "lugar-sancion": "SAN MIGUEL DE TUCUMAN",
+      "titulo-norma": "Secuestros prendarios o ejecuciones prendarias. Se dispone la suspensi\u00F3n del inicio de juicios o procesos judiciales. Modifica la Ley 9405",
+      "publicacion-codificada": {
+        "publicacion-decodificada": {
+          "organismo": "Bolet\u00EDn Oficial",
+          "fecha": "2024 12 11"
+        }
+      },
+      "sancion": "La Legislatura de la provincia sanciona con fuerza de Ley:",
+      "analista": "Signorelli, Angela",
+      "responsable": "Signorelli, Angela",
+      "uid-alta": "ABM",
+      "uid-mod": "ABM",
+      "fecha-alta": "2024-12-13",
+      "fecha-mod": "2024-12-13",
+      "timestamp": "2024-12-13T14:41:03",
+      "timestamp-alta": "2024-12-13T14:41:03",
+      "timestamp-m": "2024-12-13T14:41:03",
+      "sumario": {
+        "sumario": "[[p]]Secuestros prendarios o ejecuciones prendarias. Se dispone la suspensi\u00F3n del inicio de juicios o procesos judiciales. Modifica la Ley 9405[[/p]]"
+      },
+      "descriptores": {
+        "descriptor": [
+          {
+            "elegido": {
+              "termino": "ejecuci\u00F3n prendaria"
+            },
+            "preferido": {
+              "termino": "Derecho procesal/procesos de ejecuci\u00F3n/ejecuciones especiales/ejecuci\u00F3n prendaria"
+            },
+            "sinonimos": {
+              "termino": [
+                "juicios de ejecuci\u00F3n",
+                "juicios ejecutorios",
+                "juicio prendario"
+              ]
+            }
+          },
+          {
+            "elegido": {
+              "termino": "suspensi\u00F3n de la ejecuci\u00F3n"
+            },
+            "preferido": {
+              "termino": "Derecho procesal/procesos de ejecuci\u00F3n/suspensi\u00F3n de la ejecuci\u00F3n"
+            },
+            "sinonimos": {
+              "termino": [
+                "juicios de ejecuci\u00F3n",
+                "juicios ejecutorios"
+              ]
+            }
+          }
+        ],
+        "suggest": {
+          "termino": [
+            "juicios de ejecuci\u00F3n (procesos de ejecuci\u00F3n)",
+            "ejecuciones especiales",
+            "suspensi\u00F3n de la ejecuci\u00F3n",
+            "ejecuci\u00F3n prendaria",
+            "Derecho procesal",
+            "procesos de ejecuci\u00F3n",
+            "juicio prendario (ejecuci\u00F3n prendaria)",
+            "juicios ejecutorios (procesos de ejecuci\u00F3n)"
+          ]
+        }
+      },
+      "generalidades": {
+        "observaciones-generales": "[[p]]CANTIDAD DE ARTICULOS QUE COMPONEN LA NORMA: 02[[/p]]"
+      },
+      "articulo": [
+        {
+          "modifica-a": {
+            "referencia-normativa": {
+              "cr": null,
+              "id": "MODIFICA_A_0",
+              "ref": "LEY T 009405 2021 05 27 0001 000 0000 000"
+            }
+          },
+          "numero-articulo": 1,
+          "texto": "[[p]]Articulo 1\u00B0.- Modificase la Ley N\u00B0 9405 y sus modificatorias, en la forma que a continuaci\u00F3n se indica:[[/p]][[p]]- En el Articulo 1\u00B0: sustituir la expresi\u00F3n: \u0022hasta el 31 de Diciembre de 2024\u0022, por la expresi\u00F3n: \u0022hasta el 31 de Diciembre de 2025\u0022.[[/p]]"
+        },
+        {
+          "numero-articulo": 2,
+          "texto": "[[p]]Art 2\u00B0.- Comun\u00EDquese.[[/p]]"
+        }
+      ],
+      "firmantes": {
+        "firmantes": "Sergio Francisco Mansilla, Presidente Subrogante a/c de la Presidencia H. Legislatura de Tucum\u00E1n. Claudio Antonio P\u00E9rez, Secretario H. Legislatura de Tucum\u00E1n."
+      },
+      "id-infojus": "LPT0009831",
+      "fecha-umod": 20241213144708
+    }
+  }
+}

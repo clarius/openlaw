@@ -3,7 +3,7 @@
     "metadata": {
       "uuid": "123456789-0abc-213-0000-5202svorpced",
       "document-content-type": "legislacion",
-      "timestamp": 1740400123493,
+      "timestamp": 1740400099714,
       "operation": "ADD",
       "target-document-repository-id": "infojus",
       "target-index-id": "index",
@@ -192,7 +192,7 @@
         "firmantes": "Pullaro Bastia-Lionel"
       },
       "id-infojus": "S20250000312",
-      "fecha-umod": 20250224092843
+      "fecha-umod": 20250224092819
     }
   }
 }

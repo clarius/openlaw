@@ -3,7 +3,7 @@
     "metadata": {
       "uuid": "123456789-0abc-620-3000-4202nvorpced",
       "document-content-type": "legislacion",
-      "timestamp": 1736964667950,
+      "timestamp": 1736964670619,
       "operation": "ADD",
       "target-document-repository-id": "infojus",
       "target-index-id": "index",
@@ -160,7 +160,7 @@
         "firmantes": "PASSALACQUA - P\u00E9rez"
       },
       "id-infojus": "N20240003026",
-      "fecha-umod": 20250115151107
+      "fecha-umod": 20250115151110
     }
   }
 }

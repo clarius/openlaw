@@ -3,7 +3,7 @@
     "metadata": {
       "uuid": "123456789-0abc-824-0000-4202zvorpced",
       "document-content-type": "legislacion",
-      "timestamp": 1715863461855,
+      "timestamp": 1715863447306,
       "operation": "ADD",
       "target-document-repository-id": "infojus",
       "target-index-id": "index",
@@ -185,7 +185,7 @@
         "firmantes": "Sr. VIDAL - CP. Marilina Jos\u00E9 Jaramillo"
       },
       "id-infojus": "Z20240000428",
-      "fecha-umod": 20240516094421
+      "fecha-umod": 20240516094407
     }
   }
 }

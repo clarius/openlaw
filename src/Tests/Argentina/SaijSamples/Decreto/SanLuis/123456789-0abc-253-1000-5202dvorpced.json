@@ -3,7 +3,7 @@
     "metadata": {
       "uuid": "123456789-0abc-253-1000-5202dvorpced",
       "document-content-type": "legislacion",
-      "timestamp": 1739987167169,
+      "timestamp": 1739987168855,
       "operation": "ADD",
       "target-document-repository-id": "infojus",
       "target-index-id": "index",
@@ -208,7 +208,7 @@
         "firmantes": "CLAUDIO JAVIER POGGI -Ricardo Juan Andre Bazla -Gonzalo Federico Amondarain -N\u00E9stor Alberto Ordo\u00F1ez"
       },
       "id-infojus": "D20250001352",
-      "fecha-umod": 20250219144607
+      "fecha-umod": 20250219144608
     }
   }
 }

@@ -3,7 +3,7 @@
     "metadata": {
       "uuid": "123456789-0abc-030-0000-5202ovorpced",
       "document-content-type": "legislacion",
-      "timestamp": 1739269902227,
+      "timestamp": 1739269889041,
       "operation": "ADD",
       "target-document-repository-id": "infojus",
       "target-index-id": "index",
@@ -213,7 +213,7 @@
         "firmantes": "Llaryora-Acosta-C\u00F3rdoba"
       },
       "id-infojus": "O20250000030",
-      "fecha-umod": 20250211073142
+      "fecha-umod": 20250211073129
     }
   }
 }

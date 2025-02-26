@@ -3,7 +3,7 @@
     "metadata": {
       "uuid": "123456789-0abc-201-0000-5202uvorpced",
       "document-content-type": "legislacion",
-      "timestamp": 1739379508408,
+      "timestamp": 1739379493760,
       "operation": "ADD",
       "target-document-repository-id": "infojus",
       "target-index-id": "index",
@@ -148,7 +148,7 @@
         "firmantes": "Torres-Eraso Parodi"
       },
       "id-infojus": "U20250000102",
-      "fecha-umod": 20250212135828
+      "fecha-umod": 20250212135813
     }
   }
 }

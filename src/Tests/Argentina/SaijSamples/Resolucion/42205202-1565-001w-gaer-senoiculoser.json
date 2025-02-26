@@ -3,7 +3,7 @@
     "metadata": {
       "uuid": "42205202-1565-001w-gaer-senoiculoser",
       "document-content-type": "legislacion",
-      "timestamp": 1740484960764,
+      "timestamp": 1740484949062,
       "operation": "ADD",
       "target-document-repository-id": "infojus",
       "target-index-id": "index",
@@ -193,7 +193,7 @@
         }
       ],
       "id-infojus": "RSREAGW100565120250224",
-      "fecha-umod": 20250225090240
+      "fecha-umod": 20250225090229
     }
   }
 }

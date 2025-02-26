@@ -3,7 +3,7 @@
     "metadata": {
       "uuid": "123456789-0abc-362-1000-4202gvorpced",
       "document-content-type": "legislacion",
-      "timestamp": 1725470063739,
+      "timestamp": 1725470050600,
       "operation": "ADD",
       "target-document-repository-id": "infojus",
       "target-index-id": "index",
@@ -195,7 +195,7 @@
         "firmantes": "Dr. Gerardo Zamora Sr. El\u00EDas Miguel Su\u00E1rez Dra. Matilde O\u00B4Mill"
       },
       "id-infojus": "G20240001263",
-      "fecha-umod": 20240904141423
+      "fecha-umod": 20240904141410
     }
   }
 }

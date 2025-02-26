@@ -1,6 +1,5 @@
 ﻿using System.Diagnostics;
 using System.Net.Http.Headers;
-using System.Runtime.CompilerServices;
 using System.Text.Json;
 using System.Text.Json.Nodes;
 using Devlooped;
@@ -169,10 +168,11 @@ public class SaijClientTests(ITestOutputHelper output)
         var count = 0;
         var watch = Stopwatch.StartNew();
 
-        await foreach (var doc in client.EnumerateJsonAsync())
+        await foreach (var doc in client.EnumerateAsync(TipoNorma.Acordada))
         {
-            if (Debugger.IsAttached)
-                output.WriteLine(doc.ToJsonString(options));
+            var json = await client.FetchJsonAsync(doc.Id);
+            Assert.NotNull(json);
+            output.WriteLine(json.ToJsonString(options));
             count++;
         }
 
@@ -219,6 +219,7 @@ public class SaijClientTests(ITestOutputHelper output)
         var client = CreateClient(output);
         await foreach (var doc in client.EnumerateAsync(tipo, null))
         {
+            Assert.Equal(tipo, doc.Kind);
             output.WriteLine(doc.ToYaml());
 
             var path = $@"..\..\..\Argentina\SaijSamples\{tipo}";
