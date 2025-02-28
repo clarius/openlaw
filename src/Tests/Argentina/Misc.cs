@@ -13,25 +13,6 @@ public partial class Misc(ITestOutputHelper output)
 {
     [LocalTheory]
     [InlineData("Argentina/SaijSamples/123456789-0abc-defg-g23-85000scanyel.json")]
-    [InlineData("Argentina/SaijSamples/123456789-0abc-defg-g81-87000tcanyel.json")]
-    [InlineData("Argentina/SaijSamples/123456789-0abc-defg-g56-95000scanyel.json")]
-    public void ConvertJsonToYaml(string jsonFile)
-    {
-        jsonFile = Path.Combine(ThisAssembly.Project.MSBuildProjectDirectory, jsonFile);
-        var json = File.ReadAllText(jsonFile).ReplaceLineEndings();
-
-        var dictionary = DictionaryConverter.Parse(json);
-        Assert.NotNull(dictionary);
-
-        var yaml = DictionaryConverter.ToYaml(dictionary);
-
-        // Save the YAML to a file
-        var yamlFile = Path.ChangeExtension(jsonFile, ".yaml");
-        File.WriteAllText(yamlFile, yaml);
-    }
-
-    [LocalTheory]
-    [InlineData("Argentina/SaijSamples/123456789-0abc-defg-g23-85000scanyel.json")]
     [InlineData("Argentina/SaijSamples/123456789-0abc-defg-g56-95000scanyel.json")]
     public void ConvertJsonToMarkdown(string jsonFile)
     {

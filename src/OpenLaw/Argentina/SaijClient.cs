@@ -1,10 +1,7 @@
 ﻿using System.Diagnostics;
 using System.Globalization;
 using System.Runtime.CompilerServices;
-using System.Text.Json;
 using System.Text.Json.Nodes;
-using System.Text.Json.Serialization;
-using System.Text.Json.Serialization.Metadata;
 using Devlooped;
 using Spectre.Console;
 using Spectre.Console.Json;
@@ -15,17 +12,7 @@ public class SaijClient(IHttpClientFactory httpFactory, IProgress<ProgressMessag
 {
     const string UrlFormat = "https://www.saij.gob.ar/busqueda?o={0}&p={1}&f=Total{2}{3}{4}&s=fecha-rango|DESC&v=colapsada";
 
-    static readonly JsonSerializerOptions options = new(JsonSerializerDefaults.Web)
-    {
-        TypeInfoResolver = new DefaultJsonTypeInfoResolver(),
-        PropertyNamingPolicy = JsonNamingPolicy.CamelCase,
-        PropertyNameCaseInsensitive = true,
-        Converters = { new JsonStringEnumConverter(JsonNamingPolicy.CamelCase) },
-        WriteIndented = true,
-        Encoder = System.Text.Encodings.Web.JavaScriptEncoder.UnsafeRelaxedJsonEscaping,
-    };
-
-    public async IAsyncEnumerable<DocumentAbstract> EnumerateAsync(
+    public async IAsyncEnumerable<DocumentAbstract> SearchAsync(
         TipoNorma? tipo = TipoNorma.Ley,
         Jurisdiccion? jurisdiccion = Jurisdiccion.Nacional,
         Provincia? provincia = null,
@@ -38,11 +25,11 @@ public class SaijClient(IHttpClientFactory httpFactory, IProgress<ProgressMessag
         var json = await http.GetStringAsync(url, cancellation);
 
         var jq = await JQ.ExecuteAsync(json, ThisAssembly.Resources.Argentina.SaijSearch.Text);
-        if (TryDeserialize<SearchResults>(jq) is not { } result)
+        if (Document.JsonOptions.TryDeserialize<SearchResults>(jq) is not { } result)
             yield break;
 
-        var query = ThisAssembly.Resources.Argentina.SaijAbstract.Text
-            .Replace("$$kind$$", tipo?.ToString() ?? "Any");
+        var source = new Source(tipo, jurisdiccion, provincia);
+        var query = ThisAssembly.Resources.Argentina.SaijAbstract.Text;
 
         while (true)
         {
@@ -57,7 +44,7 @@ public class SaijClient(IHttpClientFactory httpFactory, IProgress<ProgressMessag
 
                 // This is the bare minimum we expect all results to have.
                 if (await JQ.ExecuteAsync(item.Abstract, ThisAssembly.Resources.Argentina.SaijIdType.Text) is not { } idType ||
-                    TryDeserialize<IdType>(idType) is not { } id)
+                    Document.JsonOptions.TryDeserialize<IdType>(idType) is not { } id)
                 {
                     progress.Report(new($"Skipping {skip + count} of {result.Total})", percentage));
                     continue;
@@ -73,7 +60,7 @@ public class SaijClient(IHttpClientFactory httpFactory, IProgress<ProgressMessag
                 jq = await JQ.ExecuteAsync(item.Abstract, query);
                 if (string.IsNullOrEmpty(jq))
                 {
-                    AnsiConsole.MarkupLine($":cross_mark: [dim]{id.Type}[/] [blue][link={id.Url}]{id.Id}[/][/]");
+                    AnsiConsole.MarkupLine($":cross_mark: [dim]{id.Type}[/] [blue][link={id.HtmlUrl}]{id.Id}[/][/] ([blue][link={id.JsonUrl}]JSON[/][/])");
 #if DEBUG
                     Debugger.Launch();
                     AnsiConsole.Write(new JsonText(item.Abstract));
@@ -81,9 +68,9 @@ public class SaijClient(IHttpClientFactory httpFactory, IProgress<ProgressMessag
                     continue;
                 }
 
-                if (TryDeserialize<DocumentAbstract>(jq) is not { } doc)
+                if (Document.JsonOptions.TryDeserialize<DocumentAbstract>(jq) is not { } doc)
                 {
-                    AnsiConsole.MarkupLine($":cross_mark: [dim]{id.Type}[/] [blue][link={id.Url}]{id.Id}[/][/]");
+                    AnsiConsole.MarkupLine($":cross_mark: [dim]{id.Type}[/] [blue][link={id.HtmlUrl}]{id.Id}[/][/] ([blue][link={id.JsonUrl}]JSON[/][/])");
 #if DEBUG
                     Debugger.Launch();
                     AnsiConsole.Write(new JsonText(item.Abstract));
@@ -94,7 +81,11 @@ public class SaijClient(IHttpClientFactory httpFactory, IProgress<ProgressMessag
                 percentage = (skip + count) * 100 / result.Total;
                 progress.Report(new($"Processing {skip + count} of {result.Total}", percentage));
 
-                yield return doc with { Summary = StringMarkup.Cleanup(doc.Summary) };
+                yield return doc with
+                {
+                    Source = source,
+                    Summary = StringMarkup.Cleanup(doc.Summary)
+                };
             }
 
             skip = skip + take;
@@ -106,9 +97,42 @@ public class SaijClient(IHttpClientFactory httpFactory, IProgress<ProgressMessag
 
             json = await response.Content.ReadAsStringAsync(cancellation);
             jq = await JQ.ExecuteAsync(json, ThisAssembly.Resources.Argentina.SaijSearch.Text);
-            result = TryDeserialize<SearchResults>(jq);
+            result = Document.JsonOptions.TryDeserialize<SearchResults>(jq);
             if (result == null)
                 break;
+        }
+    }
+
+    public async Task<Document> FetchAsync(string id, HttpClient? http = default)
+    {
+        var dispose = http == null;
+        try
+        {
+            http ??= httpFactory.CreateClient("saij");
+            var response = await http.GetAsync("https://www.saij.gob.ar/view-document?guid=" + id);
+            if (!response.IsSuccessStatusCode)
+                throw new ArgumentException($"Document not found with ID '{id}.", nameof(id));
+
+            var doc = await response.Content.ReadAsStringAsync();
+            var data = JsonNode.Parse(doc)?["data"]?.GetValue<string>();
+            if (string.IsNullOrEmpty(data))
+                throw new ArgumentException($"Invalid document data for '{id}'.");
+
+            if (await JQ.ExecuteAsync(data, ThisAssembly.Resources.Argentina.SaijIdType.Text) is not { } jq ||
+                Document.JsonOptions.TryDeserialize<IdType>(jq) is not { } idType)
+            {
+                throw new ArgumentException($"Invalid document data for ID '{id}'.");
+            }
+
+            if (!DisplayValue.TryParse<ContentType>(idType.Type, true, out var contentType))
+                throw new ArgumentException($"Unsupported document content type '{idType.Type}' with ID '{id}'.");
+
+            return new Document(idType.Id, contentType, data);
+        }
+        finally
+        {
+            if (dispose)
+                http?.Dispose();
         }
     }
 
@@ -119,64 +143,4 @@ public class SaijClient(IHttpClientFactory httpFactory, IProgress<ProgressMessag
         provincia == null ?
             jurisdiccion == null ? "" : $"|Jurisdicción/{DisplayValue.ToString(jurisdiccion.Value)}" :
             $"|Jurisdicción/{DisplayValue.ToString(Jurisdiccion.Provincial)}/{DisplayValue.ToString(provincia.Value)}");
-
-    public async Task<JsonObject?> FetchJsonAsync(string id)
-    {
-        if (await FetchRawAsync(id) is not { } data ||
-            JsonNode.Parse(data) is not JsonObject json)
-            return null;
-
-        return json;
-    }
-
-    public async Task<Legislacion?> FetchDocumentAsync(string id)
-    {
-        if (await FetchRawAsync(id) is not { } data ||
-            await JQ.ExecuteAsync(data, ThisAssembly.Resources.Argentina.SaijDocument.Text) is not { Length: > 0 } jq ||
-            TryDeserialize<Legislacion>(jq) is not { } doc)
-        {
-            Debugger.Launch();
-            return null;
-        }
-
-        return doc with { Summary = StringMarkup.Cleanup(doc.Summary) };
-    }
-
-    public async Task<string?> FetchRawAsync(string id, HttpClient? http = default)
-    {
-        var dispose = http == null;
-        try
-        {
-            http ??= httpFactory.CreateClient("saij");
-            var response = await http.GetAsync("https://www.saij.gob.ar/view-document?guid=" + id);
-            if (!response.IsSuccessStatusCode)
-                return null;
-
-            var doc = await response.Content.ReadAsStringAsync();
-
-            return JsonNode.Parse(doc)?["data"]?.GetValue<string>();
-        }
-        finally
-        {
-            if (dispose)
-                http?.Dispose();
-        }
-    }
-
-    static T? TryDeserialize<T>(string json)
-    {
-        if (string.IsNullOrEmpty(json))
-            return default;
-
-        try
-        {
-            return JsonSerializer.Deserialize<T>(json, options);
-        }
-        catch (JsonException e)
-        {
-            Debugger.Launch();
-            Debugger.Log(0, "", e.Message);
-            return default;
-        }
-    }
 }

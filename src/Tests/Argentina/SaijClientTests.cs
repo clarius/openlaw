@@ -1,7 +1,10 @@
-﻿using System.Diagnostics;
+﻿using System.Collections.Generic;
+using System.Collections.Specialized;
+using System.Diagnostics;
 using System.Net.Http.Headers;
 using System.Text.Json;
 using System.Text.Json.Nodes;
+using System.Text.RegularExpressions;
 using Devlooped;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Http.Resilience;
@@ -86,7 +89,7 @@ public class SaijClientTests(ITestOutputHelper output)
         var client = CreateClient(output);
         var count = 0;
 
-        await foreach (var doc in client.EnumerateAsync())
+        await foreach (var doc in client.SearchAsync())
         {
             count++;
             if (count == 10)
@@ -109,7 +112,7 @@ public class SaijClientTests(ITestOutputHelper output)
                 fullpub++;
         });
 
-        await foreach (var item in client.EnumerateAsync())
+        await foreach (var item in client.SearchAsync())
         {
             total++;
             if (await client.FetchDocumentAsync(item.Id) is { } doc &&
@@ -128,11 +131,11 @@ public class SaijClientTests(ITestOutputHelper output)
         output.WriteLine($"Total: {total}, NoPub: {nopub}, FullPub: {fullpub}");
     }
 
-    [LocalFact]
+    [DebuggerFact]
     public async Task NoArticleContainsSegments()
     {
         var client = CreateClient(output);
-        await foreach (var item in client.EnumerateAsync())
+        await foreach (var item in client.SearchAsync())
         {
             if (await client.FetchJsonAsync(item.Id) is { } doc)
             {
@@ -168,7 +171,7 @@ public class SaijClientTests(ITestOutputHelper output)
         var count = 0;
         var watch = Stopwatch.StartNew();
 
-        await foreach (var doc in client.EnumerateAsync(TipoNorma.Acordada))
+        await foreach (var doc in client.SearchAsync(TipoNorma.Acordada))
         {
             var json = await client.FetchJsonAsync(doc.Id);
             Assert.NotNull(json);
@@ -207,6 +210,66 @@ public class SaijClientTests(ITestOutputHelper output)
             System.Text.Encoding.UTF8);
     }
 
+    [DebuggerFact]
+    public async Task CollectDocsWithLinks()
+    {
+        var client = CreateClient(output);
+        var count = 0;
+        await foreach (var doc in client.SearchAsync())
+        {
+            var raw = await client.FetchAsync(doc.Id);
+            Assert.NotNull(raw);
+            var json = await JQ.ExecuteAsync(raw.Json, ".document.content.d_link // empty");
+            if (string.IsNullOrEmpty(json))
+                continue;
+
+            var link = JsonSerializer.Deserialize<Link>(json);
+            if (link == null)
+            {
+                output.WriteLine($"Failed to parse link from {json}");
+                continue;
+            }
+
+            File.AppendAllText(@$"..\..\..\Argentina\SaijSamples\links.txt",
+                $"{doc.Id}: {link.filename} {link.uuid}\n",
+                System.Text.Encoding.UTF8);
+
+            count++;
+            if (count == 10)
+                break;
+        }
+    }
+
+    record Link(string filename, string uuid);
+
+    [Theory]
+    [InlineData("123456789-0abc-317-54ti-lpssedadevon")]
+    [InlineData("123456789-0abc-517-54ti-lpssedadevon")]
+    [InlineData("123456789-0abc-017-54ti-lpssedadevon")]
+    [InlineData("123456789-0abc-117-54ti-lpssedadevon")]
+    [InlineData("123456789-0abc-217-54ti-lpssedadevon")]
+    [InlineData("123456789-0abc-896-54ti-lpssedadevon")]
+    [InlineData("123456789-0abc-507-54ti-lpssedadevon")]
+    [InlineData("123456789-0abc-996-54ti-lpssedadevon")]
+    [InlineData("123456789-0abc-796-54ti-lpssedadevon")]
+    [InlineData("123456789-0abc-127-54ti-lpssedadevon")]
+    [InlineData("123456789-0abc-417-54ti-lpssedadevon")]
+    [InlineData("123456789-0abc-696-54ti-lpssedadevon")]
+    [InlineData("123456789-0abc-396-54ti-lpssedadevon")]
+    [InlineData("123456789-0abc-876-54ti-lpssedadevon")]
+    [InlineData("123456789-0abc-496-54ti-lpssedadevon")]
+    public async Task WhenDocHasLinkThenAddsToMarkdown(string id)
+    {
+        var client = CreateClient(output);
+        var doc = await client.FetchAsync(id);
+        var markdown = await doc.GetMarkdownAsync(true);
+
+        Assert.NotNull(markdown);
+        Assert.Matches(@"\[.*\]\(.*\)", markdown);
+
+        await WriteAsync(client, id, @$"..\..\..\Argentina\SaijSamples\md");
+    }
+
     [Theory]
     [InlineData(TipoNorma.Ley)]
     [InlineData(TipoNorma.Decreto)]
@@ -217,17 +280,11 @@ public class SaijClientTests(ITestOutputHelper output)
     public async Task CanEnumerateAllTypes(TipoNorma tipo)
     {
         var client = CreateClient(output);
-        await foreach (var doc in client.EnumerateAsync(tipo, null))
+        await foreach (var doc in client.SearchAsync(tipo, null))
         {
-            Assert.Equal(tipo, doc.Kind);
+            Assert.Equal(tipo, doc.Source.Tipo);
             output.WriteLine(doc.ToYaml());
-
-            var path = $@"..\..\..\Argentina\SaijSamples\{tipo}";
-            Directory.CreateDirectory(path);
-            var full = await client.FetchJsonAsync(doc.Id);
-            Assert.NotNull(full);
-            await File.WriteAllTextAsync($@"{path}\{doc.Id}.json", full.ToJsonString(options), System.Text.Encoding.UTF8);
-
+            await WriteAsync(client, doc.Id, $@"..\..\..\Argentina\SaijSamples\{tipo}");
             return;
         }
 
@@ -240,20 +297,35 @@ public class SaijClientTests(ITestOutputHelper output)
     public async Task CanEnumerateAllJurisdictions(TipoNorma tipo, Provincia provincia)
     {
         var client = CreateClient(output);
-        await foreach (var doc in client.EnumerateAsync(tipo, Jurisdiccion.Provincial, provincia))
+        await foreach (var doc in client.SearchAsync(tipo, Jurisdiccion.Provincial, provincia))
         {
+            Assert.Equal(tipo, doc.Source.Tipo);
             output.WriteLine(doc.ToYaml());
-
-            var path = $@"..\..\..\Argentina\SaijSamples\{tipo}\{provincia}";
-            Directory.CreateDirectory(path);
-            var full = await client.FetchJsonAsync(doc.Id);
-            Assert.NotNull(full);
-            await File.WriteAllTextAsync(@$"{path}\{doc.Id}.json", full.ToJsonString(options), System.Text.Encoding.UTF8);
-
+            await WriteAsync(client, doc.Id, $@"..\..\..\Argentina\SaijSamples\{tipo}\{provincia}");
             return;
         }
 
         Assert.Fail("Did not get at least one document of the specified type");
+    }
+
+    static async Task WriteAsync(SaijClient client, string id, string path)
+    {
+        Directory.CreateDirectory(path);
+        var json = await client.FetchJsonAsync(id);
+        Assert.NotNull(json);
+        await File.WriteAllTextAsync(@$"{path}\{id}.json", json.ToJsonString(options), System.Text.Encoding.UTF8);
+
+        var raw = await client.FetchAsync(id);
+        Assert.NotNull(raw);
+
+        var markdown = await raw.GetMarkdownAsync();
+
+        await File.WriteAllTextAsync(@$"{path}\{id}.md", markdown, System.Text.Encoding.UTF8);
+
+        var yaml = DictionaryConverter.ToYaml(raw.Dictionary);
+
+        await File.WriteAllTextAsync(@$"{path}\{id}.yml", yaml, System.Text.Encoding.UTF8);
+
     }
 
     public static IEnumerable<object[]> ForJurisdiction(TipoNorma tipo)

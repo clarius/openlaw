@@ -1,7 +1,9 @@
 ﻿using System.ComponentModel;
 using System.Diagnostics;
+using Devlooped;
 using Spectre.Console;
 using Spectre.Console.Cli;
+using Spectre.Console.Json;
 
 namespace Clarius.OpenLaw.Argentina;
 
@@ -10,15 +12,53 @@ public class EnumerateCommand(IAnsiConsole console, IHttpClientFactory http) : A
 {
     public class EnumerateSettings : CommandSettings
     {
-        [Description("Enumerar todos los documentos, no solamente Leyes de alcance Nacional.")]
-        [DefaultValue(true)]
-        [CommandOption("--all")]
-        public bool All { get; set; } = false;
+        [Description("Tipo de norma a enumerar.")]
+        [CommandOption("-t|--tipo <Ley|Decreto|Resolution|Disposicion|Acordada>")]
+        [DefaultValue(TipoNorma.Ley)]
+        public TipoNorma? Tipo { get; set; } = TipoNorma.Ley;
+
+        [Description("Jurisdicción a enumerar.")]
+        [CommandOption("-j|--jurisdiccion <Internacional|Nacional|Provincial>")]
+        [DefaultValue(Argentina.Jurisdiccion.Nacional)]
+        public Jurisdiccion? Jurisdiccion { get; set; } = Argentina.Jurisdiccion.Nacional;
+
+        [Description("Provincia a enumerar.")]
+        [CommandOption("-p|--provincia")]
+        [DefaultValue(null)]
+        public Provincia? Provincia { get; set; }
+
+        [Description("Enumerar todo, sin filtros.")]
+        [CommandOption("--all", IsHidden = true)]
+        public bool All { get; set; }
+
+        [Description("Mostrar resultados con links.")]
+        [CommandOption("--show-links", IsHidden = true)]
+        public bool ShowLinks { get; set; }
+
+        public override ValidationResult Validate()
+        {
+            if (All)
+            {
+                Tipo = null;
+                Jurisdiccion = null;
+                Provincia = null;
+            }
+
+            if (Jurisdiccion == Argentina.Jurisdiccion.Provincial && Provincia == null)
+                return ValidationResult.Error("Debe especificar una provincia para la jurisdicción provincial.");
+
+            if (Jurisdiccion != Argentina.Jurisdiccion.Provincial && Provincia != null)
+                return ValidationResult.Error("No se puede especificar una provincia para la jurisdicción no provincial.");
+
+            return base.Validate();
+        }
     }
 
     public override async Task<int> ExecuteAsync(CommandContext context, EnumerateSettings settings)
     {
         var watch = Stopwatch.StartNew();
+
+        console.MarkupLine($"[dim]Enumerating {settings.Tipo} {settings.Jurisdiccion} {settings.Provincia}[/]");
 
         await console.Progress()
             .Columns(
@@ -36,16 +76,29 @@ public class EnumerateCommand(IAnsiConsole console, IHttpClientFactory http) : A
                     task.Value(x.Percentage);
                 }));
 
-                var tipo = settings.All ? null : "Ley";
-                var jurisdiccion = settings.All ? null : "Nacional";
                 var options = new ParallelOptions();
                 if (Debugger.IsAttached)
                     options.MaxDegreeOfParallelism = 1;
 
-                await Parallel.ForEachAsync(client.EnumerateAsync(null, null, null), options, (doc, cancellation) =>
+                await Parallel.ForEachAsync(client.SearchAsync(settings.Tipo, settings.Jurisdiccion, settings.Provincia), options, async (doc, cancellation) =>
                 {
-                    Debugger.Log(0, "", doc.Modified.ToString());
-                    return ValueTask.CompletedTask;
+                    if (settings.ShowLinks)
+                    {
+                        try
+                        {
+                            var full = await client.FetchAsync(doc.Id);
+                            var json = await JQ.ExecuteAsync(full.Json, ".document.content.d_link // empty");
+                            if (string.IsNullOrEmpty(json))
+                                return;
+
+                            AnsiConsole.MarkupInterpolated($":link: [blue][link={doc.JsonUrl}]{doc.Id}[/][/] \r\n[dim]{json}[/]");
+                            await File.AppendAllTextAsync("links.txt", $"[InlineData(\"{doc.Id}\")]\r\n", cancellation);
+                        }
+                        catch (Exception e)
+                        {
+                            AnsiConsole.WriteException(e);
+                        }
+                    }
                     // Do nothing, just enumerate
                 });
             });

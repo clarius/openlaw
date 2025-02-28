@@ -1,9 +1,9 @@
-﻿using System.Text;
+﻿using System.ComponentModel.DataAnnotations;
+using System.Text;
 using System.Text.Json;
-using Devlooped;
 using YamlDotNet.Serialization;
 
-namespace Clarius.OpenLaw;
+namespace Clarius.OpenLaw.Argentina;
 
 public static class DictionaryConverter
 {
@@ -34,33 +34,33 @@ public static class DictionaryConverter
         var writeTime = File.GetLastWriteTimeUtc(jsonFile);
 
         if (overwrite || !File.Exists(yamlFile) ||
-            (File.Exists(yamlFile) && File.GetLastWriteTimeUtc(yamlFile) != writeTime))
+            File.Exists(yamlFile) && File.GetLastWriteTimeUtc(yamlFile) != writeTime)
         {
             dictionary = Parse(File.ReadAllText(jsonFile));
             if (dictionary is null)
                 return;
 
-            File.WriteAllText(yamlFile, ToYaml(dictionary), Encoding.UTF8);
+            File.WriteAllText(yamlFile, dictionary.ToYaml(), Encoding.UTF8);
         }
 
         // Always ensure write time matches source json file
         File.SetLastWriteTimeUtc(yamlFile, writeTime);
 
         if (overwrite || !File.Exists(mdFile) ||
-            (File.Exists(mdFile) && File.GetLastWriteTimeUtc(mdFile) != writeTime))
+            File.Exists(mdFile) && File.GetLastWriteTimeUtc(mdFile) != writeTime)
         {
             dictionary ??= Parse(File.ReadAllText(jsonFile));
             if (dictionary is null)
                 return;
 
-            File.WriteAllText(mdFile, ToMarkdown(dictionary), Encoding.UTF8);
+            File.WriteAllText(mdFile, dictionary.ToMarkdown(), Encoding.UTF8);
         }
 
         // Always ensure write time matches source json file
         File.SetLastWriteTimeUtc(mdFile, writeTime);
 
         if (overwrite || !File.Exists(pdfFile) ||
-            (File.Exists(pdfFile) && File.GetLastWriteTimeUtc(pdfFile) != writeTime))
+            File.Exists(pdfFile) && File.GetLastWriteTimeUtc(pdfFile) != writeTime)
         {
             dictionary ??= Parse(File.ReadAllText(jsonFile));
             if (dictionary is null)
@@ -68,7 +68,7 @@ public static class DictionaryConverter
 
             if (!File.Exists(mdFile))
             {
-                File.WriteAllText(mdFile, ToMarkdown(dictionary), Encoding.UTF8);
+                File.WriteAllText(mdFile, dictionary.ToMarkdown(), Encoding.UTF8);
                 File.SetLastWriteTimeUtc(mdFile, writeTime);
             }
 
@@ -90,8 +90,11 @@ public static class DictionaryConverter
     public static Dictionary<string, object?>? Parse(string json)
         => JsonSerializer.Deserialize<Dictionary<string, object?>>(json, options);
 
-    public static string ToYaml(this object value)
+    public static string ToYaml(this object? value)
     {
+        if (value is null)
+            return string.Empty;
+
         var serializer = new SerializerBuilder()
             .WithTypeConverter(new YamlDictionaryConverter())
             .WithTypeConverter(new YamlListConverter())
@@ -100,30 +103,49 @@ public static class DictionaryConverter
         return serializer.Serialize(value).Trim();
     }
 
-    public static string ToMarkdown(this Dictionary<string, object?> dictionary)
+    public static string ToMarkdown(this Dictionary<string, object?> dictionary, bool renderLinks = true)
+        => dictionary.ToMarkdown(out _, renderLinks);
+
+    public static string ToMarkdown(this Dictionary<string, object?> dictionary, out List<Link> links, bool renderLinks = true)
     {
         var output = new StringBuilder();
-        ProcessDictionary(0, dictionary, output);
+        links = new List<Link>();
+        ProcessDictionary(0, dictionary, output, links);
+
+        if (renderLinks && links.Count > 0)
+        {
+            output.AppendLine().AppendLine("<a id=\"attachments\"></a>").AppendLine("---");
+
+            if (links.Count > 1)
+                output.AppendLine("**Archivos adjuntos**: ");
+            else
+                output.AppendLine("**Archivo adjunto**: ");
+
+            foreach (var link in links)
+            {
+                output.AppendLine($"[{link.Name}]({link.Url})");
+            }
+        }
 
         return output.ToString().Trim();
     }
 
-    static void ProcessObject(int depth, object? obj, StringBuilder output)
+    static void ProcessObject(int depth, object? obj, StringBuilder output, List<Link> links)
     {
         if (obj is Dictionary<string, object?> dictionary)
         {
-            ProcessDictionary(depth, dictionary, output);
+            ProcessDictionary(depth, dictionary, output, links);
         }
         else if (obj is List<object?> list)
         {
             foreach (var item in list)
             {
-                ProcessObject(depth, item, output);
+                ProcessObject(depth, item, output, links);
             }
         }
     }
 
-    static void ProcessDictionary(int depth, Dictionary<string, object?> dictionary, StringBuilder output)
+    static void ProcessDictionary(int depth, Dictionary<string, object?> dictionary, StringBuilder output, List<Link> links)
     {
         var title = dictionary
             .Where(x => x.Key.StartsWith("titulo-", StringComparison.OrdinalIgnoreCase))
@@ -153,9 +175,17 @@ public static class DictionaryConverter
 
                 output.AppendLine(value.ToString());
             }
+            else if (key == "d_link" && value is Dictionary<string, object?> values &&
+                values.TryGetValue("filename", out var fnObj) &&
+                fnObj is string filename &&
+                values.TryGetValue("uuid", out var uuidObj) &&
+                uuidObj is string uuid)
+            {
+                links.Add(new Link($"https://www.saij.gob.ar/descarga-archivo?guid={uuid}&name={filename}", filename));
+            }
             else
             {
-                ProcessObject(depth, value, output);
+                ProcessObject(depth, value, output, links);
             }
         }
 
