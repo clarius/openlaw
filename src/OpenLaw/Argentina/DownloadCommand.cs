@@ -49,19 +49,15 @@ public class DownloadCommand(IAnsiConsole console, IHttpClientFactory http) : As
                 if (Debugger.IsAttached)
                     options.MaxDegreeOfParallelism = 1;
 
-                await Parallel.ForEachAsync(client.EnumerateJsonAsync(), options, async (doc, cancellation) =>
+                await Parallel.ForEachAsync(client.SearchAsync(), options, async (doc, cancellation) =>
                 {
-                    if (doc["document"]?["metadata"]?["uuid"]?.GetValue<string>() is not string id ||
-                        doc["document"]?["metadata"]?["timestamp"]?.GetValue<long>() is not long timestamp)
-                        return;
-
-                    var file = Path.Combine(settings.Directory, id + ".json");
+                    var file = Path.Combine(settings.Directory, doc.Id + ".json");
                     // Skip if file exists and has the same timestamp
-                    if (File.Exists(file) && await GetJsonTimestampAsync(file) == timestamp)
+                    if (File.Exists(file) && await GetJsonTimestampAsync(file) == doc.Timestamp)
                     {
                         // Ensure we set the last write time to the timestamp for easier checks at conversion time.
                         // when converting files.
-                        File.SetLastWriteTimeUtc(file, DateTimeOffset.FromUnixTimeMilliseconds(timestamp).UtcDateTime);
+                        File.SetLastWriteTimeUtc(file, DateTimeOffset.FromUnixTimeMilliseconds(doc.Timestamp).UtcDateTime);
 
                         // Source json file hasn't changed, so only convert if requested
                         if (settings.Convert)
@@ -72,14 +68,14 @@ public class DownloadCommand(IAnsiConsole console, IHttpClientFactory http) : As
                     }
 
                     // Converting to dictionary performs string multiline formatting and markup removal
-                    var dictionary = doc.Deserialize<Dictionary<string, object?>>(readOptions);
-                    File.WriteAllText(file, JsonSerializer.Serialize(dictionary, writeOptions));
+                    var full = await client.FetchAsync(doc.Id);
+                    File.WriteAllText(file, full.Json);
                     if (settings.Convert)
                         Convert(file, overwrite: true);
 
                     // Ensure we set the last write time to the timestamp for easier check 
                     // when converting files.
-                    File.SetLastWriteTimeUtc(file, DateTimeOffset.FromUnixTimeMilliseconds(timestamp).UtcDateTime);
+                    File.SetLastWriteTimeUtc(file, DateTimeOffset.FromUnixTimeMilliseconds(doc.Timestamp).UtcDateTime);
                 });
             });
 

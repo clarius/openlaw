@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel;
 using System.Diagnostics;
+using Clarius.OpenLaw.Argentina;
 using Spectre.Console;
 using Spectre.Console.Cli;
 
