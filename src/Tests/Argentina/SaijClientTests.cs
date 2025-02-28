@@ -310,6 +310,7 @@ public class SaijClientTests(ITestOutputHelper output)
 
     static async Task WriteAsync(SaijClient client, string id, string path)
     {
+#if DEBUG
         Directory.CreateDirectory(path);
         var json = await client.FetchJsonAsync(id);
         Assert.NotNull(json);
@@ -326,6 +327,9 @@ public class SaijClientTests(ITestOutputHelper output)
 
         await File.WriteAllTextAsync(@$"{path}\{id}.yml", yaml, System.Text.Encoding.UTF8);
 
+        var pdf = new Markdown2Pdf.Markdown2PdfConverter();
+        await pdf.Convert(@$"{path}\{id}.md");
+#endif
     }
 
     public static IEnumerable<object[]> ForJurisdiction(TipoNorma tipo)
