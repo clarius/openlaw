@@ -72,16 +72,18 @@ public class Document
 
     public async Task<string> GetMarkdownAsync(bool includeMetadata = true)
     {
+        var doc = await GetAbstractAsync();
+
         if (markdown != null)
         {
             return includeMetadata ?
                 $"""
                 ---
-                {metadata?.ToFrontMatter()}
+                {doc?.ToFrontMatter()}
                 ---
                 {markdown}
                 <!-- 
-                {(await GetAbstractAsync())?.ToYaml()}
+                {doc?.ToYaml()}
                 -->            
                 """ : markdown;
         }
@@ -89,11 +91,8 @@ public class Document
         if (dictionary == null)
             return string.Empty;
 
-        var doc = await GetAbstractAsync();
         if (doc == null)
             return string.Empty;
-
-        var fm = doc.ToFrontMatter();
 
         markdown = DictionaryConverter.ToMarkdown(dictionary, out var links, renderLinks: false);
         if (string.IsNullOrEmpty(markdown))
@@ -116,7 +115,7 @@ public class Document
         return includeMetadata ?
           $"""
             ---
-            {metadata?.ToFrontMatter()}
+            {doc.ToFrontMatter()}
             ---
             {markdown}
             <!-- 
