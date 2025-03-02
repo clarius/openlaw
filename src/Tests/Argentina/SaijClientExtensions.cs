@@ -15,7 +15,7 @@ public static class SaijClientExtensions
     {
         await foreach (var doc in client.SearchAsync(tipo, jurisdiccion, provincia, skip, take, cancellation))
         {
-            if (await client.FetchJsonAsync(doc.Id) is not { } json)
+            if (await client.FetchJsonAsync(doc.Uuid) is not { } json)
                 continue;
 
             yield return json;

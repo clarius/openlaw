@@ -4,12 +4,12 @@ namespace Clarius.OpenLaw.Argentina;
 
 record SearchResults(int Total, int Skip, int Take, DocResult[] Docs);
 
-record DocResult(string Id, string Abstract);
+record DocResult(string Uuid, string Abstract);
 
-record IdType(string Id, string Type)
+record IdType(string Uuid, string Type)
 {
-    public string HtmlUrl => $"https://www.saij.gob.ar/{Id}";
-    public string JsonUrl => $"https://www.saij.gob.ar/view-document?guid={Id}";
+    public string WebUrl => $"https://www.saij.gob.ar/{Uuid}";
+    public string DataUrl => $"https://www.saij.gob.ar/view-document?guid={Uuid}";
 }
 
 public record Kind(string Code, string Text);
@@ -20,24 +20,30 @@ public record Kind(string Code, string Text);
 public record Source(TipoNorma? Tipo, Jurisdiccion? Jurisdiccion, Provincia? Provincia);
 
 public record DocumentAbstract(
-    string Id, string Title, string Summary,
+    string Uuid,
+    string Title, string Summary,
     ContentType Type, Kind Kind, string Status, string Date,
     string Modified, long Timestamp)
 {
     [JsonIgnore]
     public Source Source { get; init; } = new(null, null, null);
 
-    public string HtmlUrl => $"https://www.saij.gob.ar/{Id}";
-    public string JsonUrl => $"https://www.saij.gob.ar/view-document?guid={Id}";
+    public virtual string WebUrl => $"https://www.saij.gob.ar/{Uuid}";
+    public string DataUrl => $"https://www.saij.gob.ar/view-document?guid={Uuid}";
 };
 
 public record Legislation(
-    string Id, string Ref, string Name, string Title, string Summary,
+    string Id, string Uuid, string Ref,
+    string Name, string Title, string Summary,
     ContentType Type, Kind Kind,
     string Status, string Date,
-    string Modified, long Timestamp, string[] Terms,
+    string Modified, long Timestamp,
+    string[] Terms,
     [property: JsonPropertyName("pub")] Publication? Publication) :
-    DocumentAbstract(Id, Title, Summary, Type, Kind, Status, Date, Modified, Timestamp);
+    DocumentAbstract(Uuid, Title, Summary, Type, Kind, Status, Date, Modified, Timestamp)
+{
+    public override string WebUrl => $"https://www.saij.gob.ar/{Id}";
+}
 
 public record Publication([property: JsonPropertyName("org")] string Organization, string Date);
 
@@ -54,13 +60,24 @@ public static class DocumentExtensions
         {
             { nameof(doc.Date), doc.Date },
         };
-        if (doc is Legislation full && full.Publication != null)
+
+        var full = doc as Legislation;
+        if (full != null)
         {
             fm.Add(nameof(full.Name), full.Name);
-            fm.Add(nameof(full.Publication), full.Publication);
+            if (full.Publication != null)
+                fm.Add(nameof(full.Publication), full.Publication);
         }
-        fm.Add("Web", doc.HtmlUrl);
-        fm.Add("Data", doc.JsonUrl);
+
+        fm.Add(nameof(doc.WebUrl), doc.WebUrl);
+        fm.Add(nameof(doc.DataUrl), doc.DataUrl);
+
+        if (full != null)
+            fm.Add(nameof(full.Id), full.Id);
+
+        fm.Add(nameof(doc.Uuid), doc.Uuid);
+        fm.Add(nameof(doc.Timestamp), doc.Timestamp);
+
         return fm.ToYaml();
     }
 }

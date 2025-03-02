@@ -47,9 +47,6 @@ public class Document
     public string Json { get; }
     public Dictionary<string, object?>? Dictionary => dictionary;
 
-    public string HtmlUrl => $"https://www.saij.gob.ar/{Id}";
-    public string JsonUrl => $"https://www.saij.gob.ar/view-document?guid={Id}";
-
     public async Task<DocumentAbstract?> GetAbstractAsync()
     {
         // We only need to attempt metadata conversion once
@@ -128,5 +125,5 @@ public class Document
             """ : markdown;
     }
 
-    public override string ToString() => $"[{Id}]({HtmlUrl})";
+    public override string ToString() => $"[{Id}](https://www.saij.gob.ar/{Id})";
 }

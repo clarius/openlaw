@@ -4,7 +4,7 @@
     skip: .queryObjectData.offset,
     take: .queryObjectData.pageSize,
     docs: [.searchResults.documentResultList[] | {
-        id: .uuid,
+        uuid: .uuid,
         abstract: .documentAbstract
     }]
 }
