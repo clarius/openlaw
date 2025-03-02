@@ -33,6 +33,8 @@ public class SaijClient(IHttpClientFactory httpFactory, IProgress<ProgressMessag
 
         while (true)
         {
+            cancellation.ThrowIfCancellationRequested();
+
             if (result.Total == 0)
                 break;
 
@@ -46,7 +48,7 @@ public class SaijClient(IHttpClientFactory httpFactory, IProgress<ProgressMessag
                 if (await JQ.ExecuteAsync(item.Abstract, ThisAssembly.Resources.Argentina.SaijIdType.Text) is not { } idType ||
                     Document.JsonOptions.TryDeserialize<IdType>(idType) is not { } id)
                 {
-                    progress.Report(new($"Skipping {skip + count} of {result.Total})", percentage));
+                    progress.Report(new($"Skipping {skip + count} of {result.Total} (unsupported document)", percentage));
                     continue;
                 }
 
@@ -60,7 +62,7 @@ public class SaijClient(IHttpClientFactory httpFactory, IProgress<ProgressMessag
                 jq = await JQ.ExecuteAsync(item.Abstract, query);
                 if (string.IsNullOrEmpty(jq))
                 {
-                    AnsiConsole.MarkupLine($":cross_mark: [dim]{id.Type}[/] [blue][link={id.HtmlUrl}]{id.Id}[/][/] ([blue][link={id.JsonUrl}]JSON[/][/])");
+                    AnsiConsole.MarkupLine($":cross_mark: [dim]{id.Type}[/] [blue][link={id.WebUrl}]{id.Uuid}[/][/] ([blue][link={id.DataUrl}]JSON[/][/])");
 #if DEBUG
                     Debugger.Launch();
                     AnsiConsole.Write(new JsonText(item.Abstract));
@@ -70,7 +72,7 @@ public class SaijClient(IHttpClientFactory httpFactory, IProgress<ProgressMessag
 
                 if (Document.JsonOptions.TryDeserialize<DocumentAbstract>(jq) is not { } doc)
                 {
-                    AnsiConsole.MarkupLine($":cross_mark: [dim]{id.Type}[/] [blue][link={id.HtmlUrl}]{id.Id}[/][/] ([blue][link={id.JsonUrl}]JSON[/][/])");
+                    AnsiConsole.MarkupLine($":cross_mark: [dim]{id.Type}[/] [blue][link={id.WebUrl}]{id.Uuid}[/][/] ([blue][link={id.DataUrl}]JSON[/][/])");
 #if DEBUG
                     Debugger.Launch();
                     AnsiConsole.Write(new JsonText(item.Abstract));
@@ -103,12 +105,34 @@ public class SaijClient(IHttpClientFactory httpFactory, IProgress<ProgressMessag
         }
     }
 
+    /// <summary>
+    /// Retrieves full document content by ID.
+    /// </summary>
+    /// <param name="id">Either the SAIJ identifier or the document UUID.</param>
+    /// <param name="http">Optional http client, defaults to a transient one.</param>
+    /// <returns>The located document.</returns>
+    /// <exception cref="ArgumentException">The document was not found with the given ID.</exception>
+    /// <exception cref="NotSupportedException">The document was found but its content type or data is not supported.</exception>
+    /// <seealso cref="ContentType/>
     public async Task<Document> FetchAsync(string id, HttpClient? http = default)
     {
         var dispose = http == null;
         try
         {
             http ??= httpFactory.CreateClient("saij");
+
+            // Resolve SAIJ ID > UUID if needed
+            if (!id.Contains('-'))
+            {
+                var json = await http.GetStringAsync($"https://www.saij.gob.ar/busqueda?r=(id-infojus%3A{id})&f=Total");
+                if (await JQ.ExecuteAsync(json, ThisAssembly.Resources.Argentina.SaijSearch.Text) is { Length: > 0 } search &&
+                    Document.JsonOptions.TryDeserialize<SearchResults>(search) is { } result &&
+                    result.Total == 1)
+                {
+                    id = result.Docs[0].Uuid;
+                }
+            }
+
             var response = await http.GetAsync("https://www.saij.gob.ar/view-document?guid=" + id);
             if (!response.IsSuccessStatusCode)
                 throw new ArgumentException($"Document not found with ID '{id}.", nameof(id));
@@ -116,18 +140,18 @@ public class SaijClient(IHttpClientFactory httpFactory, IProgress<ProgressMessag
             var doc = await response.Content.ReadAsStringAsync();
             var data = JsonNode.Parse(doc)?["data"]?.GetValue<string>();
             if (string.IsNullOrEmpty(data))
-                throw new ArgumentException($"Invalid document data for '{id}'.");
+                throw new NotSupportedException($"Invalid document data for '{id}'.");
 
             if (await JQ.ExecuteAsync(data, ThisAssembly.Resources.Argentina.SaijIdType.Text) is not { } jq ||
                 Document.JsonOptions.TryDeserialize<IdType>(jq) is not { } idType)
             {
-                throw new ArgumentException($"Invalid document data for ID '{id}'.");
+                throw new NotSupportedException($"Invalid document data for ID '{id}'.");
             }
 
             if (!DisplayValue.TryParse<ContentType>(idType.Type, true, out var contentType))
-                throw new ArgumentException($"Unsupported document content type '{idType.Type}' with ID '{id}'.");
+                throw new NotSupportedException($"Unsupported document content type '{idType.Type}' with ID '{id}'.");
 
-            return new Document(idType.Id, contentType, data);
+            return new Document(idType.Uuid, contentType, data);
         }
         finally
         {

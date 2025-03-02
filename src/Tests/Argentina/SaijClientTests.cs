@@ -115,15 +115,15 @@ public class SaijClientTests(ITestOutputHelper output)
         await foreach (var item in client.SearchAsync())
         {
             total++;
-            if (await client.FetchDocumentAsync(item.Id) is { } doc &&
+            if (await client.FetchDocumentAsync(item.Uuid) is { } doc &&
                 doc.Publication is null)
             {
                 nopub++;
-                var json = await client.FetchJsonAsync(item.Id);
+                var json = await client.FetchJsonAsync(item.Uuid);
                 Assert.NotNull(json);
                 var pub = await JQ.ExecuteAsync(json.ToJsonString(options),
                     ".document.content[\"publicacion-codificada\"]");
-                output.WriteLine($"{item.Id}: {pub}");
+                output.WriteLine($"{item.Uuid}: {pub}");
             }
         }
 
@@ -137,13 +137,13 @@ public class SaijClientTests(ITestOutputHelper output)
         var client = CreateClient(output);
         await foreach (var item in client.SearchAsync())
         {
-            if (await client.FetchJsonAsync(item.Id) is { } doc)
+            if (await client.FetchJsonAsync(item.Uuid) is { } doc)
             {
                 var segments = await JQ.ExecuteAsync(
                     doc.ToJsonString(options),
                     ".document.content.articulo | .. | .segmento? | select(. != null)");
 
-                Assert.True(string.IsNullOrEmpty(segments), $"Expected null for document {item.Id}");
+                Assert.True(string.IsNullOrEmpty(segments), $"Expected null for document {item.Uuid}");
             }
         }
     }
@@ -173,7 +173,7 @@ public class SaijClientTests(ITestOutputHelper output)
 
         await foreach (var doc in client.SearchAsync(TipoNorma.Acordada))
         {
-            var json = await client.FetchJsonAsync(doc.Id);
+            var json = await client.FetchJsonAsync(doc.Uuid);
             Assert.NotNull(json);
             output.WriteLine(json.ToJsonString(options));
             count++;
@@ -217,7 +217,7 @@ public class SaijClientTests(ITestOutputHelper output)
         var count = 0;
         await foreach (var doc in client.SearchAsync())
         {
-            var raw = await client.FetchAsync(doc.Id);
+            var raw = await client.FetchAsync(doc.Uuid);
             Assert.NotNull(raw);
             var json = await JQ.ExecuteAsync(raw.Json, ".document.content.d_link // empty");
             if (string.IsNullOrEmpty(json))
@@ -231,7 +231,7 @@ public class SaijClientTests(ITestOutputHelper output)
             }
 
             File.AppendAllText(@$"..\..\..\Argentina\SaijSamples\links.txt",
-                $"{doc.Id}: {link.filename} {link.uuid}\n",
+                $"{doc.Uuid}: {link.filename} {link.uuid}\n",
                 System.Text.Encoding.UTF8);
 
             count++;
@@ -284,7 +284,7 @@ public class SaijClientTests(ITestOutputHelper output)
         {
             Assert.Equal(tipo, doc.Source.Tipo);
             output.WriteLine(doc.ToYaml());
-            await WriteAsync(client, doc.Id, $@"..\..\..\Argentina\SaijSamples\{tipo}");
+            await WriteAsync(client, doc.Uuid, $@"..\..\..\Argentina\SaijSamples\{tipo}");
             return;
         }
 
@@ -301,11 +301,22 @@ public class SaijClientTests(ITestOutputHelper output)
         {
             Assert.Equal(tipo, doc.Source.Tipo);
             output.WriteLine(doc.ToYaml());
-            await WriteAsync(client, doc.Id, $@"..\..\..\Argentina\SaijSamples\{tipo}\{provincia}");
+            await WriteAsync(client, doc.Uuid, $@"..\..\..\Argentina\SaijSamples\{tipo}\{provincia}");
             return;
         }
 
         Assert.Fail("Did not get at least one document of the specified type");
+    }
+
+    // Ley Bases
+    [Theory]
+    [InlineData("LNS0007682")]
+    [InlineData("123456789-0abc-defg-g28-67000scanyel")]
+    public async Task CanFetchByIdOrUuid(string id)
+    {
+        var client = CreateClient(output);
+        var doc = await client.FetchAsync(id);
+        Assert.NotNull(doc);
     }
 
     static async Task WriteAsync(SaijClient client, string id, string path)
