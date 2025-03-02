@@ -20,29 +20,29 @@ public record Kind(string Code, string Text);
 public record Source(TipoNorma? Tipo, Jurisdiccion? Jurisdiccion, Provincia? Provincia);
 
 public record DocumentAbstract(
-    string Uuid,
+    string Id,
     string Title, string Summary,
     ContentType Type, Kind Kind, string Status, string Date,
-    string Modified, long Timestamp)
+    string Modified, long Timestamp) : IContentInfo
 {
     [JsonIgnore]
     public Source Source { get; init; } = new(null, null, null);
 
-    public virtual string WebUrl => $"https://www.saij.gob.ar/{Uuid}";
-    public string DataUrl => $"https://www.saij.gob.ar/view-document?guid={Uuid}";
+    public virtual string WebUrl => $"https://www.saij.gob.ar/{Id}";
+    public string DataUrl => $"https://www.saij.gob.ar/view-document?guid={Id}";
 };
 
 public record Legislation(
-    string Id, string Uuid, string Ref,
+    string Id, string Alias, string Ref,
     string Name, string Title, string Summary,
     ContentType Type, Kind Kind,
     string Status, string Date,
     string Modified, long Timestamp,
     string[] Terms,
     [property: JsonPropertyName("pub")] Publication? Publication) :
-    DocumentAbstract(Uuid, Title, Summary, Type, Kind, Status, Date, Modified, Timestamp)
+    DocumentAbstract(Id, Title, Summary, Type, Kind, Status, Date, Modified, Timestamp)
 {
-    public override string WebUrl => $"https://www.saij.gob.ar/{Id}";
+    public override string WebUrl => $"https://www.saij.gob.ar/{Alias}";
 }
 
 public record Publication([property: JsonPropertyName("org")] string Organization, string Date);
@@ -73,9 +73,9 @@ public static class DocumentExtensions
         fm.Add(nameof(doc.DataUrl), doc.DataUrl);
 
         if (full != null)
-            fm.Add(nameof(full.Id), full.Id);
+            fm.Add(nameof(full.Alias), full.Alias);
 
-        fm.Add(nameof(doc.Uuid), doc.Uuid);
+        fm.Add(nameof(doc.Id), doc.Id);
         fm.Add(nameof(doc.Timestamp), doc.Timestamp);
 
         return fm.ToYaml();

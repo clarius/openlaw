@@ -86,13 +86,13 @@ public class EnumerateCommand(IAnsiConsole console, IHttpClientFactory http) : A
                     {
                         try
                         {
-                            var full = await client.FetchAsync(doc.Uuid);
+                            var full = await client.FetchAsync(doc.Id);
                             var json = await JQ.ExecuteAsync(full.Json, ".document.content.d_link // empty");
                             if (string.IsNullOrEmpty(json))
                                 return;
 
-                            AnsiConsole.MarkupInterpolated($":link: [blue][link={doc.DataUrl}]{doc.Uuid}[/][/] \r\n[dim]{json}[/]");
-                            await File.AppendAllTextAsync("links.txt", $"[InlineData(\"{doc.Uuid}\")]\r\n", cancellation);
+                            AnsiConsole.MarkupInterpolated($":link: [blue][link={doc.DataUrl}]{doc.Id}[/][/] \r\n[dim]{json}[/]");
+                            await File.AppendAllTextAsync("links.txt", $"[InlineData(\"{doc.Id}\")]\r\n", cancellation);
                         }
                         catch (Exception e)
                         {
