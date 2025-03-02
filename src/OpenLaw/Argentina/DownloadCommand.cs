@@ -51,7 +51,7 @@ public class DownloadCommand(IAnsiConsole console, IHttpClientFactory http) : As
 
                 await Parallel.ForEachAsync(client.SearchAsync(), options, async (doc, cancellation) =>
                 {
-                    var file = Path.Combine(settings.Directory, doc.Uuid + ".json");
+                    var file = Path.Combine(settings.Directory, doc.Id + ".json");
                     // Skip if file exists and has the same timestamp
                     if (File.Exists(file) && await GetJsonTimestampAsync(file) == doc.Timestamp)
                     {
@@ -68,7 +68,7 @@ public class DownloadCommand(IAnsiConsole console, IHttpClientFactory http) : As
                     }
 
                     // Converting to dictionary performs string multiline formatting and markup removal
-                    var full = await client.FetchAsync(doc.Uuid);
+                    var full = await client.FetchAsync(doc.Id);
                     File.WriteAllText(file, full.Json);
                     if (settings.Convert)
                         Convert(file, overwrite: true);

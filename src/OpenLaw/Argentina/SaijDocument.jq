@@ -1,6 +1,6 @@
 .document | {
-    id: (.content["id-infojus"] // .metadata.uuid),
-    uuid: .metadata.uuid,
+    id: .metadata.uuid,
+    alias: (.content["id-infojus"] // .metadata.uuid),
     ref: .content["standard-normativo"],
     name: .content["nombre-coloquial"] | tostring,
     number: (.content["numero-norma"] // .content["numero_norma"] // null), 
