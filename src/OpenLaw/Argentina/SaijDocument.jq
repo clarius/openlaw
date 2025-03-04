@@ -1,12 +1,12 @@
 .document | {
     id: .metadata.uuid,
+    type: .metadata["document-content-type"], 
     alias: (.content["id-infojus"] // .metadata.uuid),
     ref: .content["standard-normativo"],
     name: .content["nombre-coloquial"] | tostring,
     number: (.content["numero-norma"] // .content["numero_norma"] // null), 
     title: (.content["titulo-norma"] // .content["titulo_noticia"] // null),
     summary: (.content.sintesis // ([.content.sumario | .. | select(type == "string")] | join(""))),
-    type: .metadata["document-content-type"], 
     kind: .content["tipo-norma"] | { code: .codigo, text: .texto },
     status: (.content.estado // .content.status),
     date: .content.fecha,

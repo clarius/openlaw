@@ -9,17 +9,17 @@ namespace Clarius.OpenLaw;
 /// </summary>
 public class FileContentRepository : IContentRepository
 {
-    readonly string baseDir;
+    readonly string rootDirectory;
 
-    public FileContentRepository(string baseDir)
+    public FileContentRepository(string rootDirectory)
     {
-        this.baseDir = baseDir;
-        Directory.CreateDirectory(baseDir);
+        this.rootDirectory = rootDirectory;
+        Directory.CreateDirectory(rootDirectory);
     }
 
     public async IAsyncEnumerable<IContentInfo> EnumerateAsync([EnumeratorCancellation] CancellationToken cancellation)
     {
-        foreach (var file in Directory.EnumerateFiles(baseDir, "*.md"))
+        foreach (var file in Directory.EnumerateFiles(rootDirectory, "*.md"))
         {
             cancellation.ThrowIfCancellationRequested();
             using var stream = File.OpenRead(file);
@@ -33,7 +33,7 @@ public class FileContentRepository : IContentRepository
 
     public ValueTask<Stream?> GetContentAsync(string id)
     {
-        var file = Path.Combine(baseDir, id + ".md");
+        var file = Path.Combine(rootDirectory, id + ".md");
         if (!File.Exists(file))
             return ValueTask.FromResult(default(Stream));
 
@@ -42,7 +42,7 @@ public class FileContentRepository : IContentRepository
 
     public ValueTask<long?> GetTimestampAsync(string id)
     {
-        var file = Path.Combine(baseDir, id + ".md");
+        var file = Path.Combine(rootDirectory, id + ".md");
         if (!File.Exists(file))
             return ValueTask.FromResult<long?>(null);
 
@@ -55,7 +55,7 @@ public class FileContentRepository : IContentRepository
 
     public ValueTask<ContentAction> SetContentAsync(string id, long timestamp, Stream content)
     {
-        var file = Path.Combine(baseDir, id + ".md");
+        var file = Path.Combine(rootDirectory, id + ".md");
         var action = ContentAction.Created;
 
         if (File.Exists(file))

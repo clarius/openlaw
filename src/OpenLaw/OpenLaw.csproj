@@ -38,10 +38,9 @@
 
   <ItemGroup>
     <EmbeddedResource Include="Argentina\SaijIdType.jq" />
-    <EmbeddedResource Include="Argentina\SaijAbstract.jq" />
+    <EmbeddedResource Include="Argentina\SearchResult.jq" />
     <EmbeddedResource Include="Argentina\SaijDocument.jq" />
-    <EmbeddedResource Include="Argentina\SaijMetadata.jq" />
-    <EmbeddedResource Include="Argentina\SaijSearch.jq" />
+    <EmbeddedResource Include="Argentina\SearchResults.jq" />
   </ItemGroup>
 
 </Project>

@@ -3,5 +3,5 @@
 public interface IContentInfo
 {
     string Id { get; }
-    long Timestamp { get; }
+    long? Timestamp { get; }
 }

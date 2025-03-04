@@ -5,10 +5,11 @@ namespace Clarius.OpenLaw;
 
 public class ContentInfo(string id, long timestamp) : IContentInfo
 {
-    static readonly Serializer serializer = new();
+    static readonly Serializer serializer = new(new() { IgnoreUnmatchedProperties = true });
 
     public string Id { get; init; } = id;
     public long Timestamp { get; init; } = timestamp;
+    long? IContentInfo.Timestamp => Timestamp;
 
     public static IContentInfo? ReadFrontMatter(Stream stream)
     {
@@ -64,6 +65,6 @@ public class ContentInfo(string id, long timestamp) : IContentInfo
     {
         public required string Id { get; init; }
 
-        public required long Timestamp { get; init; }
+        public required long? Timestamp { get; init; }
     }
 }

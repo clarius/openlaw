@@ -15,7 +15,7 @@ namespace Clarius.OpenLaw.Argentina;
 
 public class SaijClientTests(ITestOutputHelper output)
 {
-    static readonly JsonSerializerOptions options = new(JsonSerializerDefaults.Web)
+    static readonly JsonSerializerOptions writeIndented = new(JsonSerializerDefaults.Web)
     {
         WriteIndented = true
     };
@@ -55,9 +55,9 @@ public class SaijClientTests(ITestOutputHelper output)
         var client = CreateClient(output);
         JsonNode? first = default;
 
-        await foreach (var doc in client.EnumerateJsonAsync())
+        await foreach (var doc in client.SearchAsync())
         {
-            first = doc;
+            first = JsonNode.Parse(doc.Json);
             break;
         }
 
@@ -67,12 +67,12 @@ public class SaijClientTests(ITestOutputHelper output)
         var id = first["document"]?["metadata"]?["uuid"]?.GetValue<string>();
         Assert.NotNull(id);
 
-        await foreach (var doc in client.EnumerateJsonAsync())
+        await foreach (var doc in client.SearchAsync())
         {
-            var id2 = doc["document"]?["metadata"]?["uuid"]?.GetValue<string>();
+            var id2 = doc.Id;
             if (id == id2)
             {
-                second = doc;
+                second = JsonNode.Parse(doc.Json);
                 break;
             }
         }
@@ -115,14 +115,13 @@ public class SaijClientTests(ITestOutputHelper output)
         await foreach (var item in client.SearchAsync())
         {
             total++;
-            if (await client.FetchDocumentAsync(item.Id) is { } doc &&
+            if (await client.LoadAsync(item) is { } doc &&
                 doc.Publication is null)
             {
                 nopub++;
-                var json = await client.FetchJsonAsync(item.Id);
+                var json = doc.Json;
                 Assert.NotNull(json);
-                var pub = await JQ.ExecuteAsync(json.ToJsonString(options),
-                    ".document.content[\"publicacion-codificada\"]");
+                var pub = await JQ.ExecuteAsync(json, ".document.content[\"publicacion-codificada\"]");
                 output.WriteLine($"{item.Id}: {pub}");
             }
         }
@@ -137,10 +136,9 @@ public class SaijClientTests(ITestOutputHelper output)
         var client = CreateClient(output);
         await foreach (var item in client.SearchAsync())
         {
-            if (await client.FetchJsonAsync(item.Id) is { } doc)
+            if (await client.LoadAsync(item) is { } doc)
             {
-                var segments = await JQ.ExecuteAsync(
-                    doc.ToJsonString(options),
+                var segments = await JQ.ExecuteAsync(doc.Json,
                     ".document.content.articulo | .. | .segmento? | select(. != null)");
 
                 Assert.True(string.IsNullOrEmpty(segments), $"Expected null for document {item.Id}");
@@ -154,7 +152,7 @@ public class SaijClientTests(ITestOutputHelper output)
         var client = CreateClient(output);
         var count = 0;
 
-        await foreach (var doc in client.EnumerateJsonAsync())
+        await foreach (var doc in client.SearchAsync())
         {
             count++;
             if (count == 10)
@@ -173,9 +171,9 @@ public class SaijClientTests(ITestOutputHelper output)
 
         await foreach (var doc in client.SearchAsync(TipoNorma.Acordada))
         {
-            var json = await client.FetchJsonAsync(doc.Id);
+            var json = await client.LoadAsync(doc);
             Assert.NotNull(json);
-            output.WriteLine(json.ToJsonString(options));
+            output.WriteLine(json.Json);
             count++;
         }
 
@@ -197,16 +195,17 @@ public class SaijClientTests(ITestOutputHelper output)
     [InlineData("123456789-0abc-430-0000-5202kvorpced")]
     [InlineData("123456789-0abc-104-0000-4202xvorpced")]
     [InlineData("123456789-0abc-defg-g07-67000tcanyel")]
+    [InlineData("123456789-0abc-defg-g81-87000tcanyel")]
     public async Task CanFetchSpecificById(string id)
     {
         var client = CreateClient(output);
 
-        var doc = await client.FetchJsonAsync(id);
+        var doc = await client.LoadAsync(id);
 
         Assert.NotNull(doc);
 
         await File.WriteAllTextAsync(@$"..\..\..\Argentina\SaijSamples\{id}.json",
-            doc.ToJsonString(options),
+            doc.Json,
             System.Text.Encoding.UTF8);
     }
 
@@ -217,7 +216,7 @@ public class SaijClientTests(ITestOutputHelper output)
         var count = 0;
         await foreach (var doc in client.SearchAsync())
         {
-            var raw = await client.FetchAsync(doc.Id);
+            var raw = await client.LoadAsync(doc);
             Assert.NotNull(raw);
             var json = await JQ.ExecuteAsync(raw.Json, ".document.content.d_link // empty");
             if (string.IsNullOrEmpty(json))
@@ -261,13 +260,14 @@ public class SaijClientTests(ITestOutputHelper output)
     public async Task WhenDocHasLinkThenAddsToMarkdown(string id)
     {
         var client = CreateClient(output);
-        var doc = await client.FetchAsync(id);
-        var markdown = await doc.GetMarkdownAsync(true);
+        var doc = await client.LoadAsync(id);
+
+        var markdown = doc.ToMarkdown(true);
 
         Assert.NotNull(markdown);
         Assert.Matches(@"\[.*\]\(.*\)", markdown);
 
-        await WriteAsync(client, id, @$"..\..\..\Argentina\SaijSamples\md");
+        await WriteAsync(client, doc, @$"..\..\..\Argentina\SaijSamples\md");
     }
 
     [Theory]
@@ -282,9 +282,10 @@ public class SaijClientTests(ITestOutputHelper output)
         var client = CreateClient(output);
         await foreach (var doc in client.SearchAsync(tipo, null))
         {
-            Assert.Equal(tipo, doc.Source.Tipo);
-            output.WriteLine(doc.ToYaml());
-            await WriteAsync(client, doc.Id, $@"..\..\..\Argentina\SaijSamples\{tipo}");
+            Assert.Equal(tipo, doc.Query.Tipo);
+
+            var full = await WriteAsync(client, doc, $@"..\..\..\Argentina\SaijSamples\{tipo}");
+            Assert.Equal(doc.Timestamp, full.Timestamp);
             return;
         }
 
@@ -299,9 +300,14 @@ public class SaijClientTests(ITestOutputHelper output)
         var client = CreateClient(output);
         await foreach (var doc in client.SearchAsync(tipo, Jurisdiccion.Provincial, provincia))
         {
-            Assert.Equal(tipo, doc.Source.Tipo);
-            output.WriteLine(doc.ToYaml());
-            await WriteAsync(client, doc.Id, $@"..\..\..\Argentina\SaijSamples\{tipo}\{provincia}");
+            Assert.Equal(tipo, doc.Query.Tipo);
+
+            var full = await WriteAsync(client, doc, $@"..\..\..\Argentina\SaijSamples\{tipo}\{provincia}");
+            // Some documents don't have a timestamp, so we can't compare. We'd need fetching the full doc.
+            // in these cases. Would be slower to sync too.
+            if (doc.Timestamp != null)
+                Assert.Equal(doc.Timestamp, full.Timestamp);
+
             return;
         }
 
@@ -315,32 +321,41 @@ public class SaijClientTests(ITestOutputHelper output)
     public async Task CanFetchByIdOrUuid(string id)
     {
         var client = CreateClient(output);
-        var doc = await client.FetchAsync(id);
+        var doc = await client.LoadAsync(id);
         Assert.NotNull(doc);
     }
 
-    static async Task WriteAsync(SaijClient client, string id, string path)
+    static async Task<Document> WriteAsync(SaijClient client, SearchResult item, string path)
+    {
+        var doc = await WriteAsync(client, await client.LoadAsync(item), path);
+        Assert.NotNull(doc);
+#if DEBUG
+        await File.WriteAllTextAsync(@$"{path}\{item.Id}-idx.json",
+            item.Json,
+            System.Text.Encoding.UTF8);
+#endif
+        return doc;
+    }
+
+    static async Task<Document> WriteAsync(SaijClient client, Document doc, string path)
     {
 #if DEBUG
         Directory.CreateDirectory(path);
-        var json = await client.FetchJsonAsync(id);
-        Assert.NotNull(json);
-        await File.WriteAllTextAsync(@$"{path}\{id}.json", json.ToJsonString(options), System.Text.Encoding.UTF8);
 
-        var raw = await client.FetchAsync(id);
-        Assert.NotNull(raw);
+        await File.WriteAllTextAsync(@$"{path}\{doc.Id}.json", doc.Json, System.Text.Encoding.UTF8);
 
-        var markdown = await raw.GetMarkdownAsync();
+        var markdown = doc.ToMarkdown();
 
-        await File.WriteAllTextAsync(@$"{path}\{id}.md", markdown, System.Text.Encoding.UTF8);
+        await File.WriteAllTextAsync(@$"{path}\{doc.Id}.md", markdown, System.Text.Encoding.UTF8);
 
-        var yaml = DictionaryConverter.ToYaml(raw.Dictionary);
+        var yaml = DictionaryConverter.ToYaml(doc.Data);
 
-        await File.WriteAllTextAsync(@$"{path}\{id}.yml", yaml, System.Text.Encoding.UTF8);
+        await File.WriteAllTextAsync(@$"{path}\{doc.Id}.yml", yaml, System.Text.Encoding.UTF8);
 
         var pdf = new Markdown2Pdf.Markdown2PdfConverter();
-        await pdf.Convert(@$"{path}\{id}.md");
+        await pdf.Convert(@$"{path}\{doc.Id}.md");
 #endif
+        return doc;
     }
 
     public static IEnumerable<object[]> ForJurisdiction(TipoNorma tipo)

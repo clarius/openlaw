@@ -5,6 +5,7 @@ using System.Text.Json;
 using CliWrap;
 using CliWrap.Buffered;
 using Devlooped;
+using NuGet.Packaging.Signing;
 using Spectre.Console;
 using Spectre.Console.Cli;
 
@@ -53,12 +54,9 @@ public class DownloadCommand(IAnsiConsole console, IHttpClientFactory http) : As
                 {
                     var file = Path.Combine(settings.Directory, doc.Id + ".json");
                     // Skip if file exists and has the same timestamp
-                    if (File.Exists(file) && await GetJsonTimestampAsync(file) == doc.Timestamp)
+                    if (File.Exists(file) && await GetJsonTimestampAsync(file) is var timestamp &&
+                        timestamp == doc.Timestamp)
                     {
-                        // Ensure we set the last write time to the timestamp for easier checks at conversion time.
-                        // when converting files.
-                        File.SetLastWriteTimeUtc(file, DateTimeOffset.FromUnixTimeMilliseconds(doc.Timestamp).UtcDateTime);
-
                         // Source json file hasn't changed, so only convert if requested
                         if (settings.Convert)
                             // Don't force conversion if file already exists.
@@ -68,14 +66,10 @@ public class DownloadCommand(IAnsiConsole console, IHttpClientFactory http) : As
                     }
 
                     // Converting to dictionary performs string multiline formatting and markup removal
-                    var full = await client.FetchAsync(doc.Id);
+                    var full = await client.LoadAsync(doc);
                     File.WriteAllText(file, full.Json);
                     if (settings.Convert)
                         Convert(file, overwrite: true);
-
-                    // Ensure we set the last write time to the timestamp for easier check 
-                    // when converting files.
-                    File.SetLastWriteTimeUtc(file, DateTimeOffset.FromUnixTimeMilliseconds(doc.Timestamp).UtcDateTime);
                 });
             });
 
