@@ -12,7 +12,10 @@ public class SaijClient(IHttpClientFactory httpFactory, IProgress<ProgressMessag
 {
     const string UrlFormat = "https://www.saij.gob.ar/busqueda?o={0}&p={1}&f=Total{2}{3}{4}&s=fecha-rango|DESC&v=colapsada";
 
-    public async IAsyncEnumerable<DocumentAbstract> SearchAsync(
+    record SearchResults(int Total, int Skip, int Take, DocResult[] Docs);
+    record DocResult(string Uuid, string Abstract);
+
+    public async IAsyncEnumerable<SearchResult> SearchAsync(
         TipoNorma? tipo = TipoNorma.Ley,
         Jurisdiccion? jurisdiccion = Jurisdiccion.Nacional,
         Provincia? provincia = null,
@@ -24,12 +27,12 @@ public class SaijClient(IHttpClientFactory httpFactory, IProgress<ProgressMessag
         progress.Report(new("Initiating query...", 0));
         var json = await http.GetStringAsync(url, cancellation);
 
-        var jq = await JQ.ExecuteAsync(json, ThisAssembly.Resources.Argentina.SaijSearch.Text);
-        if (Document.JsonOptions.TryDeserialize<SearchResults>(jq) is not { } result)
+        var jq = await JQ.ExecuteAsync(json, ThisAssembly.Resources.Argentina.SearchResults.Text);
+        if (JsonOptions.Default.TryDeserialize<SearchResults>(jq) is not { } result)
             yield break;
 
-        var source = new Source(tipo, jurisdiccion, provincia);
-        var query = ThisAssembly.Resources.Argentina.SaijAbstract.Text;
+        var source = new Search(tipo, jurisdiccion, provincia);
+        var query = ThisAssembly.Resources.Argentina.SearchResult.Text;
 
         while (true)
         {
@@ -46,7 +49,7 @@ public class SaijClient(IHttpClientFactory httpFactory, IProgress<ProgressMessag
 
                 // This is the bare minimum we expect all results to have.
                 if (await JQ.ExecuteAsync(item.Abstract, ThisAssembly.Resources.Argentina.SaijIdType.Text) is not { } idType ||
-                    Document.JsonOptions.TryDeserialize<IdType>(idType) is not { } id)
+                    JsonOptions.Default.TryDeserialize<IdType>(idType) is not { } id)
                 {
                     progress.Report(new($"Skipping {skip + count} of {result.Total} (unsupported document)", percentage));
                     continue;
@@ -70,7 +73,7 @@ public class SaijClient(IHttpClientFactory httpFactory, IProgress<ProgressMessag
                     continue;
                 }
 
-                if (Document.JsonOptions.TryDeserialize<DocumentAbstract>(jq) is not { } doc)
+                if (JsonOptions.Default.TryDeserialize<SearchResult>(jq) is not { } doc)
                 {
                     AnsiConsole.MarkupLine($":cross_mark: [dim]{id.Type}[/] [blue][link={id.WebUrl}]{id.Uuid}[/][/] ([blue][link={id.DataUrl}]JSON[/][/])");
 #if DEBUG
@@ -81,12 +84,13 @@ public class SaijClient(IHttpClientFactory httpFactory, IProgress<ProgressMessag
                 }
 
                 percentage = (skip + count) * 100 / result.Total;
-                progress.Report(new($"Processing {skip + count} of {result.Total}", percentage));
+                progress.Report(new($"Processing {skip + count} of {result.Total} ([blue][link={id.WebUrl}]source[/][/])", percentage));
 
                 yield return doc with
                 {
-                    Source = source,
-                    Summary = StringMarkup.Cleanup(doc.Summary)
+                    Json = item.Abstract,
+                    JQ = jq,
+                    Query = source,
                 };
             }
 
@@ -98,11 +102,30 @@ public class SaijClient(IHttpClientFactory httpFactory, IProgress<ProgressMessag
                 break;
 
             json = await response.Content.ReadAsStringAsync(cancellation);
-            jq = await JQ.ExecuteAsync(json, ThisAssembly.Resources.Argentina.SaijSearch.Text);
-            result = Document.JsonOptions.TryDeserialize<SearchResults>(jq);
+            jq = await JQ.ExecuteAsync(json, ThisAssembly.Resources.Argentina.SearchResults.Text);
+            result = JsonOptions.Default.TryDeserialize<SearchResults>(jq);
             if (result == null)
                 break;
         }
+    }
+
+    /// <summary>
+    /// Loads the document corresponding to a search result.
+    /// </summary>
+    /// <returns>The located document.</returns>
+    /// <exception cref="ArgumentException">The document was not found with the given item ID.</exception>
+    /// <exception cref="NotSupportedException">The document was found but its content type or data is not supported.</exception>
+    /// <seealso cref="ContentType/>
+    public async Task<Document> LoadAsync(SearchResult item)
+    {
+        using var http = httpFactory.CreateClient("saij");
+        var (data, jq, doc) = await ReadDocument(item.Id, http);
+        return doc with
+        {
+            Json = data,
+            JQ = jq,
+            Query = item.Query,
+        };
     }
 
     /// <summary>
@@ -114,50 +137,55 @@ public class SaijClient(IHttpClientFactory httpFactory, IProgress<ProgressMessag
     /// <exception cref="ArgumentException">The document was not found with the given ID.</exception>
     /// <exception cref="NotSupportedException">The document was found but its content type or data is not supported.</exception>
     /// <seealso cref="ContentType/>
-    public async Task<Document> FetchAsync(string id, HttpClient? http = default)
+    public async Task<Document> LoadAsync(string id)
     {
-        var dispose = http == null;
-        try
+        using var http = httpFactory.CreateClient("saij");
+
+        // Resolve SAIJ ID > UUID if needed
+        if (!id.Contains('-'))
         {
-            http ??= httpFactory.CreateClient("saij");
-
-            // Resolve SAIJ ID > UUID if needed
-            if (!id.Contains('-'))
+            var json = await http.GetStringAsync($"https://www.saij.gob.ar/busqueda?r=(id-infojus%3A{id})&f=Total");
+            if (await JQ.ExecuteAsync(json, ThisAssembly.Resources.Argentina.SearchResults.Text) is { Length: > 0 } search &&
+                JsonOptions.Default.TryDeserialize<SearchResults>(search) is { } result &&
+                result.Total == 1)
             {
-                var json = await http.GetStringAsync($"https://www.saij.gob.ar/busqueda?r=(id-infojus%3A{id})&f=Total");
-                if (await JQ.ExecuteAsync(json, ThisAssembly.Resources.Argentina.SaijSearch.Text) is { Length: > 0 } search &&
-                    Document.JsonOptions.TryDeserialize<SearchResults>(search) is { } result &&
-                    result.Total == 1)
-                {
-                    id = result.Docs[0].Uuid;
-                }
+                id = result.Docs[0].Uuid;
             }
-
-            var response = await http.GetAsync("https://www.saij.gob.ar/view-document?guid=" + id);
-            if (!response.IsSuccessStatusCode)
-                throw new ArgumentException($"Document not found with ID '{id}.", nameof(id));
-
-            var doc = await response.Content.ReadAsStringAsync();
-            var data = JsonNode.Parse(doc)?["data"]?.GetValue<string>();
-            if (string.IsNullOrEmpty(data))
-                throw new NotSupportedException($"Invalid document data for '{id}'.");
-
-            if (await JQ.ExecuteAsync(data, ThisAssembly.Resources.Argentina.SaijIdType.Text) is not { } jq ||
-                Document.JsonOptions.TryDeserialize<IdType>(jq) is not { } idType)
-            {
-                throw new NotSupportedException($"Invalid document data for ID '{id}'.");
-            }
-
-            if (!DisplayValue.TryParse<ContentType>(idType.Type, true, out var contentType))
-                throw new NotSupportedException($"Unsupported document content type '{idType.Type}' with ID '{id}'.");
-
-            return new Document(idType.Uuid, contentType, data);
         }
-        finally
+
+        var (data, jq, doc) = await ReadDocument(id, http);
+        return doc with
         {
-            if (dispose)
-                http?.Dispose();
+            JQ = jq,
+            Json = data,
+        };
+    }
+
+    static async Task<(string data, string jq, Document doc)> ReadDocument(string id, HttpClient http)
+    {
+        var response = await http.GetAsync("https://www.saij.gob.ar/view-document?guid=" + id);
+        // Even for invalid document ids, the server returns a 200 status code with empty data.
+        response.EnsureSuccessStatusCode();
+
+        var raw = await response.Content.ReadAsStringAsync();
+        var data = JsonNode.Parse(raw)?["data"]?.GetValue<string>();
+        if (string.IsNullOrEmpty(data))
+            throw new ArgumentException($"Document not found with ID '{id}.", nameof(id));
+
+        if (await JQ.ExecuteAsync(data, ThisAssembly.Resources.Argentina.SaijIdType.Text) is not { } idjq ||
+            JsonOptions.Default.TryDeserialize<IdType>(idjq) is not { } idType)
+        {
+            throw new NotSupportedException($"Invalid document data for ID '{id}'.");
         }
+
+        if (!DisplayValue.TryParse<ContentType>(idType.Type, true, out var contentType))
+            throw new NotSupportedException($"Unsupported document content type '{idType.Type}' with ID '{id}'.");
+
+        if (await JQ.ExecuteAsync(data, ThisAssembly.Resources.Argentina.SaijDocument.Text) is not { } docjq ||
+            JsonOptions.Default.TryDeserialize<Document>(docjq) is not { } doc)
+            throw new NotSupportedException($"Invalid document data for ID '{id}'.");
+
+        return (data, docjq, doc);
     }
 
     static string BuildUrl(TipoNorma? tipo, Jurisdiccion? jurisdiccion, Provincia? provincia, int skip, int take) => string.Format(

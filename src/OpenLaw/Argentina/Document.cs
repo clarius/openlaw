@@ -1,128 +1,39 @@
-﻿using System.Text.Json;
-using System.Text.Json.Serialization;
-using System.Text.Json.Serialization.Metadata;
-using Devlooped;
+﻿using System.Text.Json.Serialization;
 
 namespace Clarius.OpenLaw.Argentina;
 
-public class Document
+public record Document(
+    string Id, string Alias, string Ref,
+    ContentType ContentType, DocumentType DocumentType,
+    string Name, string Title, string Summary,
+    string Status, DateOnly Date,
+    string Modified, long Timestamp,
+    string[] Terms,
+    [property: JsonPropertyName("pub")] Publication? Publication) : IContentInfo, IWebDocument, ISearchDocument
 {
-    static readonly JsonSerializerOptions writerOptions = new(JsonSerializerDefaults.Web)
+    readonly NormalizedWebDocument normalizer = new(Id);
+
+    public string WebUrl => $"https://www.saij.gob.ar/{Alias}";
+
+    [JsonIgnore]
+    public string Json
     {
-        WriteIndented = true
-    };
-
-    public static JsonSerializerOptions JsonOptions { get; } = new(JsonSerializerDefaults.Web)
-    {
-        TypeInfoResolver = new DefaultJsonTypeInfoResolver(),
-        PropertyNamingPolicy = JsonNamingPolicy.CamelCase,
-        PropertyNameCaseInsensitive = true,
-        Converters =
-        {
-            new TipoNormaConverter(),
-            new JsonStringEnumConverter(JsonNamingPolicy.CamelCase),
-            new JsonDictionaryConverter(),
-        },
-        WriteIndented = true,
-        Encoder = System.Text.Encodings.Web.JavaScriptEncoder.UnsafeRelaxedJsonEscaping,
-    };
-
-    bool metadataDone;
-    Dictionary<string, object?>? dictionary;
-    DocumentAbstract? metadata;
-    string? markdown;
-
-    public Document(string id, ContentType type, string json)
-    {
-        Id = id;
-        Type = type;
-
-        // Cleanups and re-serialize to ensure consistent formatting and markup removal.
-        dictionary = JsonSerializer.Deserialize<Dictionary<string, object?>>(json, JsonOptions);
-        Json = JsonSerializer.Serialize(dictionary, writerOptions);
+        get => normalizer.Json;
+        init => normalizer = normalizer with { Json = value };
     }
 
-    public string Id { get; }
-    public ContentType Type { get; }
-    public string Json { get; }
-    public Dictionary<string, object?>? Dictionary => dictionary;
-
-    public async Task<DocumentAbstract?> GetAbstractAsync()
+    [JsonIgnore]
+    public string JQ
     {
-        // We only need to attempt metadata conversion once
-        if (metadataDone)
-            return metadata;
-
-        metadata = JsonOptions.TryDeserialize<Legislation>(
-            await JQ.ExecuteAsync(Json, ThisAssembly.Resources.Argentina.SaijDocument.Text)) ??
-            JsonOptions.TryDeserialize<DocumentAbstract>(
-            await JQ.ExecuteAsync(Json, ThisAssembly.Resources.Argentina.SaijAbstract.Text));
-
-        if (metadata != null)
-        {
-            metadata = metadata with
-            {
-                Summary = StringMarkup.Cleanup(metadata.Summary)
-            };
-        }
-
-        metadataDone = true;
-        return metadata;
+        get => normalizer.JQ;
+        init => normalizer = normalizer with { JQ = value };
     }
 
-    public async Task<string> GetMarkdownAsync(bool includeMetadata = true)
-    {
-        var doc = await GetAbstractAsync();
+    [JsonIgnore]
+    public Dictionary<string, object?> Data => normalizer.Data;
 
-        if (markdown != null)
-        {
-            return includeMetadata ?
-                $"""
-                ---
-                {doc?.ToFrontMatter()}
-                ---
-                {markdown}
-                <!-- 
-                {doc?.ToYaml()}
-                -->            
-                """ : markdown;
-        }
+    [JsonIgnore]
+    public Search Query { get; init; } = Search.Empty;
 
-        if (dictionary == null)
-            return string.Empty;
-
-        if (doc == null)
-            return string.Empty;
-
-        markdown = DictionaryConverter.ToMarkdown(dictionary, out var links, renderLinks: false);
-        if (string.IsNullOrEmpty(markdown))
-        {
-            markdown =
-                $"""
-                # {doc.Title}
-
-                {doc.Summary}
-
-                {DictionaryConverter.ToMarkdown(dictionary, renderLinks: true)}
-                """;
-        }
-        else if (links.Count > 0)
-        {
-            // Re-render to append links at the end of the content
-            markdown = DictionaryConverter.ToMarkdown(dictionary, renderLinks: true);
-        }
-
-        return includeMetadata ?
-          $"""
-            ---
-            {doc.ToFrontMatter()}
-            ---
-            {markdown}
-            <!-- 
-            {(await GetAbstractAsync())?.ToYaml()}
-            -->            
-            """ : markdown;
-    }
-
-    public override string ToString() => $"[{Id}](https://www.saij.gob.ar/{Id})";
+    long? IContentInfo.Timestamp => Timestamp;
 }

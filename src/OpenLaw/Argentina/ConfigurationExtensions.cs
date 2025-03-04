@@ -27,6 +27,7 @@ public static class ConfigurationExtensions
             config.AddBranch("ar", ar =>
             {
                 ar.AddCommand<DownloadCommand>("download");
+                ar.AddCommand<SyncCommand>("sync");
                 ar.AddCommand<EnumerateCommand>("enum").IsHidden();
             });
         });
