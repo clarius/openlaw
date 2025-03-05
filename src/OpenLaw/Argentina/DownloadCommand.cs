@@ -5,7 +5,6 @@ using System.Text.Json;
 using CliWrap;
 using CliWrap.Buffered;
 using Devlooped;
-using NuGet.Packaging.Signing;
 using Spectre.Console;
 using Spectre.Console.Cli;
 
@@ -34,6 +33,7 @@ public class DownloadCommand(IAnsiConsole console, IHttpClientFactory http) : As
                 new TaskDescriptionColumn(),
                 new ProgressBarColumn(),
                 new PercentageColumn(),
+                new RemainingTimeColumn(),
             ])
             .StartAsync(async ctx =>
             {
@@ -41,7 +41,9 @@ public class DownloadCommand(IAnsiConsole console, IHttpClientFactory http) : As
                 var client = new SaijClient(http, new Progress<ProgressMessage>(x =>
                 {
                     task.Description = x.Message;
-                    task.Value(x.Percentage);
+                    task.Value = x.Value;
+                    if (x.Total != task.MaxValue)
+                        task.MaxValue = x.Total;
                 }));
 
                 var tipo = settings.All ? null : "Ley";

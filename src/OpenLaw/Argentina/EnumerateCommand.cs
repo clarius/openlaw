@@ -1,6 +1,6 @@
-﻿using System.ComponentModel;
+﻿using System.Collections.Concurrent;
+using System.ComponentModel;
 using System.Diagnostics;
-using Devlooped;
 using Humanizer;
 using Spectre.Console;
 using Spectre.Console.Cli;
@@ -16,49 +16,65 @@ public class EnumerateCommand(IAnsiConsole console, IHttpClientFactory http) : A
 
         console.MarkupLine($"[dim]Enumerating {settings.Tipo} {settings.Jurisdiccion} {settings.Provincia}[/]");
 
+        var results = new ConcurrentBag<SearchResult>();
+
         await console.Progress()
             .Columns(
             [
                 new TaskDescriptionColumn(),
                 new ProgressBarColumn(),
                 new PercentageColumn(),
+                new RemainingTimeColumn(),
             ])
             .StartAsync(async ctx =>
             {
                 var task = ctx.AddTask("Enumerando...");
                 var client = new SaijClient(http, new Progress<ProgressMessage>(x =>
                 {
-                    task.Description = x.Message;
-                    task.Value(x.Percentage);
+                    if (x.Total != task.MaxValue)
+                        task.MaxValue = x.Total;
                 }));
 
                 var options = new ParallelOptions();
+                var take = 100;
                 if (Debugger.IsAttached)
                     options.MaxDegreeOfParallelism = 1;
+                else
+                    options.MaxDegreeOfParallelism = Environment.ProcessorCount;
 
-                await Parallel.ForEachAsync(client.SearchAsync(settings.Tipo, settings.Jurisdiccion, settings.Provincia), options, async (doc, cancellation) =>
-                {
-                    if (settings.ShowLinks)
+                // Fetch batches in parallel
+                await Parallel.ForEachAsync(
+                    Enumerable.Range(0, options.MaxDegreeOfParallelism),
+                    options,
+                    async (index, cancellationToken) =>
                     {
-                        try
+                        // Starting point for this task
+                        var skip = index * take; 
+                        while (true)
                         {
-                            var full = await client.LoadAsync(doc);
-                            var json = await JQ.ExecuteAsync(full.Json, ".document.content.d_link // empty");
-                            if (string.IsNullOrEmpty(json))
-                                return;
+                            // Fetch a batch
+                            var search = client.SearchAsync(settings.Tipo, settings.Jurisdiccion, settings.Provincia, skip, take, cancellationToken);
+                            var count = 0;
+                            await foreach (var item in search)
+                            {
+                                count++;
+                                results.Add(item);
+                                task.Description = $"Enumerated {results.Count} of {task.MaxValue}";
+                                task.Value = results.Count;
+                                if (count == take)
+                                    break;
+                            }
 
-                            AnsiConsole.MarkupInterpolated($":link: [blue][link={doc.DataUrl()}]{doc.Id}[/][/] \r\n[dim]{json}[/]");
-                            await File.AppendAllTextAsync("links.txt", $"[InlineData(\"{doc.Id}\")]\r\n", cancellation);
+                            if (count == 0) // No more items, stop this task
+                                break;
+
+                            // Move to the next batch
+                            skip += options.MaxDegreeOfParallelism * take;
                         }
-                        catch (Exception e)
-                        {
-                            AnsiConsole.WriteException(e);
-                        }
-                    }
-                });
+                    });
             });
 
-        console.MarkupLine($"[bold green]Sincronización completada en {watch.Elapsed.Humanize()}[/]");
+        console.MarkupLine($"[bold green]Enumeracion de {results.Count} items completada en {watch.Elapsed.Humanize()}[/]");
         return 0;
     }
 

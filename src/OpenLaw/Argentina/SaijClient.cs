@@ -25,14 +25,19 @@ public class SaijClient(IHttpClientFactory httpFactory, IProgress<ProgressMessag
         var url = BuildUrl(tipo, jurisdiccion, provincia, skip, take);
 
         progress.Report(new("Initiating query...", 0));
-        var json = await http.GetStringAsync(url, cancellation);
+        var response = await http.GetAsync(url, cancellation);
+        if (!response.IsSuccessStatusCode)
+            yield break;
 
+        var json = await response.Content.ReadAsStringAsync(cancellation);
         var jq = await JQ.ExecuteAsync(json, ThisAssembly.Resources.Argentina.SearchResults.Text);
         if (JsonOptions.Default.TryDeserialize<SearchResults>(jq) is not { } result)
             yield break;
 
         var source = new Search(tipo, jurisdiccion, provincia);
         var query = ThisAssembly.Resources.Argentina.SearchResult.Text;
+        var total = result.Total;
+        progress.Report(new($"Processing {result.Total} results", skip, total));
 
         while (true)
         {
@@ -41,7 +46,6 @@ public class SaijClient(IHttpClientFactory httpFactory, IProgress<ProgressMessag
             if (result.Total == 0)
                 break;
 
-            var percentage = skip * 100 / result.Total;
             var count = 0;
             foreach (var item in result.Docs)
             {
@@ -51,14 +55,14 @@ public class SaijClient(IHttpClientFactory httpFactory, IProgress<ProgressMessag
                 if (await JQ.ExecuteAsync(item.Abstract, ThisAssembly.Resources.Argentina.SaijIdType.Text) is not { } idType ||
                     JsonOptions.Default.TryDeserialize<IdType>(idType) is not { } id)
                 {
-                    progress.Report(new($"Skipping {skip + count} of {result.Total} (unsupported document)", percentage));
+                    progress.Report(new($"Skipping {skip + count} of {result.Total} (unsupported document)", skip + count, total));
                     continue;
                 }
 
                 // If it's not one of our supported content types, just skip.
                 if (!DisplayValue.TryParse<ContentType>(id.Type, true, out _))
                 {
-                    progress.Report(new($"Skipping {skip + count} of {result.Total} (unspported content type '{id.Type}')", percentage));
+                    progress.Report(new($"Skipping {skip + count} of {result.Total} (unspported content type '{id.Type}')", skip + count, total));
                     continue;
                 }
 
@@ -83,8 +87,7 @@ public class SaijClient(IHttpClientFactory httpFactory, IProgress<ProgressMessag
                     continue;
                 }
 
-                percentage = (skip + count) * 100 / result.Total;
-                progress.Report(new($"Processing {skip + count} of {result.Total} ([blue][link={id.WebUrl}]source[/][/])", percentage));
+                progress.Report(new($"Processing {skip + count} of {result.Total} ([blue][link={id.WebUrl}]source[/][/])", skip + count, total));
 
                 yield return doc with
                 {
@@ -97,7 +100,7 @@ public class SaijClient(IHttpClientFactory httpFactory, IProgress<ProgressMessag
             skip = skip + take;
             url = BuildUrl(tipo, jurisdiccion, provincia, skip, take);
 
-            var response = await http.GetAsync(url, cancellation);
+            response = await http.GetAsync(url, cancellation);
             if (!response.IsSuccessStatusCode)
                 break;
 

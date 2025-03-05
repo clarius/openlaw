@@ -1,3 +1,3 @@
 ﻿namespace Clarius.OpenLaw;
 
-public record ProgressMessage(string Message, double Percentage);
+public record ProgressMessage(string Message, long Value, long Total = 100);

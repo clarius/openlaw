@@ -44,7 +44,7 @@ public class SaijClientTests(ITestOutputHelper output)
             services.BuildServiceProvider().GetRequiredService<IHttpClientFactory>(),
             new Progress<ProgressMessage>(x =>
             {
-                output.WriteLine($"{x.Percentage}% {x.Message}");
+                output.WriteLine($"{x.Value}% {x.Message}");
                 report?.Invoke(x.Message);
             }));
     }
