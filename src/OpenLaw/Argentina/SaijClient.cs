@@ -191,6 +191,10 @@ public class SaijClient(IHttpClientFactory httpFactory, IProgress<ProgressMessag
             JsonOptions.Default.TryDeserialize<Document>(docjq) is not { } doc)
             throw new NotSupportedException($"Invalid document data for ID '{id}'.");
 
+        // Sanitize markup in summary, which is otherwise missing since we're not doing dictionary-based 
+        // deserialization to Document.
+        doc = doc with { Summary = StringMarkup.Cleanup(doc.Summary) };
+
         return (data, docjq, doc);
     }
 
