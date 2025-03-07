@@ -1,4 +1,5 @@
-﻿using System.ComponentModel;
+﻿using System.Collections.Concurrent;
+using System.ComponentModel;
 using System.Diagnostics;
 using System.Text;
 using Humanizer;
@@ -9,12 +10,18 @@ namespace Clarius.OpenLaw.Argentina;
 
 public class SyncCommand(IAnsiConsole console, IHttpClientFactory http) : AsyncCommand<SyncCommand.SyncSettings>
 {
+    // For batched retrieval from search results.
+    const int PageSize = 100;
+
     public override async Task<int> ExecuteAsync(CommandContext context, SyncSettings settings)
     {
         var watch = Stopwatch.StartNew();
         var targetDir = Path.GetFullPath(settings.Directory);
         var query = $"{settings.Tipo} ({settings.Jurisdiccion}{(settings.Provincia == null ? "" : ", " + settings.Provincia)})";
         var target = new FileContentRepository(targetDir);
+
+        long? total = null;
+        var client = new SaijClient(http, new Progress<ProgressMessage>(x => total = x.Total));
 
         await console.Progress()
             .Columns(
@@ -26,62 +33,101 @@ public class SyncCommand(IAnsiConsole console, IHttpClientFactory http) : AsyncC
             ])
             .StartAsync(async ctx =>
             {
-                var task = ctx.AddTask($"Sincronizando  {query} -> {settings.Directory}");
-                var createdTask = ctx.AddTask(":check_mark_button: Created: 0");
-                var updatedTask = ctx.AddTask(":pencil: Updated: 0");
-                var skippedTask = ctx.AddTask(":right_arrow: Skipped: 0");
-                createdTask.IsIndeterminate = updatedTask.IsIndeterminate = skippedTask.IsIndeterminate = true;
+                var results = new ConcurrentQueue<SyncAction>();
+                var options = new ParallelOptions
+                {
+                    MaxDegreeOfParallelism = Debugger.IsAttached ? 1 : Environment.ProcessorCount
+                };
 
+                var loadTask = ctx.AddTask("Cargando normas");
+
+                await Parallel.ForEachAsync(
+                    Enumerable.Range(0, options.MaxDegreeOfParallelism),
+                    options,
+                    async (index, cancellationToken) =>
+                    {
+                        // Starting point for this task
+                        var skip = index * PageSize;
+                        while (true)
+                        {
+                            // Fetch a batch
+                            var search = client.SearchAsync(settings.Tipo, settings.Jurisdiccion, settings.Provincia, skip, PageSize, cancellationToken);
+                            var count = 0;
+                            await foreach (var item in search)
+                            {
+                                count++;
+                                results.Enqueue(new SyncAction(client, item, target, await target.GetTimestampAsync(item.Id)));
+                                loadTask.Description = $"Cargando {results.Count} de {total} normas";
+                                if (count == PageSize)
+                                    break;
+                            }
+
+                            if (count == 0) // No more items, stop this task
+                                break;
+
+                            // Move to the next batch
+                            skip += options.MaxDegreeOfParallelism * PageSize;
+                        }
+                    });
+
+                loadTask.StopTask();
+
+                total = results.Count;
+                var processed = 0;
                 var created = 0;
                 var updated = 0;
                 var skipped = 0;
 
-                var lastProgress = new ProgressMessage("", 0);
-                IProgress<ProgressMessage> progress = new Progress<ProgressMessage>(x =>
-                {
-                    lastProgress = x;
-                    task.Description = x.Message;
-                    task.Value(x.Percentage);
-                });
+                var syncTask = ctx.AddTask($"Sincronizando {total} normas", maxValue: total.Value);
 
-                var client = new SaijClient(http, progress);
-                var options = new ParallelOptions();
-                if (Debugger.IsAttached)
-                    options.MaxDegreeOfParallelism = 1;
-
-                await Parallel.ForEachAsync(client.SearchAsync(settings.Tipo, settings.Jurisdiccion, settings.Provincia), options, async (doc, cancellation) =>
+                void UpdateSync(ContentAction action)
                 {
-                    var action = ContentAction.Skipped;
-                    var timestamp = await target.GetTimestampAsync(doc.Id);
-                    if (timestamp == null || doc.Timestamp == null || doc.Timestamp != timestamp)
-                    {
-                        var content = await client.LoadAsync(doc);
-                        Debug.Assert(content is not null);
-                        // Compare once more since we may have gotten a content timestamp we previously 
-                        // didn't have (some search docs don't have timestamps)
-                        if (content.Timestamp != timestamp)
-                        {
-                            using var markdown = new MemoryStream(Encoding.UTF8.GetBytes(doc.ToMarkdown(true)));
-                            action = await target.SetContentAsync(doc.Id, content.Timestamp, markdown);
-                        }
-                    }
+                    Interlocked.Increment(ref processed);
+                    syncTask.Value = processed;
 
                     switch (action)
                     {
                         case ContentAction.Created:
-                            //createdTask.Increment(1);
-                            createdTask.Description = $":check_mark_button: Created: {created++}";
+                            Interlocked.Increment(ref created);
                             break;
                         case ContentAction.Updated:
-                            //updatedTask.Increment(1);
-                            updatedTask.Description = $":pencil: Updated: {updated++}";
+                            Interlocked.Increment(ref updated);
                             break;
                         case ContentAction.Skipped:
-                            //skippedTask.Increment(1);
-                            skippedTask.Description = $":right_arrow: Skipped: {skipped++}";
+                            Interlocked.Increment(ref skipped);
                             break;
                     }
+
+                    syncTask.Description = $"Sincronizando {processed} de {total} normas (creadas: {created}, actualizadas: {updated}, sin cambios: {skipped})";
+                }
+
+                async IAsyncEnumerable<SyncAction> GetResults()
+                {
+                    while (processed != total)
+                    {
+                        if (results.TryDequeue(out var result))
+                            yield return result;
+                        else
+                            await Task.Delay(100);
+                    }
+                }
+
+                await Parallel.ForEachAsync(GetResults(), options, async (item, cancellation) =>
+                {
+                    var action = await item.ExecuteAsync();
+                    if (action != null)
+                    {
+                        UpdateSync(action.Value);
+                    }
+                    else
+                    {
+                        // Re-enqueue for execution later on again. Note we won't 
+                        // update the stats.
+                        results.Enqueue(item);
+                    }
                 });
+
+                syncTask.StopTask();
             });
 
         console.MarkupLine($"[bold green]Enumeración completada en {watch.Elapsed.Humanize()}[/]");
@@ -94,5 +140,38 @@ public class SyncCommand(IAnsiConsole console, IHttpClientFactory http) : AsyncC
         [Description("Ubicación opcional archivos. Por defecto el directorio actual.")]
         [CommandOption("--dir")]
         public string Directory { get; set; } = ".";
+    }
+
+    class SyncAction(SaijClient client, SearchResult item, IContentRepository targetRepository, long? targetTimestamp)
+    {
+        Document? document;
+
+        public async Task<ContentAction?> ExecuteAsync()
+        {
+            // Try loading the doc only once.
+            try
+            {
+                document ??= await client.LoadAsync(item);
+            }
+            catch (Exception)
+            {
+                return null;
+            }
+
+            if (document.Timestamp != targetTimestamp)
+            {
+                using var markdown = new MemoryStream(Encoding.UTF8.GetBytes(document.ToMarkdown(true)));
+                try
+                {
+                    return await targetRepository.SetContentAsync(item.Id, document.Timestamp, markdown);
+                }
+                catch (Exception)
+                {
+                    return null;
+                }
+            }
+
+            return ContentAction.Skipped;
+        }
     }
 }
