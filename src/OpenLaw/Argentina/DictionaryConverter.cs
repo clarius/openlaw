@@ -1,7 +1,7 @@
-﻿using System.ComponentModel.DataAnnotations;
-using System.Text;
+﻿using System.Text;
 using System.Text.Json;
 using YamlDotNet.Serialization;
+using YamlDotNet.Serialization.NamingConventions;
 
 namespace Clarius.OpenLaw.Argentina;
 
@@ -96,8 +96,10 @@ public static class DictionaryConverter
             return string.Empty;
 
         var serializer = new SerializerBuilder()
+            .WithNamingConvention(PascalCaseNamingConvention.Instance)
             .WithTypeConverter(new YamlDictionaryConverter())
             .WithTypeConverter(new YamlListConverter())
+            .WithTypeConverter(new YamlDateOnlyConverter())
             .Build();
 
         return serializer.Serialize(value).Trim();

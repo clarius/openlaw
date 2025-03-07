@@ -1,10 +1,12 @@
 ﻿using System.Text.Json.Serialization;
+using YamlDotNet.Serialization;
 
 namespace Clarius.OpenLaw.Argentina;
 
 public record Document(
     string Id, string Alias, string Ref,
-    ContentType ContentType, DocumentType DocumentType,
+    [property: JsonPropertyName("type")] ContentType ContentType, 
+    [property: JsonPropertyName("kind")] DocumentType DocumentType,
     string Name, string Title, string Summary,
     string Status, DateOnly Date,
     string Modified, long Timestamp,
@@ -14,25 +16,26 @@ public record Document(
     readonly NormalizedWebDocument normalizer = new(Id);
 
     public string WebUrl => $"https://www.saij.gob.ar/{Alias}";
+    public string DataUrl => $"https://www.saij.gob.ar/view-document?guid={Id}";
 
-    [JsonIgnore]
+    [YamlIgnore, SharpYaml.Serialization.YamlIgnore, JsonIgnore]
     public string Json
     {
         get => normalizer.Json;
         init => normalizer = normalizer with { Json = value };
     }
 
-    [JsonIgnore]
+    [YamlIgnore, SharpYaml.Serialization.YamlIgnore, JsonIgnore]
     public string JQ
     {
         get => normalizer.JQ;
         init => normalizer = normalizer with { JQ = value };
     }
 
-    [JsonIgnore]
+    [YamlIgnore, SharpYaml.Serialization.YamlIgnore, JsonIgnore]
     public Dictionary<string, object?> Data => normalizer.Data;
 
-    [JsonIgnore]
+    [YamlIgnore, SharpYaml.Serialization.YamlIgnore, JsonIgnore]
     public Search Query { get; init; } = Search.Empty;
 
     long? IContentInfo.Timestamp => Timestamp;

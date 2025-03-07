@@ -1,37 +1,37 @@
-﻿using System.Text.Json;
+﻿using System.Text.Json.Serialization;
+using YamlDotNet.Serialization;
 
 namespace Clarius.OpenLaw.Argentina;
 
 public static class DocumentExtensions
 {
+    record FrontMatter(
+        [property: YamlMember(Alias = "Fecha")] string Date,
+        [property: YamlMember(Alias = "Título")] string Name,
+        [property: JsonPropertyName("pub"), YamlMember(Alias = "Publicación")] Publication? Publication,
+        [property: YamlMember(Alias = "Código SAIJ")] string? Alias,
+        string Id, long? Timestamp)
+    {
+        [YamlMember(Alias = "Web")]
+        public string? WebUrl { get; set; }
+        [YamlMember(Alias = "Datos")]
+        public string? DataUrl { get; set; }
+    }
+
+    record Publication(
+        [property: JsonPropertyName("org"), YamlMember(Alias = "Organismo")] string Organization,
+        [property: YamlMember(Alias = "Fecha")] string Date);
+
     public static string ToFrontMatter(this IWebDocument document)
     {
-        var data = JsonSerializer.Deserialize<Dictionary<string, object?>>(document.JQ, JsonOptions.Default);
+        var data = JsonOptions.Default.TryDeserialize<FrontMatter>(document.JQ);
         if (data == null)
             return string.Empty;
 
-        data = new Dictionary<string, object?>(data, StringComparer.OrdinalIgnoreCase);
-        var fm = new Dictionary<string, object?>();
+        data.WebUrl = document.WebUrl;
+        data.DataUrl = document.DataUrl;
 
-        if (data.TryGetValue(nameof(Document.Date), out var date))
-            fm.Add(nameof(Document.Date), date);
-
-        if (data.TryGetValue(nameof(Document.Name), out var name))
-            fm.Add(nameof(Document.Name), name);
-        if (data.TryGetValue("pub", out var publication))
-            fm.Add(nameof(Document.Publication), publication);
-
-        fm.Add(nameof(document.WebUrl), document.WebUrl);
-        fm.Add(nameof(document.DataUrl), document.DataUrl);
-
-        if (data.TryGetValue(nameof(Document.Alias), out var alias))
-            fm.Add(nameof(Document.Alias), alias);
-
-        fm.Add(nameof(document.Id), document.Id);
-        if (data.TryGetValue(nameof(IContentInfo.Timestamp), out var timestamp))
-            fm.Add(nameof(IContentInfo.Timestamp), timestamp);
-
-        return fm.ToYaml();
+        return data.ToYaml();
     }
 
     public static string ToMarkdown(this IWebDocument document, bool includeMetadata = true)
