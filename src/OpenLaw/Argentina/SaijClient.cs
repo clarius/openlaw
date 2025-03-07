@@ -24,7 +24,6 @@ public class SaijClient(IHttpClientFactory httpFactory, IProgress<ProgressMessag
         using var http = httpFactory.CreateClient("saij");
         var url = BuildUrl(tipo, jurisdiccion, provincia, skip, take);
 
-        progress.Report(new("Initiating query...", 0));
         var response = await http.GetAsync(url, cancellation);
         if (!response.IsSuccessStatusCode)
             yield break;
