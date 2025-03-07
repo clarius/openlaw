@@ -15,6 +15,7 @@ public class SaijClient(IHttpClientFactory httpFactory, IProgress<ProgressMessag
     record SearchResults(int Total, int Skip, int Take, DocResult[] Docs);
     record DocResult(string Uuid, string Abstract);
 
+    // TODO: add int top value to stop the search after a certain number of results.
     public async IAsyncEnumerable<SearchResult> SearchAsync(
         TipoNorma? tipo = TipoNorma.Ley,
         Jurisdiccion? jurisdiccion = Jurisdiccion.Nacional,
@@ -97,6 +98,9 @@ public class SaijClient(IHttpClientFactory httpFactory, IProgress<ProgressMessag
             }
 
             skip = skip + take;
+            if (skip > total)
+                break;
+
             url = BuildUrl(tipo, jurisdiccion, provincia, skip, take);
 
             response = await http.GetAsync(url, cancellation);
