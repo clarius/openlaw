@@ -5,7 +5,7 @@ namespace Clarius.OpenLaw.Argentina;
 
 public record Document(
     string Id, string Alias, string Ref,
-    [property: JsonPropertyName("type")] ContentType ContentType, 
+    [property: JsonPropertyName("type")] ContentType ContentType,
     [property: JsonPropertyName("kind")] DocumentType DocumentType,
     string Name, string Title, string Summary,
     string Status, DateOnly Date,

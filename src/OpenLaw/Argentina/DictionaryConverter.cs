@@ -8,7 +8,7 @@ namespace Clarius.OpenLaw.Argentina;
 public static class DictionaryConverter
 {
     static readonly Lock sync = new();
-    
+
     static readonly JsonSerializerOptions options = new()
     {
         Converters = { new JsonDictionaryConverter() },
@@ -107,7 +107,7 @@ public static class DictionaryConverter
         return serializer.Serialize(value).Trim();
     }
 
-    public static Dictionary<string, object?> FromYaml(string yaml) 
+    public static Dictionary<string, object?> FromYaml(string yaml)
         => deserializer.Deserialize<Dictionary<string, object?>>(yaml);
 
     public static string ToMarkdown(this Dictionary<string, object?> dictionary, bool renderLinks = true)

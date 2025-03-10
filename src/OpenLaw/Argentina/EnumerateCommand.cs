@@ -49,7 +49,7 @@ public class EnumerateCommand(IAnsiConsole console, IHttpClientFactory http) : A
                     async (index, cancellationToken) =>
                     {
                         // Starting point for this task
-                        var skip = index * take; 
+                        var skip = index * take;
                         while (true)
                         {
                             // Fetch a batch

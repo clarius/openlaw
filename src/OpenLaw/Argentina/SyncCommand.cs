@@ -150,7 +150,7 @@ public class SyncCommand(IAnsiConsole console, IHttpClientFactory http) : AsyncC
             console.MarkupLine($":cross_mark: [red]{poison.Count}[/] fallas de sincronización en [link={errorsDir}].openlaw/errors[/].");
             foreach (var error in poison)
             {
-                await File.WriteAllTextAsync(Path.Combine(errorsDir, $"{error.Item.Id}.yml"), 
+                await File.WriteAllTextAsync(Path.Combine(errorsDir, $"{error.Item.Id}.yml"),
                     new { error.Attempts, Exception = error.Exception?.ToString(), error.Item }.ToYaml());
             }
         }
@@ -174,7 +174,7 @@ public class SyncCommand(IAnsiConsole console, IHttpClientFactory http) : AsyncC
         public int Attempts { get; private set; }
 
         public Exception? Exception { get; private set; }
-        
+
         public async Task<ContentAction?> ExecuteAsync()
         {
             Exception = null;
