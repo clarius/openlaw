@@ -325,7 +325,7 @@ public class SaijClientTests(ITestOutputHelper output)
         Assert.NotNull(doc);
     }
 
-    [Theory]
+    [LocalTheory]
     [MemberData(nameof(LoadErrorData), 10)]
     public async Task CanLoadFormerErrors(string id)
     {
@@ -339,6 +339,10 @@ public class SaijClientTests(ITestOutputHelper output)
 
     static IEnumerable<string> LoadErrorIds()
     {
+        var dir = new DirectoryInfo("../../../Argentina/SaijSamples/errors").FullName;
+        if (!Directory.Exists(dir))
+            yield break;
+
         foreach (var error in Directory.EnumerateFiles("../../../Argentina/SaijSamples/errors", "*.yml"))
         {
             var yaml = File.ReadAllText(error);
