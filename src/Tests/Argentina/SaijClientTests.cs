@@ -325,6 +325,28 @@ public class SaijClientTests(ITestOutputHelper output)
         Assert.NotNull(doc);
     }
 
+    [Theory]
+    [MemberData(nameof(LoadErrorData), 10)]
+    public async Task CanLoadFormerErrors(string id)
+    {
+        var client = CreateClient(output);
+        var doc = await client.LoadAsync(id);
+        Assert.NotNull(doc);
+        output.WriteLine(doc.Timestamp.ToString());
+    }
+
+    public static TheoryData<string> LoadErrorData(int count) => new TheoryData<string>(LoadErrorIds().Take(count));
+
+    static IEnumerable<string> LoadErrorIds()
+    {
+        foreach (var error in Directory.EnumerateFiles("../../../Argentina/SaijSamples/errors", "*.yml"))
+        {
+            var yaml = File.ReadAllText(error);
+            var data = DictionaryConverter.FromYaml(yaml);
+            yield return (string)((Dictionary<object, object?>)data["Item"]!)["Id"]!;
+        }
+    }
+
     static async Task<Document> WriteAsync(SaijClient client, SearchResult item, string path)
     {
         var doc = await WriteAsync(client, await client.LoadAsync(item), path);

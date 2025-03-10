@@ -6,7 +6,7 @@ using System.Text.Json.Serialization.Metadata;
 using Clarius.OpenLaw.Argentina;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Http.Resilience;
+using PuppeteerSharp;
 using Spectre.Console;
 using Spectre.Console.Cli;
 using static Spectre.Console.AnsiConsole;
@@ -34,7 +34,15 @@ public static class App
                     http.DefaultRequestHeaders.UserAgent.Add(new ProductInfoHeaderValue(ThisAssembly.Info.Product, ThisAssembly.Info.InformationalVersion));
                     if (Debugger.IsAttached)
                         http.Timeout = TimeSpan.FromMinutes(10);
-                }).AddStandardResilienceHandler());
+                }).AddStandardResilienceHandler(options =>
+                {
+                    var retry = options.Retry.ShouldHandle;
+
+                    static bool isFailedSearch(HttpResponseMessage? response)
+                        => response is { IsSuccessStatusCode: false, RequestMessage.RequestUri.PathAndQuery: string path } && path.StartsWith("/busqueda?");
+
+                    options.Retry.ShouldHandle = message => isFailedSearch(message.Outcome.Result) ? ValueTask.FromResult(false) : retry(message);
+                }));
 
         var needsNewLine = false;
         collection.AddSingleton<IProgress<string>>(new Progress<string>(message =>

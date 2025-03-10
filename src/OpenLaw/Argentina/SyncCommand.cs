@@ -3,6 +3,8 @@ using System.ComponentModel;
 using System.Diagnostics;
 using System.Text;
 using Humanizer;
+using Polly;
+using Polly.Timeout;
 using Spectre.Console;
 using Spectre.Console.Cli;
 
@@ -22,6 +24,7 @@ public class SyncCommand(IAnsiConsole console, IHttpClientFactory http) : AsyncC
 
         long? total = null;
         var client = new SaijClient(http, new Progress<ProgressMessage>(x => total = x.Total));
+        var poison = new List<SyncAction>();
 
         await console.Progress()
             .Columns(
@@ -30,6 +33,7 @@ public class SyncCommand(IAnsiConsole console, IHttpClientFactory http) : AsyncC
                 new ProgressBarColumn(),
                 new PercentageColumn(),
                 new RemainingTimeColumn(),
+                new ElapsedTimeColumn(),
             ])
             .StartAsync(async ctx =>
             {
@@ -39,7 +43,7 @@ public class SyncCommand(IAnsiConsole console, IHttpClientFactory http) : AsyncC
                     MaxDegreeOfParallelism = Debugger.IsAttached ? 1 : Environment.ProcessorCount
                 };
 
-                var loadTask = ctx.AddTask("Cargando normas");
+                var loadTask = ctx.AddTask($"Cargando [lime]{query}[/]");
 
                 await Parallel.ForEachAsync(
                     Enumerable.Range(0, options.MaxDegreeOfParallelism),
@@ -57,7 +61,11 @@ public class SyncCommand(IAnsiConsole console, IHttpClientFactory http) : AsyncC
                             {
                                 count++;
                                 results.Enqueue(new SyncAction(client, item, target, await target.GetTimestampAsync(item.Id)));
-                                loadTask.Description = $"Cargando {results.Count} de {total} normas";
+                                loadTask.Description = $"Cargando [lime]{query}[/]: {results.Count} de {total}";
+                                loadTask.Value = results.Count;
+                                if (total.HasValue)
+                                    loadTask.MaxValue(total.Value);
+
                                 if (count == PageSize)
                                     break;
                             }
@@ -78,7 +86,7 @@ public class SyncCommand(IAnsiConsole console, IHttpClientFactory http) : AsyncC
                 var updated = 0;
                 var skipped = 0;
 
-                var syncTask = ctx.AddTask($"Sincronizando {total} normas", maxValue: total.Value);
+                var syncTask = ctx.AddTask($"Sincronizando [lime]{query}[/]: {processed} de {total} ({created}:plus:, {updated}:pencil:, {skipped}:fast_forward_button:)", maxValue: total.Value);
 
                 void UpdateSync(ContentAction action)
                 {
@@ -98,7 +106,7 @@ public class SyncCommand(IAnsiConsole console, IHttpClientFactory http) : AsyncC
                             break;
                     }
 
-                    syncTask.Description = $"Sincronizando {processed} de {total} normas (creadas: {created}, actualizadas: {updated}, sin cambios: {skipped})";
+                    syncTask.Description = $"Sincronizando [lime]{query}[/]: {processed} de {total} ({created}:plus:, {updated}:pencil:, {skipped}:fast_forward_button:)";
                 }
 
                 async IAsyncEnumerable<SyncAction> GetResults()
@@ -119,18 +127,33 @@ public class SyncCommand(IAnsiConsole console, IHttpClientFactory http) : AsyncC
                     {
                         UpdateSync(action.Value);
                     }
-                    else
+                    else if (item.Attempts < 5)
                     {
                         // Re-enqueue for execution later on again. Note we won't 
                         // update the stats.
                         results.Enqueue(item);
+                    }
+                    else
+                    {
+                        poison.Add(item);
                     }
                 });
 
                 syncTask.StopTask();
             });
 
-        console.MarkupLine($"[bold green]Enumeración completada en {watch.Elapsed.Humanize()}[/]");
+        console.MarkupLine($"[bold green]Sincronización completada en {watch.Elapsed.Humanize()}[/]");
+
+        if (poison.Count > 0)
+        {
+            var errorsDir = Directory.CreateDirectory(".openlaw/errors").FullName;
+            console.MarkupLine($":cross_mark: [red]{poison.Count}[/] fallas de sincronización en [link={errorsDir}].openlaw/errors[/].");
+            foreach (var error in poison)
+            {
+                await File.WriteAllTextAsync(Path.Combine(errorsDir, $"{error.Item.Id}.yml"), 
+                    new { error.Attempts, Exception = error.Exception?.ToString(), error.Item }.ToYaml());
+            }
+        }
 
         return 0;
     }
@@ -146,27 +169,55 @@ public class SyncCommand(IAnsiConsole console, IHttpClientFactory http) : AsyncC
     {
         Document? document;
 
+        public SearchResult Item => item;
+
+        public int Attempts { get; private set; }
+
+        public Exception? Exception { get; private set; }
+        
         public async Task<ContentAction?> ExecuteAsync()
         {
+            Exception = null;
+
             // Try loading the doc only once.
             try
             {
                 document ??= await client.LoadAsync(item);
             }
-            catch (Exception)
+            catch (Exception e) when (e is HttpRequestException || e is ExecutionRejectedException)
             {
+                // Don't consider transient exceptions as actual attempts.
+                return null;
+            }
+            catch (Exception e)
+            {
+                Attempts++;
+                Exception = e;
+#if DEBUG
+                Debugger.Launch();
+#endif
                 return null;
             }
 
-            if (document.Timestamp != targetTimestamp)
+            if (targetTimestamp is null || document.Timestamp > targetTimestamp)
             {
                 using var markdown = new MemoryStream(Encoding.UTF8.GetBytes(document.ToMarkdown(true)));
                 try
                 {
                     return await targetRepository.SetContentAsync(item.Id, document.Timestamp, markdown);
                 }
-                catch (Exception)
+                catch (Exception e) when (e is HttpRequestException || e is ExecutionRejectedException)
                 {
+                    // Don't consider transient exceptions as actual attempts.
+                    return null;
+                }
+                catch (Exception e)
+                {
+                    Attempts++;
+                    Exception = e;
+#if DEBUG
+                    Debugger.Launch();
+#endif
                     return null;
                 }
             }

@@ -184,7 +184,7 @@ public class SaijClient(IHttpClientFactory httpFactory, IProgress<ProgressMessag
             throw new NotSupportedException($"Invalid document data for ID '{id}'.");
         }
 
-        if (!DisplayValue.TryParse<ContentType>(idType.Type, true, out var contentType))
+        if (!DisplayValue.TryParse<ContentType>(idType.Type, true, out _))
             throw new NotSupportedException($"Unsupported document content type '{idType.Type}' with ID '{id}'.");
 
         if (await JQ.ExecuteAsync(data, ThisAssembly.Resources.Argentina.SaijDocument.Text) is not { } docjq ||

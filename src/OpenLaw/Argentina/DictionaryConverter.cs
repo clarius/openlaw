@@ -8,10 +8,19 @@ namespace Clarius.OpenLaw.Argentina;
 public static class DictionaryConverter
 {
     static readonly Lock sync = new();
+    
     static readonly JsonSerializerOptions options = new()
     {
         Converters = { new JsonDictionaryConverter() },
     };
+
+    static readonly ISerializer serializer = new SerializerBuilder()
+        .WithTypeConverter(new YamlDictionaryConverter())
+        .WithTypeConverter(new YamlListConverter())
+        .WithTypeConverter(new YamlDateOnlyConverter())
+        .Build();
+
+    static readonly IDeserializer deserializer = new DeserializerBuilder().Build();
 
     public static void Convert(string jsonFile, bool yaml, bool pdf, bool markdown, bool overwrite)
     {
@@ -95,15 +104,11 @@ public static class DictionaryConverter
         if (value is null)
             return string.Empty;
 
-        var serializer = new SerializerBuilder()
-            .WithNamingConvention(PascalCaseNamingConvention.Instance)
-            .WithTypeConverter(new YamlDictionaryConverter())
-            .WithTypeConverter(new YamlListConverter())
-            .WithTypeConverter(new YamlDateOnlyConverter())
-            .Build();
-
         return serializer.Serialize(value).Trim();
     }
+
+    public static Dictionary<string, object?> FromYaml(string yaml) 
+        => deserializer.Deserialize<Dictionary<string, object?>>(yaml);
 
     public static string ToMarkdown(this Dictionary<string, object?> dictionary, bool renderLinks = true)
         => dictionary.ToMarkdown(out _, renderLinks);
