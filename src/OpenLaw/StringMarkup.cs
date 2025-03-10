@@ -15,11 +15,8 @@ public static partial class StringMarkup
     [return: NotNullIfNotNull("value")]
     public static string? Cleanup(string? value)
     {
-        if (value == null)
+        if (string.IsNullOrEmpty(value))
             return null;
-
-        if (value.Length == 0)
-            return value;
 
         // First add proper paragraph breaks
         var paragraphs = value.Replace("\r\n", "\n").Replace("[[p]]", "\n").Replace("[[/p]]", "\n");
