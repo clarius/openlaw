@@ -5,6 +5,7 @@
     <TargetFramework>net9.0</TargetFramework>
     <PackageId>dotnet-openlaw</PackageId>
     <ToolCommandName>openlaw</ToolCommandName>
+    <PackAsTool>true</PackAsTool>
   </PropertyGroup>
 
   <ItemGroup>
