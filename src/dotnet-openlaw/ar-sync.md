@@ -10,4 +10,7 @@ OPTIONS:
     -p, --provincia                   Provincia a sincronizar                   
         --dir                         Ubicación opcional archivos. Por defecto  
                                       el directorio actual                      
+        --changelog                   Escribir un resumen de las operaciones    
+                                      efectuadas en el archivo especificado     
+        --appendlog                   Agregar al log de cambios si ya existe    
 ```
