@@ -86,7 +86,7 @@ public class SyncCommand(IAnsiConsole console, IHttpClientFactory http) : AsyncC
                 var updated = 0;
                 var skipped = 0;
 
-                var syncTask = ctx.AddTask($"Sincronizando [lime]{query}[/]: {processed} de {total} ({created}:plus:, {updated}:pencil:, {skipped}:fast_forward_button:)", maxValue: total.Value);
+                var syncTask = ctx.AddTask($"Sincronizando [lime]{query}[/]: {processed} de {total} ({created}:plus:, {updated}:writing_hand:, {skipped}:check_mark_button:)", maxValue: total.Value);
 
                 void UpdateSync(ContentAction action)
                 {
@@ -106,7 +106,7 @@ public class SyncCommand(IAnsiConsole console, IHttpClientFactory http) : AsyncC
                             break;
                     }
 
-                    syncTask.Description = $"Sincronizando [lime]{query}[/]: {processed} de {total} ({created}:plus:, {updated}:pencil:, {skipped}:fast_forward_button:)";
+                    syncTask.Description = $"Sincronizando [lime]{query}[/]: {processed} de {total} ({created}:plus:, {updated}:writing_hand:, {skipped}:check_mark_button:)";
                 }
 
                 async IAsyncEnumerable<SyncAction> GetResults()
