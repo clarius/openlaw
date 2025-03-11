@@ -68,10 +68,15 @@ public class YamlTests(ITestOutputHelper output)
     }
 
     [Fact]
-    public void OmitsEmptyStrings()
+    public void OmitsEmptyStringsKeepsDefaultEnum()
     {
         var yaml = new TestDocument { Id = "asdf" }.ToYaml();
-        Assert.Equal("Id: asdf", yaml.Trim());
+        Assert.Equal(
+            """
+            Id: asdf
+            ContentType: Legislacion
+            """.ReplaceLineEndings(), yaml.Trim().ReplaceLineEndings());
+
     }
 
     class TestDocument : IWebDocument
@@ -79,6 +84,8 @@ public class YamlTests(ITestOutputHelper output)
         public string Id { get; set; } = "";
 
         public string Json { get; set; } = "";
+
+        public ContentType ContentType { get; set; } = ContentType.Legislacion;
 
         public string JQ { get; set; } = "";
 

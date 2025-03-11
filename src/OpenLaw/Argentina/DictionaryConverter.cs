@@ -18,7 +18,7 @@ public static class DictionaryConverter
         .WithTypeConverter(new YamlDictionaryConverter())
         .WithTypeConverter(new YamlListConverter())
         .WithTypeConverter(new YamlDateOnlyConverter())
-        .ConfigureDefaultValuesHandling(DefaultValuesHandling.OmitNull | DefaultValuesHandling.OmitEmptyCollections | DefaultValuesHandling.OmitDefaults)
+        .ConfigureDefaultValuesHandling(DefaultValuesHandling.OmitNull | DefaultValuesHandling.OmitEmptyCollections)
         .Build();
 
     static readonly IDeserializer deserializer = new DeserializerBuilder().Build();
