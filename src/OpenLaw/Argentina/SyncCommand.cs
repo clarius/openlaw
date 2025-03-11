@@ -129,6 +129,13 @@ public class SyncCommand(IAnsiConsole console, IHttpClientFactory http) : AsyncC
 
                 await Parallel.ForEachAsync(GetResults(), options, async (item, cancellation) =>
                 {
+                    // If item attempts > 2, add an await Task.Delay that is exponential to the attempts. 
+                    if (item.Attempts >= 2)
+                    {
+                        var delay = TimeSpan.FromSeconds(Math.Pow(2, item.Attempts));
+                        await Task.Delay(delay, cancellation);
+                    }
+
                     var action = await item.ExecuteAsync();
                     if (action != null)
                     {
