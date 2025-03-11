@@ -2,9 +2,7 @@
 using System.ComponentModel;
 using System.Diagnostics;
 using System.Text;
-using Humanizer;
 using Polly;
-using Polly.Timeout;
 using Spectre.Console;
 using Spectre.Console.Cli;
 
@@ -25,6 +23,7 @@ public class SyncCommand(IAnsiConsole console, IHttpClientFactory http) : AsyncC
         long? total = null;
         var client = new SaijClient(http, new Progress<ProgressMessage>(x => total = x.Total));
         var poison = new List<SyncAction>();
+        var summary = new SyncSummary(query);
 
         await console.Progress()
             .Columns(
@@ -60,7 +59,14 @@ public class SyncCommand(IAnsiConsole console, IHttpClientFactory http) : AsyncC
                             await foreach (var item in search)
                             {
                                 count++;
+                                if (settings.Top != null && results.Count >= settings.Top)
+                                    return;
+
                                 results.Enqueue(new SyncAction(client, item, target, await target.GetTimestampAsync(item.Id)));
+
+                                if (settings.Top != null && results.Count >= settings.Top)
+                                    return;
+
                                 loadTask.Description = $"Cargando [lime]{query}[/]: {results.Count} de {total}";
                                 loadTask.Value = results.Count;
                                 if (total.HasValue)
@@ -92,6 +98,7 @@ public class SyncCommand(IAnsiConsole console, IHttpClientFactory http) : AsyncC
                 {
                     Interlocked.Increment(ref processed);
                     syncTask.Value = processed;
+                    summary.Add(action);
 
                     switch (action)
                     {
@@ -136,13 +143,16 @@ public class SyncCommand(IAnsiConsole console, IHttpClientFactory http) : AsyncC
                     else
                     {
                         poison.Add(item);
+                        summary.Add(item.Exception);
+                        Interlocked.Increment(ref processed);
                     }
                 });
 
                 syncTask.StopTask();
             });
 
-        console.MarkupLine($"[bold green]Sincronización completada en {watch.Elapsed.Humanize()}[/]");
+        console.MarkupLine($"[bold green]Sincronización completada en {watch.Elapsed.ToMinimalString()}[/]");
+        summary.Stop();
 
         if (poison.Count > 0)
         {
@@ -155,6 +165,22 @@ public class SyncCommand(IAnsiConsole console, IHttpClientFactory http) : AsyncC
             }
         }
 
+        if (settings.ChangeLog is not null)
+        {
+            var changelog = summary.ToMarkdown();
+            if (File.Exists(settings.ChangeLog) && settings.AppendLog)
+            {
+                await File.AppendAllLinesAsync(settings.ChangeLog, [Environment.NewLine]);
+                await File.AppendAllTextAsync(settings.ChangeLog, changelog);
+            }
+            else
+            {
+                if (Path.GetDirectoryName(settings.ChangeLog) is { } dir)
+                    Directory.CreateDirectory(dir);
+                await File.WriteAllTextAsync(settings.ChangeLog, changelog);
+            }
+        }
+
         return 0;
     }
 
@@ -163,6 +189,18 @@ public class SyncCommand(IAnsiConsole console, IHttpClientFactory http) : AsyncC
         [Description("Ubicación opcional archivos. Por defecto el directorio actual.")]
         [CommandOption("--dir")]
         public string Directory { get; set; } = ".";
+
+        [Description("Escribir un resumen de las operaciones efectuadas en el archivo especificado.")]
+        [CommandOption("--changelog")]
+        public string? ChangeLog { get; set; }
+
+        [Description("Agregar al log de cambios si ya existe.")]
+        [CommandOption("--appendlog")]
+        public bool AppendLog { get; set; }
+
+        [DefaultValue(null)]
+        [CommandOption("--top", IsHidden = true)]
+        public int? Top { get; set; } = null;
     }
 
     class SyncAction(SaijClient client, SearchResult item, IContentRepository targetRepository, long? targetTimestamp)
