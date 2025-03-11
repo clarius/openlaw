@@ -67,6 +67,13 @@ public class YamlTests(ITestOutputHelper output)
             """, yaml);
     }
 
+    [Fact]
+    public void OmitsEmptyStrings()
+    {
+        var yaml = new TestDocument { Id = "asdf" }.ToYaml();
+        Assert.Equal("Id: asdf", yaml.Trim());
+    }
+
     class TestDocument : IWebDocument
     {
         public string Id { get; set; } = "";

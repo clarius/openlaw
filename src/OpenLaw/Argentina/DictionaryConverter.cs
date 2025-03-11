@@ -1,7 +1,6 @@
 ﻿using System.Text;
 using System.Text.Json;
 using YamlDotNet.Serialization;
-using YamlDotNet.Serialization.NamingConventions;
 
 namespace Clarius.OpenLaw.Argentina;
 
@@ -14,10 +13,12 @@ public static class DictionaryConverter
         Converters = { new JsonDictionaryConverter() },
     };
 
+
     static readonly ISerializer serializer = new SerializerBuilder()
         .WithTypeConverter(new YamlDictionaryConverter())
         .WithTypeConverter(new YamlListConverter())
         .WithTypeConverter(new YamlDateOnlyConverter())
+        .ConfigureDefaultValuesHandling(DefaultValuesHandling.OmitNull | DefaultValuesHandling.OmitEmptyCollections | DefaultValuesHandling.OmitDefaults)
         .Build();
 
     static readonly IDeserializer deserializer = new DeserializerBuilder().Build();

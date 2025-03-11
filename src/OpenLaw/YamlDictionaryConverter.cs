@@ -23,9 +23,13 @@ public class YamlDictionaryConverter : IYamlTypeConverter
             if (kvp.Value == null)
                 continue;
 
-            emitter.Emit(new Scalar(kvp.Key));
             if (kvp.Value is string str)
             {
+                // Don't emit empty strings, for conciseness.
+                if (str.Length == 0)
+                    continue;
+
+                emitter.Emit(new Scalar(kvp.Key));
                 if (str.Contains('\n'))
                     emitter.Emit(new Scalar(null, null, StringMarkup.Cleanup(str), ScalarStyle.Literal, true, false));
                 else
@@ -33,6 +37,7 @@ public class YamlDictionaryConverter : IYamlTypeConverter
             }
             else
             {
+                emitter.Emit(new Scalar(kvp.Key));
                 serializer.Invoke(kvp.Value);
             }
         }
