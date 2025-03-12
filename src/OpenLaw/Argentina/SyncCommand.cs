@@ -88,32 +88,14 @@ public class SyncCommand(IAnsiConsole console, IHttpClientFactory http) : AsyncC
 
                 total = results.Count;
                 var processed = 0;
-                var created = 0;
-                var updated = 0;
-                var skipped = 0;
-
-                var syncTask = ctx.AddTask($"Sincronizando [lime]{query}[/]: {processed} de {total} ({created}:plus:, {updated}:writing_hand:, {skipped}:check_mark_button:)", maxValue: total.Value);
+                var syncTask = ctx.AddTask($"Sincronizando [lime]{query}[/]: {processed} de {total} ({summary.Created}:plus:, {summary.Updated}:writing_hand:, {summary.Skipped}:check_mark_button:)", maxValue: total.Value);
 
                 void UpdateSync(ContentAction action)
                 {
                     Interlocked.Increment(ref processed);
                     syncTask.Value = processed;
                     summary.Add(action);
-
-                    switch (action)
-                    {
-                        case ContentAction.Created:
-                            Interlocked.Increment(ref created);
-                            break;
-                        case ContentAction.Updated:
-                            Interlocked.Increment(ref updated);
-                            break;
-                        case ContentAction.Skipped:
-                            Interlocked.Increment(ref skipped);
-                            break;
-                    }
-
-                    syncTask.Description = $"Sincronizando [lime]{query}[/]: {processed} de {total} ({created}:plus:, {updated}:writing_hand:, {skipped}:check_mark_button:)";
+                    syncTask.Description = $"Sincronizando [lime]{query}[/]: {processed} de {total} ({summary.Created}:plus:, {summary.Updated}:writing_hand:, {summary.Skipped}:check_mark_button:)";
                 }
 
                 async IAsyncEnumerable<SyncAction> GetResults()
