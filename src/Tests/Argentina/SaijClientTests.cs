@@ -196,6 +196,8 @@ public class SaijClientTests(ITestOutputHelper output)
     [InlineData("123456789-0abc-104-0000-4202xvorpced")]
     [InlineData("123456789-0abc-defg-g07-67000tcanyel")]
     [InlineData("123456789-0abc-defg-g81-87000tcanyel")]
+    [InlineData("123456789-0abc-defg-g29-54000scanyel")]
+    [InlineData("LNS0004592")]
     public async Task CanFetchSpecificById(string id)
     {
         var client = CreateClient(output);
@@ -204,9 +206,7 @@ public class SaijClientTests(ITestOutputHelper output)
 
         Assert.NotNull(doc);
 
-        await File.WriteAllTextAsync(@$"..\..\..\Argentina\SaijSamples\{id}.json",
-            doc.Json,
-            System.Text.Encoding.UTF8);
+        await WriteAsync(client, doc, @$"..\..\..\Argentina\SaijSamples");
     }
 
     [DebuggerFact]
@@ -318,11 +318,18 @@ public class SaijClientTests(ITestOutputHelper output)
     [Theory]
     [InlineData("LNS0007682")]
     [InlineData("123456789-0abc-defg-g28-67000scanyel")]
-    public async Task CanFetchByIdOrUuid(string id)
+    public async Task CanFetchByIdOrUuidAndCheckReferences(string id)
     {
         var client = CreateClient(output);
         var doc = await client.LoadAsync(id);
         Assert.NotNull(doc);
+
+        Assert.NotNull(doc.References);
+        Assert.NotEmpty(doc.References.Repeals.To);
+        Assert.NotEmpty(doc.References.Remarks.To);
+        Assert.NotEmpty(doc.References.Ammends.To);
+
+        await WriteAsync(client, doc, "../../../Argentina/SaijSamples");
     }
 
     // Ley Bases
@@ -393,35 +400,35 @@ public class SaijClientTests(ITestOutputHelper output)
         }
     }
 
-    static async Task<Document> WriteAsync(SaijClient client, SearchResult item, string path)
+    static async Task<Document> WriteAsync(SaijClient client, SearchResult item, string directory)
     {
-        var doc = await WriteAsync(client, await client.LoadAsync(item), path);
+        var doc = await WriteAsync(client, await client.LoadAsync(item), directory);
         Assert.NotNull(doc);
 #if DEBUG
-        await File.WriteAllTextAsync(@$"{path}\{item.Id}-idx.json",
+        await File.WriteAllTextAsync(@$"{directory}\{item.Id}-idx.json",
             item.Json,
             System.Text.Encoding.UTF8);
 #endif
         return doc;
     }
 
-    static async Task<Document> WriteAsync(SaijClient client, Document doc, string path)
+    static async Task<Document> WriteAsync(SaijClient client, Document doc, string directory)
     {
 #if DEBUG
-        Directory.CreateDirectory(path);
+        Directory.CreateDirectory(directory);
 
-        await File.WriteAllTextAsync(@$"{path}\{doc.Id}.json", doc.Json, System.Text.Encoding.UTF8);
+        await File.WriteAllTextAsync(@$"{directory}\{doc.Id}.json", doc.Json, System.Text.Encoding.UTF8);
 
         var markdown = doc.ToMarkdown();
 
-        await File.WriteAllTextAsync(@$"{path}\{doc.Id}.md", markdown, System.Text.Encoding.UTF8);
+        await File.WriteAllTextAsync(@$"{directory}\{doc.Id}.md", markdown, System.Text.Encoding.UTF8);
 
         var yaml = DictionaryConverter.ToYaml(doc.Data);
 
-        await File.WriteAllTextAsync(@$"{path}\{doc.Id}.yml", yaml, System.Text.Encoding.UTF8);
+        await File.WriteAllTextAsync(@$"{directory}\{doc.Id}.yml", yaml, System.Text.Encoding.UTF8);
 
         var pdf = new Markdown2Pdf.Markdown2PdfConverter();
-        await pdf.Convert(@$"{path}\{doc.Id}.md");
+        await pdf.Convert(@$"{directory}\{doc.Id}.md");
 #endif
         return doc;
     }
