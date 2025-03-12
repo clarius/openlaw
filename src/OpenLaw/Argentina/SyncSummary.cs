@@ -6,12 +6,16 @@ public class SyncSummary(string operation)
 {
     readonly HashSet<string> errors = [];
     readonly Stopwatch stopwatch = Stopwatch.StartNew();
+    int created = 0;
+    int updated = 0;
+    int skipped = 0;
+    int failed = 0;
 
     public string Operation { get; } = operation;
-    public int Created { get; private set; }
-    public int Updated { get; private set; }
-    public int Skipped { get; private set; }
-    public int Failed { get; private set; }
+    public int Created => created;
+    public int Updated => updated;
+    public int Skipped => skipped;
+    public int Failed => failed;
 
     public TimeSpan Elapsed => stopwatch.Elapsed;
 
@@ -22,13 +26,13 @@ public class SyncSummary(string operation)
         switch (action)
         {
             case ContentAction.Created:
-                Created++;
+                Interlocked.Increment(ref created);
                 break;
             case ContentAction.Updated:
-                Updated++;
+                Interlocked.Increment(ref updated);
                 break;
             case ContentAction.Skipped:
-                Skipped++;
+                Interlocked.Increment(ref skipped);
                 break;
         }
     }
@@ -38,7 +42,7 @@ public class SyncSummary(string operation)
         if (exception != null)
             errors.Add(exception.Message);
 
-        Failed++;
+        Interlocked.Increment(ref failed);
     }
 
     public void Stop() => stopwatch.Stop();
