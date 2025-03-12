@@ -1,11 +1,14 @@
 ﻿using System.Text;
-using SharpYaml.Serialization;
+using Clarius.OpenLaw.Argentina;
+using YamlDotNet.Serialization;
 
 namespace Clarius.OpenLaw;
 
 public class ContentInfo(string id, long timestamp) : IContentInfo
 {
-    static readonly Serializer serializer = new(new() { IgnoreUnmatchedProperties = true });
+    static readonly IDeserializer serializer = new DeserializerBuilder()
+        .IgnoreUnmatchedProperties()
+        .Build();
 
     public string Id { get; init; } = id;
     public long Timestamp { get; init; } = timestamp;
@@ -41,7 +44,7 @@ public class ContentInfo(string id, long timestamp) : IContentInfo
 
     public string ToFrontMatter(FrontMatter style = FrontMatter.Markdown)
     {
-        var yaml = serializer.Serialize(this);
+        var yaml = this.ToYaml();
 
         return style switch
         {

@@ -11,31 +11,32 @@ public record Document(
     string Status, DateOnly Date,
     string Modified, long Timestamp,
     string[] Terms,
-    [property: JsonPropertyName("pub")] Publication? Publication) : IContentInfo, IWebDocument, ISearchDocument
+    [property: JsonPropertyName("pub")] Publication? Publication,
+    [property: JsonPropertyName("refs")] References? References) : IContentInfo, IWebDocument, ISearchDocument
 {
     readonly NormalizedWebDocument normalizer = new(Id);
 
     public string WebUrl => $"https://www.saij.gob.ar/{Alias}";
     public string DataUrl => $"https://www.saij.gob.ar/view-document?guid={Id}";
 
-    [YamlIgnore, SharpYaml.Serialization.YamlIgnore, JsonIgnore]
+    [YamlIgnore, JsonIgnore]
     public string Json
     {
         get => normalizer.Json;
         init => normalizer = normalizer with { Json = value };
     }
 
-    [YamlIgnore, SharpYaml.Serialization.YamlIgnore, JsonIgnore]
+    [YamlIgnore, JsonIgnore]
     public string JQ
     {
         get => normalizer.JQ;
         init => normalizer = normalizer with { JQ = value };
     }
 
-    [YamlIgnore, SharpYaml.Serialization.YamlIgnore, JsonIgnore]
+    [YamlIgnore, JsonIgnore]
     public Dictionary<string, object?> Data => normalizer.Data;
 
-    [YamlIgnore, SharpYaml.Serialization.YamlIgnore, JsonIgnore]
+    [YamlIgnore, JsonIgnore]
     public Search Query { get; init; } = Search.Empty;
 
     long? IContentInfo.Timestamp => Timestamp;
