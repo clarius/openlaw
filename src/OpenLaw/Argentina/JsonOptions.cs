@@ -26,6 +26,7 @@ public static class JsonOptions
     /// </summary>
     public static JsonSerializerOptions Indented { get; } = new(JsonSerializerDefaults.Web)
     {
-        WriteIndented = true
+        WriteIndented = true,
+        Encoder = System.Text.Encodings.Web.JavaScriptEncoder.UnsafeRelaxedJsonEscaping,
     };
 }
