@@ -325,6 +325,24 @@ public class SaijClientTests(ITestOutputHelper output)
         Assert.NotNull(doc);
     }
 
+    // Ley Bases
+    [Theory]
+    [InlineData("123456789-0abc-defg-g28-67000scanyel")]
+    public async Task CanConvertFromMarkdown(string id)
+    {
+        var client = CreateClient(output);
+        var doc = await client.LoadAsync(id);
+        var markdown = doc.ToMarkdown(true);
+
+        var data = DictionaryConverter.FromMarkdown(markdown);
+
+        Assert.NotNull(data);
+        Assert.Contains("Id", data.Keys);
+        Assert.Contains("Timestamp", data.Keys);
+        Assert.Contains("WebUrl", data.Keys);
+        Assert.Contains("DataUrl", data.Keys);
+    }
+
     [Theory]
     [InlineData(
         """

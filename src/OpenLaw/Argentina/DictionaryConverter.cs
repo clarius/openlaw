@@ -1,10 +1,11 @@
 ﻿using System.Text;
 using System.Text.Json;
+using System.Text.RegularExpressions;
 using YamlDotNet.Serialization;
 
 namespace Clarius.OpenLaw.Argentina;
 
-public static class DictionaryConverter
+public static partial class DictionaryConverter
 {
     static readonly Lock sync = new();
 
@@ -111,6 +112,15 @@ public static class DictionaryConverter
     public static Dictionary<string, object?> FromYaml(string yaml)
         => deserializer.Deserialize<Dictionary<string, object?>>(yaml);
 
+    public static Dictionary<string, object?> FromMarkdown(string markdown)
+    {
+        var yaml = YamlExpr().Match(markdown);
+        if (!yaml.Success)
+            return [];
+
+        return FromYaml(yaml.Groups["front"].Value + yaml.Groups["back"].Value);
+    }
+
     public static string ToMarkdown(this Dictionary<string, object?> dictionary, bool renderLinks = true)
         => dictionary.ToMarkdown(out _, renderLinks);
 
@@ -137,6 +147,9 @@ public static class DictionaryConverter
 
         return output.ToString().Trim();
     }
+
+    [GeneratedRegex("---(?<front>.*?)---.*?\\<!--(?<back>.*?)--\\>", RegexOptions.Singleline)]
+    private static partial Regex YamlExpr();
 
     static void ProcessObject(int depth, object? obj, StringBuilder output, List<Link> links)
     {
