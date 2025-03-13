@@ -8,7 +8,8 @@ public static class DocumentExtensions
     record FrontMatter(
         [property: YamlMember(Alias = "Fecha")] string Date,
         [property: YamlMember(Alias = "Título")] string Name,
-        [property: JsonPropertyName("pub"), YamlMember(Alias = "Publicación")] Publication? Publication)
+        [property: JsonPropertyName("pub"), YamlMember(Alias = "Publicación")] Publication? Publication,
+        [property: YamlMember(Order = int.MaxValue)] string Id)
     {
         [YamlMember(Alias = "SAIJ")]
         public string? WebUrl { get; set; }
