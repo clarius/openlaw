@@ -22,12 +22,33 @@ OPTIONS:
 COMMANDS:
     convert    Convierte archivos JSON a YAML, Markdown y PDF
     format     Normaliza el formato de archivos JSON         
-    ar                                                       
+    sync       Sincroniza contenido de SAIJ                  
 ```
 
 <!-- src/dotnet-openlaw/help.md -->
 
 <!-- include src/dotnet-openlaw/sync.md -->
+```shell
+DESCRIPTION:
+Sincroniza contenido de SAIJ
+
+USAGE:
+    openlaw sync [OPTIONS]
+
+OPTIONS:
+                          DEFAULT                                               
+    -h, --help                        Prints help information                   
+    -t, --tipo            Ley         Tipo de norma a sincronizar               
+    -j, --jurisdiccion    Nacional    Jurisdicción a sincronizar                
+    -p, --provincia                   Provincia a sincronizar                   
+        --dir                         Ubicación opcional archivos. Por defecto  
+                                      el directorio actual                      
+        --changelog                   Escribir un resumen de las operaciones    
+                                      efectuadas en el archivo especificado     
+        --appendlog                   Agregar al log de cambios si ya existe    
+```
+
+<!-- src/dotnet-openlaw/sync.md -->
 
 <!-- include src/dotnet-openlaw/convert.md -->
 ```shell
