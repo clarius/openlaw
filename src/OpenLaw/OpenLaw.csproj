@@ -29,18 +29,10 @@
     <PackageReference Include="ThisAssembly.Resources" Version="2.0.12" PrivateAssets="all" />
     <PackageReference Include="YamlDotNet" Version="16.3.0" />
     <PackageReference Include="Markdown2Pdf" Version="2.2.1" />
-    <!--<PackageReference Include="SharpYaml" Version="2.1.1" />-->
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Include="*.jq" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <EmbeddedResource Include="Argentina\SaijIdType.jq" />
-    <EmbeddedResource Include="Argentina\SearchResult.jq" />
-    <EmbeddedResource Include="Argentina\SaijDocument.jq" />
-    <EmbeddedResource Include="Argentina\SearchResults.jq" />
+    <EmbeddedResource Include="**\*.jq" />
   </ItemGroup>
 
 </Project>

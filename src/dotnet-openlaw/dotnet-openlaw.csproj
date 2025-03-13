@@ -28,8 +28,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <CommandHelp Include="ar download" />
-    <CommandHelp Include="ar sync" />
+    <CommandHelp Include="sync" />
     <CommandHelp Include="convert" />
     <CommandHelp Include="format" />
   </ItemGroup>

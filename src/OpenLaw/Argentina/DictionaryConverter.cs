@@ -148,7 +148,7 @@ public static partial class DictionaryConverter
         return output.ToString().Trim();
     }
 
-    [GeneratedRegex("---(?<front>.*?)---.*?\\<!--(?<back>.*?)--\\>", RegexOptions.Singleline)]
+    [GeneratedRegex("(---(?<front>.*?)---)?.*?(\\<!--(?<back>.*?)--\\>)?", RegexOptions.Singleline)]
     private static partial Regex YamlExpr();
 
     static void ProcessObject(int depth, object? obj, StringBuilder output, List<Link> links)

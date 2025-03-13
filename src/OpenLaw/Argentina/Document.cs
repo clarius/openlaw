@@ -39,5 +39,18 @@ public record Document(
     [YamlIgnore, JsonIgnore]
     public Search Query { get; init; } = Search.Empty;
 
+    /// <summary>
+    /// Parses the document from the given JSON data.
+    /// </summary>
+    /// <exception cref="NotSupportedException">The data cannot be deserialized into <see cref="Document"/></exception>
+    public static async Task<Document> ParseAsync(string json)
+    {
+        if (await Devlooped.JQ.ExecuteAsync(json, ThisAssembly.Resources.Argentina.SaijDocument.Text) is not { } docjq ||
+            JsonOptions.Default.TryDeserialize<Document>(docjq) is not { } doc)
+            throw new NotSupportedException($"Invalid document data'.");
+
+        return doc with { JQ = docjq, Json = json };
+    }
+
     long? IContentInfo.Timestamp => Timestamp;
 }

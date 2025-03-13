@@ -59,11 +59,7 @@ public class YamlTests(ITestOutputHelper output)
             Publicación:
               Organismo: Boletín Oficial
               Fecha: 2024-12-27
-            Código SAIJ: X20240000401
-            Id: 123456789-0abc-104-0000-4202xvorpced
-            Timestamp: 1735561866
-            Web: https://www.saij.gob.ar/123456789-0abc-104-0000-4202xvorpced
-            Datos: https://www.saij.gob.ar/view-document?guid=123456789-0abc-104-0000-4202xvorpced
+            SAIJ: https://www.saij.gob.ar/123456789-0abc-104-0000-4202xvorpced
             """, yaml);
     }
 

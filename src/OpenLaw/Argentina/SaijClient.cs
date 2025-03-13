@@ -125,11 +125,9 @@ public class SaijClient(IHttpClientFactory httpFactory, IProgress<ProgressMessag
     public async Task<Document> LoadAsync(SearchResult item)
     {
         using var http = httpFactory.CreateClient("saij");
-        var (data, jq, doc) = await ReadDocument(item.Id, http);
+        var doc = await ReadDocument(item.Id, http);
         return doc with
         {
-            Json = data,
-            JQ = jq,
             Query = item.Query,
         };
     }
@@ -159,15 +157,10 @@ public class SaijClient(IHttpClientFactory httpFactory, IProgress<ProgressMessag
             }
         }
 
-        var (data, jq, doc) = await ReadDocument(id, http);
-        return doc with
-        {
-            JQ = jq,
-            Json = data,
-        };
+        return await ReadDocument(id, http);
     }
 
-    static async Task<(string data, string jq, Document doc)> ReadDocument(string id, HttpClient http)
+    static async Task<Document> ReadDocument(string id, HttpClient http)
     {
         var response = await http.GetAsync("https://www.saij.gob.ar/view-document?guid=" + id);
         // Even for invalid document ids, the server returns a 200 status code with empty data.
@@ -187,16 +180,12 @@ public class SaijClient(IHttpClientFactory httpFactory, IProgress<ProgressMessag
         if (!DisplayValue.TryParse<ContentType>(idType.Type, true, out _))
             throw new NotSupportedException($"Unsupported document content type '{idType.Type}' with ID '{id}'.");
 
-
-        if (await JQ.ExecuteAsync(data, ThisAssembly.Resources.Argentina.SaijDocument.Text) is not { } docjq ||
-            JsonOptions.Default.TryDeserialize<Document>(docjq) is not { } doc)
-            throw new NotSupportedException($"Invalid document data for ID '{id}'.");
+        var doc = await Document.ParseAsync(data);
 
         // Sanitize markup in summary, which is otherwise missing since we're not doing dictionary-based 
-        // deserialization to Document.
-        doc = doc with { Summary = StringMarkup.Cleanup(doc.Summary) };
-
-        return (data, docjq, doc);
+        // deserialization to Document. This is only needed because we're loading from original web source.
+        // Document.ParseAsync does not do this.
+        return doc with { Summary = StringMarkup.Cleanup(doc.Summary) };
     }
 
     static string BuildUrl(TipoNorma? tipo, Jurisdiccion? jurisdiccion, Provincia? provincia, int skip, int take) => string.Format(

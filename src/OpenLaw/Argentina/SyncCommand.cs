@@ -8,6 +8,7 @@ using Spectre.Console.Cli;
 
 namespace Clarius.OpenLaw.Argentina;
 
+[Description("Sincroniza contenido de SAIJ")]
 public class SyncCommand(IAnsiConsole console, IHttpClientFactory http) : AsyncCommand<SyncCommand.SyncSettings>
 {
     // For batched retrieval from search results.
@@ -18,7 +19,7 @@ public class SyncCommand(IAnsiConsole console, IHttpClientFactory http) : AsyncC
         var watch = Stopwatch.StartNew();
         var targetDir = Path.GetFullPath(settings.Directory);
         var query = $"{settings.Tipo} ({settings.Jurisdiccion}{(settings.Provincia == null ? "" : ", " + settings.Provincia)})";
-        var target = new FileContentRepository(targetDir);
+        var target = new FileDocumentRepository(targetDir);
 
         long? total = null;
         var client = new SaijClient(http, new Progress<ProgressMessage>(x => total = x.Total));
@@ -62,7 +63,8 @@ public class SyncCommand(IAnsiConsole console, IHttpClientFactory http) : AsyncC
                                 if (settings.Top != null && results.Count >= settings.Top)
                                     return;
 
-                                results.Enqueue(new SyncAction(client, item, target, await target.GetTimestampAsync(item.Id)));
+                                results.Enqueue(new SyncAction(client, item, target,
+                                   await target.GetTimestampAsync(item.Id), settings.Force));
 
                                 if (settings.Top != null && results.Count >= settings.Top)
                                     return;
@@ -190,9 +192,13 @@ public class SyncCommand(IAnsiConsole console, IHttpClientFactory http) : AsyncC
         [DefaultValue(null)]
         [CommandOption("--top", IsHidden = true)]
         public int? Top { get; set; } = null;
+
+        [Description("Forzar actualizacion de documentos.")]
+        [CommandOption("--force", IsHidden = true)]
+        public bool Force { get; set; }
     }
 
-    class SyncAction(SaijClient client, SearchResult item, IContentRepository targetRepository, long? targetTimestamp)
+    class SyncAction(SaijClient client, SearchResult item, FileDocumentRepository targetRepository, long? targetTimestamp, bool forceUpdate)
     {
         Document? document;
 
@@ -226,12 +232,13 @@ public class SyncCommand(IAnsiConsole console, IHttpClientFactory http) : AsyncC
                 return null;
             }
 
-            if (targetTimestamp is null || document.Timestamp > targetTimestamp)
+            if (forceUpdate || targetTimestamp is null || document.Timestamp > targetTimestamp)
             {
                 using var markdown = new MemoryStream(Encoding.UTF8.GetBytes(document.ToMarkdown(true)));
                 try
                 {
-                    return await targetRepository.SetContentAsync(item.Id, document.Timestamp, markdown);
+                    // \o/: Force update by passing an impossible timestamp for our new doc.
+                    return await targetRepository.SetDocumentAsync(document);
                 }
                 catch (Exception e) when (e is HttpRequestException || e is ExecutionRejectedException)
                 {

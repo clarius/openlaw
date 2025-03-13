@@ -1,5 +1,4 @@
-﻿using DotNetConfig;
-using Microsoft.Extensions.DependencyInjection;
+﻿using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Http.Resilience;
 using Spectre.Console.Cli;
 
@@ -24,12 +23,15 @@ public static class ConfigurationExtensions
     {
         app.Configure(config =>
         {
-            config.AddBranch("ar", ar =>
-            {
-                ar.AddCommand<DownloadCommand>("download");
-                ar.AddCommand<SyncCommand>("sync");
-                ar.AddCommand<EnumerateCommand>("enum").IsHidden();
-            });
+            config.AddCommand<SyncCommand>("sync");
+            config.AddCommand<EnumerateCommand>("enum").IsHidden();
+
+            //config.AddBranch("ar", ar =>
+            //{
+            //    ar.AddCommand<DownloadCommand>("download");
+            //    ar.AddCommand<SyncCommand>("sync");
+            //    ar.AddCommand<EnumerateCommand>("enum").IsHidden();
+            //});
         });
 
         return app;
