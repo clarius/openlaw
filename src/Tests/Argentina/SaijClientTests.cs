@@ -344,34 +344,7 @@ public class SaijClientTests(ITestOutputHelper output)
         var data = DictionaryConverter.FromMarkdown(markdown);
 
         Assert.NotNull(data);
-        Assert.Contains("Id", data.Keys);
-        Assert.Contains("Timestamp", data.Keys);
-        Assert.Contains("WebUrl", data.Keys);
-        Assert.Contains("DataUrl", data.Keys);
-    }
-
-    [Theory]
-    [InlineData(
-        """
-        {
-          "id": "123456789-0abc-442-0000-7102soterced",
-          "contentType": "legislacion",
-          "documentType": {
-            "code": "DEC",
-            "text": "Decreto"
-          },
-          "date": "2017-04-07",
-          "status": "Vigente, de alcance general",
-          "timestamp": null
-        }        
-        """)]
-    public async Task SkipsTrueFailure(string jq)
-    {
-        var client = CreateClient(output);
-        var item = JsonOptions.Default.TryDeserialize<SearchResult>(jq);
-        Assert.NotNull(item);
-        var doc = await client.LoadAsync(item);
-        Assert.NotNull(doc);
+        Assert.Contains("SAIJ", data.Keys);
     }
 
     [LocalTheory]

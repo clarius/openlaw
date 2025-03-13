@@ -8,5 +8,5 @@ OPTIONS:
 COMMANDS:
     convert    Convierte archivos JSON a YAML, Markdown y PDF
     format     Normaliza el formato de archivos JSON         
-    ar                                                       
+    sync       Sincroniza contenido de SAIJ                  
 ```

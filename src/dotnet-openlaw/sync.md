@@ -1,6 +1,9 @@
 ﻿```shell
+DESCRIPTION:
+Sincroniza contenido de SAIJ
+
 USAGE:
-    openlaw ar sync [OPTIONS]
+    openlaw sync [OPTIONS]
 
 OPTIONS:
                           DEFAULT                                               

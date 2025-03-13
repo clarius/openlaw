@@ -8,14 +8,10 @@ public static class DocumentExtensions
     record FrontMatter(
         [property: YamlMember(Alias = "Fecha")] string Date,
         [property: YamlMember(Alias = "Título")] string Name,
-        [property: JsonPropertyName("pub"), YamlMember(Alias = "Publicación")] Publication? Publication,
-        [property: YamlMember(Alias = "Código SAIJ")] string? Alias,
-        string Id, long? Timestamp)
+        [property: JsonPropertyName("pub"), YamlMember(Alias = "Publicación")] Publication? Publication)
     {
-        [YamlMember(Alias = "Web")]
+        [YamlMember(Alias = "SAIJ")]
         public string? WebUrl { get; set; }
-        [YamlMember(Alias = "Datos")]
-        public string? DataUrl { get; set; }
     }
 
     record Publication(
@@ -29,7 +25,6 @@ public static class DocumentExtensions
             return string.Empty;
 
         data.WebUrl = document.WebUrl;
-        data.DataUrl = document.DataUrl;
 
         return data.ToYaml();
     }
@@ -60,9 +55,6 @@ public static class DocumentExtensions
             {document.ToFrontMatter()}
             ---
             {markdown}
-            <!-- 
-            {document.ToYaml()}
-            -->            
             """ : markdown;
     }
 }
