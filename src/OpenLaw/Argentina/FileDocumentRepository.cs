@@ -1,4 +1,6 @@
-﻿namespace Clarius.OpenLaw.Argentina;
+﻿using System.Runtime.CompilerServices;
+
+namespace Clarius.OpenLaw.Argentina;
 
 public class FileDocumentRepository
 {
@@ -9,6 +11,12 @@ public class FileDocumentRepository
         this.rootDirectory = rootDirectory;
         Directory.CreateDirectory(rootDirectory);
         Directory.CreateDirectory(Path.Combine(rootDirectory, "data"));
+    }
+
+    public async IAsyncEnumerable<Document> EnumerateAsync([EnumeratorCancellation] CancellationToken cancellation = default)
+    {
+        foreach (var file in Directory.EnumerateFiles(Path.Combine(rootDirectory, "data"), "*.json"))
+            yield return await Document.ParseAsync(File.ReadAllText(file));
     }
 
     public async ValueTask<Document?> GetDocumentAsync(string id)
