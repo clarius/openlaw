@@ -3,6 +3,9 @@
   <PropertyGroup>
     <TargetFramework>net9.0</TargetFramework>
     <EmbeddedResourceStringExtensions>.jq;$(EmbeddedResourceStringExtensions)</EmbeddedResourceStringExtensions>
+    <PackageId>Clarius.OpenLaw</PackageId>
+    <EmitCompilerGeneratedFiles>true</EmitCompilerGeneratedFiles>
+    <ThisAssemblyNamespace>$(RootNamespace)</ThisAssemblyNamespace>
   </PropertyGroup>
 
   <ItemGroup>
