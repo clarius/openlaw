@@ -52,7 +52,7 @@ public class SyncSummary(string operation)
         var report = $"{Operation}: ";
 
         if (Created > 0) report += $":heavy_plus_sign: {Created} ";
-        if (Updated > 0) report += $":pencil2: {Updated} ";
+        if (Updated > 0) report += $":pencil: {Updated} ";
         if (Skipped > 0) report += $":white_check_mark: {Skipped} ";
         if (Failed > 0) report += $":x: {Failed} ";
 
