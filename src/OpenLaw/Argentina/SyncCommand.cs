@@ -55,7 +55,7 @@ public class SyncCommand(IAnsiConsole console, IHttpClientFactory http) : AsyncC
                         while (true)
                         {
                             // Fetch a batch
-                            var search = client.SearchAsync(settings.Tipo, settings.Jurisdiccion, settings.Provincia, skip, PageSize, cancellationToken);
+                            var search = client.SearchAsync(settings.Tipo, settings.Jurisdiccion, settings.Provincia, settings.Filters, skip, PageSize, cancellationToken);
                             var count = 0;
                             await foreach (var item in search)
                             {

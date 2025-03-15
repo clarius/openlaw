@@ -53,7 +53,7 @@ public class EnumerateCommand(IAnsiConsole console, IHttpClientFactory http) : A
                         while (true)
                         {
                             // Fetch a batch
-                            var search = client.SearchAsync(settings.Tipo, settings.Jurisdiccion, settings.Provincia, skip, take, cancellationToken);
+                            var search = client.SearchAsync(settings.Tipo, settings.Jurisdiccion, settings.Provincia, settings.Filters, skip, take, cancellationToken);
                             var count = 0;
                             await foreach (var item in search)
                             {

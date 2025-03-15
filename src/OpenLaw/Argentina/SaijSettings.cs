@@ -6,22 +6,30 @@ namespace Clarius.OpenLaw.Argentina;
 
 public class ClientSettings : CommandSettings
 {
-    [Description("Tipo de norma a sincronizar.")]
+    [Description("Tipo de norma a sincronizar")]
     [CommandOption("-t|--tipo")]
     [DefaultValue(TipoNorma.Ley)]
     public TipoNorma? Tipo { get; set; } = TipoNorma.Ley;
 
-    [Description("Jurisdicción a sincronizar.")]
+    [Description("Jurisdicción a sincronizar")]
     [CommandOption("-j|--jurisdiccion")]
     [DefaultValue(Argentina.Jurisdiccion.Nacional)]
     public Jurisdiccion? Jurisdiccion { get; set; } = Argentina.Jurisdiccion.Nacional;
 
-    [Description("Provincia a sincronizar.")]
+    [Description("Provincia a sincronizar")]
     [CommandOption("-p|--provincia")]
     [DefaultValue(null)]
     public Provincia? Provincia { get; set; }
 
-    [Description("Enumerar todo, sin filtros.")]
+    [Description("Filtros avanzados a aplicar (KEY=VALUE)")]
+    [CommandOption("-f|--filtro")]
+    public Dictionary<string, string> Filters { get; set; } = [];
+
+    [Description("Mostrar solo leyes/decretos vigentes")]
+    [CommandOption("--vigentes")]
+    public bool Vigentes { get; set; }
+
+    [Description("Enumerar todo, sin filtros")]
     [CommandOption("--all", IsHidden = true)]
     public bool All { get; set; }
 
@@ -39,6 +47,9 @@ public class ClientSettings : CommandSettings
 
         if (Jurisdiccion != Argentina.Jurisdiccion.Provincial && Provincia != null)
             return ValidationResult.Error("No se puede especificar una provincia para la jurisdicción no provincial.");
+
+        if (Vigentes)
+            Filters.AddFilter(KnownFilters.EstadoDeVigencia.VigenteDeAlcanceGeneral);
 
         return base.Validate();
     }
