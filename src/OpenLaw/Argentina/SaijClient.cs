@@ -19,11 +19,11 @@ public class SaijClient(IHttpClientFactory httpFactory, IProgress<ProgressMessag
     public async IAsyncEnumerable<SearchResult> SearchAsync(
         TipoNorma? tipo = TipoNorma.Ley,
         Jurisdiccion? jurisdiccion = Jurisdiccion.Nacional,
-        Provincia? provincia = null,
+        Provincia? provincia = null, IDictionary<string, string>? filters = null,
         int skip = 0, int take = 25, [EnumeratorCancellation] CancellationToken cancellation = default)
     {
         using var http = httpFactory.CreateClient("saij");
-        var url = BuildUrl(tipo, jurisdiccion, provincia, skip, take);
+        var url = BuildUrl(tipo, jurisdiccion, provincia, filters, skip, take);
 
         var response = await http.GetAsync(url, cancellation);
         if (!response.IsSuccessStatusCode)
@@ -101,7 +101,7 @@ public class SaijClient(IHttpClientFactory httpFactory, IProgress<ProgressMessag
             if (skip > total)
                 break;
 
-            url = BuildUrl(tipo, jurisdiccion, provincia, skip, take);
+            url = BuildUrl(tipo, jurisdiccion, provincia, filters, skip, take);
 
             response = await http.GetAsync(url, cancellation);
             if (!response.IsSuccessStatusCode)
@@ -188,10 +188,10 @@ public class SaijClient(IHttpClientFactory httpFactory, IProgress<ProgressMessag
         return doc with { Summary = StringMarkup.Cleanup(doc.Summary) };
     }
 
-    static string BuildUrl(TipoNorma? tipo, Jurisdiccion? jurisdiccion, Provincia? provincia, int skip, int take) => string.Format(
+    static string BuildUrl(TipoNorma? tipo, Jurisdiccion? jurisdiccion, Provincia? provincia, IDictionary<string, string>? filters, int skip, int take) => string.Format(
         CultureInfo.InvariantCulture, UrlFormat, skip, take,
         tipo == null ? "|Tipo+de+Documento/Legislación" : $"|Tipo+de+Documento/Legislación/{DisplayValue.ToString(tipo.Value)}",
-        tipo == TipoNorma.Ley || tipo == TipoNorma.Decreto ? "|Estado+de+Vigencia/Vigente,+de+alcance+general" : "",
+        filters is not { Count: > 0 } ? "" : "|" + string.Join('|', filters.Select(x => $"{x.Key.Replace(' ', '+')}/{x.Value.Replace(' ', '+')}")),
         provincia == null ?
             jurisdiccion == null ? "" : $"|Jurisdicción/{DisplayValue.ToString(jurisdiccion.Value)}" :
             $"|Jurisdicción/{DisplayValue.ToString(Jurisdiccion.Provincial)}/{DisplayValue.ToString(provincia.Value)}");

@@ -20,7 +20,7 @@ public class SaijClientTests(ITestOutputHelper output)
         WriteIndented = true
     };
 
-    public static SaijClient CreateClient(ITestOutputHelper output, Action<string>? report = default)
+    public static SaijClient CreateClient(ITestOutputHelper output, Action<ProgressMessage>? report = default)
     {
         var services = new ServiceCollection()
             .ConfigureHttpClientDefaults(defaults => defaults.ConfigureHttpClient(http =>
@@ -45,7 +45,7 @@ public class SaijClientTests(ITestOutputHelper output)
             new Progress<ProgressMessage>(x =>
             {
                 output.WriteLine($"{x.Value}% {x.Message}");
-                report?.Invoke(x.Message);
+                report?.Invoke(x);
             }));
     }
 
@@ -106,9 +106,9 @@ public class SaijClientTests(ITestOutputHelper output)
         var nopub = 0;
         var fullpub = 0;
 
-        var client = CreateClient(output, message =>
+        var client = CreateClient(output, progress =>
         {
-            if (message.Contains("Fetched full doc"))
+            if (progress.Message.Contains("Fetched full doc"))
                 fullpub++;
         });
 
@@ -160,6 +160,34 @@ public class SaijClientTests(ITestOutputHelper output)
         }
 
         Assert.Equal(10, count);
+    }
+
+    [Theory]
+    [InlineData(TipoNorma.Ley, Jurisdiccion.Nacional)]
+    [InlineData(TipoNorma.Decreto, Jurisdiccion.Nacional)]
+    [InlineData(TipoNorma.Ley, Jurisdiccion.Internacional)]
+    public async Task CanApplyFilters(TipoNorma tipo, Jurisdiccion jurisdiccion)
+    {
+        var total1 = 0L;
+        var total2 = 0L;
+        var client1 = CreateClient(output, progress => total1 = progress.Total);
+        var client2 = CreateClient(output, progress => total2 = progress.Total);
+
+        await foreach (var doc in client1.SearchAsync(tipo, jurisdiccion, filters:
+            new Dictionary<string, string>().AddFilter(KnownFilters.EstadoDeVigencia.VigenteDeAlcanceGeneral)))
+        {
+            break;
+        }
+
+        await foreach (var doc in client2.SearchAsync(tipo, jurisdiccion))
+        {
+            break;
+        }
+
+        Assert.NotEqual(0, total1);
+        Assert.NotEqual(0, total2);
+
+        Assert.True(total1 < total2);
     }
 
     [DebuggerFact]
@@ -347,7 +375,7 @@ public class SaijClientTests(ITestOutputHelper output)
         Assert.Contains("SAIJ", data.Keys);
     }
 
-    [LocalTheory]
+    [LocalTheory(Skip = "No errors for now. Activate as needed.")]
     [MemberData(nameof(LoadErrorData), 10)]
     public async Task CanLoadFormerErrors(string id)
     {
