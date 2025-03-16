@@ -47,7 +47,7 @@ public record Document(
     {
         if (await Devlooped.JQ.ExecuteAsync(json, ThisAssembly.Resources.Argentina.SaijDocument.Text) is not { } docjq ||
             JsonOptions.Default.TryDeserialize<Document>(docjq) is not { } doc)
-            throw new NotSupportedException($"Invalid document data'.");
+            throw new ArgumentException($"Invalid document data'.", nameof(json));
 
         return doc with { JQ = docjq, Json = json };
     }

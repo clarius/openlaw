@@ -1,6 +1,8 @@
 ﻿using System.ComponentModel;
 using System.Diagnostics;
 using System.Text;
+using Polly;
+using Polly.Retry;
 using Spectre.Console;
 using Spectre.Console.Cli;
 
@@ -9,16 +11,27 @@ namespace Clarius.OpenLaw.Argentina;
 [Description("Sincroniza un documento especifico de SAIJ")]
 public class SyncItemCommand(IAnsiConsole console, IHttpClientFactory http) : AsyncCommand<SyncItemCommand.Settings>
 {
+
     public override async Task<int> ExecuteAsync(CommandContext context, Settings settings)
     {
-        var watch = Stopwatch.StartNew();
         var targetDir = Path.GetFullPath(settings.Directory);
         var target = new FileDocumentRepository(targetDir);
         var client = new SaijClient(http, new Progress<ProgressMessage>(x => console.WriteLine(x.Message)));
 
+        // ArgumentException is what loading a doc throws if no data is found, which in retries, is a transient error.
+        var retryPolicy = Policy.Handle<ArgumentException>().WaitAndRetryAsync(
+            retryCount: 5,
+            sleepDurationProvider: attempt => TimeSpan.FromSeconds(Math.Pow(2, attempt)),
+            onRetry: (exception, timeSpan, retryCount, context) =>
+            {
+                console.MarkupLine($"[yellow]Intento {retryCount}. Reintentando en {timeSpan.TotalSeconds}s...[/]");
+            });
+
         try
         {
-            var document = await client.LoadAsync(settings.Item);
+
+            var document = await retryPolicy.ExecuteAsync(() => client.LoadAsync(settings.Item));
+
             using var markdown = new MemoryStream(Encoding.UTF8.GetBytes(document.ToMarkdown(true)));
             var action = await target.SetDocumentAsync(document);
             var emoji = action switch
