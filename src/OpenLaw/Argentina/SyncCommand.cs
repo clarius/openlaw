@@ -35,6 +35,8 @@ public class SyncCommand(IAnsiConsole console, IHttpClientFactory http) : AsyncC
                 new RemainingTimeColumn(),
                 new ElapsedTimeColumn(),
             ])
+            // Hide completed tasks if running in CI to avoid re-rendering finished tasks in logs.
+            .HideCompleted(!string.IsNullOrEmpty(Environment.GetEnvironmentVariable("CI")))
             .StartAsync(async ctx =>
             {
                 var results = new ConcurrentQueue<SyncAction>();
