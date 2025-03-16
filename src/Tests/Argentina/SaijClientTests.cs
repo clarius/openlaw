@@ -234,7 +234,7 @@ public class SaijClientTests(ITestOutputHelper output)
 
         Assert.NotNull(doc);
 
-        await WriteAsync(client, doc, @$"..\..\..\Argentina\SaijSamples");
+        await WriteAsync(client, doc, @$"..\..\..\Argentina\SaijSamples\ById");
     }
 
     [DebuggerFact]
