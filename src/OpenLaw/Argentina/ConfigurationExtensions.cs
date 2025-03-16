@@ -24,6 +24,7 @@ public static class ConfigurationExtensions
         app.Configure(config =>
         {
             config.AddCommand<SyncCommand>("sync");
+            config.AddCommand<SyncItemCommand>("syncitem");
             config.AddCommand<EnumerateCommand>("enum").IsHidden();
 
             //config.AddBranch("ar", ar =>
