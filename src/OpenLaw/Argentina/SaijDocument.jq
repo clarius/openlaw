@@ -19,7 +19,16 @@ def articulos($node):
     empty
   end;
 
-# Extract references from a given field name, handling both object and array structures
+def terms($field):
+  if $field | type == "object" then
+    if $field.termino? | type == "string" then [$field.termino]
+    elif $field.termino? | type == "array" then $field.termino
+    else empty
+    end
+  elif $field | type == "string" then [$field]
+  else empty
+  end;
+
 def refs($context; $name):
   [ articulos($context),
     (if ($context.anexo | type) == "array" then $context.anexo[] else empty end)
@@ -59,11 +68,17 @@ def refs($context; $name):
         (.metadata.timestamp | to_timestamp)
     ),
     terms: [
-        (.content.descriptores?.descriptor?.elegido?.termino?, 
-        .content.descriptores?.descriptor?.preferido?.termino?, 
-        .content.descriptores?.descriptor?.sinonimos?.termino[]?, 
-        .content.descriptores?.suggest?.termino[]?)
-    ] | map(select(. != null)) | flatten | unique | map(gsub("^\\s+|\\s+$"; "")),
+        (if .content.descriptores?.descriptor | type == "array" then
+           .content.descriptores?.descriptor[] | terms(.elegido), terms(.preferido), terms(.sinonimos)
+         elif .content.descriptores?.descriptor | type == "object" then
+           [terms(.content.descriptores?.descriptor.elegido), 
+            terms(.content.descriptores?.descriptor.preferido), 
+            terms(.content.descriptores?.descriptor.sinonimos)] | add
+         else
+           empty
+         end),
+        terms(.content.descriptores?.suggest)
+    ] | flatten | map(select(. != null)) | map(gsub("^\\s+|\\s+$"; "")) | map(select(. != "")) | unique,
     pub: first((.content["publicacion-codificada"] | .. | select(.organismo? != null) | { org: .organismo, date: (.fecha // .["fecha-sf"]) | gsub(" "; "-")}) // null),
     refs: {
         ammends: {
