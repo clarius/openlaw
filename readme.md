@@ -20,9 +20,10 @@ OPTIONS:
     -h, --help    Prints help information
 
 COMMANDS:
-    convert    Convierte archivos JSON a YAML, Markdown y PDF
-    format     Normaliza el formato de archivos JSON         
-    sync       Sincroniza contenido de SAIJ                  
+    convert          Convierte archivos JSON a YAML, Markdown y PDF
+    format           Normaliza el formato de archivos JSON         
+    sync             Sincroniza contenido de SAIJ                  
+    syncitem <ID>    Sincroniza un documento especifico de SAIJ    
 ```
 
 <!-- src/dotnet-openlaw/help.md -->
@@ -41,6 +42,8 @@ OPTIONS:
     -t, --tipo            Ley         Tipo de norma a sincronizar               
     -j, --jurisdiccion    Nacional    Jurisdicción a sincronizar                
     -p, --provincia                   Provincia a sincronizar                   
+    -f, --filtro                      Filtros avanzados a aplicar (KEY=VALUE)   
+        --vigentes                    Mostrar solo leyes/decretos vigentes      
         --dir                         Ubicación opcional archivos. Por defecto  
                                       el directorio actual                      
         --changelog                   Escribir un resumen de las operaciones    
