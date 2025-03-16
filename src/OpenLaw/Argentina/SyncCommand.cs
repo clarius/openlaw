@@ -151,7 +151,7 @@ public class SyncCommand(IAnsiConsole console, IHttpClientFactory http) : AsyncC
         {
             var errorsDir = Path.Combine(".github", ".openlaw", settings.Directory);
             Directory.CreateDirectory(errorsDir);
-            console.MarkupLine($":cross_mark: [red]{poison.Count}[/] fallas de sincronización en [link={errorsDir}]{errorsDir}[/].");
+            console.MarkupLine($":cross_mark: [red]{poison.Count}[/] fallas de sincronización en {errorsDir}");
             foreach (var error in poison)
             {
                 await File.WriteAllTextAsync(Path.Combine(errorsDir, $"{error.Item.Id}.yml"),
