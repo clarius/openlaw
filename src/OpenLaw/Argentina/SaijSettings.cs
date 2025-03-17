@@ -26,8 +26,16 @@ public class ClientSettings : CommandSettings
     public Dictionary<string, string> Filters { get; set; } = [];
 
     [Description("Mostrar solo leyes/decretos vigentes")]
-    [CommandOption("--vigentes")]
-    public bool Vigentes { get; set; }
+    [CommandOption("--vigente")]
+    public bool Vigente { get; set; }
+
+    [Description("Mostrar solo leyes/decretos vigentes")]
+    [CommandOption("--vigentes", IsHidden = true)]
+    public bool Vigentes
+    {
+        get => Vigentes;
+        set => Vigentes = value;
+    }
 
     [Description("Enumerar todo, sin filtros")]
     [CommandOption("--all", IsHidden = true)]
@@ -48,7 +56,7 @@ public class ClientSettings : CommandSettings
         if (Jurisdiccion != Argentina.Jurisdiccion.Provincial && Provincia != null)
             return ValidationResult.Error("No se puede especificar una provincia para la jurisdicción no provincial.");
 
-        if (Vigentes)
+        if (Vigente)
             Filters.AddFilter(KnownFilters.EstadoDeVigencia.VigenteDeAlcanceGeneral);
 
         return base.Validate();
