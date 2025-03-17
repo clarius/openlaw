@@ -46,7 +46,7 @@ public class SyncItemCommand(IAnsiConsole console, IHttpClientFactory http) : As
                     _ => ":check_mark_button:",
                 };
 
-                console.MarkupLine($"{cliemoji}  [link={document.WebUrl}]{document.Alias}[/]");
+                console.MarkupLine($"{cliemoji}  {document.WebUrl}");
 
                 if (settings.ChangeLog is not null)
                 {
