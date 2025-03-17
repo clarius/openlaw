@@ -7,7 +7,11 @@ namespace Clarius.OpenLaw.Argentina;
 
 public static partial class DictionaryConverter
 {
+#if NET9_0_OR_GREATER
     static readonly Lock sync = new();
+#else
+    static readonly object sync = new();
+#endif
 
     static readonly JsonSerializerOptions options = new()
     {
