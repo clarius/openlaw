@@ -1,8 +1,6 @@
 ﻿using System.ComponentModel;
-using System.Diagnostics;
 using System.Text;
 using Polly;
-using Polly.Retry;
 using Spectre.Console;
 using Spectre.Console.Cli;
 
@@ -27,45 +25,47 @@ public class SyncItemCommand(IAnsiConsole console, IHttpClientFactory http) : As
                 console.MarkupLine($"[yellow]Intento {retryCount}. Reintentando en {timeSpan.TotalSeconds}s...[/]");
             });
 
-        try
+        return await console.Status().StartAsync($"Sync {settings.Item} > {settings.Directory}", async _ =>
         {
-
-            var document = await retryPolicy.ExecuteAsync(() => client.LoadAsync(settings.Item));
-
-            using var markdown = new MemoryStream(Encoding.UTF8.GetBytes(document.ToMarkdown(true)));
-            var action = await target.SetDocumentAsync(document);
-            var emoji = action switch
+            try
             {
-                ContentAction.Created => ":heavy_plus_sign:",
-                ContentAction.Updated => ":pencil:",
-                _ => ":white_check_mark:",
-            };
-            var summary = $"{emoji}  [link={document.WebUrl}]{document.Alias}[/]";
-            console.MarkupLine(summary);
+                var document = await retryPolicy.ExecuteAsync(() => client.LoadAsync(settings.Item));
 
-            if (settings.ChangeLog is not null)
-            {
-                // TODO: reuse with SyncCommand?
-                if (File.Exists(settings.ChangeLog) && settings.AppendLog)
+                using var markdown = new MemoryStream(Encoding.UTF8.GetBytes(document.ToMarkdown(true)));
+                var action = await target.SetDocumentAsync(document);
+                var emoji = action switch
                 {
-                    await File.AppendAllLinesAsync(settings.ChangeLog, [Environment.NewLine]);
-                    await File.AppendAllTextAsync(settings.ChangeLog, summary);
-                }
-                else
+                    ContentAction.Created => ":heavy_plus_sign:",
+                    ContentAction.Updated => ":pencil:",
+                    _ => ":white_check_mark:",
+                };
+                var summary = $"{emoji}  [link={document.WebUrl}]{document.Alias}[/]";
+                console.MarkupLine(summary);
+
+                if (settings.ChangeLog is not null)
                 {
-                    if (Path.GetDirectoryName(settings.ChangeLog) is { } dir)
-                        Directory.CreateDirectory(dir);
-                    await File.WriteAllTextAsync(settings.ChangeLog, summary);
+                    // TODO: reuse with SyncCommand?
+                    if (File.Exists(settings.ChangeLog) && settings.AppendLog)
+                    {
+                        await File.AppendAllLinesAsync(settings.ChangeLog, [Environment.NewLine]);
+                        await File.AppendAllTextAsync(settings.ChangeLog, summary);
+                    }
+                    else
+                    {
+                        if (Path.GetDirectoryName(settings.ChangeLog) is { } dir)
+                            Directory.CreateDirectory(dir);
+                        await File.WriteAllTextAsync(settings.ChangeLog, summary);
+                    }
                 }
+
+                return 0;
             }
-
-            return 0;
-        }
-        catch (Exception ex)
-        {
-            console.MarkupLine($":cross_mark: {ex.Message}");
-            return 1;
-        }
+            catch (Exception ex)
+            {
+                console.MarkupLine($":cross_mark: {ex.Message}");
+                return 1;
+            }
+        });
     }
 
     public class Settings : ClientSettings
