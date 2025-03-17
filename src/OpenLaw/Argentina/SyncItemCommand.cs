@@ -33,13 +33,20 @@ public class SyncItemCommand(IAnsiConsole console, IHttpClientFactory http) : As
 
                 using var markdown = new MemoryStream(Encoding.UTF8.GetBytes(document.ToMarkdown(true)));
                 var action = await target.SetDocumentAsync(document);
-                var emoji = action switch
+                var ghemoji = action switch
                 {
                     ContentAction.Created => ":heavy_plus_sign:",
                     ContentAction.Updated => ":pencil:",
                     _ => ":white_check_mark:",
                 };
-                console.MarkupLine($"{emoji}  [link={document.WebUrl}]{document.Alias}[/]");
+                var cliemoji = action switch
+                {
+                    ContentAction.Created => ":plus:",
+                    ContentAction.Updated => ":pencil:",
+                    _ => ":check_mark_button:",
+                };
+
+                console.MarkupLine($"{cliemoji}  [link={document.WebUrl}]{document.Alias}[/]");
 
                 if (settings.ChangeLog is not null)
                 {
@@ -47,13 +54,13 @@ public class SyncItemCommand(IAnsiConsole console, IHttpClientFactory http) : As
                     if (File.Exists(settings.ChangeLog) && settings.AppendLog)
                     {
                         await File.AppendAllLinesAsync(settings.ChangeLog, [Environment.NewLine]);
-                        await File.AppendAllTextAsync(settings.ChangeLog, $"{emoji}  [{document.Alias}]({document.WebUrl})");
+                        await File.AppendAllTextAsync(settings.ChangeLog, $"{ghemoji}  [{document.Alias}]({document.WebUrl})");
                     }
                     else
                     {
                         if (Path.GetDirectoryName(settings.ChangeLog) is { } dir)
                             Directory.CreateDirectory(dir);
-                        await File.WriteAllTextAsync(settings.ChangeLog, $"{emoji}  [{document.Alias}]({document.WebUrl})");
+                        await File.WriteAllTextAsync(settings.ChangeLog, $"{ghemoji}  [{document.Alias}]({document.WebUrl})");
                     }
                 }
 
