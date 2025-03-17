@@ -1,8 +1,8 @@
 ![Icon](assets/img/icon.png) OpenLaw
 ============
 
-[![tool version](https://img.shields.io/endpoint?url=https://shields.kzu.io/v/dotnet-openlaw&label=dotnet-openlaw&color=blue)](https://clarius.blob.core.windows.net/nuget/index.json)
-[![lib version](https://img.shields.io/endpoint?url=https://shields.kzu.io/v/clarius.openlaw&label=Clarius.OpenLaw&color=purple)](https://clarius.blob.core.windows.net/nuget/index.json)
+[![tool version](https://img.shields.io/endpoint?url=https://shields.kzu.io/v/dotnet-openlaw?f=https://clarius.blob.core.windows.net/nuget/index.json&label=dotnet-openlaw&color=blue)](https://clarius.blob.core.windows.net/nuget/index.json)
+[![lib version](https://img.shields.io/endpoint?url=https://shields.kzu.io/v/clarius.openlaw?f=https://clarius.blob.core.windows.net/nuget/index.json&label=Clarius.OpenLaw&color=purple)](https://clarius.blob.core.windows.net/nuget/index.json)
 [![Build](https://github.com/clarius/openlaw/actions/workflows/build.yml/badge.svg?branch=main)](https://github.com/clarius/openlaw/actions)
 
 Plataforma de código abierto para normas de Argentina.
