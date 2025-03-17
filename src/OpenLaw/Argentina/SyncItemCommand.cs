@@ -39,8 +39,7 @@ public class SyncItemCommand(IAnsiConsole console, IHttpClientFactory http) : As
                     ContentAction.Updated => ":pencil:",
                     _ => ":white_check_mark:",
                 };
-                var summary = $"{emoji}  [link={document.WebUrl}]{document.Alias}[/]";
-                console.MarkupLine(summary);
+                console.MarkupLine($"{emoji}  [link={document.WebUrl}]{document.Alias}[/]");
 
                 if (settings.ChangeLog is not null)
                 {
@@ -48,13 +47,13 @@ public class SyncItemCommand(IAnsiConsole console, IHttpClientFactory http) : As
                     if (File.Exists(settings.ChangeLog) && settings.AppendLog)
                     {
                         await File.AppendAllLinesAsync(settings.ChangeLog, [Environment.NewLine]);
-                        await File.AppendAllTextAsync(settings.ChangeLog, summary);
+                        await File.AppendAllTextAsync(settings.ChangeLog, $"{emoji}  [{document.Alias}]({document.WebUrl})");
                     }
                     else
                     {
                         if (Path.GetDirectoryName(settings.ChangeLog) is { } dir)
                             Directory.CreateDirectory(dir);
-                        await File.WriteAllTextAsync(settings.ChangeLog, summary);
+                        await File.WriteAllTextAsync(settings.ChangeLog, $"{emoji}  [{document.Alias}]({document.WebUrl})");
                     }
                 }
 
