@@ -33,8 +33,8 @@ public class ClientSettings : CommandSettings
     [CommandOption("--vigentes", IsHidden = true)]
     public bool Vigentes
     {
-        get => Vigentes;
-        set => Vigentes = value;
+        get => Vigente;
+        set => Vigente = value;
     }
 
     [Description("Enumerar todo, sin filtros")]
