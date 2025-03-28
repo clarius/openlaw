@@ -9,7 +9,6 @@ namespace Clarius.OpenLaw.Argentina;
 [Description("Sincroniza un documento especifico de SAIJ")]
 public class SyncItemCommand(IAnsiConsole console, IHttpClientFactory http) : AsyncCommand<SyncItemCommand.Settings>
 {
-
     public override async Task<int> ExecuteAsync(CommandContext context, Settings settings)
     {
         var targetDir = Path.GetFullPath(settings.Directory);

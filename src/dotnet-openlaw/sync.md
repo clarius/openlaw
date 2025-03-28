@@ -12,7 +12,7 @@ OPTIONS:
     -j, --jurisdiccion    Nacional    Jurisdicción a sincronizar                
     -p, --provincia                   Provincia a sincronizar                   
     -f, --filtro                      Filtros avanzados a aplicar (KEY=VALUE)   
-        --vigentes                    Mostrar solo leyes/decretos vigentes      
+        --vigente                     Mostrar solo leyes/decretos vigentes      
         --dir                         Ubicación opcional archivos. Por defecto  
                                       el directorio actual                      
         --changelog                   Escribir un resumen de las operaciones    
