@@ -94,7 +94,7 @@ public class SyncCommand(IAnsiConsole console, IHttpClientFactory http) : AsyncC
                 var processed = 0;
                 var syncTask = ctx.AddTask($"Sincronizando [lime]{query}[/]: {processed} de {total} ({summary.Created}:plus:, {summary.Updated}:writing_hand:, {summary.Skipped}:check_mark_button:)", maxValue: total.Value);
 
-                void UpdateSync(ContentAction action)
+                void UpdateSync(SyncActionResult action)
                 {
                     Interlocked.Increment(ref processed);
                     syncTask.Value = processed;
@@ -125,7 +125,7 @@ public class SyncCommand(IAnsiConsole console, IHttpClientFactory http) : AsyncC
                     var action = await item.ExecuteAsync();
                     if (action != null)
                     {
-                        UpdateSync(action.Value);
+                        UpdateSync(action);
                     }
                     else if (item.Attempts < 5)
                     {
@@ -203,6 +203,7 @@ public class SyncCommand(IAnsiConsole console, IHttpClientFactory http) : AsyncC
 
     class SyncAction(SaijClient client, SearchResult item, FileDocumentRepository targetRepository, long? targetTimestamp, bool forceUpdate)
     {
+        Document? original;
         Document? document;
 
         public SearchResult Item => item;
@@ -211,14 +212,19 @@ public class SyncCommand(IAnsiConsole console, IHttpClientFactory http) : AsyncC
 
         public Exception? Exception { get; private set; }
 
-        public async Task<ContentAction?> ExecuteAsync()
+        public async Task<SyncActionResult?> ExecuteAsync()
         {
             Exception = null;
 
-            // Try loading the doc only once.
+            // Try loading the doc(s) only once.
             try
             {
-                document ??= await client.LoadAsync(item);
+                if (document == null)
+                {
+                    document = await client.LoadAsync(item);
+                    // Might return null if it's a new doc.
+                    original = await targetRepository.GetDocumentAsync(item.Id);
+                }
             }
             catch (Exception e) when (e is HttpRequestException || e is ExecutionRejectedException)
             {
@@ -241,7 +247,7 @@ public class SyncCommand(IAnsiConsole console, IHttpClientFactory http) : AsyncC
                 try
                 {
                     // \o/: Force update by passing an impossible timestamp for our new doc.
-                    return await targetRepository.SetDocumentAsync(document);
+                    return new SyncActionResult(await targetRepository.SetDocumentAsync(document), document, original);
                 }
                 catch (Exception e) when (e is HttpRequestException || e is ExecutionRejectedException)
                 {
@@ -259,7 +265,7 @@ public class SyncCommand(IAnsiConsole console, IHttpClientFactory http) : AsyncC
                 }
             }
 
-            return ContentAction.Skipped;
+            return new SyncActionResult(ContentAction.Skipped, document, original);
         }
     }
 }
