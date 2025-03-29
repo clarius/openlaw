@@ -46,6 +46,7 @@ public class SyncCommand(IAnsiConsole console, IHttpClientFactory http) : AsyncC
                 };
 
                 var loadTask = ctx.AddTask($"Cargando [lime]{query}[/]");
+                var initialSkip = settings.Skip ?? 0;
 
                 await Parallel.ForEachAsync(
                     Enumerable.Range(0, options.MaxDegreeOfParallelism),
@@ -53,7 +54,7 @@ public class SyncCommand(IAnsiConsole console, IHttpClientFactory http) : AsyncC
                     async (index, cancellationToken) =>
                     {
                         // Starting point for this task
-                        var skip = index * PageSize;
+                        var skip = initialSkip + (index * PageSize);
                         while (true)
                         {
                             // Fetch a batch
@@ -191,6 +192,10 @@ public class SyncCommand(IAnsiConsole console, IHttpClientFactory http) : AsyncC
         [Description("Agregar al log de cambios si ya existe.")]
         [CommandOption("--appendlog")]
         public bool AppendLog { get; set; }
+
+        [DefaultValue(null)]
+        [CommandOption("--skip", IsHidden = true)]
+        public int? Skip { get; set; } = null;
 
         [DefaultValue(null)]
         [CommandOption("--top", IsHidden = true)]
