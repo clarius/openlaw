@@ -8,11 +8,22 @@ USAGE:
 OPTIONS:
                           DEFAULT                                               
     -h, --help                        Prints help information                   
-    -t, --tipo            Ley         Tipo de norma a sincronizar               
-    -j, --jurisdiccion    Nacional    Jurisdicción a sincronizar                
-    -p, --provincia                   Provincia a sincronizar                   
+    -t, --tipo            Ley         Tipo de norma a sincronizar (ley, decreto,
+                                      resolucion, disposicion, decision,        
+                                      acordada)                                 
+    -j, --jurisdiccion    Nacional    Jurisdicción a sincronizar (nacional,     
+                                      internacional, Local, federal)            
+    -p, --provincia                   Provincia a sincronizar (buenosaires,     
+                                      catamarca, chaco, chubut,                 
+                                      ciudadautonomadebuenosaires, cordoba,     
+                                      corrientes, entrerios, formosa, jujuy,    
+                                      lapampa, larioja, mendoza, misiones,      
+                                      neuquen, rionegro, salta, sanjuan,        
+                                      sanluis, santacruz, santafe,              
+                                      santiagodelestero, tierradelfuego,        
+                                      tucuman)                                  
     -f, --filtro                      Filtros avanzados a aplicar (KEY=VALUE)   
-        --vigentes                    Mostrar solo leyes/decretos vigentes      
+        --vigente                     Mostrar solo leyes/decretos vigentes      
         --dir                         Ubicación opcional archivos. Por defecto  
                                       el directorio actual                      
         --changelog                   Escribir un resumen de las operaciones    
