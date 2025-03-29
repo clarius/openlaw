@@ -29,8 +29,7 @@ static class DisplayValue<T> where T : struct, Enum
 
     public static T Parse(string? value, bool ignoreCase = false)
     {
-        if (value == null)
-            throw new ArgumentNullException(nameof(value));
+        ThrowIfNull(value, nameof(value));
 
         var map = ignoreCase ? displayToValueIgnoreCase : displayToValue;
         if (map.TryGetValue(value, out var cached))

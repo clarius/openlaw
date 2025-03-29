@@ -58,7 +58,7 @@ public class FormatCommand(IAnsiConsole console) : Command<FormatCommand.FormatS
         return 0;
     }
 
-    void FormatFile(string file)
+    static void FormatFile(string file)
     {
         var json = File.ReadAllText(file);
         var dictionary = JsonSerializer.Deserialize<Dictionary<string, object?>>(json, readOptions);

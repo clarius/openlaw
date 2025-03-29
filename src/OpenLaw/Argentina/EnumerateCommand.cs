@@ -1,6 +1,7 @@
 ﻿using System.Collections.Concurrent;
 using System.ComponentModel;
 using System.Diagnostics;
+using System.Text;
 using Humanizer;
 using Spectre.Console;
 using Spectre.Console.Cli;
@@ -75,6 +76,21 @@ public class EnumerateCommand(IAnsiConsole console, IHttpClientFactory http) : A
             });
 
         console.MarkupLine($"[bold green]Enumeracion de {results.Count} items completada en {watch.Elapsed.Humanize()}[/]");
+
+        if (settings.Save)
+        {
+            var file = $"{settings.Tipo}.csv";
+            await console.Status().StartAsync($"Guardando {file}...", async ctx =>
+            {
+                var content = new StringBuilder().AppendLine($"date,id");
+
+                foreach (var item in results)
+                    content.AppendLine($"{item.Date:yyyyMMdd},{item.Id}");
+
+                await File.WriteAllTextAsync(file, content.ToString());
+            });
+        }
+
         return 0;
     }
 
@@ -83,5 +99,9 @@ public class EnumerateCommand(IAnsiConsole console, IHttpClientFactory http) : A
         [Description("Mostrar resultados con links.")]
         [CommandOption("--show-links", IsHidden = true)]
         public bool ShowLinks { get; set; }
+
+        [Description("Guardar los resultados.")]
+        [CommandOption("--save")]
+        public bool Save { get; set; }
     }
 }

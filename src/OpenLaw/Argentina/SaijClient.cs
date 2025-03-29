@@ -97,7 +97,7 @@ public class SaijClient(IHttpClientFactory httpFactory, IProgress<ProgressMessag
                 };
             }
 
-            skip = skip + take;
+            skip += take;
             if (skip > total)
                 break;
 

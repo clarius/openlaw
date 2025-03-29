@@ -5,7 +5,7 @@ namespace Clarius.OpenLaw.Argentina;
 
 record NormalizedWebDocument(string Id) : IWebDocument
 {
-    Dictionary<string, object?> data = new();
+    Dictionary<string, object?> data = [];
     string json = "{}";
     string jq = "{}";
 

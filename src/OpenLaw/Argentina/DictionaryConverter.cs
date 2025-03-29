@@ -131,7 +131,7 @@ public static partial class DictionaryConverter
     public static string ToMarkdown(this Dictionary<string, object?> dictionary, out List<Link> links, bool renderLinks = true)
     {
         var output = new StringBuilder();
-        links = new List<Link>();
+        links = [];
         ProcessDictionary(0, dictionary, output, links);
 
         if (renderLinks && links.Count > 0)

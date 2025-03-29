@@ -12,7 +12,7 @@ public static partial class StringMarkup
     /// <summary>
     /// Normalizes paragraphs and removes markup.
     /// </summary>
-    [return: NotNullIfNotNull("value")]
+    [return: NotNullIfNotNull(nameof(value))]
     public static string? Cleanup(string? value)
     {
         if (string.IsNullOrEmpty(value))

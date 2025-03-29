@@ -20,7 +20,7 @@ public partial class JsonDictionaryConverter : JsonConverter<Dictionary<string, 
             if (reader.TokenType != JsonTokenType.PropertyName)
                 throw new JsonException();
 
-            string propertyName = reader.GetString() ?? throw new JsonException();
+            var propertyName = reader.GetString() ?? throw new JsonException();
 
             reader.Read();
 

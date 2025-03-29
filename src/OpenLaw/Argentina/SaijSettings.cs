@@ -6,17 +6,17 @@ namespace Clarius.OpenLaw.Argentina;
 
 public class ClientSettings : CommandSettings
 {
-    [Description("Tipo de norma a sincronizar")]
+    [DisplayValueDescription<TipoNorma>("Tipo de norma a sincronizar")]
     [CommandOption("-t|--tipo")]
     [DefaultValue(TipoNorma.Ley)]
     public TipoNorma? Tipo { get; set; } = TipoNorma.Ley;
 
-    [Description("Jurisdicción a sincronizar")]
+    [DisplayValueDescription<Jurisdiccion>("Jurisdicción a sincronizar")]
     [CommandOption("-j|--jurisdiccion")]
     [DefaultValue(Argentina.Jurisdiccion.Nacional)]
     public Jurisdiccion? Jurisdiccion { get; set; } = Argentina.Jurisdiccion.Nacional;
 
-    [Description("Provincia a sincronizar")]
+    [EnumDescription<Provincia>("Provincia a sincronizar")]
     [CommandOption("-p|--provincia")]
     [DefaultValue(null)]
     public Provincia? Provincia { get; set; }

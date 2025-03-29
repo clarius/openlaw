@@ -17,7 +17,7 @@ if (RuntimeInformation.IsOSPlatform(OSPlatform.Windows))
 if (args.Contains("--debug"))
 {
     Debugger.Launch();
-    args = args.Where(x => x != "--debug").ToArray();
+    args = [.. args.Where(x => x != "--debug")];
 }
 #endif
 

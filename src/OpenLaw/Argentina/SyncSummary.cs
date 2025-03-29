@@ -116,7 +116,7 @@ public class SyncSummary(string operation)
                 report +=
                     $"""
 
-                    > {nop} actualizaciones sin cambios de contenido
+                    > Actualizaciones sin cambios de contenido: {nop}
                     """;
             }
 
