@@ -11,12 +11,12 @@ public class ClientSettings : CommandSettings
     [DefaultValue(TipoNorma.Ley)]
     public TipoNorma? Tipo { get; set; } = TipoNorma.Ley;
 
-    [DisplayValueDescription<Jurisdiccion>("Jurisdicción a sincronizar")]
+    [DisplayValueDescription<Jurisdiccion>("Jurisdicción a sincronizar", lowerCase: true)]
     [CommandOption("-j|--jurisdiccion")]
     [DefaultValue(Argentina.Jurisdiccion.Nacional)]
     public Jurisdiccion? Jurisdiccion { get; set; } = Argentina.Jurisdiccion.Nacional;
 
-    [EnumDescription<Provincia>("Provincia a sincronizar")]
+    [EnumDescription<Provincia>("Provincia a sincronizar", lowerCase: true)]
     [CommandOption("-p|--provincia")]
     [DefaultValue(null)]
     public Provincia? Provincia { get; set; }

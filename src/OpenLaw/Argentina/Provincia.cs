@@ -1,4 +1,6 @@
-﻿namespace Clarius.OpenLaw.Argentina;
+﻿using System.ComponentModel;
+
+namespace Clarius.OpenLaw.Argentina;
 
 public enum Provincia
 {
@@ -10,6 +12,7 @@ public enum Provincia
     [DisplayValue("Ciudad Autónoma de Buenos Aires")]
     [DisplayValue("Ciudad Autonoma de Buenos Aires")]
     [DisplayValue("CABA")]
+    [Description("CABA")]
     CiudadAutonomaDeBuenosAires,
     [DisplayValue("Córdoba")]
     Cordoba,
