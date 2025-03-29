@@ -11,6 +11,6 @@ class DisplayValueConverter<TEnum> : EnumConverter where TEnum : struct, Enum
         => sourceType == typeof(string) || base.CanConvertFrom(context, sourceType);
 
     public override object? ConvertFrom(ITypeDescriptorContext? context, CultureInfo? culture, object value)
-        => value.ToString() is string display && DisplayValue.TryParse<TEnum>(display, out var result) ? result
+        => value.ToString() is string display && DisplayValue.TryParse<TEnum>(display, true, out var result) ? result
         : base.ConvertFrom(context, culture, value);
 }

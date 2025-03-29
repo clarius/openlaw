@@ -12,10 +12,9 @@ OPTIONS:
                                       resolucion, disposicion, decision,        
                                       acordada)                                 
     -j, --jurisdiccion    Nacional    Jurisdicción a sincronizar (nacional,     
-                                      internacional, Local, federal)            
+                                      internacional, local, federal)            
     -p, --provincia                   Provincia a sincronizar (buenosaires,     
-                                      catamarca, chaco, chubut,                 
-                                      ciudadautonomadebuenosaires, cordoba,     
+                                      catamarca, chaco, chubut, caba, cordoba,  
                                       corrientes, entrerios, formosa, jujuy,    
                                       lapampa, larioja, mendoza, misiones,      
                                       neuquen, rionegro, salta, sanjuan,        
