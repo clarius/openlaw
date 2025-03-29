@@ -64,6 +64,7 @@ public class SyncSummary(string operation)
         report += $":hourglass: {Elapsed.ToMinimalString()}";
 
         var details = new StringBuilder();
+        var nop = 0;
 
         // TODO: add/count diff.
         foreach (var result in results)
@@ -86,11 +87,12 @@ public class SyncSummary(string operation)
                 {
                     // discard changes that are only timestamp/fecha-umod
                     // see: https://github.com/clarius/normas/pull/32/files#diff-2f592ca38476012d2be4d6b3f17789b83b8bd3c3fa1df6eda2e54b8ccc7e1cbc
+                    nop++;
                     continue;
                 }
             }
 
-            details.AppendLine($"{(result.Action == ContentAction.Created ? ":heavy_plus_sign:" : ":pencil:")} {result.NewDocument.Name}: {result.NewDocument.Title}");
+            details.AppendLine($"|{(result.Action == ContentAction.Created ? ":heavy_plus_sign:" : ":pencil:")}|{result.NewDocument.Name}|{result.NewDocument.Title}|");
         }
 
         if (details.Length > 0)
@@ -101,13 +103,25 @@ public class SyncSummary(string operation)
 
                 <details>
 
-                <summary>:eyes: Detalles</summary>
+                <summary>:information_source: Detalles</summary>
+
+                | | Nombre | Título|
+                |--------|---------------|-------------|
 
                 """;
             report += details.ToString();
+            report += Environment.NewLine;
+            if (nop > 0)
+            {
+                report +=
+                    $"""
+
+                    > {nop} actualizaciones sin cambios de contenido
+                    """;
+            }
+
             report +=
                 """
-
 
                 </details>
                 """;
