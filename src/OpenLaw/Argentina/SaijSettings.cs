@@ -6,7 +6,7 @@ namespace Clarius.OpenLaw.Argentina;
 
 public class ClientSettings : CommandSettings
 {
-    [DisplayValueDescription<TipoNorma>("Tipo de norma a sincronizar")]
+    [EnumDescription<TipoNorma>("Tipo de norma a sincronizar")]
     [CommandOption("-t|--tipo")]
     [DefaultValue(TipoNorma.Ley)]
     public TipoNorma? Tipo { get; set; } = TipoNorma.Ley;
