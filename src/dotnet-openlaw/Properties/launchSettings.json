@@ -2,7 +2,7 @@
   "profiles": {
     "dotnet-openlaw": {
       "commandName": "Project",
-      "commandLineArgs": "ar enum"
+      "commandLineArgs": "enum -t ley -j nacional --vigente"
     }
   }
 }

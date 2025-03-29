@@ -1,1 +1,3 @@
 SaijSamples
+*.http
+.env
