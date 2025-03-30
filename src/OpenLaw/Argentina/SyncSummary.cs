@@ -92,7 +92,7 @@ public class SyncSummary(string operation)
                 }
             }
 
-            details.AppendLine($"|{(result.Action == ContentAction.Created ? ":heavy_plus_sign:" : ":pencil:")}|{result.NewDocument.Name}|{result.NewDocument.Title}|");
+            details.AppendLine($"|{(result.Action == ContentAction.Created ? ":heavy_plus_sign:" : ":pencil:")}|[{result.NewDocument.Name ?? result.NewDocument.Alias}]({result.NewDocument.WebUrl})|{result.NewDocument.Title}|");
         }
 
         if (details.Length > 0)
