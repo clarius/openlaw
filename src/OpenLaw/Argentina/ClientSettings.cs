@@ -21,6 +21,11 @@ public class ClientSettings : CommandSettings
     [DefaultValue(null)]
     public Provincia? Provincia { get; set; }
 
+    [EnumDescription<ContentType>("Tipo de contenido a sincronizar", lowerCase: true)]
+    [DefaultValue(ContentType.Legislacion)]
+    [CommandOption("-c|--content-type")]
+    public ContentType ContentType { get; set; } = ContentType.Legislacion;
+
     [Description("Filtros avanzados a aplicar (KEY=VALUE)")]
     [CommandOption("-f|--filtro")]
     public Dictionary<string, string> Filters { get; set; } = [];
