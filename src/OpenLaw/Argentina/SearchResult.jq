@@ -1,4 +1,9 @@
-﻿def to_timestamp:
+﻿def to_fecha:
+  if . == null then null
+  else if type == "number" then tostring | if length == 4 then . + "-01-01" else . end else . end
+  end;
+
+def to_timestamp:
   if . == null then null
   elif type == "number" then .
   else
@@ -9,7 +14,7 @@
     id: .metadata.uuid,
     contentType: .metadata["document-content-type"], 
     documentType: .content["tipo-norma"] | { code: .codigo, text: .texto },
-    date: .content.fecha,
+    date: .content.fecha? | to_fecha,
     status: (.content.estado // .content.status),
     timestamp: (
         (
