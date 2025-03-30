@@ -66,6 +66,9 @@ public class SyncCommand(IAnsiConsole console, IHttpClientFactory http) : AsyncC
                                 if (settings.Top != null && results.Count >= settings.Top)
                                     return;
 
+                                if (item.ContentType != settings.ContentType)
+                                    continue;
+
                                 results.Enqueue(new SyncAction(client, item, target,
                                    await target.GetTimestampAsync(item.Id), settings.Force));
 
