@@ -58,6 +58,9 @@ public class EnumerateCommand(IAnsiConsole console, IHttpClientFactory http) : A
                             var count = 0;
                             await foreach (var item in search)
                             {
+                                if (item.ContentType != settings.ContentType)
+                                    continue;
+
                                 count++;
                                 results.Add(item);
                                 task.Description = $"Enumerated {results.Count} of {task.MaxValue}";
@@ -77,17 +80,26 @@ public class EnumerateCommand(IAnsiConsole console, IHttpClientFactory http) : A
 
         console.MarkupLine($"[bold green]Enumeracion de {results.Count} items completada en {watch.Elapsed.Humanize()}[/]");
 
-        if (settings.Save)
+        if (settings.Save.IsSet)
         {
-            var file = $"{settings.Tipo}.csv";
+            var file = settings.Save.Value ?? $"{settings.Tipo}.csv";
             await console.Status().StartAsync($"Guardando {file}...", async ctx =>
             {
-                var content = new StringBuilder().AppendLine($"date,id");
+                var content = new StringBuilder();
+
+                // Only add the header if file doesn't exist already
+                if (!File.Exists(file))
+                    content.AppendLine($"date,id");
+                else
+                    content.AppendLine();
 
                 foreach (var item in results)
-                    content.AppendLine($"{item.Date:yyyyMMdd},{item.Id}");
+                        content.AppendLine($"{item.Date:yyyyMMdd},{item.Id}");
 
-                await File.WriteAllTextAsync(file, content.ToString());
+                if (File.Exists(file))
+                    await File.AppendAllTextAsync(file, content.ToString());
+                else
+                    await File.WriteAllTextAsync(file, content.ToString());
             });
         }
 
@@ -100,8 +112,8 @@ public class EnumerateCommand(IAnsiConsole console, IHttpClientFactory http) : A
         [CommandOption("--show-links", IsHidden = true)]
         public bool ShowLinks { get; set; }
 
-        [Description("Guardar los resultados.")]
-        [CommandOption("--save")]
-        public bool Save { get; set; }
+        [Description("Guardar los resultados en el archivo CSV especificado.")]
+        [CommandOption("--save [PATH]")]
+        public FlagValue<string> Save { get; set; } = new();
     }
 }
