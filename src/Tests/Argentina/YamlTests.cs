@@ -59,6 +59,7 @@ public class YamlTests(ITestOutputHelper output)
             Publicación:
               Organismo: Boletín Oficial
               Fecha: 2024-12-27
+            Estado: Vigente
             SAIJ: https://www.saij.gob.ar/123456789-0abc-104-0000-4202xvorpced
             Id: 123456789-0abc-104-0000-4202xvorpced
             """, yaml);

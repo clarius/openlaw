@@ -94,7 +94,7 @@ public class EnumerateCommand(IAnsiConsole console, IHttpClientFactory http) : A
                     content.AppendLine();
 
                 foreach (var item in results)
-                        content.AppendLine($"{item.Date:yyyyMMdd},{item.Id}");
+                    content.AppendLine($"{item.Date:yyyyMMdd},{item.Id}");
 
                 if (File.Exists(file))
                     await File.AppendAllTextAsync(file, content.ToString());

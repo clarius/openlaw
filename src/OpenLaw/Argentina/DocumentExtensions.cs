@@ -9,6 +9,7 @@ public static class DocumentExtensions
         [property: YamlMember(Alias = "Fecha")] string Date,
         [property: YamlMember(Alias = "Título")] string Name,
         [property: JsonPropertyName("pub"), YamlMember(Alias = "Publicación")] Publication? Publication,
+        [property: JsonPropertyName("status"), YamlMember(Alias = "Estado")] string? Status,
         [property: YamlMember(Order = int.MaxValue)] string Id)
     {
         [YamlMember(Alias = "SAIJ")]
@@ -26,6 +27,9 @@ public static class DocumentExtensions
             return string.Empty;
 
         data.WebUrl = document.WebUrl;
+        // Special case "Vigente, de alcance general" to "Vigente"
+        if (data.Status == "Vigente, de alcance general")
+            data = data with { Status = "Vigente" };
 
         return data.ToYaml();
     }
