@@ -11,6 +11,9 @@ namespace Clarius.OpenLaw.Argentina;
 [Description("Enumerar todos los documentos.")]
 public class EnumerateCommand(IAnsiConsole console, IHttpClientFactory http) : AsyncCommand<EnumerateCommand.EnumerateSettings>
 {
+    // For batched retrieval from search results.
+    const int PageSize = 100;
+
     public override async Task<int> ExecuteAsync(CommandContext context, EnumerateSettings settings)
     {
         var watch = Stopwatch.StartNew();
@@ -37,12 +40,10 @@ public class EnumerateCommand(IAnsiConsole console, IHttpClientFactory http) : A
                         task.MaxValue = x.Total;
                 }));
 
-                var options = new ParallelOptions();
-                var take = 100;
-                if (Debugger.IsAttached)
-                    options.MaxDegreeOfParallelism = 1;
-                else
-                    options.MaxDegreeOfParallelism = Environment.ProcessorCount;
+                var options = new ParallelOptions
+                {
+                    MaxDegreeOfParallelism = Debugger.IsAttached ? 1 : Environment.ProcessorCount
+                };
 
                 // Fetch batches in parallel
                 await Parallel.ForEachAsync(
@@ -51,11 +52,11 @@ public class EnumerateCommand(IAnsiConsole console, IHttpClientFactory http) : A
                     async (index, cancellationToken) =>
                     {
                         // Starting point for this task
-                        var skip = index * take;
+                        var skip = index * PageSize;
                         while (true)
                         {
                             // Fetch a batch
-                            var search = client.SearchAsync(settings.Tipo, settings.Jurisdiccion, settings.Provincia, settings.Filters, skip, take, cancellationToken);
+                            var search = client.SearchAsync(settings.Tipo, settings.Jurisdiccion, settings.Provincia, settings.Filters, skip, PageSize, cancellationToken);
                             var count = 0;
                             await foreach (var item in search)
                             {
@@ -66,7 +67,7 @@ public class EnumerateCommand(IAnsiConsole console, IHttpClientFactory http) : A
                                 results.Add(item);
                                 task.Description = $"Enumerated {results.Count} of {task.MaxValue}";
                                 task.Value = results.Count;
-                                if (count == take)
+                                if (count == PageSize)
                                     break;
                             }
 
@@ -74,7 +75,7 @@ public class EnumerateCommand(IAnsiConsole console, IHttpClientFactory http) : A
                                 break;
 
                             // Move to the next batch
-                            skip += options.MaxDegreeOfParallelism * take;
+                            skip += options.MaxDegreeOfParallelism * PageSize;
                         }
                     });
             });
