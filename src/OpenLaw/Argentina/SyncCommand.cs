@@ -32,8 +32,8 @@ public class SyncCommand(IAnsiConsole console, IHttpClientFactory http) : AsyncC
                 new TaskDescriptionColumn(),
                 new ProgressBarColumn(),
                 new PercentageColumn(),
-                new RemainingTimeColumn(),
-                new ElapsedTimeColumn(),
+                new PrefixProgressColumn(new RemainingTimeColumn(), Emoji.Known.HourglassNotDone),
+                new PrefixProgressColumn(new ElapsedTimeColumn(), Emoji.Known.HourglassDone),
             ])
             // Hide completed tasks if running in CI to avoid re-rendering finished tasks in logs.
             .HideCompleted(!string.IsNullOrEmpty(Environment.GetEnvironmentVariable("CI")))
