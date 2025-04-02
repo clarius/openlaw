@@ -40,6 +40,7 @@ public class SyncCommand(IAnsiConsole console, IHttpClientFactory http) : AsyncC
             .StartAsync(async ctx =>
             {
                 var results = new ConcurrentQueue<SyncAction>();
+                var ids = new ConcurrentDictionary<string, string>();
                 var options = new ParallelOptions
                 {
                     MaxDegreeOfParallelism = Debugger.IsAttached ? 1 : Environment.ProcessorCount
@@ -67,6 +68,10 @@ public class SyncCommand(IAnsiConsole console, IHttpClientFactory http) : AsyncC
                                     return;
 
                                 if (item.ContentType != settings.ContentType)
+                                    continue;
+
+                                // Never enqueue same item twice. Shouldn't happen, but just in case.
+                                if (!ids.TryAdd(item.Id, item.Id))
                                     continue;
 
                                 results.Enqueue(new SyncAction(client, item, target,
