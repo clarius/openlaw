@@ -25,7 +25,8 @@ public class EnumerateCommand(IAnsiConsole console, IHttpClientFactory http) : A
                 new TaskDescriptionColumn(),
                 new ProgressBarColumn(),
                 new PercentageColumn(),
-                new RemainingTimeColumn(),
+                new PrefixProgressColumn(new RemainingTimeColumn(), Emoji.Known.HourglassNotDone),
+                new PrefixProgressColumn(new ElapsedTimeColumn(), Emoji.Known.HourglassDone),
             ])
             .StartAsync(async ctx =>
             {
