@@ -63,6 +63,16 @@ public static class App
             Encoder = System.Text.Encodings.Web.JavaScriptEncoder.UnsafeRelaxedJsonEscaping,
         });
 
+        var shutdownSource = new CancellationTokenSource();
+        System.Console.CancelKeyPress += (s, e) =>
+        {
+            // We stop from main loop after we do graceful shutdown
+            e.Cancel = true;
+            shutdownSource.Cancel();
+        };
+
+        collection.AddSingleton(shutdownSource);
+
         collection.UseArgentina();
 
         var registrar = new TypeRegistrar(collection);

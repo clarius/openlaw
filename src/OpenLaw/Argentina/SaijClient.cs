@@ -50,6 +50,7 @@ public class SaijClient(IHttpClientFactory httpFactory, IProgress<ProgressMessag
             foreach (var item in result.Docs)
             {
                 count++;
+                cancellation.ThrowIfCancellationRequested();
 
                 // This is the bare minimum we expect all results to have.
                 if (await JQ.ExecuteAsync(item.Abstract, ThisAssembly.Resources.Argentina.SaijIdType.Text) is not { } idType ||
