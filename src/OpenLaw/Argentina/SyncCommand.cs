@@ -1,7 +1,9 @@
 ﻿using System.Collections.Concurrent;
 using System.ComponentModel;
 using System.Diagnostics;
+using System.Diagnostics.CodeAnalysis;
 using System.Text;
+using System.Text.Json;
 using Polly;
 using Spectre.Console;
 using Spectre.Console.Cli;
@@ -54,60 +56,82 @@ public class SyncCommand(IAnsiConsole console, IHttpClientFactory http, Cancella
                 // CPU2: 100-200, then skip 400 to 600-700, then 1100-1200, etc.
                 var step = PageSize * options.MaxDegreeOfParallelism;
 
-                await Parallel.ForEachAsync(
-                    Enumerable.Range(1, options.MaxDegreeOfParallelism),
-                    options,
-                    async (index, cancellationToken) =>
-                    {
-                        // Starting point for this task.
-                        var skip = settings.Skip.GetValueOrDefault(0) + ((index - 1) * PageSize);
-                        if (settings.Verbose)
-                            console.WriteLine($"[CPU-{index:00}] {Emoji.Known.BackhandIndexPointingRight} {skip}");
+                if (!settings.Resume || !TryLoadProgress(out results))
+                {
+                    results = new ConcurrentQueue<SyncAction>();
 
-                        while (true)
+                    await Parallel.ForEachAsync(
+                        Enumerable.Range(1, options.MaxDegreeOfParallelism),
+                        options,
+                        async (index, cancellationToken) =>
                         {
-                            cancellationToken.ThrowIfCancellationRequested();
-                            // Fetch a batch
-                            var search = client.SearchAsync(settings.Tipo, settings.Jurisdiccion, settings.Provincia, settings.Filters, skip, PageSize, cancellationToken);
-                            var count = -1;
-                            await foreach (var item in search)
+                            // Starting point for this task.
+                            var skip = settings.Skip.GetValueOrDefault(0) + ((index - 1) * PageSize);
+                            if (settings.Verbose)
+                                console.WriteLine($"[CPU-{index:00}] {Emoji.Known.BackhandIndexPointingRight} {skip}");
+
+                            while (true)
                             {
                                 cancellationToken.ThrowIfCancellationRequested();
-                                count++;
-                                if (count == PageSize)
+                                // Fetch a batch
+                                var search = client.SearchAsync(settings.Tipo, settings.Jurisdiccion, settings.Provincia, settings.Filters, skip, PageSize, cancellationToken);
+                                var count = -1;
+                                await foreach (var item in search)
+                                {
+                                    cancellationToken.ThrowIfCancellationRequested();
+                                    count++;
+                                    if (count == PageSize)
+                                        break;
+
+                                    if (settings.Top != null && results.Count >= settings.Top)
+                                        return;
+
+                                    if (item.ContentType != settings.ContentType)
+                                        continue;
+
+                                    // Never enqueue same item twice. Shouldn't happen, but just in case.
+                                    if (!ids.TryAdd(item.Id, item.Id))
+                                        continue;
+
+                                    results.Enqueue(new SyncAction(item, await target.GetTimestampAsync(item.Id), settings.Force));
+
+                                    if (settings.Top != null && results.Count >= settings.Top)
+                                        return;
+
+                                    loadTask.Description = $"Cargando [lime]{query}[/]: {results.Count + settings.Skip.GetValueOrDefault(0)} de {total}";
+                                    loadTask.Value = results.Count + settings.Skip.GetValueOrDefault(0);
+                                    if (total.HasValue)
+                                        loadTask.MaxValue(total.Value);
+                                }
+
+                                if (count == -1) // No more items, stop this task
                                     break;
 
-                                if (settings.Top != null && results.Count >= settings.Top)
-                                    return;
-
-                                if (item.ContentType != settings.ContentType)
-                                    continue;
-
-                                // Never enqueue same item twice. Shouldn't happen, but just in case.
-                                if (!ids.TryAdd(item.Id, item.Id))
-                                    continue;
-
-                                results.Enqueue(new SyncAction(client, item, target,
-                                   await target.GetTimestampAsync(item.Id), settings.Force));
-
-                                if (settings.Top != null && results.Count >= settings.Top)
-                                    return;
-
-                                loadTask.Description = $"Cargando [lime]{query}[/]: {results.Count + settings.Skip.GetValueOrDefault(0)} de {total}";
-                                loadTask.Value = results.Count + settings.Skip.GetValueOrDefault(0);
-                                if (total.HasValue)
-                                    loadTask.MaxValue(total.Value);
+                                // Move to the next batch
+                                skip += step;
+                                if (settings.Verbose)
+                                    console.WriteLine($"[CPU-{index:00}] {Emoji.Known.RightArrow}  {skip}");
                             }
+                        });
 
-                            if (count == -1) // No more items, stop this task
-                                break;
+                    if (string.IsNullOrEmpty(Environment.GetEnvironmentVariable("CI")))
+                        SaveProgress(results);
+                }
+                else
+                {
+                    loadTask.Description = $"Cargado [lime]{query}[/]: {results.Count} de checkpoint";
+                    if (settings.Skip.HasValue || settings.Top.HasValue)
+                    {
+                        IEnumerable<SyncAction> filtered = results;
 
-                            // Move to the next batch
-                            skip += step;
-                            if (settings.Verbose)
-                                console.WriteLine($"[CPU-{index:00}] {Emoji.Known.RightArrow}  {skip}");
-                        }
-                    });
+                        if (settings.Skip.HasValue)
+                            filtered = filtered.Skip(settings.Skip.Value);
+                        if (settings.Top.HasValue)
+                            filtered = filtered.Take(settings.Top.Value);
+
+                        results = new ConcurrentQueue<SyncAction>(filtered);
+                    }
+                }
 
                 loadTask.StopTask();
 
@@ -143,7 +167,7 @@ public class SyncCommand(IAnsiConsole console, IHttpClientFactory http, Cancella
                         await Task.Delay(delay, cancellation);
                     }
 
-                    var action = await item.ExecuteAsync();
+                    var action = await item.ExecuteAsync(client, target);
                     if (action != null)
                     {
                         UpdateSync(action);
@@ -227,20 +251,28 @@ public class SyncCommand(IAnsiConsole console, IHttpClientFactory http, Cancella
 
         [CommandOption("--verbose", IsHidden = true)]
         public bool Verbose { get; set; }
+
+        [Description("Resume from checkpoint if found.")]
+        [CommandOption("--resume", IsHidden = true)]
+        public bool Resume { get; set; }
     }
 
-    class SyncAction(SaijClient client, SearchResult item, FileDocumentRepository targetRepository, long? targetTimestamp, bool forceUpdate)
+    class SyncAction(SearchResult item, long? targetTimestamp, bool forceUpdate)
     {
         Document? original;
         Document? document;
 
         public SearchResult Item => item;
 
+        public long? TargetTimestamp => targetTimestamp;
+
+        public bool ForceUpdate => forceUpdate;
+
         public int Attempts { get; private set; }
 
         public Exception? Exception { get; private set; }
 
-        public async Task<SyncActionResult?> ExecuteAsync()
+        public async Task<SyncActionResult?> ExecuteAsync(SaijClient client, FileDocumentRepository targetRepository)
         {
             Exception = null;
 
@@ -295,5 +327,26 @@ public class SyncCommand(IAnsiConsole console, IHttpClientFactory http, Cancella
 
             return new SyncActionResult(ContentAction.Skipped, document, original);
         }
+    }
+
+    static bool TryLoadProgress([NotNullWhen(true)] out ConcurrentQueue<SyncAction>? actions)
+    {
+        var path = Path.Combine(Path.GetTempPath(), "openlaw.json");
+        actions = null;
+        if (!File.Exists(path))
+            return false;
+
+        var data = JsonSerializer.Deserialize<SyncAction[]>(File.ReadAllText(path), JsonOptions.Default);
+        if (data == null || data.Length == 0)
+            return false;
+
+        actions = new ConcurrentQueue<SyncAction>(data);
+        return true;
+    }
+
+    static void SaveProgress(IEnumerable<SyncAction> actions)
+    {
+        var path = Path.Combine(Path.GetTempPath(), "openlaw.json");
+        File.WriteAllText(path, JsonSerializer.Serialize(actions), Encoding.UTF8);
     }
 }
