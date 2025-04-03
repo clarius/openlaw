@@ -16,5 +16,14 @@
 
     <RestoreSources>https://kzu.blob.core.windows.net/nuget/index.json;https://api.nuget.org/v3/index.json</RestoreSources>
   </PropertyGroup>
-  
+
+  <ItemGroup>
+    <ProjectProperty Include="ToolCommandName" />
+    <ProjectProperty Include="BuildDate" />
+    <ProjectProperty Include="BuildRef" />
+    <ProjectProperty Include="PackageId" />
+    <ProjectProperty Include="PackageVersion" />
+    <ProjectProperty Include="SLEET_FEED_URL" />
+  </ItemGroup>
+
 </Project>
