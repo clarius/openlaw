@@ -9,7 +9,7 @@ using Spectre.Console.Cli;
 namespace Clarius.OpenLaw.Argentina;
 
 [Description("Enumerar todos los documentos.")]
-public class EnumerateCommand(IAnsiConsole console, IHttpClientFactory http) : AsyncCommand<EnumerateCommand.EnumerateSettings>
+public class EnumerateCommand(IAnsiConsole console, IHttpClientFactory http, CancellationTokenSource cts) : AsyncCommand<EnumerateCommand.EnumerateSettings>
 {
     // For batched retrieval from search results.
     const int PageSize = 100;
@@ -42,6 +42,7 @@ public class EnumerateCommand(IAnsiConsole console, IHttpClientFactory http) : A
 
                 var options = new ParallelOptions
                 {
+                    CancellationToken = cts.Token,
                     MaxDegreeOfParallelism = Debugger.IsAttached ? 1 : Environment.ProcessorCount
                 };
 

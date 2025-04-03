@@ -9,7 +9,7 @@ using Spectre.Console.Cli;
 namespace Clarius.OpenLaw.Argentina;
 
 [Description("Sincroniza contenido de SAIJ")]
-public class SyncCommand(IAnsiConsole console, IHttpClientFactory http) : AsyncCommand<SyncCommand.SyncSettings>
+public class SyncCommand(IAnsiConsole console, IHttpClientFactory http, CancellationTokenSource cts) : AsyncCommand<SyncCommand.SyncSettings>
 {
     // For batched retrieval from search results.
     const int PageSize = 100;
@@ -43,27 +43,40 @@ public class SyncCommand(IAnsiConsole console, IHttpClientFactory http) : AsyncC
                 var ids = new ConcurrentDictionary<string, string>();
                 var options = new ParallelOptions
                 {
+                    CancellationToken = cts.Token,
                     MaxDegreeOfParallelism = Debugger.IsAttached ? 1 : Environment.ProcessorCount
                 };
 
                 var loadTask = ctx.AddTask($"Cargando [lime]{query}[/]");
-                var initialSkip = settings.Skip ?? 0;
+                // Each paralell block skips this many records in each iteration. 
+                // For 4 CPUs, for example:
+                // CPU1: 0-100, then skip 400 and do 500-600, then 1000-1100, etc.
+                // CPU2: 100-200, then skip 400 to 600-700, then 1100-1200, etc.
+                var step = PageSize * options.MaxDegreeOfParallelism;
 
                 await Parallel.ForEachAsync(
-                    Enumerable.Range(0, options.MaxDegreeOfParallelism),
+                    Enumerable.Range(1, options.MaxDegreeOfParallelism),
                     options,
                     async (index, cancellationToken) =>
                     {
-                        // Starting point for this task
-                        var skip = initialSkip + (index * PageSize);
+                        // Starting point for this task.
+                        var skip = settings.Skip.GetValueOrDefault(0) + ((index - 1) * PageSize);
+                        if (settings.Verbose)
+                            console.WriteLine($"[CPU-{index:00}] {Emoji.Known.BackhandIndexPointingRight} {skip}");
+
                         while (true)
                         {
+                            cancellationToken.ThrowIfCancellationRequested();
                             // Fetch a batch
                             var search = client.SearchAsync(settings.Tipo, settings.Jurisdiccion, settings.Provincia, settings.Filters, skip, PageSize, cancellationToken);
-                            var count = 0;
+                            var count = -1;
                             await foreach (var item in search)
                             {
+                                cancellationToken.ThrowIfCancellationRequested();
                                 count++;
+                                if (count == PageSize)
+                                    break;
+
                                 if (settings.Top != null && results.Count >= settings.Top)
                                     return;
 
@@ -80,20 +93,19 @@ public class SyncCommand(IAnsiConsole console, IHttpClientFactory http) : AsyncC
                                 if (settings.Top != null && results.Count >= settings.Top)
                                     return;
 
-                                loadTask.Description = $"Cargando [lime]{query}[/]: {results.Count} de {total}";
-                                loadTask.Value = results.Count;
+                                loadTask.Description = $"Cargando [lime]{query}[/]: {results.Count + settings.Skip.GetValueOrDefault(0)} de {total}";
+                                loadTask.Value = results.Count + settings.Skip.GetValueOrDefault(0);
                                 if (total.HasValue)
                                     loadTask.MaxValue(total.Value);
-
-                                if (count == PageSize)
-                                    break;
                             }
 
-                            if (count == 0) // No more items, stop this task
+                            if (count == -1) // No more items, stop this task
                                 break;
 
                             // Move to the next batch
-                            skip += options.MaxDegreeOfParallelism * PageSize;
+                            skip += step;
+                            if (settings.Verbose)
+                                console.WriteLine($"[CPU-{index:00}] {Emoji.Known.RightArrow}  {skip}");
                         }
                     });
 
@@ -212,6 +224,9 @@ public class SyncCommand(IAnsiConsole console, IHttpClientFactory http) : AsyncC
         [Description("Forzar actualizacion de documentos.")]
         [CommandOption("--force", IsHidden = true)]
         public bool Force { get; set; }
+
+        [CommandOption("--verbose", IsHidden = true)]
+        public bool Verbose { get; set; }
     }
 
     class SyncAction(SaijClient client, SearchResult item, FileDocumentRepository targetRepository, long? targetTimestamp, bool forceUpdate)
