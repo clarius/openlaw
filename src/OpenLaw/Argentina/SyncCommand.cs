@@ -167,7 +167,7 @@ public class SyncCommand(IAnsiConsole console, IHttpClientFactory http, Cancella
                         await Task.Delay(delay, cancellation);
                     }
 
-                    var action = await item.ExecuteAsync(client, target);
+                    var action = await item.ExecuteAsync(client, target, settings.NoDebugger);
                     if (action != null)
                     {
                         UpdateSync(action);
@@ -255,6 +255,10 @@ public class SyncCommand(IAnsiConsole console, IHttpClientFactory http, Cancella
         [Description("Resume from checkpoint if found.")]
         [CommandOption("--resume", IsHidden = true)]
         public bool Resume { get; set; }
+
+        [Description("Don't attemp to attach debugger in debug builds.")]
+        [CommandOption("--no-debugger", IsHidden = true)]
+        public bool NoDebugger { get; set; }
     }
 
     class SyncAction(SearchResult item, long? targetTimestamp, bool forceUpdate)
@@ -272,7 +276,7 @@ public class SyncCommand(IAnsiConsole console, IHttpClientFactory http, Cancella
 
         public Exception? Exception { get; private set; }
 
-        public async Task<SyncActionResult?> ExecuteAsync(SaijClient client, FileDocumentRepository targetRepository)
+        public async Task<SyncActionResult?> ExecuteAsync(SaijClient client, FileDocumentRepository targetRepository, bool noDebugger = false)
         {
             Exception = null;
 
@@ -296,7 +300,8 @@ public class SyncCommand(IAnsiConsole console, IHttpClientFactory http, Cancella
                 Attempts++;
                 Exception = e;
 #if DEBUG
-                Debugger.Launch();
+                if (noDebugger != true)
+                    Debugger.Launch();
 #endif
                 return null;
             }
@@ -319,7 +324,8 @@ public class SyncCommand(IAnsiConsole console, IHttpClientFactory http, Cancella
                     Attempts++;
                     Exception = e;
 #if DEBUG
-                    Debugger.Launch();
+                    if (noDebugger != true)
+                        Debugger.Launch();
 #endif
                     return null;
                 }
