@@ -6,7 +6,6 @@ using System.Text.Json.Serialization.Metadata;
 using Clarius.OpenLaw.Argentina;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using PuppeteerSharp;
 using Spectre.Console;
 using Spectre.Console.Cli;
 using static Spectre.Console.AnsiConsole;
@@ -34,7 +33,8 @@ public static class App
                     http.DefaultRequestHeaders.UserAgent.Add(new ProductInfoHeaderValue(ThisAssembly.Info.Product, ThisAssembly.Info.InformationalVersion));
                     if (Debugger.IsAttached)
                         http.Timeout = TimeSpan.FromMinutes(10);
-                }).AddStandardResilienceHandler(options =>
+                })
+                .AddStandardResilienceHandler(options =>
                 {
                     var retry = options.Retry.ShouldHandle;
 
