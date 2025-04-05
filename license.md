@@ -1,6 +1,7 @@
 Copyright (c) Fundacion Clarius, Daniel Cazzulino y Contribuyentes
 
 Software Libre y Licencia Comercial de OpenLaw
+
 Fundación Clarius ofrece OpenLaw bajo un modelo de doble licencia, 
 adaptado a las necesidades de distribuidores comerciales y proyectos 
 de código abierto.  
