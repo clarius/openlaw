@@ -1,6 +1,6 @@
 ﻿```shell
 DESCRIPTION:
-Normaliza el formato de archivos JSON.
+Normaliza el formato de archivos JSON
 
 USAGE:
     openlaw format [OPTIONS]
