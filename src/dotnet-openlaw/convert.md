@@ -1,6 +1,6 @@
 ﻿```shell
 DESCRIPTION:
-Convierte archivos JSON a YAML, Markdown y PDF.
+Convierte archivos JSON a YAML, Markdown y PDF
 
 USAGE:
     openlaw convert [file] [OPTIONS]
