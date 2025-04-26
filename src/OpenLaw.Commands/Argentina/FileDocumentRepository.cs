@@ -28,6 +28,8 @@ public class FileDocumentRepository
         return await Document.ParseAsync(await File.ReadAllTextAsync(file));
     }
 
+    public Location GetLocation(string id) => new(Path.Combine(rootDirectory, id + ".md"), Path.Combine(rootDirectory, "data", id + ".json"));
+
     public async ValueTask<long?> GetTimestampAsync(string id)
     {
         var file = Path.Combine(rootDirectory, "data", id + ".json");
@@ -53,4 +55,9 @@ public class FileDocumentRepository
 
         return action;
     }
+}
+
+public static class FileDocumentRepositoryExtensions
+{
+    public static Location GetLocation(this FileDocumentRepository repository, Document document) => repository.GetLocation(document.Id);
 }
