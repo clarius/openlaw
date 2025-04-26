@@ -72,7 +72,7 @@ OPTIONS:
 <!-- include src/dotnet-openlaw/convert.md -->
 ```shell
 DESCRIPTION:
-Convierte archivos JSON a YAML, Markdown y PDF.
+Convierte archivos JSON a YAML, Markdown y PDF
 
 USAGE:
     openlaw convert [file] [OPTIONS]
@@ -97,7 +97,7 @@ OPTIONS:
 <!-- include src/dotnet-openlaw/format.md -->
 ```shell
 DESCRIPTION:
-Normaliza el formato de archivos JSON.
+Normaliza el formato de archivos JSON
 
 USAGE:
     openlaw format [OPTIONS]
