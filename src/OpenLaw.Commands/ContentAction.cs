@@ -14,6 +14,10 @@ public enum ContentAction
     /// </summary>
     Updated,
     /// <summary>
+    /// The change was only on timestamps, no actual content changed.
+    /// </summary>
+    Timestamps,
+    /// <summary>
     /// The given content existed but the timestamps matched, so it wasn't updated.
     /// </summary>
     Skipped,

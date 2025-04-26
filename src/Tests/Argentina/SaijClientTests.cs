@@ -385,6 +385,16 @@ public class SaijClientTests(ITestOutputHelper output)
         output.WriteLine(doc.Timestamp.ToString());
     }
 
+    [Theory]
+    [InlineData("LNS0004592")]
+    public async Task SearchById(string id)
+    {
+        var client = CreateClient(output);
+        var result = await client.SearchIdAsync(id);
+
+        Assert.NotNull(result);
+    }
+
     public static TheoryData<string> LoadErrorData(int count) => new TheoryData<string>(LoadErrorIds().Take(count));
 
     static IEnumerable<string> LoadErrorIds()

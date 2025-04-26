@@ -1,6 +1,5 @@
 ﻿using System.Diagnostics;
 using System.Text;
-using DiffPlex.DiffBuilder;
 
 namespace Clarius.OpenLaw.Argentina;
 
@@ -35,10 +34,10 @@ public class SyncSummary(string operation)
                 Interlocked.Increment(ref updated);
                 break;
             case ContentAction.Skipped:
+            case ContentAction.Timestamps:
                 Interlocked.Increment(ref skipped);
                 break;
         }
-
         results.Add(result);
     }
 
@@ -51,6 +50,41 @@ public class SyncSummary(string operation)
     }
 
     public void Stop() => stopwatch.Stop();
+
+    public void Save(string filePath, bool append = false)
+    {
+        var content = ToMarkdown();
+        AddOrUpdate(filePath, append, content);
+
+        // Persist the timestamp-only changes to a separate txt file so it can be 
+        // committed separately without a PR, for example, since there's no need 
+        // for a review.
+        filePath = Path.ChangeExtension(filePath, ".txt");
+
+        AddOrUpdate(filePath, append, results
+            .Where(r => r.Action == ContentAction.Timestamps)
+            .Select(r => r.Location.Data)
+            .Concat(results
+            .Where(r => r.Action == ContentAction.Timestamps)
+            .Select(r => r.Location.Text)));
+    }
+
+    static void AddOrUpdate(string path, bool append, string content) => AddOrUpdate(path, append, [content]);
+
+    static void AddOrUpdate(string path, bool append, IEnumerable<string> lines)
+    {
+        if (File.Exists(path) && append)
+        {
+            File.AppendAllLines(path, [Environment.NewLine]);
+            File.AppendAllLines(path, lines);
+        }
+        else
+        {
+            if (Path.GetDirectoryName(path) is { } dir)
+                Directory.CreateDirectory(dir);
+            File.WriteAllLines(path, lines);
+        }
+    }
 
     public string ToMarkdown()
     {
@@ -72,24 +106,13 @@ public class SyncSummary(string operation)
             // quickly skip from report the dummy updates
             if (result.Action == ContentAction.Skipped)
                 continue;
-            if (result.Action == ContentAction.Updated &&
-                result.OldDocument != null)
-            {
-                var diff = InlineDiffBuilder.Diff(result.OldDocument!.Json, result.NewDocument.Json)
-                    .Lines.Where(x => x.Type != DiffPlex.DiffBuilder.Model.ChangeType.Unchanged)
-                    .ToList();
 
-                if (diff.Count == 4 &&
-                    diff[0].Type == DiffPlex.DiffBuilder.Model.ChangeType.Deleted && diff[0].Text.Trim().StartsWith("\"timestamp\":") &&
-                    diff[1].Type == DiffPlex.DiffBuilder.Model.ChangeType.Inserted && diff[1].Text.Trim().StartsWith("\"timestamp\":") &&
-                    diff[2].Type == DiffPlex.DiffBuilder.Model.ChangeType.Deleted && diff[2].Text.Trim().StartsWith("\"fecha-umod\":") &&
-                    diff[3].Type == DiffPlex.DiffBuilder.Model.ChangeType.Inserted && diff[3].Text.Trim().StartsWith("\"fecha-umod\":"))
-                {
-                    // discard changes that are only timestamp/fecha-umod
-                    // see: https://github.com/clarius/normas/pull/32/files#diff-2f592ca38476012d2be4d6b3f17789b83b8bd3c3fa1df6eda2e54b8ccc7e1cbc
-                    nop++;
-                    continue;
-                }
+            if (result.Action == ContentAction.Timestamps)
+            {
+                // discard changes that are only timestamp/fecha-umod
+                // see: https://github.com/clarius/normas/pull/32/files#diff-2f592ca38476012d2be4d6b3f17789b83b8bd3c3fa1df6eda2e54b8ccc7e1cbc
+                nop++;
+                continue;
             }
 
             details.AppendLine($"|{(result.Action == ContentAction.Created ? ":heavy_plus_sign:" : ":pencil:")}|[{result.NewDocument.Name ?? result.NewDocument.Alias}]({result.NewDocument.WebUrl})|{result.NewDocument.Title}|");

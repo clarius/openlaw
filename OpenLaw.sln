@@ -1,13 +1,15 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.13.35507.96 d17.13
+VisualStudioVersion = 17.13.35507.96
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "dotnet-infoleg", "src\dotnet-openlaw\dotnet-openlaw.csproj", "{DB86D9A6-75C2-52CD-310B-764761DD39E7}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "dotnet-openlaw", "src\dotnet-openlaw\dotnet-openlaw.csproj", "{DB86D9A6-75C2-52CD-310B-764761DD39E7}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tests", "src\Tests\Tests.csproj", "{F9698E0A-C16D-407A-B3D0-60CC075B28A7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infoleg", "src\OpenLaw\OpenLaw.csproj", "{303D816A-B1AD-4C1B-8481-A319721DCE75}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenLaw.Commands", "src\OpenLaw.Commands\OpenLaw.Commands.csproj", "{303D816A-B1AD-4C1B-8481-A319721DCE75}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenLaw.Core", "src\OpenLaw.Core\OpenLaw.Core.csproj", "{96C1848B-804C-4348-95FE-CAA8DECA9758}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +29,10 @@ Global
 		{303D816A-B1AD-4C1B-8481-A319721DCE75}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{303D816A-B1AD-4C1B-8481-A319721DCE75}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{303D816A-B1AD-4C1B-8481-A319721DCE75}.Release|Any CPU.Build.0 = Release|Any CPU
+		{96C1848B-804C-4348-95FE-CAA8DECA9758}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{96C1848B-804C-4348-95FE-CAA8DECA9758}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{96C1848B-804C-4348-95FE-CAA8DECA9758}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{96C1848B-804C-4348-95FE-CAA8DECA9758}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

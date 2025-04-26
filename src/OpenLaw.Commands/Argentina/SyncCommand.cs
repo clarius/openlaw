@@ -205,20 +205,7 @@ public class SyncCommand(IAnsiConsole console, IHttpClientFactory http, Cancella
         }
 
         if (settings.ChangeLog is not null)
-        {
-            var changelog = summary.ToMarkdown();
-            if (File.Exists(settings.ChangeLog) && settings.AppendLog)
-            {
-                await File.AppendAllLinesAsync(settings.ChangeLog, [Environment.NewLine]);
-                await File.AppendAllTextAsync(settings.ChangeLog, changelog);
-            }
-            else
-            {
-                if (Path.GetDirectoryName(settings.ChangeLog) is { } dir)
-                    Directory.CreateDirectory(dir);
-                await File.WriteAllTextAsync(settings.ChangeLog, changelog);
-            }
-        }
+            summary.Save(settings.ChangeLog, settings.AppendLog);
 
         return 0;
     }
@@ -259,80 +246,6 @@ public class SyncCommand(IAnsiConsole console, IHttpClientFactory http, Cancella
         [Description("Don't attemp to attach debugger in debug builds.")]
         [CommandOption("--no-debugger", IsHidden = true)]
         public bool NoDebugger { get; set; }
-    }
-
-    class SyncAction(SearchResult item, long? targetTimestamp, bool forceUpdate)
-    {
-        Document? original;
-        Document? document;
-
-        public SearchResult Item => item;
-
-        public long? TargetTimestamp => targetTimestamp;
-
-        public bool ForceUpdate => forceUpdate;
-
-        public int Attempts { get; private set; }
-
-        public Exception? Exception { get; private set; }
-
-        public async Task<SyncActionResult?> ExecuteAsync(SaijClient client, FileDocumentRepository targetRepository, bool noDebugger = false)
-        {
-            Exception = null;
-
-            // Try loading the doc(s) only once.
-            try
-            {
-                if (document == null)
-                {
-                    document = await client.LoadAsync(item);
-                    // Might return null if it's a new doc.
-                    original = await targetRepository.GetDocumentAsync(item.Id);
-                }
-            }
-            catch (Exception e) when (e is HttpRequestException || e is ExecutionRejectedException)
-            {
-                // Don't consider transient exceptions as actual attempts.
-                return null;
-            }
-            catch (Exception e)
-            {
-                Attempts++;
-                Exception = e;
-#if DEBUG
-                if (noDebugger != true)
-                    Debugger.Launch();
-#endif
-                return null;
-            }
-
-            if (forceUpdate || targetTimestamp is null || document.Timestamp > targetTimestamp)
-            {
-                using var markdown = new MemoryStream(Encoding.UTF8.GetBytes(document.ToMarkdown(true)));
-                try
-                {
-                    // \o/: Force update by passing an impossible timestamp for our new doc.
-                    return new SyncActionResult(await targetRepository.SetDocumentAsync(document), document, original);
-                }
-                catch (Exception e) when (e is HttpRequestException || e is ExecutionRejectedException)
-                {
-                    // Don't consider transient exceptions as actual attempts.
-                    return null;
-                }
-                catch (Exception e)
-                {
-                    Attempts++;
-                    Exception = e;
-#if DEBUG
-                    if (noDebugger != true)
-                        Debugger.Launch();
-#endif
-                    return null;
-                }
-            }
-
-            return new SyncActionResult(ContentAction.Skipped, document, original);
-        }
     }
 
     static bool TryLoadProgress([NotNullWhen(true)] out ConcurrentQueue<SyncAction>? actions)

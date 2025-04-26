@@ -28,7 +28,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\OpenLaw\OpenLaw.csproj" />
+    <ProjectReference Include="..\OpenLaw.Commands\OpenLaw.Commands.csproj" />
   </ItemGroup>
 
   <Target Name="RenderHelp" AfterTargets="Build" Condition="$(DesignTimeBuild) != 'true' and '$(OS)' == 'Windows_NT'">

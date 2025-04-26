@@ -15,6 +15,70 @@ public class SaijClient(IHttpClientFactory httpFactory, IProgress<ProgressMessag
     record SearchResults(int Total, int Skip, int Take, DocResult[] Docs);
     record DocResult(string Uuid, string Abstract);
 
+    public async Task<SearchResult?> SearchIdAsync(string id, CancellationToken token = default)
+    {
+        var url = $"https://www.saij.gob.ar/busqueda?r=(id-infojus:{id})&f=Total";
+        using var http = httpFactory.CreateClient("saij");
+        var response = await http.GetAsync(url, token);
+        if (!response.IsSuccessStatusCode)
+            return null;
+
+        var json = await response.Content.ReadAsStringAsync(token);
+        var jq = await JQ.ExecuteAsync(json, ThisAssembly.Resources.Argentina.SearchResults.Text);
+
+        if (JsonOptions.Default.TryDeserialize<SearchResults>(jq) is not { } result)
+            return null;
+        if (result.Total == 0 || result.Docs.Length == 0)
+            return null;
+        if (result.Total > 1)
+            throw new ArgumentException($"Multiple results found for ID '{id}'.", nameof(id));
+
+        var item = result.Docs[0];
+
+        if (await JQ.ExecuteAsync(item.Abstract, ThisAssembly.Resources.Argentina.SaijIdType.Text) is not { } idTypeJson ||
+            JsonOptions.Default.TryDeserialize<IdType>(idTypeJson) is not { } idType)
+            throw new ArgumentException($"Invalid document data for ID '{id}'.", nameof(id));
+
+        if (!DisplayValue.TryParse<ContentType>(idType.Type, true, out _))
+            throw new NotSupportedException($"Unsupported document content type '{idType.Type}' with ID '{id}'.");
+
+        jq = await JQ.ExecuteAsync(item.Abstract, ThisAssembly.Resources.Argentina.SearchResult.Text);
+        if (string.IsNullOrEmpty(jq))
+        {
+            AnsiConsole.MarkupLine($":cross_mark: [dim]{idType.Type}[/] [blue][link={idType.WebUrl}]{idType.Uuid}[/][/] ([blue][link={idType.DataUrl}]JSON[/][/])");
+#if DEBUG
+            Debugger.Launch();
+            AnsiConsole.Write(new JsonText(item.Abstract));
+#endif
+            return null;
+        }
+
+        if (JsonOptions.Default.TryDeserialize<SearchResult>(jq) is not { } doc)
+        {
+            AnsiConsole.MarkupLine($":cross_mark: [dim]{idType.Type}[/] [blue][link={idType.WebUrl}]{idType.Uuid}[/][/] ([blue][link={idType.DataUrl}]JSON[/][/])");
+#if DEBUG
+            Debugger.Launch();
+            AnsiConsole.Write(new JsonText(item.Abstract));
+#endif
+            return null;
+        }
+
+        var source = new Search(
+            doc.DocumentType.Code == "LEY" ?
+            TipoNorma.Ley :
+            doc.DocumentType.Code == "DEC" ?
+            TipoNorma.Decreto :
+            // TODO: we don't attempt to convert the other types just yet.
+            null, null, null);
+
+        return doc with
+        {
+            Json = result.Docs[0].Abstract,
+            JQ = jq,
+            Query = source,
+        };
+    }
+
     // TODO: add int top value to stop the search after a certain number of results.
     public async IAsyncEnumerable<SearchResult> SearchAsync(
         TipoNorma? tipo = TipoNorma.Ley,
