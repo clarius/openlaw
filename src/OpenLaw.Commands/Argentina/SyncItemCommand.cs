@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel;
 using System.Runtime.ExceptionServices;
+using Polly;
 using Spectre.Console;
 using Spectre.Console.Cli;
 
@@ -19,8 +20,24 @@ public class SyncItemCommand(IAnsiConsole console, IHttpClientFactory http, Canc
             try
             {
                 var summary = new SyncSummary($"Sync {settings.Id}");
-                var result = await client.SearchIdAsync(settings.Id, cts.Token) ??
-                    throw new ArgumentException($"Document not found with ID '{settings.Id}.");
+                var result = await client.SearchIdAsync(settings.Id, cts.Token);
+                // Fallback to loading by document id, but as a search result so we can levarge the rest.
+                if (result is null)
+                {
+                    var doc = await Policy
+                        // ArgumentException is what loading a doc throws if no data is found, which in retries, is a transient error.
+                        .Handle<ArgumentException>()
+                        .WaitAndRetryAsync(
+                            retryCount: 5,
+                            sleepDurationProvider: attempt => TimeSpan.FromSeconds(Math.Pow(2, attempt)),
+                            onRetry: (exception, timeSpan, retryCount, context) =>
+                            {
+                                console.MarkupLine($"[yellow]Intento {retryCount}. Reintentando en {timeSpan.TotalSeconds}s...[/]");
+                            })
+                        .ExecuteAsync(async () => await client.LoadAsync(settings.Id));
+
+                    result = new SearchResult(settings.Id, doc.ContentType, doc.DocumentType, doc.Status, doc.Date, doc.Timestamp);
+                }
 
                 var item = new SyncAction(result, null, true);
                 SyncActionResult? action = null;
