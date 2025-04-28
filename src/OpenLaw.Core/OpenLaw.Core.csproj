@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>net8.0</TargetFramework>
@@ -9,7 +9,7 @@
   <ItemGroup>
     <PackageReference Include="NuGetizer" Version="1.2.4" PrivateAssets="all" />
     <PackageReference Include="Devlooped.TableStorage" Version="5.2.1" />
-    <PackageReference Include="Devlooped.WhatsApp" Version="1.0.0-rc.3" />
+    <PackageReference Include="Devlooped.WhatsApp" Version="1.0.0-rc.4" />
     <PackageReference Include="SystemTextJson.JsonDiffPatch" Version="2.0.0" />
   </ItemGroup>
 
