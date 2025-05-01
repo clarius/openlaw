@@ -1,8 +1,9 @@
 ![Icon](assets/img/icon.png) OpenLaw
 ============
 
-[![tool version](https://img.shields.io/endpoint?url=https://shields.kzu.io/v/dotnet-openlaw?f=https://clarius.blob.core.windows.net/nuget/index.json&label=dotnet-openlaw&color=blue)](https://clarius.blob.core.windows.net/nuget/index.json)
-[![lib version](https://img.shields.io/endpoint?url=https://shields.kzu.io/v/clarius.openlaw?f=https://clarius.blob.core.windows.net/nuget/index.json&label=Clarius.OpenLaw&color=purple)](https://clarius.blob.core.windows.net/nuget/index.json)
+[![tool](https://img.shields.io/endpoint?url=https://shields.kzu.app/v/dotnet-openlaw?f=https://clarius.blob.core.windows.net/nuget/index.json&label=dotnet-openlaw&color=blue)](https://clarius.blob.core.windows.net/nuget/index.json)
+[![lib](https://img.shields.io/endpoint?url=https://shields.kzu.app/v/clarius.openlaw?f=https://clarius.blob.core.windows.net/nuget/index.json&label=Clarius.OpenLaw&color=purple)](https://clarius.blob.core.windows.net/nuget/index.json)
+[![commands](https://img.shields.io/endpoint?url=https://shields.kzu.app/v/clarius.openlaw.commands?f=https://clarius.blob.core.windows.net/nuget/index.json&label=Clarius.OpenLaw.Commands&color=purple)](https://clarius.blob.core.windows.net/nuget/index.json)
 [![Build](https://github.com/clarius/openlaw/actions/workflows/build.yml/badge.svg?branch=main)](https://github.com/clarius/openlaw/actions)
 
 Plataforma de código abierto para normas de Argentina.
@@ -109,3 +110,21 @@ OPTIONS:
 ```
 
 <!-- src/dotnet-openlaw/format.md -->
+
+## WhatsApp API
+
+El proyecto incluye integracion con WhatsApp for Business para consultas de contenido.
+
+Para usar la API de WhatsApp, es necesario tener una cuenta de WhatsApp Business y un 
+número de teléfono asociado. Ver [Devlooped.WhatsApp](https://github.com/devlooped/WhatsApp?tab=readme-ov-file#configuration) 
+para más detalles de configuración específica de la API de WhatsApp.
+
+### CI/CD
+
+El deployment esta configurado para ocurrir automaticamente en push a main.
+
+Para el deployment, debe configurarse el fork de este repo con las siguientes valores:
+
+* `AZURE_CREDENTIALS` *secret*: credenciales de Azure para el deployment de la API
+* `APP_NAME` *variable*: nombre de la app de Azure Functions a deployear, como variable de repo.
+

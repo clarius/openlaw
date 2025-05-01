@@ -45,7 +45,7 @@ public class ConvertCommand(IAnsiConsole console) : Command<ConvertCommand.Conve
     }
 
     static void Convert(string file, ConvertSettings settings)
-        => DictionaryConverter.Convert(file, settings.Yaml, settings.Pdf, settings.Markdown, settings.Overwrite);
+        => JsonDataConverter.Convert(file, settings.Yaml, settings.Pdf, settings.Markdown, settings.Overwrite);
 
     public class ConvertSettings : CommandSettings
     {

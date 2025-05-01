@@ -9,7 +9,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tests", "src\Tests\Tests.cs
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenLaw.Commands", "src\OpenLaw.Commands\OpenLaw.Commands.csproj", "{303D816A-B1AD-4C1B-8481-A319721DCE75}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenLaw.Core", "src\OpenLaw.Core\OpenLaw.Core.csproj", "{96C1848B-804C-4348-95FE-CAA8DECA9758}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenLaw", "src\OpenLaw\OpenLaw.csproj", "{96C1848B-804C-4348-95FE-CAA8DECA9758}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
