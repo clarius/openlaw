@@ -1,6 +1,9 @@
-﻿namespace Clarius.OpenLaw;
+﻿using System.ComponentModel;
 
-static class TimeSpanExtensions
+namespace Clarius.OpenLaw;
+
+[EditorBrowsable(EditorBrowsableState.Never)]
+public static class TimeSpanExtensions
 {
     public static string ToMinimalString(this TimeSpan timeSpan)
     {

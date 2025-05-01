@@ -39,5 +39,3 @@ public record Legislation(
 }
 
 public record Publication([property: JsonPropertyName("org")] string Organization, string Date);
-
-public record Link(string Url, string Name);
