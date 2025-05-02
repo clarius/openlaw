@@ -100,6 +100,7 @@ public class BlobStorage(ILogger<BlobStorage> log, VectorStoreService storeServi
 
         if (!frontMatter.TryGetValue("Estado", out var estado) || !string.Equals("Vigente", estado?.ToString(), StringComparison.OrdinalIgnoreCase))
         {
+            // NOTE: we have already deleted the file and store association if there was one, so we're done.
             log.LogInformation("Skipping norm {Url} (status: {Status})", data.Url, estado);
             return;
         }
