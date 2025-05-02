@@ -1,0 +1,135 @@
+﻿using System.Text;
+using System.Text.Json;
+using Azure.Messaging.EventGrid;
+using Azure.Storage;
+using Azure.Storage.Blobs;
+using Microsoft.Azure.Functions.Worker;
+using Microsoft.Azure.Functions.Worker.Http;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Logging;
+using OpenAI;
+using OpenAI.Files;
+
+namespace Clarius.OpenLaw;
+
+public class BlobStorage(ILogger<BlobStorage> log, VectorStoreService storeService,
+    [FromKeyedServices("oai")] OpenAIClient oai, IConfiguration configuration,
+    IHttpClientFactory httpFactory)
+{
+    static readonly JsonSerializerOptions options = new(JsonSerializerDefaults.Web);
+
+    public record EventData(string Api, string Url);
+
+    [Function("event_triggered")]
+    public async Task RunEventAsync(
+#if DEBUG
+        [HttpTrigger][FromBody] EventGridEvent e
+#else
+        [EventGridTrigger] EventGridEvent e
+#endif
+        )
+    {
+#if DEBUG
+        log.LogTrace(
+            """
+                Got event: 
+                    Id: {Id} @ {Time}
+                    Subject: {Subject}
+                    Topic: {Topic}
+                    Type: {Type}
+                    Data: {Data}
+                """, e.Id, e.EventTime, e.Subject, e.Topic, e.EventType, e.Data.ToString());
+#endif
+
+        var data = e.Data.ToObjectFromJson<EventData>(options);
+        if (data is null)
+        {
+            log.LogWarning("Invalid event data: {Data}", e.Data.ToString());
+            return;
+        }
+
+        var blob = CreateBlobClient(data);
+        using var http = httpFactory.CreateClient();
+        var response = await http.SendAsync(new HttpRequestMessage(HttpMethod.Get, data.Url));
+        if (!response.IsSuccessStatusCode)
+        {
+            log.LogWarning("Failed to get {Url}: {Status}", data.Url, response.StatusCode);
+            return;
+        }
+
+        // convert to case-insensitive dictionary the headers that start with "x-ms-meta-" and remove the prefix
+        var metadata = response.Headers
+            .Where(h => h.Key.StartsWith("x-ms-meta-", StringComparison.OrdinalIgnoreCase))
+            .ToDictionary(h => h.Key[10..], h => h.Value.FirstOrDefault(), StringComparer.OrdinalIgnoreCase);
+
+        // In OpenAI, we need to just delete the existing and add a new file.
+        if (metadata.TryGetValue("FileId", out var fileId) &&
+            metadata.TryGetValue("StoreId", out var storeId))
+        {
+            log.LogInformation("Deleting older file {File} from store", fileId);
+
+            await oai.GetVectorStoreClient().RemoveFileFromStoreAsync(storeId, fileId);
+            await oai.GetOpenAIFileClient().DeleteFileAsync(fileId);
+
+            // clear the two fields from the blob so we don't try to delete it again
+            metadata.Remove("FileId");
+            metadata.Remove("StoreId");
+            await blob.SetMetadataAsync(metadata);
+        }
+        else
+        {
+            log.LogInformation("No existing vector store info found");
+        }
+
+        var content = await response.Content.ReadAsStringAsync();
+        // TODO: if any of the metadata is missing from the front-matter, we should fallback to fetching the JSON.
+        var frontMatter = DictionaryConverter.FromMarkdown(content);
+
+        if (!frontMatter.TryGetValue("Estado", out var estado) || !string.Equals("Vigente", estado?.ToString(), StringComparison.OrdinalIgnoreCase))
+        {
+            log.LogInformation("Skipping norm {Url} (status: {Status})", data.Url, estado);
+            return;
+        }
+
+        if (!frontMatter.TryGetValue("Fecha", out var dateMeta) || !DateOnly.TryParse(dateMeta?.ToString(), out var date))
+        {
+            log.LogWarning("Missing or invalid 'Fecha' front-matter in {Url}: {Fecha}", data.Url, dateMeta);
+            return;
+        }
+
+        var filename = Path.GetFileName(data.Url);
+        if (await storeService.GetStoreAsync(date) is not { } store)
+        {
+            log.LogWarning("No store found for document {Url} ({Date})", data.Url, date);
+            return;
+        }
+
+        var title = frontMatter.TryGetValue("Título", out var titleMeta) ? titleMeta?.ToString() : filename;
+
+        using var stream = new MemoryStream(Encoding.UTF8.GetBytes(content));
+        var file = await oai.GetOpenAIFileClient().UploadFileAsync(stream, filename, FileUploadPurpose.Assistants);
+        await oai.GetVectorStoreClient().AddFileToVectorStoreAsync(store.Id, file.Value.Id, true);
+
+        // Update blob metadata.
+        metadata["FileId"] = file.Value.Id;
+        metadata["StoreId"] = store.Id;
+        await blob.SetMetadataAsync(metadata);
+
+        log.LogInformation("Added file {File} to store {Store} for {Title}", file.Value.Id, store.Id, title);
+    }
+
+    BlobClient CreateBlobClient(EventData data)
+    {
+        var uri = new Uri(data.Url);
+        var account = uri.Host.Split('.')[0];
+        var key = configuration["Azure:Storage:" + account] ?? throw new InvalidOperationException($"Missing access key to storage account '{account}'");
+        var parts = uri.AbsolutePath.Split('/', StringSplitOptions.TrimEntries | StringSplitOptions.RemoveEmptyEntries);
+        var container = parts[0];
+        var path = string.Join('/', parts[1..]);
+        var credential = new StorageSharedKeyCredential(account, key);
+        var client = new BlobServiceClient(new Uri(uri.GetComponents(UriComponents.SchemeAndServer, UriFormat.Unescaped)), credential);
+
+        return client.GetBlobContainerClient(container).GetBlobClient(path);
+    }
+}
