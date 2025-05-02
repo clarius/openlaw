@@ -1,5 +1,4 @@
-﻿using System;
-using System.ClientModel;
+﻿using System.ClientModel;
 using System.Text;
 using System.Text.Json;
 using Azure.Messaging.EventGrid;
@@ -118,7 +117,7 @@ public class BlobStorage(ILogger<BlobStorage> log, VectorStoreService storeServi
         message.Request.Method = "POST";
         message.Request.Uri = new Uri($"https://api.openai.com/v1/vector_stores/{store.Id}/files");
         message.Request.Headers.Add("OpenAI-Beta", "assistants=v2");
-        var request = JsonSerializer.Serialize(new { file_id = file.Value.Id, frontMatter });
+        var request = JsonSerializer.Serialize(new { file_id = file.Value.Id, attributes = frontMatter });
         message.Request.Content = BinaryContent.Create(BinaryData.FromString(request));
 
         await oai.Pipeline.SendAsync(message);
