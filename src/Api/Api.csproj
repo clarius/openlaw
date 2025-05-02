@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>net8.0</TargetFramework>
@@ -29,7 +29,7 @@
     <PackageReference Include="Devlooped.TableStorage" Version="5.2.1" />
     <PackageReference Include="Devlooped.WhatsApp" Version="1.0.0-rc.3" />
 
-    <PackageReference Include="ThisAssembly.AssemblyInfo" PrivateAssets="all" Version="2.0.12" />
+    <PackageReference Include="ThisAssembly.AssemblyInfo" PrivateAssets="all" Version="2.0.14" />
   </ItemGroup>
 
   <ItemGroup>

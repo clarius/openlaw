@@ -14,8 +14,8 @@
     <PackageReference Include="NuGet.Protocol" Version="6.13.2" />
     <PackageReference Include="NuGetizer" Version="1.2.4" PrivateAssets="all" />
     <PackageReference Include="Spectre.Console.Cli" Version="0.50.0" />
-    <PackageReference Include="ThisAssembly.Git" Version="2.0.13" PrivateAssets="all" />
-    <PackageReference Include="ThisAssembly.Project" Version="2.0.13" PrivateAssets="all" />
+    <PackageReference Include="ThisAssembly.Git" Version="2.0.14" PrivateAssets="all" />
+    <PackageReference Include="ThisAssembly.Project" Version="2.0.14" PrivateAssets="all" />
     <PackageReference Include="Microsoft.Extensions.Configuration" Version="9.0.3" />
     <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="9.0.3" />
     <PackageReference Include="Microsoft.Extensions.Http" Version="9.0.3" />
