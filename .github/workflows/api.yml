@@ -26,6 +26,10 @@ env:
   Sha: ${{ github.event.inputs.sha || github.sha }}
   VersionOrTag: ${{ github.event.inputs.version || github.event.release.tag_name || format('1.0.{0}', github.run_number) }}
 
+permissions:
+  id-token: write
+  contents: read
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
