@@ -1,4 +1,5 @@
-﻿using System.ClientModel;
+﻿using System;
+using System.ClientModel;
 using System.Text;
 using System.Text.Json;
 using Azure.Messaging.EventGrid;
@@ -121,6 +122,12 @@ public class BlobStorage(ILogger<BlobStorage> log, VectorStoreService storeServi
         message.Request.Content = BinaryContent.Create(BinaryData.FromString(request));
 
         await oai.Pipeline.SendAsync(message);
+
+        if (message.Response is null || message.Response.IsError)
+        {
+            log.LogError("Failed to add file to vector store: {Payload}", message.Response?.Content.ToString());
+            throw new InvalidOperationException($"Failed to add file to vector store: {message.Response?.Content.ToString()}");
+        }
 
         // Update blob metadata.
         metadata["FileId"] = file.Value.Id;
