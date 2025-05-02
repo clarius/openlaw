@@ -1,4 +1,5 @@
-﻿using System.Text;
+﻿using System.ClientModel;
+using System.Text;
 using System.Text.Json;
 using Azure.Messaging.EventGrid;
 using Azure.Storage;
@@ -109,7 +110,17 @@ public class BlobStorage(ILogger<BlobStorage> log, VectorStoreService storeServi
 
         using var stream = new MemoryStream(Encoding.UTF8.GetBytes(content));
         var file = await oai.GetOpenAIFileClient().UploadFileAsync(stream, filename, FileUploadPurpose.Assistants);
-        await oai.GetVectorStoreClient().AddFileToVectorStoreAsync(store.Id, file.Value.Id, true);
+
+        // To append metadata to the file association, we need to go lower-level since it's not supported in the SDK
+        var message = oai.Pipeline.CreateMessage();
+
+        message.Request.Method = "POST";
+        message.Request.Uri = new Uri($"https://api.openai.com/v1/vector_stores/{store.Id}/files");
+        message.Request.Headers.Add("OpenAI-Beta", "assistants=v2");
+        var request = JsonSerializer.Serialize(new { file_id = file.Value.Id, frontMatter });
+        message.Request.Content = BinaryContent.Create(BinaryData.FromString(request));
+
+        await oai.Pipeline.SendAsync(message);
 
         // Update blob metadata.
         metadata["FileId"] = file.Value.Id;
