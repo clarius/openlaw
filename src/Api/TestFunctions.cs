@@ -5,12 +5,11 @@ using Microsoft.Extensions.Logging;
 
 namespace Clarius.OpenLaw;
 
-public class TestFunctions(ILogger<TestFunctions> logger)
+public class TestFunctions(VectorStoreService vectors, ILogger<TestFunctions> logger)
 {
-    [Function("test")]
-    public IActionResult Test([HttpTrigger(AuthorizationLevel.Anonymous, "get", Route = "test")] HttpRequest req)
+    [Function("vectors")]
+    public async Task<IActionResult> VectorsAsync([HttpTrigger(AuthorizationLevel.Anonymous, "get", Route = "vectors")] HttpRequest req)
     {
-        logger.LogInformation("Received test message.");
-        return new OkResult();
+        return new OkObjectResult(await vectors.GetStores());
     }
 }
