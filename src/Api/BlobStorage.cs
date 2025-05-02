@@ -111,21 +111,28 @@ public class BlobStorage(ILogger<BlobStorage> log, VectorStoreService storeServi
         using var stream = new MemoryStream(Encoding.UTF8.GetBytes(content));
         var file = await oai.GetOpenAIFileClient().UploadFileAsync(stream, filename, FileUploadPurpose.Assistants);
 
-        // To append metadata to the file association, we need to go lower-level since it's not supported in the SDK
-        var message = oai.Pipeline.CreateMessage();
-
-        message.Request.Method = "POST";
-        message.Request.Uri = new Uri($"https://api.openai.com/v1/vector_stores/{store.Id}/files");
-        message.Request.Headers.Add("OpenAI-Beta", "assistants=v2");
-        var request = JsonSerializer.Serialize(new { file_id = file.Value.Id, attributes = frontMatter });
-        message.Request.Content = BinaryContent.Create(BinaryData.FromString(request));
-
-        await oai.Pipeline.SendAsync(message);
-
-        if (message.Response is null || message.Response.IsError)
+        try
         {
-            log.LogError("Failed to add file to vector store: {Payload}", message.Response?.Content.ToString());
-            throw new InvalidOperationException($"Failed to add file to vector store: {message.Response?.Content.ToString()}");
+            // To append metadata to the file association, we need to go lower-level since it's not supported in the SDK
+            var message = oai.Pipeline.CreateMessage();
+
+            message.Request.Method = "POST";
+            message.Request.Uri = new Uri($"https://api.openai.com/v1/vector_stores/{store.Id}/files");
+            message.Request.Headers.Add("OpenAI-Beta", "assistants=v2");
+            var request = JsonSerializer.Serialize(new { file_id = file.Value.Id, attributes = frontMatter });
+            message.Request.Content = BinaryContent.Create(BinaryData.FromString(request));
+
+            await oai.Pipeline.SendAsync(message);
+
+            if (message.Response is null || message.Response.IsError)
+            {
+                log.LogError("Failed to add file to vector store: {Payload}", message.Response?.Content.ToString());
+                throw new InvalidOperationException($"Failed to add file to vector store: {message.Response?.Content.ToString()}");
+            }
+        }
+        catch
+        {
+            await oai.GetOpenAIFileClient().DeleteFileAsync(file.Value.Id);
         }
 
         // Update blob metadata.
