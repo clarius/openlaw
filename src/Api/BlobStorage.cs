@@ -1,6 +1,8 @@
 ﻿using System.ClientModel;
 using System.Text;
+using System.Text.Encodings.Web;
 using System.Text.Json;
+using System.Text.Json.Serialization;
 using Azure.Messaging.EventGrid;
 using Azure.Storage;
 using Azure.Storage.Blobs;
@@ -18,7 +20,16 @@ public class BlobStorage(ILogger<BlobStorage> log, VectorStoreService storeServi
     [FromKeyedServices("oai")] OpenAIClient oai, IConfiguration configuration,
     IHttpClientFactory httpFactory)
 {
-    static readonly JsonSerializerOptions options = new(JsonSerializerDefaults.Web);
+    static readonly JsonSerializerOptions options = new(JsonSerializerDefaults.Web)
+    {
+        Converters =
+        {
+            new JsonStringEnumConverter(),
+        },
+        Encoder = JavaScriptEncoder.UnsafeRelaxedJsonEscaping,
+        DefaultIgnoreCondition = JsonIgnoreCondition.WhenWritingNull,
+        WriteIndented = true,
+    };
 
     public record EventData(string Api, string Url);
 
@@ -119,7 +130,12 @@ public class BlobStorage(ILogger<BlobStorage> log, VectorStoreService storeServi
             message.Request.Method = "POST";
             message.Request.Uri = new Uri($"https://api.openai.com/v1/vector_stores/{store.Id}/files");
             message.Request.Headers.Add("OpenAI-Beta", "assistants=v2");
-            var request = JsonSerializer.Serialize(new { file_id = file.Value.Id, attributes = frontMatter });
+
+            var attributes = frontMatter
+                .Where(x => x.Value is string or bool or int or double or float or decimal)
+                .ToDictionary(x => x.Key, x => x.Value);
+
+            var request = JsonSerializer.Serialize(new { file_id = file.Value.Id, attributes }, options);
             message.Request.Content = BinaryContent.Create(BinaryData.FromString(request));
 
             await oai.Pipeline.SendAsync(message);
