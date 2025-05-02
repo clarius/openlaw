@@ -149,6 +149,7 @@ public class BlobStorage(ILogger<BlobStorage> log, VectorStoreService storeServi
         catch
         {
             await oai.GetOpenAIFileClient().DeleteFileAsync(file.Value.Id);
+            throw;
         }
 
         // Update blob metadata.
