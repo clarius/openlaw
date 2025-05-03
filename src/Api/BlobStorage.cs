@@ -137,11 +137,10 @@ public class BlobStorage(ILogger<BlobStorage> log, VectorStoreService storeServi
                 .Where(x => x.Value is string or bool or int or double or float or decimal)
                 .ToDictionary(x => x.Key, x => x.Value);
 
-            if (frontMatter.TryGetValue("SAIJ", out var saijValue) &&                 saijValue is string saij && !string.IsNullOrWhiteSpace(saij))
-            {
+            if (frontMatter.TryGetValue("SAIJ", out var saijValue) && saijValue is string saij && !string.IsNullOrWhiteSpace(saij))
                 attributes["original_url"] = saij;
-            }
 
+            attributes["title"] = title;
             attributes["blob_url"] = data.Url;
 
             var request = JsonSerializer.Serialize(new { file_id = file.Value.Id, attributes }, options);
