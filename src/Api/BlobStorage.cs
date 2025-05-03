@@ -71,6 +71,7 @@ public class BlobStorage(ILogger<BlobStorage> log, VectorStoreService storeServi
         }
 
         // convert to case-insensitive dictionary the headers that start with "x-ms-meta-" and remove the prefix
+        // this is how blob storage represents custom file metadata
         var metadata = response.Headers
             .Where(h => h.Key.StartsWith("x-ms-meta-", StringComparison.OrdinalIgnoreCase))
             .ToDictionary(h => h.Key[10..], h => h.Value.FirstOrDefault(), StringComparer.OrdinalIgnoreCase);
@@ -135,6 +136,13 @@ public class BlobStorage(ILogger<BlobStorage> log, VectorStoreService storeServi
             var attributes = frontMatter
                 .Where(x => x.Value is string or bool or int or double or float or decimal)
                 .ToDictionary(x => x.Key, x => x.Value);
+
+            if (frontMatter.TryGetValue("SAIJ", out var saijValue) &&                 saijValue is string saij && !string.IsNullOrWhiteSpace(saij))
+            {
+                attributes["original_url"] = saij;
+            }
+
+            attributes["blob_url"] = data.Url;
 
             var request = JsonSerializer.Serialize(new { file_id = file.Value.Id, attributes }, options);
             message.Request.Content = BinaryContent.Create(BinaryData.FromString(request));
