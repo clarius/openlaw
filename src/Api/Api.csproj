@@ -17,7 +17,7 @@
     <PackageReference Include="Microsoft.Azure.Functions.Worker.Extensions.Http.AspNetCore" Version="2.0.1" />
     <PackageReference Include="Microsoft.Azure.Functions.Worker.Extensions.Http.AspNetCore.Analyzers" Version="1.0.3" />
     <PackageReference Include="Microsoft.Azure.Functions.Worker.Extensions.Storage.Blobs" Version="6.6.1" />
-    <PackageReference Include="Microsoft.Azure.Functions.Worker.Extensions.Storage.Queues" Version="5.5.1" />
+    <PackageReference Include="Microsoft.Azure.Functions.Worker.Extensions.Storage.Queues" Version="5.5.2" />
     <PackageReference Include="Microsoft.Azure.Functions.Worker.Sdk" Version="2.0.2" />
     <PackageReference Include="Microsoft.ApplicationInsights.WorkerService" Version="2.22.0" />
 
@@ -27,7 +27,7 @@
     <PackageReference Include="Devlooped.Extensions.DependencyInjection.Attributed" Version="2.0.0" PrivateAssets="all" />
     <PackageReference Include="Devlooped.JQ" Version="1.7.1.8" />
     <PackageReference Include="Devlooped.TableStorage" Version="5.2.1" />
-    <PackageReference Include="Devlooped.WhatsApp" Version="1.0.0-rc.3" />
+    <PackageReference Include="Devlooped.WhatsApp" Version="1.0.0-rc.5" />
 
     <PackageReference Include="ThisAssembly.AssemblyInfo" PrivateAssets="all" Version="2.0.14" />
   </ItemGroup>
