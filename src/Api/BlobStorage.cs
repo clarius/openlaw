@@ -6,7 +6,6 @@ using System.Text.Json.Serialization;
 using Azure.Messaging.EventGrid;
 using Azure.Storage;
 using Azure.Storage.Blobs;
-using Devlooped;
 using Microsoft.Azure.Functions.Worker;
 using Microsoft.Azure.Functions.Worker.Http;
 using Microsoft.Extensions.Configuration;
@@ -144,6 +143,13 @@ public class BlobStorage(ILogger<BlobStorage> log, VectorStoreService storeServi
             attributes["title"] = title;
             attributes["blob_url"] = data.Url;
             attributes["filename"] = filename;
+
+            // Propagate other blob metadata specified by the CI/CD process (i.e. 'source').
+            foreach (var blobMeta in metadata)
+            {
+                if (!attributes.ContainsKey(blobMeta.Key))
+                    attributes[blobMeta.Key] = blobMeta.Value;
+            }
 
             var request = JsonSerializer.Serialize(new { file_id = file.Value.Id, attributes }, options);
             message.Request.Content = BinaryContent.Create(BinaryData.FromString(request));
