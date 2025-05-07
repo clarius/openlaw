@@ -6,11 +6,14 @@ using Clarius.OpenLaw;
 using Devlooped;
 using Microsoft.Azure.Functions.Worker;
 using Microsoft.Azure.Functions.Worker.Builder;
+using Microsoft.Extensions.AI;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using OpenAI;
+using OpenAI.Responses;
 
 var builder = FunctionsApplication.CreateBuilder(args);
 
@@ -19,11 +22,15 @@ builder.ConfigureFunctionsWebApplication();
 builder.Configuration.AddUserSecrets<Program>();
 #endif
 
+builder.Configuration.AddInMemoryCollection();
 builder.Services.AddServices();
+builder.UseWhatsApp();
 
+#if CI
 builder.Services
     .AddApplicationInsightsTelemetryWorkerService()
     .ConfigureFunctionsApplicationInsights();
+#endif
 
 builder.Services.Configure<JsonSerializerOptions>(options =>
 {
@@ -36,6 +43,16 @@ builder.Services.Configure<JsonSerializerOptions>(options =>
 builder.Services.AddOptions<OpenAISettings>()
     .BindConfiguration("OpenAI")
     .ValidateDataAnnotations();
+
+builder.Services.AddOptions<AgentSettings>()
+    .BindConfiguration("CheBoga")
+    .ValidateDataAnnotations();
+
+builder.Services.AddSingleton(services =>
+{
+    var options = services.GetRequiredService<IOptions<OpenAISettings>>().Value;
+    return new OpenAIClient(new ApiKeyCredential(options.Key ?? "Missing required assistant key."));
+});
 
 builder.Services.AddKeyedSingleton("oai", (services, _) =>
 {
@@ -58,6 +75,37 @@ builder.Services.AddSingleton(services => services.GetRequiredService<CloudStora
 builder.Services.AddSingleton(services => new QueueServiceClient(
     services.GetRequiredService<IConfiguration>()["AzureWebJobsStorage"]!,
     new QueueClientOptions { MessageEncoding = QueueMessageEncoding.Base64 }));
+
+builder.Services.AddChatClient(services =>
+{
+    var options = services.GetRequiredService<IOptions<OpenAISettings>>().Value;
+    var client = new ChatModelResponseClient(options.Model, options.Key,
+        [.. options.Stores.Select(id => ResponseTool.CreateFileSearchTool([id]))]);
+
+    return client
+        .AsBuilder()
+        .UseLogging(services.GetRequiredService<ILoggerFactory>())
+        .UseOpenTelemetry()
+        .UseComplexityAssessment(services.GetRequiredService<ComplexityAssessment>())
+        .Build();
+});
+
+builder.Services.AddKeyedChatClient("complexity", services =>
+{
+    var configuration = services.GetRequiredService<IConfiguration>();
+    var client = new OpenAIClient(new ApiKeyCredential(configuration.Get("Gemini:Key")), new OpenAIClientOptions
+    {
+        Endpoint = new Uri("https://generativelanguage.googleapis.com/v1beta/"),
+    });
+
+    return client
+        .GetChatClient(configuration.Get("Gemini:Model"))
+        .AsIChatClient()
+        .AsBuilder()
+        .UseLogging(services.GetRequiredService<ILoggerFactory>())
+        .UseOpenTelemetry()
+        .Build();
+});
 
 var section = builder.Configuration.GetSection("Meta");
 var found = false;

@@ -13,9 +13,10 @@
     <!-- CI variable with feed URL -->
     <SLEET_FEED_URL Condition="$(SLEET_FEED_URL) == ''">https://clarius.blob.core.windows.net/nuget/index.json</SLEET_FEED_URL>
 
-    <UserSecretsId>bcfa6afd-d165-4505-b752-f00318604d0c</UserSecretsId>
+    <UserSecretsId>bcfa6afd-d165-4505-b752-f00318604d0b</UserSecretsId>
 
     <RestoreSources>https://kzu.blob.core.windows.net/nuget/index.json;https://api.nuget.org/v3/index.json</RestoreSources>
+    <EmitCompilerGeneratedFiles>true</EmitCompilerGeneratedFiles>
   </PropertyGroup>
 
   <ItemGroup>
