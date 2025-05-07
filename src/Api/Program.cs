@@ -22,10 +22,6 @@ builder.ConfigureFunctionsWebApplication();
 builder.Configuration.AddUserSecrets<Program>();
 #endif
 
-builder.Configuration.AddInMemoryCollection();
-builder.Services.AddServices();
-builder.UseWhatsApp();
-
 #if CI
 builder.Services
     .AddApplicationInsightsTelemetryWorkerService()
@@ -127,5 +123,8 @@ foreach (var entry in section.AsEnumerable().Where(x => x.Key.StartsWith("Meta:N
 
 if (!found)
     throw new InvalidOperationException("💬 No Meta numbers configured.");
+
+builder.Services.AddServices();
+builder.UseWhatsApp();
 
 builder.Build().Run();

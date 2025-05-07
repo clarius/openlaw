@@ -10,7 +10,7 @@ public class OpenAISettings
     [Required(ErrorMessage = "Key is required")]
     public required string Key { get; set; }
 
-    public string Model { get; set; } = "gpt-4o-mini";
+    public string Model { get; set; } = "gpt-4.1-mini";
 
     /// <summary>
     /// Minimum semantic similarity score to consider a document relevant.
