@@ -25,6 +25,7 @@ env:
   Configuration: ${{ github.event.inputs.configuration || 'Release' }}
   Sha: ${{ github.event.inputs.sha || github.sha }}
   VersionOrTag: ${{ github.event.inputs.version || github.event.release.tag_name || format('1.0.{0}', github.run_number) }}
+  GH_TOKEN: ${{ secrets.GH_TOKEN }}
 
 permissions:
   id-token: write
@@ -40,8 +41,11 @@ jobs:
       - name: 📝 version
         run: echo "Version=${VersionOrTag/v}" >> $GITHUB_ENV
 
-      # Azure App registration with federeted credentials and Storage Blob Data Contributor role in target AZURE_BLOB_URL
-      # See https://learn.microsoft.com/en-us/entra/workload-id/workload-identity-federation-create-trust-user-assigned-managed-identity?pivots=identity-wif-mi-methods-azp#github-actions-deploying-azure-resources
+      - name: ⚙ dotnet
+        uses: ./.github/actions/dotnet
+
+        # Azure App registration with federeted credentials and Storage Blob Data Contributor role in target AZURE_BLOB_URL
+        # See https://learn.microsoft.com/en-us/entra/workload-id/workload-identity-federation-create-trust-user-assigned-managed-identity?pivots=identity-wif-mi-methods-azp#github-actions-deploying-azure-resources
       - name: 🔓 azure login
         uses: azure/login@v2
         with:
