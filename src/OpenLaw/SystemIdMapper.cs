@@ -13,11 +13,17 @@ public record SystemId(string System, string Id)
     public static implicit operator (string System, string Id)(SystemId mapping) => (mapping.System, mapping.Id);
 }
 
+public interface ISystemIdMapper
+{
+    Task<string?> FindAsync(SystemId from, string system);
+    Task MapAsync(SystemId first, SystemId second, CancellationToken cancellation = default);
+}
+
 /// <summary>
 /// Maps IDs across different systems.
 /// </summary>
 [Service]
-public class SystemIdMapper(CloudStorageAccount storage)
+public class SystemIdMapper(CloudStorageAccount storage) : ISystemIdMapper
 {
     readonly ITableRepository<TableEntity> repo = TableRepository.Create(storage, "SystemId");
 

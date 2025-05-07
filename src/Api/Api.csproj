@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>net8.0</TargetFramework>
@@ -8,8 +8,12 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <EmbeddedResource Include="Instructions.txt" />
+  </ItemGroup>
+
+  <ItemGroup>
     <FrameworkReference Include="Microsoft.AspNetCore.App" />
-    <PackageReference Include="Azure.AI.OpenAI.Assistants" Version="1.0.0-beta.4" />
+    
     <PackageReference Include="Microsoft.Azure.Functions.Worker" Version="2.0.0" />
     <PackageReference Include="Microsoft.Azure.Functions.Worker.ApplicationInsights" Version="2.0.0" />
     <PackageReference Include="Microsoft.Azure.Functions.Worker.Extensions.EventGrid" Version="3.5.0" />
@@ -17,19 +21,22 @@
     <PackageReference Include="Microsoft.Azure.Functions.Worker.Extensions.Http.AspNetCore" Version="2.0.1" />
     <PackageReference Include="Microsoft.Azure.Functions.Worker.Extensions.Http.AspNetCore.Analyzers" Version="1.0.3" />
     <PackageReference Include="Microsoft.Azure.Functions.Worker.Extensions.Storage.Blobs" Version="6.6.1" />
-    <PackageReference Include="Microsoft.Azure.Functions.Worker.Extensions.Storage.Queues" Version="5.5.1" />
+    <PackageReference Include="Microsoft.Azure.Functions.Worker.Extensions.Storage.Queues" Version="5.5.2" />
     <PackageReference Include="Microsoft.Azure.Functions.Worker.Sdk" Version="2.0.2" />
     <PackageReference Include="Microsoft.ApplicationInsights.WorkerService" Version="2.22.0" />
 
     <PackageReference Include="Azure.Storage.Blobs" Version="12.24.0" />
     <PackageReference Include="Azure.AI.OpenAI" Version="2.2.0-beta.4" />
+    <PackageReference Include="Microsoft.Extensions.AI" Version="9.4.3-preview.1.25230.7" />
+    <PackageReference Include="Microsoft.Extensions.AI.OpenAI" Version="9.4.3-preview.1.25230.7" />
 
     <PackageReference Include="Devlooped.Extensions.DependencyInjection.Attributed" Version="2.0.0" PrivateAssets="all" />
     <PackageReference Include="Devlooped.JQ" Version="1.7.1.8" />
-    <PackageReference Include="Devlooped.TableStorage" Version="5.2.1" />
-    <PackageReference Include="Devlooped.WhatsApp" Version="1.0.0-rc.3" />
+    <PackageReference Include="Devlooped.TableStorage" Version="5.2.2" />
+    <PackageReference Include="Devlooped.WhatsApp" Version="1.0.0-rc.6" />
 
     <PackageReference Include="ThisAssembly.AssemblyInfo" PrivateAssets="all" Version="2.0.14" />
+    <PackageReference Include="ThisAssembly.Resources" PrivateAssets="all" Version="2.0.14" />
   </ItemGroup>
 
   <ItemGroup>

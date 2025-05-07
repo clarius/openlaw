@@ -6,14 +6,17 @@ using OpenAI;
 
 namespace Clarius.OpenLaw;
 
-public record VectorStore(string Id, DateOnly From, DateOnly To);
+public record VectorStore(string Id, DateOnly From, DateOnly To)
+{
+    public VectorStore(string id) : this(id, DateOnly.MinValue, DateOnly.MaxValue) { }
+}
 
 [Service]
 public class VectorStoreService(
     [FromKeyedServices("oai")] OpenAIClient client,
     IMemoryCache cache,
     ILogger<VectorStoreService> logger,
-    IOptions<OpenAISettings> settings)
+    IOptions<OpenAISettings> settings) : IVectorStoreService
 {
     static readonly TimeSpan CacheDuration = TimeSpan.FromHours(1);
     const string CacheKey = "VectorStorages";
