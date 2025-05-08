@@ -72,6 +72,8 @@ builder.Services.AddSingleton(services => new QueueServiceClient(
     services.GetRequiredService<IConfiguration>()["AzureWebJobsStorage"]!,
     new QueueClientOptions { MessageEncoding = QueueMessageEncoding.Base64 }));
 
+builder.Services.AddServices();
+
 builder.Services.AddChatClient(services =>
 {
     var options = services.GetRequiredService<IOptions<OpenAISettings>>().Value;
@@ -124,7 +126,6 @@ foreach (var entry in section.AsEnumerable().Where(x => x.Key.StartsWith("Meta:N
 if (!found)
     throw new InvalidOperationException("💬 No Meta numbers configured.");
 
-builder.Services.AddServices();
 builder.UseWhatsApp();
 
 builder.Build().Run();
