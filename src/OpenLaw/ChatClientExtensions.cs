@@ -9,101 +9,101 @@ public static class ChatClientExtensions
     extension(ChatOptions options)
     {
         public string? EndUserId
-    {
-        get => options.AdditionalProperties?[nameof(ResponseCreationOptions.EndUserId)] as string;
-        set
         {
-            if (value is not null)
+            get => options.AdditionalProperties?[nameof(ResponseCreationOptions.EndUserId)] as string;
+            set
             {
-                options.AdditionalProperties ??= [];
-                options.AdditionalProperties[nameof(ResponseCreationOptions.EndUserId)] = value;
+                if (value is not null)
+                {
+                    options.AdditionalProperties ??= [];
+                    options.AdditionalProperties[nameof(ResponseCreationOptions.EndUserId)] = value;
+                }
             }
         }
-    }
 
-    public string? Instructions
-    {
-        get => options.AdditionalProperties?[nameof(ResponseCreationOptions.Instructions)] as string;
-        set
+        public string? Instructions
         {
-            if (value is not null)
+            get => options.AdditionalProperties?[nameof(ResponseCreationOptions.Instructions)] as string;
+            set
             {
-                options.AdditionalProperties ??= [];
-                options.AdditionalProperties[nameof(ResponseCreationOptions.Instructions)] = value;
+                if (value is not null)
+                {
+                    options.AdditionalProperties ??= [];
+                    options.AdditionalProperties[nameof(ResponseCreationOptions.Instructions)] = value;
+                }
             }
         }
-    }
 
-    public IDictionary<string, string>? Metadata
-    {
-        get => options.AdditionalProperties?[nameof(ResponseCreationOptions.Metadata)] as IDictionary<string, string>;
-        set
+        public IDictionary<string, string>? Metadata
         {
-            if (value is not null)
+            get => options.AdditionalProperties?[nameof(ResponseCreationOptions.Metadata)] as IDictionary<string, string>;
+            set
             {
-                options.AdditionalProperties ??= [];
-                options.AdditionalProperties[nameof(ResponseCreationOptions.Metadata)] = value;
+                if (value is not null)
+                {
+                    options.AdditionalProperties ??= [];
+                    options.AdditionalProperties[nameof(ResponseCreationOptions.Metadata)] = value;
+                }
             }
         }
-    }
 
-    public ResponseReasoningOptions? ReasoningOptions
-    {
-        get => options.AdditionalProperties?[nameof(ResponseCreationOptions.ReasoningOptions)] as ResponseReasoningOptions;
-        set
+        public ResponseReasoningOptions? ReasoningOptions
         {
-            if (value is not null)
+            get => options.AdditionalProperties?[nameof(ResponseCreationOptions.ReasoningOptions)] as ResponseReasoningOptions;
+            set
             {
-                options.AdditionalProperties ??= [];
-                options.AdditionalProperties[nameof(ResponseCreationOptions.ReasoningOptions)] = value;
+                if (value is not null)
+                {
+                    options.AdditionalProperties ??= [];
+                    options.AdditionalProperties[nameof(ResponseCreationOptions.ReasoningOptions)] = value;
+                }
             }
         }
-    }
 
-    public bool? StoredOutputEnabled
-    {
-        get => options.AdditionalProperties?[nameof(ResponseCreationOptions.StoredOutputEnabled)] as bool?;
-        set
+        public bool? StoredOutputEnabled
         {
-            if (value is not null)
+            get => options.AdditionalProperties?[nameof(ResponseCreationOptions.StoredOutputEnabled)] as bool?;
+            set
             {
-                options.AdditionalProperties ??= [];
-                options.AdditionalProperties[nameof(ResponseCreationOptions.StoredOutputEnabled)] = value;
+                if (value is not null)
+                {
+                    options.AdditionalProperties ??= [];
+                    options.AdditionalProperties[nameof(ResponseCreationOptions.StoredOutputEnabled)] = value;
+                }
             }
         }
-    }
 
-    public ResponseTruncationMode? TruncationMode
-    {
-        get => options.AdditionalProperties?[nameof(ResponseCreationOptions.TruncationMode)] as ResponseTruncationMode?;
-        set
+        public ResponseTruncationMode? TruncationMode
         {
-            if (value is not null)
+            get => options.AdditionalProperties?[nameof(ResponseCreationOptions.TruncationMode)] as ResponseTruncationMode?;
+            set
             {
-                options.AdditionalProperties ??= [];
-                options.AdditionalProperties[nameof(ResponseCreationOptions.TruncationMode)] = value;
+                if (value is not null)
+                {
+                    options.AdditionalProperties ??= [];
+                    options.AdditionalProperties[nameof(ResponseCreationOptions.TruncationMode)] = value;
+                }
             }
         }
-    }
     }
 
     public static IChatClient AsIChatClient(this OpenAIResponseClient client, params ResponseTool[] tools)
         => tools.Length == 0 ? OpenAIClientExtensions.AsIChatClient(client) : new ToolsReponseClient(client, tools).AsIChatClient();
 
     class ToolsReponseClient(OpenAIResponseClient inner, ResponseTool[] tools) : OpenAIResponseClient
-{
-    public override Task<ClientResult<OpenAIResponse>> CreateResponseAsync(IEnumerable<ResponseItem> inputItems, ResponseCreationOptions options = null, CancellationToken cancellationToken = default)
-        => inner.CreateResponseAsync(inputItems, AddTools(options), cancellationToken);
-
-    public override AsyncCollectionResult<StreamingResponseUpdate> CreateResponseStreamingAsync(IEnumerable<ResponseItem> inputItems, ResponseCreationOptions options = null, CancellationToken cancellationToken = default)
-        => inner.CreateResponseStreamingAsync(inputItems, AddTools(options), cancellationToken);
-
-    ResponseCreationOptions AddTools(ResponseCreationOptions options)
     {
-        foreach (var tool in tools)
-            options.Tools.Add(tool);
+        public override Task<ClientResult<OpenAIResponse>> CreateResponseAsync(IEnumerable<ResponseItem> inputItems, ResponseCreationOptions options = null, CancellationToken cancellationToken = default)
+            => inner.CreateResponseAsync(inputItems, AddTools(options), cancellationToken);
 
-        return options;
+        public override AsyncCollectionResult<StreamingResponseUpdate> CreateResponseStreamingAsync(IEnumerable<ResponseItem> inputItems, ResponseCreationOptions options = null, CancellationToken cancellationToken = default)
+            => inner.CreateResponseStreamingAsync(inputItems, AddTools(options), cancellationToken);
+
+        ResponseCreationOptions AddTools(ResponseCreationOptions options)
+        {
+            foreach (var tool in tools)
+                options.Tools.Add(tool);
+
+            return options;
+        }
     }
-}
 }

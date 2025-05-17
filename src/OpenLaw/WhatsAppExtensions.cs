@@ -7,5 +7,5 @@ public static class WhatsAppExtensions
     extension(ChatMessage message)
     {
         public string? WhatsAppId => message.AdditionalProperties?["WhatsAppId"] as string;
-}
+    }
 }
