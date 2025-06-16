@@ -12,15 +12,16 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Devlooped.TableStorage" Version="5.2.2" />
-    <PackageReference Include="Microsoft.Extensions.AI" Version="9.4.3-preview.1.25230.7" />
+    <PackageReference Include="Azure.Storage.Blobs" Version="12.24.1" />
+    <PackageReference Include="Devlooped.TableStorage" Version="5.3.1" />
+    <PackageReference Include="Microsoft.Extensions.AI" Version="9.6.0" />
     <PackageReference Include="Microsoft.Extensions.AI.OpenAI" Version="9.4.3-preview.1.25230.7" />
-    <PackageReference Include="Microsoft.Extensions.Configuration.Abstractions" Version="9.0.3" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Abstractions" Version="9.0.6" />
     <PackageReference Include="NuGetizer" Version="1.2.4" PrivateAssets="all" />
     <PackageReference Include="SystemTextJson.JsonDiffPatch" Version="2.0.0" />
     <PackageReference Include="YamlDotNet" Version="16.3.0" />
     <PackageReference Include="ThisAssembly.Resources" PrivateAssets="all" Version="2.0.14" />
-    <PackageReference Include="Devlooped.Extensions.DependencyInjection.Attributed" Version="2.0.0" PrivateAssets="all" />
+    <PackageReference Include="Devlooped.Extensions.DependencyInjection.Attributed" Version="2.1.0" PrivateAssets="all" />
   </ItemGroup>
 
 </Project>
