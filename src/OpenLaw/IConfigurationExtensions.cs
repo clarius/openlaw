@@ -14,11 +14,11 @@ public static class IConfigurationExtensions
         public string Get(string key, string @default) =>
             configuration[key] is var value && string.IsNullOrEmpty(value) ? @default : value;
 
-        public string this[string key, bool required] =>
-            configuration[key] is string value && !string.IsNullOrEmpty(value) ? value : required ? throw new InvalidOperationException($"Missing required configuration value '{key}'.") : null!;
+        //public string this[string key, bool required] =>
+        //    configuration[key] is string value && !string.IsNullOrEmpty(value) ? value : required ? throw new InvalidOperationException($"Missing required configuration value '{key}'.") : null!;
 
-        public string this[string key, string @default] =>
-            configuration[key] is var value && string.IsNullOrEmpty(value) ? @default : value;
+        //public string this[string key, string @default] =>
+        //    configuration[key] is var value && string.IsNullOrEmpty(value) ? @default : value;
     }
 }
 
