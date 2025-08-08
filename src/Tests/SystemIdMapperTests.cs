@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Devlooped;
+﻿using Devlooped;
 
 namespace Clarius.OpenLaw;
 
@@ -12,7 +7,7 @@ public class SystemIdMapperTests
     [Fact]
     public async Task Map()
     {
-        var mapper = new SystemIdMapper(CloudStorageAccount.DevelopmentStorageAccount);
+        var mapper = new SystemIdMapper(MemoryRepository.Create());
         var from = ("github", "123");
         var to = ("discord", "456");
 
