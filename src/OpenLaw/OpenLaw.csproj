@@ -9,6 +9,7 @@
 
   <ItemGroup>
     <EmbeddedResource Include="Instructions.txt" />
+    <InternalsVisibleTo Include="OpenLaw.Tests" />
   </ItemGroup>
 
   <ItemGroup>

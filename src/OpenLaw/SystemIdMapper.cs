@@ -23,9 +23,19 @@ public interface ISystemIdMapper
 /// Maps IDs across different systems.
 /// </summary>
 [Service]
-public class SystemIdMapper(CloudStorageAccount storage) : ISystemIdMapper
+public class SystemIdMapper : ISystemIdMapper
 {
-    readonly ITableRepository<TableEntity> repo = TableRepository.Create(storage, "SystemId");
+    readonly ITableRepository<TableEntity> repo;
+
+    public SystemIdMapper(CloudStorageAccount storage)
+        : this(TableRepository.Create(storage, "SystemId"))
+    {
+    }
+
+    internal SystemIdMapper(ITableRepository<TableEntity> repo)
+    {
+        this.repo = repo ?? throw new ArgumentNullException(nameof(repo));
+    }
 
     /// <summary>
     /// Creates a bidirectional mapping between the two identifiers.
@@ -55,8 +65,17 @@ public class SystemIdMapper(CloudStorageAccount storage) : ISystemIdMapper
 
         try
         {
-            await foreach (var item in query.Take(1))
-                return item.RowKey[(system.Length + 1)..];
+            query = query.Take(1);
+            if (query is IAsyncEnumerable<TableEntity>)
+            {
+                await foreach (var item in query)
+                    return item.RowKey[(system.Length + 1)..];
+            }
+            else
+            {
+                foreach (var item in query)
+                    return item.RowKey[(system.Length + 1)..];
+            }
         }
         catch (HttpRequestException re) when (re.StatusCode == System.Net.HttpStatusCode.NotFound)
         {

@@ -4,11 +4,13 @@
     <TargetFramework>net9.0</TargetFramework>
     <NoWarn>OPENAI001;$(NoWarn)</NoWarn>
     <EmitCompilerGeneratedFiles>true</EmitCompilerGeneratedFiles>
+    <AssemblyName>OpenLaw.Tests</AssemblyName>
   </PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="Azure.AI.OpenAI" Version="2.2.0-beta.4" />
     <PackageReference Include="coverlet.collector" Version="6.0.4" />
+    <PackageReference Include="Devlooped.TableStorage.Memory" Version="5.4.0" />
     <PackageReference Include="Microsoft.Extensions.AI" Version="9.4.3-preview.1.25230.7" />
     <PackageReference Include="Microsoft.Extensions.AI.OpenAI" Version="9.4.3-preview.1.25230.7" />
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.13.0" />
