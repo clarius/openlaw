@@ -8,7 +8,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Azure.AI.OpenAI" Version="2.2.0-beta.4" />
+    <PackageReference Include="Azure.AI.OpenAI" Version="2.2.0-beta.5" />
     <PackageReference Include="coverlet.collector" Version="6.0.4" />
     <PackageReference Include="Devlooped.TableStorage.Memory" Version="5.4.0" />
     <PackageReference Include="Microsoft.Extensions.AI" Version="9.4.3-preview.1.25230.7" />
@@ -22,9 +22,9 @@
     <PackageReference Include="ThisAssembly.Constants" Version="2.0.14" PrivateAssets="all" />
     <PackageReference Include="ThisAssembly.Project" Version="2.0.14" PrivateAssets="all" />
     <PackageReference Include="Markdown2Pdf" Version="2.2.3" />
-    <PackageReference Include="Microsoft.Extensions.Configuration" Version="9.0.3" />
-    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="9.0.3" />
-    <PackageReference Include="Microsoft.Extensions.Http" Version="9.0.3" />
+    <PackageReference Include="Microsoft.Extensions.Configuration" Version="9.0.10" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="9.0.10" />
+    <PackageReference Include="Microsoft.Extensions.Http" Version="9.0.10" />
     <PackageReference Include="Devlooped.JQ" Version="1.7.1.8" />
   </ItemGroup>
 
