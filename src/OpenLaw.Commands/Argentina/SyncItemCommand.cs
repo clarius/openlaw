@@ -19,7 +19,6 @@ public class SyncItemCommand(IAnsiConsole console, IHttpClientFactory http, Canc
         {
             try
             {
-                var summary = new SyncSummary($"Sync {settings.Id}");
                 var result = await client.SearchIdAsync(settings.Id, cts.Token);
                 // Fallback to loading by document id, but as a search result so we can levarge the rest.
                 if (result is null)
@@ -76,6 +75,7 @@ public class SyncItemCommand(IAnsiConsole console, IHttpClientFactory http, Canc
 
                 if (settings.ChangeLog is not null)
                 {
+                    var summary = new SyncSummary(action.NewDocument.Name ?? action.NewDocument.Alias);
                     summary.Add(action);
                     summary.Stop();
                     summary.Save(settings.ChangeLog, settings.AppendLog);
