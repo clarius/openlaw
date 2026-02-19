@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.ClientModel;
 using System.ComponentModel;
 using System.Text;
@@ -9,6 +9,8 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Options;
 using Moq;
 using OpenAI.Responses;
+
+#pragma warning disable OPENAI001 // Experimental OpenAI APIs
 
 namespace Clarius.OpenLaw;
 
@@ -29,7 +31,7 @@ public class ConversationTests : IDisposable
     {
         this.output = output;
         this.client = new OpenAI.OpenAIClient(configuration["OpenAI:Key"]);
-        var store = client.GetVectorStoreClient().CreateVectorStore(true);
+        var store = client.GetVectorStoreClient().CreateVectorStore();
         storeId = store.VectorStoreId;
 
         var file = client.GetOpenAIFileClient().UploadFile("Content/LNS0004592.md", OpenAI.Files.FileUploadPurpose.Assistants);
@@ -112,7 +114,7 @@ public class ConversationTests : IDisposable
     {
         await AddLawToVector();
 
-        var responses = new OpenAIResponseClient("gpt-4.1-mini", configuration["OpenAI:Key"]);
+        var responses = new ResponsesClient("gpt-4.1-mini", configuration["OpenAI:Key"]);
 
         var client = responses.AsIChatClient(
                 ResponseTool.CreateFileSearchTool([storeId]))
@@ -180,11 +182,11 @@ public class ConversationTests : IDisposable
 
         var vectors = client.GetVectorStoreClient();
 
-        var response = await vectors.GetFileAssociationAsync(storeId, fileId);
-        while (response.Value.Status == global::OpenAI.VectorStores.VectorStoreFileAssociationStatus.InProgress)
+        var response = await vectors.GetVectorStoreFileAsync(storeId, fileId);
+        while (response.Value.Status == global::OpenAI.VectorStores.VectorStoreFileStatus.InProgress)
         {
             await Task.Delay(200);
-            response = await vectors.GetFileAssociationAsync(storeId, fileId);
+            response = await vectors.GetVectorStoreFileAsync(storeId, fileId);
             Assert.NotNull(message.Response);
             Assert.False(message.Response.IsError);
         }
