@@ -1,4 +1,4 @@
-﻿using System.Text.Json;
+using System.Text.Json;
 using System.Text.Json.Serialization;
 using Microsoft.Extensions.AI;
 using Microsoft.Extensions.DependencyInjection;
@@ -15,7 +15,7 @@ public partial class ComplexityAssessment([FromKeyedServices("complexity")] ICha
         You are an AI assistant designed to analyze user questions about legal matters. 
         Your task is to evaluate each question to determine its complexity, without 
         providing answers or accessing the legal corpus. The questions will ultimately 
-        be answered by a Retrieval-Augmented Generation (RAG) system querying a country’s 
+        be answered by a Retrieval-Augmented Generation (RAG) system querying a country's 
         vast legal corpus. Your goal is to quickly assess whether a question can be 
         handled by a smaller model for quick fact lookup or requires a top-tier model 
         for deeper analysis or falls somewhere in between.
@@ -49,7 +49,7 @@ public partial class ComplexityAssessment([FromKeyedServices("complexity")] ICha
         # Guidelines:
         Base your assessment on your internal, generic knowledge of law and the nature 
         of legal questions, without accessing any external legal corpus.
-        Focus on the question’s phrasing, specificity, and the breadth or subtlety of 
+        Focus on the question's phrasing, specificity, and the breadth or subtlety of 
         the legal topic in general terms.
         For complexity, consider how broad or subtle the question is in legal 
         terms—narrow facts are low, moderately broad topics are medium, and wide-ranging 
@@ -62,7 +62,7 @@ public partial class ComplexityAssessment([FromKeyedServices("complexity")] ICha
             [
                 new ChatMessage(ChatRole.System, SystemPrompt),
                 new ChatMessage(ChatRole.User, content)
-            ], AssessmentSerializerContext.Default.Assessment.Options, useJsonSchema: true, cancellationToken: cancellation);
+            ], AssessmentSerializerContext.Default.Assessment.Options, cancellationToken: cancellation);
 
         return response.Result.Complexity;
     }
