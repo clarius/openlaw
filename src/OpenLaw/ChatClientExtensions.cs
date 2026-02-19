@@ -1,6 +1,7 @@
-﻿using System.ClientModel;
-using Microsoft.Extensions.AI;
+﻿using Microsoft.Extensions.AI;
 using OpenAI.Responses;
+
+#pragma warning disable OPENAI001 // Experimental OpenAI APIs
 
 namespace Clarius.OpenLaw;
 
@@ -10,100 +11,71 @@ public static class ChatClientExtensions
     {
         public string? EndUserId
         {
-            get => options.AdditionalProperties?[nameof(ResponseCreationOptions.EndUserId)] as string;
+            get => options.AdditionalProperties?[nameof(CreateResponseOptions.EndUserId)] as string;
             set
             {
                 if (value is not null)
                 {
                     options.AdditionalProperties ??= [];
-                    options.AdditionalProperties[nameof(ResponseCreationOptions.EndUserId)] = value;
-                }
-            }
-        }
-
-        public string? Instructions
-        {
-            get => options.AdditionalProperties?[nameof(ResponseCreationOptions.Instructions)] as string;
-            set
-            {
-                if (value is not null)
-                {
-                    options.AdditionalProperties ??= [];
-                    options.AdditionalProperties[nameof(ResponseCreationOptions.Instructions)] = value;
+                    options.AdditionalProperties[nameof(CreateResponseOptions.EndUserId)] = value;
                 }
             }
         }
 
         public IDictionary<string, string>? Metadata
         {
-            get => options.AdditionalProperties?[nameof(ResponseCreationOptions.Metadata)] as IDictionary<string, string>;
+            get => options.AdditionalProperties?[nameof(CreateResponseOptions.Metadata)] as IDictionary<string, string>;
             set
             {
                 if (value is not null)
                 {
                     options.AdditionalProperties ??= [];
-                    options.AdditionalProperties[nameof(ResponseCreationOptions.Metadata)] = value;
-                }
-            }
-        }
-
-        public ResponseReasoningOptions? ReasoningOptions
-        {
-            get => options.AdditionalProperties?[nameof(ResponseCreationOptions.ReasoningOptions)] as ResponseReasoningOptions;
-            set
-            {
-                if (value is not null)
-                {
-                    options.AdditionalProperties ??= [];
-                    options.AdditionalProperties[nameof(ResponseCreationOptions.ReasoningOptions)] = value;
+                    options.AdditionalProperties[nameof(CreateResponseOptions.Metadata)] = value;
                 }
             }
         }
 
         public bool? StoredOutputEnabled
         {
-            get => options.AdditionalProperties?[nameof(ResponseCreationOptions.StoredOutputEnabled)] as bool?;
+            get => options.AdditionalProperties?[nameof(CreateResponseOptions.StoredOutputEnabled)] as bool?;
             set
             {
                 if (value is not null)
                 {
                     options.AdditionalProperties ??= [];
-                    options.AdditionalProperties[nameof(ResponseCreationOptions.StoredOutputEnabled)] = value;
+                    options.AdditionalProperties[nameof(CreateResponseOptions.StoredOutputEnabled)] = value;
                 }
             }
         }
 
         public ResponseTruncationMode? TruncationMode
         {
-            get => options.AdditionalProperties?[nameof(ResponseCreationOptions.TruncationMode)] as ResponseTruncationMode?;
+            get => options.AdditionalProperties?[nameof(CreateResponseOptions.TruncationMode)] as ResponseTruncationMode?;
             set
             {
                 if (value is not null)
                 {
                     options.AdditionalProperties ??= [];
-                    options.AdditionalProperties[nameof(ResponseCreationOptions.TruncationMode)] = value;
+                    options.AdditionalProperties[nameof(CreateResponseOptions.TruncationMode)] = value;
                 }
             }
         }
     }
 
-    public static IChatClient AsIChatClient(this OpenAIResponseClient client, params ResponseTool[] tools)
-        => tools.Length == 0 ? OpenAIClientExtensions.AsIChatClient(client) : new ToolsReponseClient(client, tools).AsIChatClient();
-
-    class ToolsReponseClient(OpenAIResponseClient inner, ResponseTool[] tools) : OpenAIResponseClient
+    public static IChatClient AsIChatClient(this ResponsesClient client, params ResponseTool[] tools)
     {
-        public override Task<ClientResult<OpenAIResponse>> CreateResponseAsync(IEnumerable<ResponseItem> inputItems, ResponseCreationOptions options = null, CancellationToken cancellationToken = default)
-            => inner.CreateResponseAsync(inputItems, AddTools(options), cancellationToken);
+        var chatClient = OpenAIClientExtensions.AsIChatClient(client);
+        if (tools.Length == 0)
+            return chatClient;
 
-        public override AsyncCollectionResult<StreamingResponseUpdate> CreateResponseStreamingAsync(IEnumerable<ResponseItem> inputItems, ResponseCreationOptions options = null, CancellationToken cancellationToken = default)
-            => inner.CreateResponseStreamingAsync(inputItems, AddTools(options), cancellationToken);
-
-        ResponseCreationOptions AddTools(ResponseCreationOptions options)
-        {
-            foreach (var tool in tools)
-                options.Tools.Add(tool);
-
-            return options;
-        }
+        return chatClient
+            .AsBuilder()
+            .ConfigureOptions(options =>
+            {
+                options.Tools ??= [];
+                foreach (var tool in tools)
+                    options.Tools.Add(tool);
+            })
+            .Build();
     }
 }
