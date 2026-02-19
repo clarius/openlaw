@@ -14,6 +14,8 @@ using Microsoft.Extensions.Logging;
 using OpenAI;
 using OpenAI.Files;
 
+#pragma warning disable OPENAI001 // Experimental OpenAI APIs
+
 namespace Clarius.OpenLaw;
 
 public class BlobStorage(ILogger<BlobStorage> log, VectorStoreService storeService,
@@ -51,7 +53,7 @@ public class BlobStorage(ILogger<BlobStorage> log, VectorStoreService storeServi
                     Topic: {Topic}
                     Type: {Type}
                     Data: {Data}
-                """, e.Id, e.EventTime, e.Subject, e.Topic, e.EventType, e.Data.ToString());
+                "", e.Id, e.EventTime, e.Subject, e.Topic, e.EventType, e.Data.ToString());
 #endif
 
         var data = e.Data.ToObjectFromJson<EventData>(options);
@@ -82,7 +84,7 @@ public class BlobStorage(ILogger<BlobStorage> log, VectorStoreService storeServi
         {
             log.LogInformation("Deleting older file {File} from store", fileId);
 
-            await oai.GetVectorStoreClient().RemoveFileFromStoreAsync(storeId, fileId);
+            await oai.GetVectorStoreClient().RemoveFileFromVectorStoreAsync(storeId, fileId);
             await oai.GetOpenAIFileClient().DeleteFileAsync(fileId);
 
             // clear the two fields from the blob so we don't try to delete it again
