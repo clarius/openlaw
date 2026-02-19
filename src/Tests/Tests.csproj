@@ -22,9 +22,9 @@
     <PackageReference Include="ThisAssembly.Constants" Version="2.1.2" PrivateAssets="all" />
     <PackageReference Include="ThisAssembly.Project" Version="2.1.2" PrivateAssets="all" />
     <PackageReference Include="Markdown2Pdf" Version="2.2.3" />
-    <PackageReference Include="Microsoft.Extensions.Configuration" Version="9.0.3" />
-    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="9.0.3" />
-    <PackageReference Include="Microsoft.Extensions.Http" Version="9.0.3" />
+    <PackageReference Include="Microsoft.Extensions.Configuration" Version="10.0.3" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="10.0.3" />
+    <PackageReference Include="Microsoft.Extensions.Http" Version="10.0.3" />
     <PackageReference Include="Devlooped.JQ" Version="1.7.1.8" />
   </ItemGroup>
 
