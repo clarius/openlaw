@@ -2,6 +2,8 @@
 using Microsoft.Extensions.AI;
 using OpenAI.Responses;
 
+#pragma warning disable OPENAI001 // Experimental OpenAI APIs
+
 namespace Clarius.OpenLaw;
 
 public class ChatModelResponseClient(string defaultModel, string apiKey, params ResponseTool[] tools) : IChatClient
@@ -20,18 +22,18 @@ public class ChatModelResponseClient(string defaultModel, string apiKey, params 
     public Task<ChatResponse> GetResponseAsync(IEnumerable<ChatMessage> messages, ChatOptions? options = null, CancellationToken cancellationToken = default)
     {
         var modelId = options?.ModelId ?? defaultModel;
-        var client = clients.GetOrAdd(modelId, modelId => new OpenAIResponseClient(modelId, apiKey).AsIChatClient(tools));
+        var client = clients.GetOrAdd(modelId, modelId => new ResponsesClient(modelId, apiKey).AsIChatClient(tools));
         return client.GetResponseAsync(messages, options, cancellationToken);
     }
 
     public IAsyncEnumerable<ChatResponseUpdate> GetStreamingResponseAsync(IEnumerable<ChatMessage> messages, ChatOptions? options = null, CancellationToken cancellationToken = default)
     {
         var modelId = options?.ModelId ?? defaultModel;
-        var client = clients.GetOrAdd(modelId, modelId => new OpenAIResponseClient(modelId, apiKey).AsIChatClient(tools));
+        var client = clients.GetOrAdd(modelId, modelId => new ResponsesClient(modelId, apiKey).AsIChatClient(tools));
         return client.GetStreamingResponseAsync(messages, options, cancellationToken);
     }
 
     public object? GetService(Type serviceType, object? serviceKey = null) => clients
-        .GetOrAdd(defaultModel, modelId => new OpenAIResponseClient(modelId, apiKey).AsIChatClient(tools))
+        .GetOrAdd(defaultModel, modelId => new ResponsesClient(modelId, apiKey).AsIChatClient(tools))
         .GetService(serviceType, serviceKey);
 }
