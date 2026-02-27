@@ -32,7 +32,7 @@ public class ConversationTests : IDisposable
         this.output = output;
         this.client = new OpenAI.OpenAIClient(configuration["OpenAI:Key"]);
         var store = client.GetVectorStoreClient().CreateVectorStore();
-        storeId = store.VectorStoreId;
+        storeId = store.Value.Id;
 
         var file = client.GetOpenAIFileClient().UploadFile("Content/LNS0004592.md", OpenAI.Files.FileUploadPurpose.Assistants);
         fileId = file.Value.Id;
