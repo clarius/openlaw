@@ -28,7 +28,7 @@ public class FormatCommand(IAnsiConsole console) : Command<FormatCommand.FormatS
         public string Directory { get; set; } = Environment.ExpandEnvironmentVariables("%AppData%\\clarius\\openlaw");
     }
 
-    public override int Execute(CommandContext context, FormatSettings settings)
+    public override int Execute(CommandContext context, FormatSettings settings, CancellationToken cancellation = default)
     {
         if (Directory.Exists(settings.Directory))
         {

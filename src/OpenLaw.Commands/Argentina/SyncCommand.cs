@@ -16,7 +16,7 @@ public class SyncCommand(IAnsiConsole console, IHttpClientFactory http, Cancella
     // For batched retrieval from search results.
     const int PageSize = 100;
 
-    public override async Task<int> ExecuteAsync(CommandContext context, SyncSettings settings)
+    public override async Task<int> ExecuteAsync(CommandContext context, SyncSettings settings, CancellationToken cancellation = default)
     {
         var watch = Stopwatch.StartNew();
         var targetDir = Path.GetFullPath(settings.Directory);
