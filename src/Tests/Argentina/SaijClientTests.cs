@@ -313,7 +313,10 @@ public class SaijClientTests(ITestOutputHelper output)
             Assert.Equal(tipo, doc.Query.Tipo);
 
             var full = await WriteAsync(client, doc, $@"..\..\..\Argentina\SaijSamples\{tipo}");
-            Assert.Equal(doc.Timestamp, full.Timestamp);
+
+            // This implicitly asserts we can load the full doc from search
+            Assert.NotNull(full);
+            // Can't rely on doc.Timestamp being same as full.Timestamp 
             return;
         }
 
@@ -331,10 +334,16 @@ public class SaijClientTests(ITestOutputHelper output)
             Assert.Equal(tipo, doc.Query.Tipo);
 
             var full = await WriteAsync(client, doc, $@"..\..\..\Argentina\SaijSamples\{tipo}\{provincia}");
+
+            // This implicitly asserts we can load the full doc from search
+            Assert.NotNull(full);
+
             // Some documents don't have a timestamp, so we can't compare. We'd need fetching the full doc.
             // in these cases. Would be slower to sync too.
-            if (doc.Timestamp != null)
-                Assert.Equal(doc.Timestamp, full.Timestamp);
+            // And sometimes the timestamp is newer in the search result than in the full doc, 
+            // and sometimes it's the opposite (?!).
+            // when downloading new content, we check for exact timestamp match therefore, 
+            // which might cause some documents to be redownloaded 
 
             return;
         }
