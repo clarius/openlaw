@@ -23,7 +23,7 @@ public class DownloadCommand(IAnsiConsole console, IHttpClientFactory http) : As
         WriteIndented = true,
     };
 
-    public override async Task<int> ExecuteAsync(CommandContext context, DownloadSettings settings)
+    public override async Task<int> ExecuteAsync(CommandContext context, DownloadSettings settings, CancellationToken cancellation = default)
     {
         Directory.CreateDirectory(settings.Directory);
 

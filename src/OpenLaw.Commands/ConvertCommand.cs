@@ -9,7 +9,7 @@ namespace Clarius.OpenLaw;
 [Description("Convierte archivos JSON a YAML, Markdown y PDF.")]
 public class ConvertCommand(IAnsiConsole console) : Command<ConvertCommand.ConvertSettings>
 {
-    public override int Execute(CommandContext context, ConvertSettings settings)
+    public override int Execute(CommandContext context, ConvertSettings settings, CancellationToken cancellation = default)
     {
         if (settings.File is not null)
         {

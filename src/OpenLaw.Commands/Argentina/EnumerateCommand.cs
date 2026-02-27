@@ -14,7 +14,7 @@ public class EnumerateCommand(IAnsiConsole console, IHttpClientFactory http, Can
     // For batched retrieval from search results.
     const int PageSize = 100;
 
-    public override async Task<int> ExecuteAsync(CommandContext context, EnumerateSettings settings)
+    public override async Task<int> ExecuteAsync(CommandContext context, EnumerateSettings settings, CancellationToken cancellation = default)
     {
         var watch = Stopwatch.StartNew();
 
