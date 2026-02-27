@@ -53,7 +53,7 @@ public class BlobStorage(ILogger<BlobStorage> log, VectorStoreService storeServi
                     Topic: {Topic}
                     Type: {Type}
                     Data: {Data}
-                "", e.Id, e.EventTime, e.Subject, e.Topic, e.EventType, e.Data.ToString());
+            """, e.Id, e.EventTime, e.Subject, e.Topic, e.EventType, e.Data.ToString());
 #endif
 
         var data = e.Data.ToObjectFromJson<EventData>(options);
