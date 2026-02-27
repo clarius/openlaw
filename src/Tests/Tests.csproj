@@ -10,7 +10,7 @@
   <ItemGroup>
     <PackageReference Include="Azure.AI.OpenAI" Version="2.2.0-beta.5" />
     <PackageReference Include="coverlet.collector" Version="8.0.0" />
-    <PackageReference Include="Devlooped.TableStorage.Memory" Version="5.4.0" />
+    <PackageReference Include="Devlooped.TableStorage.Memory" Version="5.5.0" />
     <PackageReference Include="Microsoft.Extensions.AI" Version="10.3.0" />
     <PackageReference Include="Microsoft.Extensions.AI.OpenAI" Version="10.3.0" />
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="18.0.1" />
@@ -25,7 +25,7 @@
     <PackageReference Include="Microsoft.Extensions.Configuration" Version="10.0.3" />
     <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="10.0.3" />
     <PackageReference Include="Microsoft.Extensions.Http" Version="10.0.3" />
-    <PackageReference Include="Devlooped.JQ" Version="1.7.1.8" />
+    <PackageReference Include="Devlooped.JQ" Version="1.8.1.1" />
   </ItemGroup>
 
   <ItemGroup>

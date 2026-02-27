@@ -14,7 +14,7 @@
 
   <ItemGroup>
     <PackageReference Include="Azure.Storage.Blobs" Version="12.27.0" />
-    <PackageReference Include="Devlooped.TableStorage" Version="5.2.2" />
+    <PackageReference Include="Devlooped.TableStorage" Version="5.5.0" />
     <PackageReference Include="Microsoft.Extensions.AI" Version="10.3.0" />
     <PackageReference Include="Microsoft.Extensions.AI.OpenAI" Version="10.3.0" />
     <PackageReference Include="Microsoft.Extensions.Configuration.Abstractions" Version="10.0.3" />
@@ -22,7 +22,7 @@
     <PackageReference Include="SystemTextJson.JsonDiffPatch" Version="2.0.0" />
     <PackageReference Include="YamlDotNet" Version="16.3.0" />
     <PackageReference Include="ThisAssembly.Resources" PrivateAssets="all" Version="2.1.2" />
-    <PackageReference Include="Devlooped.Extensions.DependencyInjection.Attributed" Version="2.0.0" PrivateAssets="all" />
+    <PackageReference Include="Devlooped.Extensions.DependencyInjection.Attributed" Version="2.2.0" PrivateAssets="all" />
   </ItemGroup>
 
 </Project>
