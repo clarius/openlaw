@@ -49,7 +49,7 @@ def refs($context; $name):
     ref: .content["standard-normativo"],
     name: .content["nombre-coloquial"] | tostring | ltrimstr(" ") | rtrimstr(" "),
     number: (.content["numero-norma"] // .content["numero_norma"] // null), 
-    title: (.content["titulo-norma"] // .content["titulo_1"] // .content["titulo_noticia"] // null | ltrimstr(" ") | rtrimstr(" ")),
+    title: (.content["titulo-norma"] // .content["titulo_1"] // .content["titulo_noticia"] // .content.asunto | select(type == "string") | ltrimstr(" ") | rtrimstr(" ")),
     summary: (.content.sintesis // ([.content.sumario | .. | select(type == "string")] | join("")) | ltrimstr(" ") | rtrimstr(" ")),
     kind: .content["tipo-norma"] | { code: .codigo, text: .texto },
     status: (.content.estado // .content.status),

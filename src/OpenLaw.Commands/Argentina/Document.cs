@@ -1,4 +1,5 @@
 ﻿using System.Text.Json.Serialization;
+using Devlooped;
 using YamlDotNet.Serialization;
 
 namespace Clarius.OpenLaw.Argentina;
@@ -45,6 +46,8 @@ public record Document(
     /// <exception cref="NotSupportedException">The data cannot be deserialized into <see cref="Document"/></exception>
     public static async Task<Document> ParseAsync(string json)
     {
+        var result = await Devlooped.JQ.ExecuteAsync(new JqParams(json, ThisAssembly.Resources.Argentina.SaijDocument.Text));
+
         if (await Devlooped.JQ.ExecuteAsync(json, ThisAssembly.Resources.Argentina.SaijDocument.Text) is not { } docjq ||
             JsonOptions.Default.TryDeserialize<Document>(docjq) is not { } doc)
             throw new ArgumentException($"Invalid document data'.", nameof(json));
