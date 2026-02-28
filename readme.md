@@ -111,20 +111,3 @@ OPTIONS:
 
 <!-- src/dotnet-openlaw/format.md -->
 
-## WhatsApp API
-
-El proyecto incluye integracion con WhatsApp for Business para consultas de contenido.
-
-Para usar la API de WhatsApp, es necesario tener una cuenta de WhatsApp Business y un 
-número de teléfono asociado. Ver [Devlooped.WhatsApp](https://github.com/devlooped/WhatsApp?tab=readme-ov-file#configuration) 
-para más detalles de configuración específica de la API de WhatsApp.
-
-### CI/CD
-
-El deployment esta configurado para ocurrir automaticamente en push a main.
-
-Para el deployment, debe configurarse el fork de este repo con las siguientes valores:
-
-* `AZURE_CREDENTIALS` *secret*: credenciales de Azure para el deployment de la API
-* `APP_NAME` *variable*: nombre de la app de Azure Functions a deployear, como variable de repo.
-
